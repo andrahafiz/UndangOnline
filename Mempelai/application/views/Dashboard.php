@@ -6,498 +6,137 @@
                 <div class="page-body">
                     <div class="row">
                         <!-- task, page, download counter  start -->
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-c-yellow update-card">
-                                <div class="card-block">
-                                    <div class="row align-items-end">
-                                        <div class="col-8">
-                                            <h4 class="text-white">$30200</h4>
-                                            <h6 class="text-white m-b-0">All Earnings</h6>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <canvas id="update-chart-1" height="50"></canvas>
-                                        </div>
-                                    </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card widget-card-1">
+                                <div class="card-block-small">
+                                    <i class="feather icon-user bg-c-blue card1-icon"></i>
+                                    <span class="text-c-blue f-w-900 f-20">Tamu Undangan</span>
+                                    <h3 class="m-t-15">100 Orang</h3>
                                 </div>
-                                <div class="card-footer">
-                                    <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-c-green update-card">
-                                <div class="card-block">
-                                    <div class="row align-items-end">
-                                        <div class="col-8">
-                                            <h4 class="text-white">290+</h4>
-                                            <h6 class="text-white m-b-0">Page Views</h6>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <canvas id="update-chart-2" height="50"></canvas>
+                                <a href="<?= base_url("Mempelai"); ?>">
+                                    <div class="card-footer bg-c-blue">
+                                        <div class="row align-items-center  text-left">
+                                            <div class="col">
+                                                <p class="text-white m-b-0">Lihat Detail</p>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <i class="feather icon-arrow-up text-white f-16"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-c-pink update-card">
-                                <div class="card-block">
-                                    <div class="row align-items-end">
-                                        <div class="col-8">
-                                            <h4 class="text-white">145</h4>
-                                            <h6 class="text-white m-b-0">Task Completed</h6>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <canvas id="update-chart-3" height="50"></canvas>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card widget-card-1">
+                                <div class="card-block-small">
+                                    <!-- <i class="feather icon-cast bg-c-green card1-icon"></i> -->
+                                    <i class="fa fa-money  bg-c-green card1-icon"></i>
+                                    <span class="text-c-blue f-w-900 f-20">Total Hadiah</span>
+                                    <h3 class="m-t-15">Rp. 1.000.000.000</h3>
+                                </div>
+                                <a href="<?= base_url("Hadiah"); ?>">
+                                    <div class="card-footer bg-c-green">
+                                        <div class="row align-items-center  text-left">
+                                            <div class="col">
+                                                <p class="text-white m-b-0">Lihat Detail</p>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <i class="feather icon-arrow-up text-white f-16"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-c-lite-green update-card">
-                                <div class="card-block">
-                                    <div class="row align-items-end">
-                                        <div class="col-8">
-                                            <h4 class="text-white">500</h4>
-                                            <h6 class="text-white m-b-0">Downloads</h6>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <canvas id="update-chart-4" height="50"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- task, page, download counter  end -->
 
-                        <!--  sale analytics start -->
-                        <div class="col-xl-9 col-md-12">
+                        <!-- TAMU UNDANGAN -->
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card widget-card-1">
+                                <div class="card-block-small">
+                                    <i class="feather icon-user bg-c-pink card1-icon"></i>
+                                    <span class="text-c-pink f-w-900 f-20">Tamu Undangan</span>
+                                    <h3 class="m-t-15">100 Orang</h3>
+                                </div>
+                                <a href="<?= base_url("Mempelai"); ?>">
+                                    <div class="card-footer bg-c-pink">
+                                        <div class="row align-items-center  text-left">
+                                            <div class="col">
+                                                <p class="text-white m-b-0">Lihat Detail</p>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <i class="feather icon-arrow-up text-white f-16"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END TAMU UNDANGAN -->
+
+                        <!--  TABEL TAMU  -->
+                        <div class="col-xl-12 col-md-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <h5>Sales Analytics</h5>
-                                    <span class="text-muted">For more details about usage, please refer <a href="https://www.amcharts.com/online-store/" target="_blank">amCharts</a> licences.</span>
-                                    <div class="card-header-right">
-                                        <ul class="list-unstyled card-option">
-                                            <li><i class="feather icon-maximize full-card"></i></li>
-                                            <li><i class="feather icon-minus minimize-card"></i></li>
-                                            <li><i class="feather icon-trash-2 close-card"></i></li>
-                                        </ul>
-                                    </div>
+                                <div class="card-header table-card-header">
+                                    <h5>HTML5 Export Buttons</h5>
                                 </div>
                                 <div class="card-block">
-                                    <div id="sales-analytics" style="height: 265px;"></div>
+                                    <div class="dt-responsive table-responsive">
+                                        <div id="basic-btn_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="dt-buttons"><a class="dt-button buttons-copy buttons-html5" tabindex="0" aria-controls="basic-btn" href="#"><span>Copy</span></a><a class="dt-button buttons-csv buttons-html5" tabindex="0" aria-controls="basic-btn" href="#"><span>CSV</span></a><a class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="basic-btn" href="#"><span>Excel</span></a><a class="dt-button buttons-pdf buttons-html5" tabindex="0" aria-controls="basic-btn" href="#"><span>PDF</span></a><a class="dt-button buttons-print" tabindex="0" aria-controls="basic-btn" href="#"><span>Print</span></a></div>
+                                            <div id="basic-btn_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="basic-btn"></label></div>
+                                            <table id="basic-btn" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="basic-btn_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188.4px;">Name</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282px;">Position</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Office</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68.4px;">Age</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 140.4px;">Start date</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Salary</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr role="row" class="odd">
+                                                        <td class="sorting_1">Airi Satou</td>
+                                                        <td>Accountant</td>
+                                                        <td>Tokyo</td>
+                                                        <td>33</td>
+                                                        <td>2008/11/28</td>
+                                                        <td>$162,700</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th rowspan="1" colspan="1">Name</th>
+                                                        <th rowspan="1" colspan="1">Position</th>
+                                                        <th rowspan="1" colspan="1">Office</th>
+                                                        <th rowspan="1" colspan="1">Age</th>
+                                                        <th rowspan="1" colspan="1">Start date</th>
+                                                        <th rowspan="1" colspan="1">Salary</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                            <div class="dataTables_info" id="basic-btn_info" role="status" aria-live="polite">Showing 1 to 10 of 20 entries</div>
+                                            <div class="dataTables_paginate paging_simple_numbers" id="basic-btn_paginate">
+                                                <ul class="pagination">
+                                                    <li class="paginate_button page-item previous disabled" id="basic-btn_previous"><a href="#" aria-controls="basic-btn" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                                    <li class="paginate_button page-item active"><a href="#" aria-controls="basic-btn" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                                    <li class="paginate_button page-item "><a href="#" aria-controls="basic-btn" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                                    <li class="paginate_button page-item next" id="basic-btn_next"><a href="#" aria-controls="basic-btn" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-12">
-                            <div class="card user-card2">
-                                <div class="card-block text-center">
-                                    <h6 class="m-b-15">Project Risk</h6>
-                                    <div class="risk-rate">
-                                        <span><b>5</b></span>
-                                    </div>
-                                    <h6 class="m-b-10 m-t-10">Balanced</h6>
-                                    <a href="#!" class="text-c-yellow b-b-warning">Change Your Risk</a>
-                                    <div class="row justify-content-center m-t-10 b-t-default m-l-0 m-r-0">
-                                        <div class="col m-t-15 b-r-default">
-                                            <h6 class="text-muted">Nr</h6>
-                                            <h6>AWS 2455</h6>
-                                        </div>
-                                        <div class="col m-t-15">
-                                            <h6 class="text-muted">Created</h6>
-                                            <h6>30th Sep</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-warning btn-block p-t-15 p-b-15">Download Overall Report</button>
-                            </div>
-                        </div>
-                        <!--  sale analytics end -->
+                        <!-- END TABEL TAMU  -->
 
-                        <div class="col-xl-8 col-md-12">
-                            <div class="card table-card">
-                                <div class="card-header">
-                                    <h5>Application Sales</h5>
-                                    <div class="card-header-right">
-                                        <ul class="list-unstyled card-option">
-                                            <li><i class="feather icon-maximize full-card"></i></li>
-                                            <li><i class="feather icon-minus minimize-card"></i></li>
-                                            <li><i class="feather icon-trash-2 close-card"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover  table-borderless">
-                                            <thead>
-                                                <tr>
-                                                    <th>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        Application
-                                                    </th>
-                                                    <th>Sales</th>
-                                                    <th>Change</th>
-                                                    <th>Avg Price</th>
-                                                    <th>Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Able Pro</h6>
-                                                            <p class="text-muted m-b-0">Powerful Admin Theme</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>16,300</td>
-                                                    <td><canvas id="app-sale1" height="50" width="100"></canvas></td>
-                                                    <td>$53</td>
-                                                    <td class="text-c-blue">$15,652</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Photoshop</h6>
-                                                            <p class="text-muted m-b-0">Design Software</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>26,421</td>
-                                                    <td><canvas id="app-sale2" height="50" width="100"></canvas></td>
-                                                    <td>$35</td>
-                                                    <td class="text-c-blue">$18,785</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Guruable</h6>
-                                                            <p class="text-muted m-b-0">Best Admin Template</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>8,265</td>
-                                                    <td><canvas id="app-sale3" height="50" width="100"></canvas></td>
-                                                    <td>$98</td>
-                                                    <td class="text-c-blue">$9,652</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Flatable</h6>
-                                                            <p class="text-muted m-b-0">Admin App</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>10,652</td>
-                                                    <td><canvas id="app-sale4" height="50" width="100"></canvas></td>
-                                                    <td>$20</td>
-                                                    <td class="text-c-blue">$7,856</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="text-center">
-                                            <a href="#!" class=" b-b-primary text-primary">View all Projects</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-12">
-                            <div class="card user-activity-card">
-                                <div class="card-header">
-                                    <h5>User Activity</h5>
-                                </div>
-                                <div class="card-block">
-                                    <div class="row m-b-25">
-                                        <div class="col-auto p-r-0">
-                                            <div class="u-img">
-                                                <img src="<?= base_url(); ?>assets\images\breadcrumb-bg.jpg" alt="user image" class="img-radius cover-img">
-                                                <img src="<?= base_url(); ?>assets\images\avatar-2.jpg" alt="user image" class="img-radius profile-img">
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <h6 class="m-b-5">John Deo</h6>
-                                            <p class="text-muted m-b-0">Lorem Ipsum is simply dummy text.</p>
-                                            <p class="text-muted m-b-0"><i class="feather icon-clock m-r-10"></i>2 min ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="row m-b-25">
-                                        <div class="col-auto p-r-0">
-                                            <div class="u-img">
-                                                <img src="<?= base_url(); ?>assets\images\breadcrumb-bg.jpg" alt="user image" class="img-radius cover-img">
-                                                <img src="<?= base_url(); ?>assets\images\avatar-2.jpg" alt="user image" class="img-radius profile-img">
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <h6 class="m-b-5">John Deo</h6>
-                                            <p class="text-muted m-b-0">Lorem Ipsum is simply dummy text.</p>
-                                            <p class="text-muted m-b-0"><i class="feather icon-clock m-r-10"></i>2 min ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="row m-b-25">
-                                        <div class="col-auto p-r-0">
-                                            <div class="u-img">
-                                                <img src="<?= base_url(); ?>assets\images\breadcrumb-bg.jpg" alt="user image" class="img-radius cover-img">
-                                                <img src="<?= base_url(); ?>assets\images\avatar-2.jpg" alt="user image" class="img-radius profile-img">
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <h6 class="m-b-5">John Deo</h6>
-                                            <p class="text-muted m-b-0">Lorem Ipsum is simply dummy text.</p>
-                                            <p class="text-muted m-b-0"><i class="feather icon-clock m-r-10"></i>2 min ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="row m-b-5">
-                                        <div class="col-auto p-r-0">
-                                            <div class="u-img">
-                                                <img src="<?= base_url(); ?>assets\images\breadcrumb-bg.jpg" alt="user image" class="img-radius cover-img">
-                                                <img src="<?= base_url(); ?>assets\images\avatar-2.jpg" alt="user image" class="img-radius profile-img">
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <h6 class="m-b-5">John Deo</h6>
-                                            <p class="text-muted m-b-0">Lorem Ipsum is simply dummy text.</p>
-                                            <p class="text-muted m-b-0"><i class="feather icon-clock m-r-10"></i>2 min ago</p>
-                                        </div>
-                                    </div>
 
-                                    <div class="text-center">
-                                        <a href="#!" class="b-b-primary text-primary">View all Projects</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- wather user -->
-                        <div class="col-xl-6 col-md-12">
-                            <div class="card latest-update-card">
-                                <div class="card-header">
-                                    <h5>Latest Updates</h5>
-                                    <div class="card-header-right">
-                                        <ul class="list-unstyled card-option">
-                                            <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                            <li><i class="fa fa-window-maximize full-card"></i></li>
-                                            <li><i class="fa fa-minus minimize-card"></i></li>
-                                            <li><i class="fa fa-refresh reload-card"></i></li>
-                                            <li><i class="fa fa-trash close-card"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                    <div class="latest-update-box">
-                                        <div class="row p-b-15">
-                                            <div class="col-auto text-right update-meta">
-                                                <p class="text-muted m-b-0 d-inline">4 hrs ago</p>
-                                                <i class="feather icon-briefcase bg-simple-c-pink update-icon"></i>
-                                            </div>
-                                            <div class="col">
-                                                <h6>+ 5 New Products were added!</h6>
-                                                <p class="text-muted m-b-0">Congratulations!</p>
-                                            </div>
-                                        </div>
-                                        <div class="row p-b-15">
-                                            <div class="col-auto text-right update-meta">
-                                                <p class="text-muted m-b-0 d-inline">1 day ago</p>
-                                                <i class="feather icon-check bg-simple-c-yellow  update-icon"></i>
-                                            </div>
-                                            <div class="col">
-                                                <h6>Database backup completed!</h6>
-                                                <p class="text-muted m-b-0">Download the <span class="text-c-blue">latest backup</span>.</p>
-                                            </div>
-                                        </div>
-                                        <div class="row p-b-0">
-                                            <div class="col-auto text-right update-meta">
-                                                <p class="text-muted m-b-0 d-inline">2 day ago</p>
-                                                <i class="feather icon-facebook bg-simple-c-green update-icon"></i>
-                                            </div>
-                                            <div class="col">
-                                                <h6>+1 Friend Requests</h6>
-                                                <p class="text-muted m-b-10">This is great, keep it up!</p>
-                                                <div class="table-responsive">
-                                                    <table class="table table-hover m-b-0">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="b-none">
-                                                                    <a href="#!" class="align-middle">
-                                                                        <img src="<?= base_url(); ?>assets\images\avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                        <div class="d-inline-block">
-                                                                            <h6>Jeny William</h6>
-                                                                            <p class="text-muted m-b-0">Graphic Designer</p>
-                                                                        </div>
-                                                                    </a>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="#!" class="b-b-primary text-primary">View all Projects</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-xl-6 col-md-12">
-                            <div class="card user-card-full">
-                                <div class="row m-l-0 m-r-0">
-                                    <div class="col-sm-4 bg-c-lite-green user-profile">
-                                        <div class="card-block text-center text-white">
-                                            <div class="m-b-25">
-                                                <img src="<?= base_url(); ?>assets\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                            </div>
-                                            <h6 class="f-w-600">Jeny William</h6>
-                                            <p>Web Designer</p>
-                                            <i class="feather icon-edit m-t-10 f-16"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <div class="card-block">
-                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Email</p>
-                                                    <h6 class="text-muted f-w-400"><a href="..\..\..\cdn-cgi\l\email-protection.htm" class="__cf_email__" data-cfemail="3a505f54437a5d575b535614595557">[email&#160;protected]</a></h6>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Phone</p>
-                                                    <h6 class="text-muted f-w-400">0023-333-526136</h6>
-                                                </div>
-                                            </div>
-                                            <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Recent</p>
-                                                    <h6 class="text-muted f-w-400">Guruable Admin</h6>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Most Viewed</p>
-                                                    <h6 class="text-muted f-w-400">Able Pro Admin</h6>
-                                                </div>
-                                            </div>
-                                            <ul class="social-link list-unstyled m-t-40 m-b-10">
-                                                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook"><i class="feather icon-facebook facebook" aria-hidden="true"></i></a></li>
-                                                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter"><i class="feather icon-twitter twitter" aria-hidden="true"></i></a></li>
-                                                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram"><i class="feather icon-instagram instagram" aria-hidden="true"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- wather user -->
 
-                        <!-- social download  start -->
-                        <div class="col-xl-4 col-md-6">
-                            <div class="card social-card bg-simple-c-blue">
-                                <div class="card-block">
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <i class="feather icon-mail f-34 text-c-blue social-icon"></i>
-                                        </div>
-                                        <div class="col">
-                                            <h6 class="m-b-0">Mail</h6>
-                                            <p>231.2w downloads</p>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#!" class="download-icon"><i class="feather icon-arrow-down"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="card social-card bg-simple-c-pink">
-                                <div class="card-block">
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <i class="feather icon-twitter f-34 text-c-pink social-icon"></i>
-                                        </div>
-                                        <div class="col">
-                                            <h6 class="m-b-0">twitter</h6>
-                                            <p>231.2w downloads</p>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#!" class="download-icon"><i class="feather icon-arrow-down"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-12">
-                            <div class="card social-card bg-simple-c-green">
-                                <div class="card-block">
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <i class="feather icon-instagram f-34 text-c-green social-icon"></i>
-                                        </div>
-                                        <div class="col">
-                                            <h6 class="m-b-0">Instagram</h6>
-                                            <p>231.2w downloads</p>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#!" class="download-icon"><i class="feather icon-arrow-down"></i></a>
-                            </div>
-                        </div>
-                        <!-- social download  end -->
 
                     </div>
                 </div>

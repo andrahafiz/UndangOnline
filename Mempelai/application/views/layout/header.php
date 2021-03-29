@@ -31,6 +31,13 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\css\style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\css\jquery.mCustomScrollbar.css">
+
+    <!-- Data Table Css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\pages\data-table\css\buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\pages\data-table\extensions\buttons\css\buttons.dataTables.min.css">
+    <!-- Style.css -->
 </head>
 
 <body>
@@ -80,15 +87,15 @@
                 <div class="navbar-wrapper">
 
                     <div class="navbar-logo">
-                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                        <!-- <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu"></i>
-                        </a>
+                        </a> -->
                         <a href="index-1.htm">
-                            <img class="img-fluid" src="<?= base_url(); ?>assets\images\logo.png" alt="Theme-Logo">
+                            <!-- <img class="img-fluid" src="<?= base_url(); ?>assets\images\logo.png" alt="Theme-Logo"> -->
                         </a>
-                        <a class="mobile-options">
+                        <!-- <a class="mobile-options">
                             <i class="feather icon-more-horizontal"></i>
-                        </a>
+                        </a> -->
                     </div>
 
                     <div class="navbar-container container-fluid">

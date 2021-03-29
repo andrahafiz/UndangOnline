@@ -24185,8 +24185,8 @@ span.value {
 }
 
 .bg-c-pink {
-  background: -webkit-gradient(linear, left top, right top, from(#eb3422), to(#ef5f51));
-  background: linear-gradient(to right, #eb3422, #ef5f51);
+  background: -webkit-gradient(linear, left top, right top, from(#FF7588), to(#FF94A3));
+  background: linear-gradient(to right, #FF7588, #FF94A3);
 }
 
 .bg-simple-c-pink {
