@@ -83,7 +83,7 @@
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
 
-            <nav class="navbar header-navbar pcoded-header" heheader-theme="theme2">
+            <nav class="navbar header-navbar pcoded-header iscollapsed" header-theme="theme2" pcoded-header-position="fixed">
                 <div class="navbar-wrapper">
 
                     <div class="navbar-logo">
@@ -91,7 +91,7 @@
                             <i class="feather icon-menu"></i>
                         </a> -->
                         <a href="index-1.htm">
-                            <!-- <img class="img-fluid" src="<?= base_url(); ?>assets\images\logo.png" alt="Theme-Logo"> -->
+                            <img class="img-fluid" src="<?= base_url(); ?>assets\images\logo.png" alt="Theme-Logo">
                         </a>
                         <!-- <a class="mobile-options">
                             <i class="feather icon-more-horizontal"></i>
