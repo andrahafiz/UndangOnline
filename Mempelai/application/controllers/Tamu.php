@@ -17,7 +17,7 @@ class Tamu extends CI_Controller
         );
 
         $this->load->view('layout/header', $data);
-        $this->load->view('Dashboard');
+        $this->load->view('View_Tamu');
         $this->load->view('layout/footer');
     }
 }

@@ -17,7 +17,7 @@ class Hadiah extends CI_Controller
         );
 
         $this->load->view('layout/header', $data);
-        $this->load->view('Dashboard');
+        $this->load->view('View_Hadiah');
         $this->load->view('layout/footer');
     }
 }
