@@ -17,7 +17,7 @@ class Mempelai extends CI_Controller
         );
 
         $this->load->view('layout/header', $data);
-        $this->load->view('Dashboard');
+        $this->load->view('Mempelai/Mempelai_View');
         $this->load->view('layout/footer');
     }
 }

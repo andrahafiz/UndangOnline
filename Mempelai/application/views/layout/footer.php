@@ -75,11 +75,22 @@
 <script src="<?= base_url(); ?>assets\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js"></script>
 
 <!-- Custom js -->
+<script type="text/javascript" src="<?= base_url(); ?>assets\pages\advance-elements\swithces.js"></script>
 <script src="<?= base_url(); ?>assets\pages\data-table\extensions\buttons\js\extension-btns-custom.js"></script>
 <script src="<?= base_url(); ?>assets\js\pcoded.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\vartical-layout.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>assets\js\script.js"></script>
+
+<!-- Switch component js -->
+<script type="text/javascript" src="<?= base_url(); ?>assets\bower_components\switchery\js\switchery.min.js"></script>
+<!-- Tags js -->
+<script type="text/javascript" src="<?= base_url(); ?>assets\bower_components\bootstrap-tagsinput\js\bootstrap-tagsinput.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+
+<!-- Max-length js -->
+<script type="text/javascript" src="<?= base_url(); ?>assets\bower_components\bootstrap-maxlength\js\bootstrap-maxlength.js"></script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
