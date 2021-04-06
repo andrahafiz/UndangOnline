@@ -13,13 +13,28 @@ class Mempelai extends CI_Controller
     // }
     public function index()
     {
-        $data = array(
-            'judul' => 'Mempelai',
-            'menu' => menu_mempelai()
-        );
+        $this->form_validation->set_rules('foto_mpria', 'Foto Mempelai Pria', 'required');
+        $this->form_validation->set_rules('nama_mpria', 'Nama Lengkap Mempelai Pria', 'required');
+        $this->form_validation->set_rules('namal_pria', 'Nama Panggilan Mempelai Pria', 'required');
+        $this->form_validation->set_rules('namaortuayah_mpria', 'Nama Ayah ( Mempelai Pria )', 'required');
+        $this->form_validation->set_rules('namaortuibu_mpria', 'Nama Ibu ( Mempelai Pria )', 'required');
+        $this->form_validation->set_rules('foto_mwanita', 'Foto Mempelai Wanita', 'required');
+        $this->form_validation->set_rules('nama_mwanita', 'Nama Lengkap Mempelai Wanita', 'required|numeric');
+        $this->form_validation->set_rules('namal_mwanita', 'Nama Panggilan Mempelai Wanita', 'required');
+        $this->form_validation->set_rules('namaortuayah_mwanita', 'Nama Ayah ( Mempelai Wanita )', 'required');
+        $this->form_validation->set_rules('namaortuibu_mwanita', 'Nama Ibu ( Mempelai Wanita )', 'required');
 
-        $this->load->view('layout/header', $data);
-        $this->load->view('Mempelai/Mempelai_View');
-        $this->load->view('layout/footer');
+        if ($this->form_validation->run() == FALSE) {
+            $data = array(
+                'judul' => 'Mempelai',
+                'menu' => menu_mempelai()
+            );
+
+            $this->load->view('layout/header', $data);
+            $this->load->view('Mempelai/Mempelai_View');
+            $this->load->view('layout/footer');
+        } else {
+            echo "bisa";
+        }
     }
 }
