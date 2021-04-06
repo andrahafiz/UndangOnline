@@ -1,3 +1,8 @@
+<!-- <div id="styleSelector">
+</div> -->
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -73,6 +78,11 @@
 <script src="<?= base_url(); ?>assets\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js"></script>
 <script src="<?= base_url(); ?>assets\bower_components\datatables.net-responsive\js\dataTables.responsive.min.js"></script>
 <script src="<?= base_url(); ?>assets\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js"></script>
+
+<!-- j-pro js -->
+<script type="text/javascript" src="<?= base_url(); ?>assets\pages\j-pro\js\jquery.ui.min.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>assets\pages\j-pro\js\jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>assets\pages\j-pro\js\jquery.j-pro.js"></script>
 
 <!-- Custom js -->
 <script type="text/javascript" src="<?= base_url(); ?>assets\pages\advance-elements\swithces.js"></script>

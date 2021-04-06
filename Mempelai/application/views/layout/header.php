@@ -35,6 +35,10 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\pages\data-table\css\buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\assets\pages\data-table\extensions\buttons\css\buttons.dataTables.min.css">
+    <!-- jpro forms css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\pages\j-pro\css\demo.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\pages\j-pro\css\font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\pages\j-pro\css\j-pro-modern.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\css\style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\css\jquery.mCustomScrollbar.css">
@@ -150,51 +154,25 @@
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">
                         <div class="pcoded-inner-navbar main-menu">
-
                             <ul class="pcoded-item pcoded-left-item">
+                                <?php
+                                for ($start = 0; $start < count($menu[0]); $start++) {
+                                    if ($judul == $menu[0][$start]) {
+                                        echo  '<li class="active">';
+                                    } else {
+                                        echo  '<li class="">';
+                                    };
+                                    echo '
+                                    <a href="' . base_url($menu[2][$start]) . '">
+                                        <span class="pcoded-micon"><i class="' . $menu[1][$start] . '"></i></span>
+                                        <span class="pcoded-mtext">' . $menu[0][$start] . '</span>
+                                    </a>
+                                </li>
+                                    ';
+                                };
+                                ?>
 
-                                <li class="active">
-                                    <a href="<?= base_url(); ?>">
-                                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
-                                        <span class="pcoded-mtext">Dashboard</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="<?= base_url("Mempelai"); ?>">
-                                        <span class="pcoded-micon"><i class="feather icon-users"></i></span>
-                                        <span class="pcoded-mtext">Mempelai</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="<?= base_url("Acara"); ?>">
-                                        <span class="pcoded-micon"><i class="feather icon-calendar"></i></span>
-                                        <span class="pcoded-mtext">Acara</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="<?= base_url("Tamu"); ?>">
-                                        <span class="pcoded-micon"><i class="feather icon-user-plus"></i></span>
-                                        <span class="pcoded-mtext">Tamu Undangan</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="<?= base_url("Hadiah"); ?>">
-                                        <span class="pcoded-micon"><i class="fa fa-gift"></i></span>
-                                        <span class="pcoded-mtext">Hadiah</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="<?= base_url("Galeri"); ?>">
-                                        <span class="pcoded-micon"><i class="feather icon-image"></i></span>
-                                        <span class="pcoded-mtext">Galeri</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="navbar-light.htm">
-                                        <span class="pcoded-micon"><i class="feather icon-log-out"></i></span>
-                                        <span class="pcoded-mtext">Log Out</span>
-                                    </a>
-                                </li>
+
                                 <!-- <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
@@ -221,6 +199,5 @@
                                     </ul>
                                 </li> -->
                             </ul>
-
                         </div>
                     </nav>

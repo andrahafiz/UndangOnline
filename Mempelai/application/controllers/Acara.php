@@ -8,12 +8,14 @@ class Acara extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Temp_Model');
+        $this->load->helper('my_function_helper');
     }
     // }
     public function index()
     {
         $data = array(
-            'judul' => 'Acara'
+            'judul' => 'Acara',
+            'menu' => menu_mempelai()
         );
 
         $this->load->view('layout/header', $data);

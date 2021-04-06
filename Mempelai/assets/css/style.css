@@ -1858,7 +1858,7 @@
 }
 
 .btn-outline-primary {
-	color: #016d6f;
+	color: #FF7588;
 	background-color: #fff;
 	background-color: transparent
 }
@@ -11935,15 +11935,15 @@ h6.media-heading {
 }
 
 .btn-outline-primary {
-	border-color: #01a9ac;
+	border-color: #FF7588;
 	font-weight: 500;
 	padding: 10px 16px;
 	font-size: 15px
 }
 
 .btn-outline-primary:hover {
-	background-color: #01a9ac;
-	border-color: #01a9ac
+	background-color: #ff334e;
+	border-color: #ff334e
 }
 
 .simple-cards p {
