@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="card-block ">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\images\user_pria.png" alt="" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_pria.png" alt="" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
                                         <input type="file" id="foto_mpria" class="form-control  form-control-round m-b-10 ">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\images\user_wanita.png" alt="" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_wanita.png" alt="" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
                                         <input type="file" id="foto_mwanita" class="form-control  form-control-round m-b-10 ">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>

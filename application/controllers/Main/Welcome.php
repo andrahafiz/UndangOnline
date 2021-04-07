@@ -8,7 +8,6 @@ class Welcome extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Temp_Model');
-		$this->load->helper('my_function_helper');
 	}
 	/**
 	 * Index Page for this controller.
@@ -55,24 +54,16 @@ class Welcome extends CI_Controller
 		// $this->load->view('Template1');
 		// 	}
 		// };]
-		// $halaman = 'thema2';
-		// $thema = $this->Temp_Model->select_by_id($halaman);
-		// // var_dump($thema);
-		// if (isset($thema)) {
-		// 	$this->load->view($thema->view_thema);
-		// 	// echo $thema['nama_thema'];
-		// 	// var_dump($thema->nama_thema);
-		// } else {
-		// 	echo "gak ada";
-		// }
-		$data = array(
-			'judul' => 'Acara',
-			'menu' => menu_mempelai()
-		);
-
-		$this->load->view('Mempelai/layout/header', $data);
-		$this->load->view('Mempelai/Acara/Acara_View');
-		$this->load->view('Mempelai/layout/footer');
+		$halaman = 'thema2';
+		$thema = $this->Temp_Model->select_by_id($halaman);
+		// var_dump($thema);
+		if (isset($thema)) {
+			$this->load->view($thema->view_thema);
+			// echo $thema['nama_thema'];
+			// var_dump($thema->nama_thema);
+		} else {
+			echo "gak ada";
+		}
 	}
 
 	public function preview($halaman)
