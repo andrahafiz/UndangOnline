@@ -55,7 +55,7 @@
                             <div class="card widget-card-1">
                                 <div class="card-block-small">
                                     <i class="feather icon-user bg-c-pink card1-icon"></i>
-                                    <span class="text-c-pink f-w-900 f-20">Tamu Undangan</span>
+                                    <span class="text-c-blue f-w-900 f-20">Total Hadiah</span>
                                     <h3 class="m-t-15">100 Orang</h3>
                                 </div>
                                 <a href="<?= base_url("Mempelai"); ?>">

@@ -21,15 +21,15 @@ $(document).ready(function() {
         }, {
             label: "Expense",
             backgroundColor: [
-                '#01a9ac',
-                '#01a9ac',
-                '#01a9ac',
-                '#01a9ac',
-                '#01a9ac',
-                '#01a9ac',
-                '#01a9ac',
-                '#01a9ac',
-                '#01a9ac'
+                '#FF7588',
+                '#FF7588',
+                '#FF7588',
+                '#FF7588',
+                '#FF7588',
+                '#FF7588',
+                '#FF7588',
+                '#FF7588',
+                '#FF7588'
             ],
 
             data: [60, 69, 85, 91, 58, 50, 45, 20],
