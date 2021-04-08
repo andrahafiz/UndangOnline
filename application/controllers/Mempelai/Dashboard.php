@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Temp_Model');
-        $this->load->helper('my_function_helper');  
+        $this->load->helper('my_function_helper');
     }
     // }
     public function index()
@@ -18,8 +18,8 @@ class Dashboard extends CI_Controller
             'menu' => menu_mempelai()
         );
 
-        $this->load->view('layout/header', $data);
-        $this->load->view('Dashboard');
-        $this->load->view('layout/footer');
+        $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/Dashboard');
+        $this->load->view('Mempelai/layout/footer');
     }
 }

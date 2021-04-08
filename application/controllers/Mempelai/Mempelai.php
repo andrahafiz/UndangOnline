@@ -30,9 +30,9 @@ class Mempelai extends CI_Controller
                 'menu' => menu_mempelai()
             );
 
-            $this->load->view('layout/header', $data);
-            $this->load->view('Mempelai/Mempelai_View');
-            $this->load->view('layout/footer');
+            $this->load->view('Mempelai/layout/header', $data);
+            $this->load->view('Mempelai/Mempelai/Mempelai_View');
+            $this->load->view('Mempelai/layout/footer');
         } else {
             echo "bisa";
         }

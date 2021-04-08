@@ -85,7 +85,7 @@
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\pages\j-pro\js\jquery.j-pro.js"></script>
 
 <!-- Custom js -->
-<script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\pages\advance-elements\swithces.js"></script>
+<!-- <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\pages\advance-elements\swithces.js"></script> -->
 <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\extension-btns-custom.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\js\pcoded.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\js\vartical-layout.min.js"></script>
@@ -93,7 +93,7 @@
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\js\script.js"></script>
 
 <!-- Switch component js -->
-<script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\switchery\js\switchery.min.js"></script>
+<!-- <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\switchery\js\switchery.min.js"></script> -->
 <!-- Tags js -->
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\bootstrap-tagsinput\js\bootstrap-tagsinput.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
@@ -112,6 +112,8 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-23581568-13');
+
+    
 </script>
 </body>
 

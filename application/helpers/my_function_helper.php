@@ -19,7 +19,7 @@ function menu_mempelai()
         //icon
         ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'feather icon-image', 'feather icon-log-out'],
         //url
-        ['', 'Mempelai/Mempelai', 'Acara', 'Tamu', 'Hadiah', 'Galeri', ''],
+        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Galeri', ''],
     ];
     return $menu;
 }

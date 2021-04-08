@@ -35,9 +35,9 @@
                                     </div>
                                     <div class="card-block ">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_pria.png" alt="" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_pria.png" alt="" id="prev_pria" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
-                                        <input type="file" id="foto_mpria" class="form-control  form-control-round m-b-10 ">
+                                        <input type="file" id="foto_mpria" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_pria')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
                                         <input type="text" id="nama_mpria" class="form-control form-control-round m-b-10">
                                         <p class="f-w-600 m-b-5">Nama Panggilan</p>
@@ -60,9 +60,11 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_wanita.png" alt="" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_wanita.png" alt="" id="prev_wanita" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
-                                        <input type="file" id="foto_mwanita" class="form-control  form-control-round m-b-10 ">
+                                        <!-- <input type="file" class="custom-file-input" name="image_pria" id="file_pria"> -->
+                                        <!-- <input type="file" class="custom-file-input" name="image_wanita" id="file_wanita" onchange="tampilkanPreview(this,'preview_2')"> -->
+                                        <input type="file" id="foto_mwanita" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_wanita')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
                                         <input type="text" id="nama_mwanita" class="form-control form-control-round m-b-10">
                                         <p class="f-w-600 m-b-5">Nama Panggilan</p>
@@ -90,3 +92,33 @@
                     </form>
                 </div>
             </div>
+            <script>
+                function tampilkanPreview(gambar, idpreview) {
+                    //                membuat objek gambar
+                    var gb = gambar.files;
+
+                    //                loop untuk merender gambar
+                    for (var i = 0; i < gb.length; i++) {
+                        //                    bikin variabel
+                        var gbPreview = gb[i];
+                        var imageType = /image.*/;
+                        var preview = document.getElementById(idpreview);
+                        var reader = new FileReader();
+
+                        if (gbPreview.type.match(imageType)) {
+                            //                        jika tipe data sesuai
+                            preview.file = gbPreview;
+                            reader.onload = (function(element) {
+                                return function(e) {
+                                    element.src = e.target.result;
+                                };
+                            })(preview);
+                            //                    membaca data URL gambar
+                            reader.readAsDataURL(gbPreview);
+                        } else {
+                            //                        jika tipe data tidak sesuai
+                            alert("Type file tidak sesuai. Khusus image.");
+                        }
+                    }
+                }
+            </script>

@@ -18,8 +18,8 @@ class Tamu extends CI_Controller
             'menu' => menu_mempelai()
         );
 
-        $this->load->view('layout/header', $data);
-        $this->load->view('Tamu/View_Tamu');
-        $this->load->view('layout/footer');
+        $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/Tamu/View_Tamu');
+        $this->load->view('Mempelai/layout/footer');
     }
 }

@@ -23,17 +23,18 @@ class Acara extends CI_Controller
         $this->form_validation->set_rules('tf_resepsi', 'Waktu Berakhir Resepsi', 'required');
         $this->form_validation->set_rules('tpt_resepsi', 'Tempat Resepsi ', 'required');
         $this->form_validation->set_rules('alamat_resepsi', 'Alamat Resepsi ', 'required');
-        
-        if ($this->form_validation->run() == FALSE) {
-        $data = array(
-            'judul' => 'Acara',
-            'menu' => menu_mempelai()
-        );
 
-        $this->load->view('layout/header', $data);
-        $this->load->view('Acara/Acara_View');
-        $this->load->view('layout/footer');
-    }else {
-        echo "bisa";
+        if ($this->form_validation->run() == FALSE) {
+            $data = array(
+                'judul' => 'Acara',
+                'menu' => menu_mempelai()
+            );
+
+            $this->load->view('Mempelai/layout/header', $data);
+            $this->load->view('Mempelai/Acara/Acara_View');
+            $this->load->view('Mempelai/layout/footer');
+        } else {
+            echo "bisa";
+        }
     }
-}}
+}

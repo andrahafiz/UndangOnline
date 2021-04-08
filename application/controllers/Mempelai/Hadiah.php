@@ -18,8 +18,8 @@ class Hadiah extends CI_Controller
             'menu' => menu_mempelai()
         );
 
-        $this->load->view('layout/header', $data);
-        $this->load->view('View_Hadiah');
-        $this->load->view('layout/footer');
+        $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/Hadiah/View_Hadiah');
+        $this->load->view('Mempelai/layout/footer');
     }
 }

@@ -54,19 +54,19 @@ class Welcome extends CI_Controller
 		// $this->load->view('Template1');
 		// 	}
 		// };]
-		$halaman = 'thema2';
-		$thema = $this->Temp_Model->select_by_id($halaman);
-		// var_dump($thema);
-		if (isset($thema)) {
-			// $this->load->view($thema->view_thema);
-			$this->load->view('layout/header');
-			$this->load->view('Dashboard');
-			$this->load->view('layout/footer');
-			// echo $thema['nama_thema'];
-			// var_dump($thema->nama_thema);
-		} else {
-			echo "gak ada";
-		}
+		// $halaman = 'thema2';
+		// $thema = $this->Temp_Model->select_by_id($halaman);
+		// // var_dump($thema);
+		// if (isset($thema)) {
+		// 	// $this->load->view($thema->view_thema);
+		// 	$this->load->view('layout/header');
+		// 	$this->load->view('Dashboard');
+		// 	$this->load->view('layout/footer');
+		// 	// echo $thema['nama_thema'];
+		// 	// var_dump($thema->nama_thema);
+		// } else {
+		// 	echo "gak ada";
+		// }
 	}
 
 	public function preview($halaman)
