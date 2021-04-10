@@ -14,7 +14,30 @@
                                             <h3 class="f-w-900">Daftar Tamu Undangan</h3>
                                         </div>
                                         <div class="col-md-4 m-b-5">
-                                            <button class="btn btn-primary f-right ">Tambah Tamu Undangan</button>
+                                            <!-- <button class="btn btn-primary f-right "></button> -->
+                                            <button type="button" class="btn btn-primary waves-effect f-right" data-toggle="modal" data-target="#large-Modal">Tambah Tamu Undangan</button>
+                                        </div>
+                                        <!-- Modal large-->
+
+                                        <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Modal title</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5>Default Modal</h5>
+                                                        <p>This is Photoshop's version of Lorem IpThis is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary waves-effect waves-light ">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <hr>

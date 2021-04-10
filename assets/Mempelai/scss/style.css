@@ -1673,8 +1673,8 @@
 .btn-primary:active,
 .wizard>.actions a:active,
 .sweet-alert button.confirm:active {
-	background-color: #016d6f !important;
-	border-color: #016d6f;
+	background-color: #fcacb7 !important;
+	border-color: #fcacb7;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	color: #fff;
