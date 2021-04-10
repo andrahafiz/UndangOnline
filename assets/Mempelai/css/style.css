@@ -2313,6 +2313,10 @@
 	border-radius: 50px
 }
 
+.round-left {
+	border-radius: 50px 0 0 50px
+}
+
 .form-group .form-control-static:focus {
 	outline: none
 }

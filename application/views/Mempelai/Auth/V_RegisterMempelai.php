@@ -75,7 +75,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <form class="md-float-material form-material">
+                    <!-- <form class="md-float-material form-material"> -->
+                    <form class="md-float-material form-material form-group" action=<?= base_url('Mempelai/Auth/register'); ?> method="POST">
                         <div class="text-center">
                             <img src="<?= base_url(); ?>assets\Mempelai\assets\images\logo.png" alt="logo.png">
                         </div>
@@ -86,42 +87,77 @@
                                         <h3 class="text-center txt-primary">Daftar Akun</h3>
                                     </div>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="icofont icofont-user-alt-3"></i></span>
-                                    <input type="text" id="username" name="username" class="form-control" required="" placeholder="Username">
+                                <!-- Inputan Username -->
+                                <div class="row m-b-15">
+                                    <div class="col-lg-12">
+                                        <div class="input-group m-b-0">
+                                            <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
+                                            <input type="text" id="username" name="username" class="form-control form-control-round" placeholder="Username" autofocus value="<?= set_value('username'); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12"><?= form_error('username', '<span class="text-pink error m-l-40">', '</span>'); ?></div>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="icofont icofont-email"></i></span>
-                                    <input type="email" id="email" name="email" class="form-control" required="" placeholder="Email">
+                                <!-- <p class="text-pink error m-l-40 m-b-10">Repeat password can't be blank</p> -->
+                                <!-- End Inputan Username -->
+
+                                <!-- Inputan Email -->
+                                <div class="row m-b-15">
+                                    <div class="col-lg-12">
+                                        <div class="input-group m-b-0">
+                                            <span class="input-group-addon round-left  "><i class="icofont icofont-email"></i></span>
+                                            <input type="email" id="email" name="email" class="form-control form-control-round" placeholder="Email" value="<?= set_value('email'); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12"><?= form_error('email', '<span class="text-pink error m-l-40">', '</span>'); ?></div>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="icofont icofont-brand-whatsapp"></i></span>
-                                    <input type="number" id="wa" name="wa" class="form-control" required="" placeholder="No. Whatsapp">
+                                <!-- End Inputan Email -->
+
+                                <!-- Inputan Nomor Wa -->
+                                <div class="row m-b-15">
+                                    <div class="col-lg-12">
+                                        <div class="input-group m-b-0">
+                                            <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
+                                            <input type="text" id="wa" name="wa" class="form-control form-control-round" placeholder="No. Whatsapp" value="<?= set_value('wa'); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12"><?= form_error('wa', '<span class="text-pink error m-l-40">', '</span>'); ?></div>
                                 </div>
+                                <!-- End Inputan Nomor Wa -->
+
+
                                 <div class="row">
+                                    <!-- Inputan Password -->
                                     <div class="col-sm-6">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="icofont icofont-key"></i></span>
-                                            <input type="password" id="password" name="user-name" class="form-control" required="" placeholder="Password">
+                                        <div class="input-group m-b-5">
+                                            <span class="input-group-addon round-left "><i class="icofont icofont-key"></i></span>
+                                            <input type="password" id="password" name="password" class="form-control form-control-round" placeholder="Password">
                                         </div>
                                     </div>
+                                    <!--End Inputan Password -->
+
+                                    <!-- Inputan Konfrimasi Password -->
                                     <div class="col-sm-6">
-                                        <div class="input-group">
+                                        <div class="input-group m-b-5">
                                             <!-- <span class="input-group-addon"><i class="icofont icofont-brand-whatsapp"></i></span> -->
-                                            <input type="password" id="conf_password" name="user-name" class="form-control" required="" placeholder="Konfirmasi Password">
+                                            <input type="password" id="conf_password" name="conf_password" class="form-control form-control-round" placeholder="Konfirmasi Password">
                                         </div>
                                     </div>
+                                    <!-- End Inputan Konfrimasi Password -->
+
                                 </div>
+                                <?= form_error('conf_password', '<p class="text-pink error m-l-40 m-b-10">', '</p>'); ?>
+                                <!-- <p class="text-pink error m-l-40 m-b-10">Repeat password can't be blank</p> -->
 
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Daftar</button>
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20 form-control-round">Daftar</button>
+                                        <p class="text-center">Sudah punya akun ? <a href="<?= base_url('Mempelai/Auth'); ?>" class="f-w-900">Silahkan Login di sini</a></p>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-10">
-                                        <p class="text-inverse text-left m-b-0">Terima Kasih</p>
+                                        <p class="text-inverse text-left m-b-25">Terima Kasih</p>
                                         <p class="text-inverse text-left"><a href="index-1.htm"><b class="f-w-600">Kembali Ke Website</b></a></p>
                                     </div>
                                     <div class="col-md-2">
