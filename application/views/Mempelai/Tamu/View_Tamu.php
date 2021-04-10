@@ -23,20 +23,30 @@
                                             <div class="modal-dialog modal-lg" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Modal title</h4>
+                                                        <h4 class="modal-title">Tambah Tamu Unndangan</h4>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <h5>Default Modal</h5>
-                                                        <p>This is Photoshop's version of Lorem IpThis is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                                                        
+                                                        <p>Masukan kontak Tamu untuk mengirim undangan </p>
+                                                        <div class="card-block ">
+                                                        <form class="form-group">
+                                                        <p class="f-w-600 m-b-5">Nama</p>
+                                                        <input type="text" id="nama_tamu" class="form-control  form-control-round m-b-10">
+                                        <p class="f-w-600 m-b-5">Nomor Whatssapp</p>
+                                        <input type="text" id="wa_tamu" class="form-control  form-control-round m-b-10">
+                                        <p class="f-w-600 m-b-5">Email</p>
+                                        <input type="text" id="email_tamu" class="form-control  form-control-round m-b-10">
+                                    </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary waves-effect waves-light ">Save changes</button>
+                                                        <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Batal</button>
+                                                        <button type="button" class="btn btn-primary waves-effect waves-light ">Simpan</button>
                                                     </div>
                                                 </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -63,12 +73,9 @@
                                                     <table id="simpletable" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="simpletable_info">
                                                         <thead>
                                                             <tr role="row">
-                                                                <th class="sorting_asc" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 185.2px;">Name</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 288.4px;">Position</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 142px;">Office</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 69.2px;">Age</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 131.6px;">Start date</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Salary</th>
+                                                                <th class="sorting_asc" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 185.2px;">No</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 288.4px;">Nama</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 142px;">Aksi</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -76,91 +83,16 @@
                                                                 <td class="sorting_1">Airi Satou</td>
                                                                 <td>Accountant</td>
                                                                 <td>Tokyo</td>
-                                                                <td>33</td>
-                                                                <td>2008/11/28</td>
-                                                                <td>$162,700</td>
                                                             </tr>
-                                                            <tr role="row" class="even">
-                                                                <td class="sorting_1">Ashton Cox</td>
-                                                                <td>Junior Technical Author</td>
-                                                                <td>San Francisco</td>
-                                                                <td>66</td>
-                                                                <td>2009/01/12</td>
-                                                                <td>$86,000</td>
-                                                            </tr>
-                                                            <tr role="row" class="odd">
-                                                                <td class="sorting_1">Bradley Greer</td>
-                                                                <td>Software Engineer</td>
-                                                                <td>London</td>
-                                                                <td>41</td>
-                                                                <td>2012/10/13</td>
-                                                                <td>$132,000</td>
-                                                            </tr>
-                                                            <tr role="row" class="even">
-                                                                <td class="sorting_1">Brielle Williamson</td>
-                                                                <td>Integration Specialist</td>
-                                                                <td>New York</td>
-                                                                <td>61</td>
-                                                                <td>2012/12/02</td>
-                                                                <td>$372,000</td>
-                                                            </tr>
-                                                            <tr role="row" class="odd">
-                                                                <td class="sorting_1">Cedric Kelly</td>
-                                                                <td>Senior Javascript Developer</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>22</td>
-                                                                <td>2012/03/29</td>
-                                                                <td>$433,060</td>
-                                                            </tr>
-                                                            <tr role="row" class="even">
-                                                                <td class="sorting_1">Charde Marshall</td>
-                                                                <td>Regional Director</td>
-                                                                <td>San Francisco</td>
-                                                                <td>36</td>
-                                                                <td>2008/10/16</td>
-                                                                <td>$470,600</td>
-                                                            </tr>
-                                                            <tr role="row" class="odd">
-                                                                <td class="sorting_1">Colleen Hurst</td>
-                                                                <td>Javascript Developer</td>
-                                                                <td>San Francisco</td>
-                                                                <td>39</td>
-                                                                <td>2009/09/15</td>
-                                                                <td>$205,500</td>
-                                                            </tr>
-                                                            <tr role="row" class="even">
-                                                                <td class="sorting_1">Dai Rios</td>
-                                                                <td>Personnel Lead</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>35</td>
-                                                                <td>2012/09/26</td>
-                                                                <td>$217,500</td>
-                                                            </tr>
-                                                            <tr role="row" class="odd">
-                                                                <td class="sorting_1">Garrett Winters</td>
-                                                                <td>Accountant</td>
-                                                                <td>Tokyo</td>
-                                                                <td>63</td>
-                                                                <td>2011/07/25</td>
-                                                                <td>$170,750</td>
-                                                            </tr>
-                                                            <tr role="row" class="even">
-                                                                <td class="sorting_1">Gloria Little</td>
-                                                                <td>Systems Administrator</td>
-                                                                <td>New York</td>
-                                                                <td>59</td>
-                                                                <td>2009/04/10</td>
-                                                                <td>$237,500</td>
-                                                            </tr>
+                                                            
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
-                                                                <th rowspan="1" colspan="1">Name</th>
-                                                                <th rowspan="1" colspan="1">Position</th>
-                                                                <th rowspan="1" colspan="1">Office</th>
-                                                                <th rowspan="1" colspan="1">Age</th>
-                                                                <th rowspan="1" colspan="1">Start date</th>
-                                                                <th rowspan="1" colspan="1">Salary</th>
+                                                                <th rowspan="1" colspan="1">No</th>
+                                                                <th rowspan="1" colspan="1">Nama</th>
+                                                                <th rowspan="1" colspan="1">Aksi</th>
+        
+                                                                
                                                             </tr>
                                                         </tfoot>
                                                     </table>
