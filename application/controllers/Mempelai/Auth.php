@@ -7,13 +7,16 @@ class Auth extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Temp_Model');
+        $this->load->model('Auth_Model');
         $this->load->helper('my_function_helper');
     }
     // }
     public function index()
     {
         $this->load->view('Mempelai/Auth/V_LoginMempelai');
+        // // var_dump(kode('tb_akun')[0]);
+        // // echo kode('tb_tamu');
+        // var_dump(kode_otomatis('tb_akun', 'ID_akun'));
     }
 
     private function _login()
@@ -69,47 +72,20 @@ class Auth extends CI_Controller
     public function register()
     {
 
-        // // $data['']
-        // $admin = $this->db->get_where('tb_admin', ['admin_user' => $this->session->userdata('username')])->row_array();
-        // $email = $this->input->post('Email', true);
-        // $data = array(
-        //     'admin' => $admin,
-        //     'judul' => 'Tambah Admin'
-
-        // );
-        // if ($this->session->userdata("username")) {
-        //     redirect('User');
-        // }
-        $this->form_validation->set_rules('username', 'Username', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tb_akun.Email_akun]', [
-            'is_unique' => 'Email ini telah terdaftar'
-        ]);
-        $this->form_validation->set_rules('wa', 'Nomor Whatasapp', 'required|trim|numeric');
-        $this->form_validation->set_rules(
-            'password',
-            'Password',
-            'required|trim|min_length[3]|matches[Password2]',
-            [
-                'matches' => 'Password tidak sama',
-                'min_length' => 'Password harus 3 Karakter'
-            ]
-        );
-        $this->form_validation->set_rules('conf_password', 'Password', 'required|trim|matches[password]');
+        $this->_formvalidation();
         if ($this->form_validation->run() == false) {
             $this->load->view('Mempelai/Auth/V_RegisterMempelai');
-            // echo "ampun";
         } else {
-            // $data = [
-            //     'admin_nama' => htmlspecialchars($this->input->post('Nama', true)),
-            //     'admin_user' => htmlspecialchars($this->input->post('Username', true)),
-            //     'admin_email' => htmlspecialchars($email),
-            //     'admin_image' => 'default.jpg',
-            //     'admin_password' => password_hash($this->input->post('Password'), PASSWORD_DEFAULT),
-            //     'admin_datecreate' => time(),
-            //     // 'admin_password' => $this->input->post('Password'),
-            //     'role_id' => 3,
-            //     'admin_active' => 0,
-            // ];
+            $email = htmlspecialchars($this->input->post('email', true));
+            $data = [
+                'ID_akun' =>  htmlspecialchars(kode_otomatis('tb_akun', 'ID_akun')),
+                'Username' => htmlspecialchars($this->input->post('username', true)),
+                'Email_akun' => htmlspecialchars($email),
+                'NoHp_akun' => htmlspecialchars($this->input->post('wa', true)),
+                'Password_akun' => password_hash($this->input->post('Password'), PASSWORD_DEFAULT),
+                'Created_akun' => time(),
+                'Status_akun' => '0'
+            ];
 
             // $token = base64_encode(random_bytes(32));
             // // var_dump($token);
@@ -119,7 +95,9 @@ class Auth extends CI_Controller
             //     'date_created' => time()
             // ];
             // // die;
-            echo "berhasil";
+            $this->Auth_Model->tambah_data_akun($data);
+            $this->maketoken($email);
+            // echo "berhasil";
 
             // $this->db->insert('tb_admin', $data);
             // $this->db->insert('admin_token', $admin_token);
@@ -127,13 +105,45 @@ class Auth extends CI_Controller
             // $this->_sendEmail($token, 'verify');
 
 
-            // $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-rounded mb-3"> 
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-rounded mb-3"> 
             // Selamat akun anda telah terdaftar. Silahkan lakukan aktifasi akun                       
             //  <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button></div>');
 
 
             // redirect('/Auth');
         }
+    }
+
+    public function _formvalidation()
+    {
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tb_akun.Email_akun]', [
+            'is_unique' => 'Email ini telah terdaftar'
+        ]);
+        $this->form_validation->set_rules('wa', 'Nomor Whatasapp', 'required|trim|numeric');
+        $this->form_validation->set_rules(
+            'password',
+            'Password',
+            'required|trim|min_length[3]|matches[conf_password]',
+            [
+                'matches' => 'Password tidak sama',
+                'min_length' => 'Password harus 3 Karakter'
+            ]
+        );
+        $this->form_validation->set_rules('conf_password', 'Konfirmasi Password', 'required|trim|matches[password]');
+    }
+
+    public function maketoken($email)
+    {
+        $token = base64_encode(random_bytes(32));
+        // var_dump($token);
+        $data_token = [
+            'email' => $email,
+            'token' => $token,
+            'date_created' => time()
+        ];
+
+        $this->db->insert('token', $data_token);
     }
 
     private function _sendEmail($token, $tipe)

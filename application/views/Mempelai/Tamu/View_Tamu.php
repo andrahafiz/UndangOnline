@@ -17,38 +17,6 @@
                                             <!-- <button class="btn btn-primary f-right "></button> -->
                                             <button type="button" class="btn btn-primary waves-effect f-right" data-toggle="modal" data-target="#large-Modal">Tambah Tamu Undangan</button>
                                         </div>
-                                        <!-- Modal large-->
-
-                                        <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title">Tambah Tamu Unndangan</h4>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        
-                                                        <p>Masukan kontak Tamu untuk mengirim undangan </p>
-                                                        <div class="card-block ">
-                                                        <form class="form-group">
-                                                        <p class="f-w-600 m-b-5">Nama</p>
-                                                        <input type="text" id="nama_tamu" class="form-control  form-control-round m-b-10">
-                                        <p class="f-w-600 m-b-5">Nomor Whatssapp</p>
-                                        <input type="text" id="wa_tamu" class="form-control  form-control-round m-b-10">
-                                        <p class="f-w-600 m-b-5">Email</p>
-                                        <input type="text" id="email_tamu" class="form-control  form-control-round m-b-10">
-                                    </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Batal</button>
-                                                        <button type="button" class="btn btn-primary waves-effect waves-light ">Simpan</button>
-                                                    </div>
-                                                </div>
-                                                </form>
-                                            </div>
-                                        </div>
                                     </div>
                                     <hr>
                                 </div>
@@ -84,15 +52,15 @@
                                                                 <td>Accountant</td>
                                                                 <td>Tokyo</td>
                                                             </tr>
-                                                            
+
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
                                                                 <th rowspan="1" colspan="1">No</th>
                                                                 <th rowspan="1" colspan="1">Nama</th>
                                                                 <th rowspan="1" colspan="1">Aksi</th>
-        
-                                                                
+
+
                                                             </tr>
                                                         </tfoot>
                                                     </table>
@@ -123,6 +91,53 @@
                     </div>
                 </div>
             </div>
+
+
+            <!-- MODAL INPUTA DATA TAMU -->
+            <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Tambah Tamu Unndangan</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-muted">Masukan kontak Tamu untuk mengirim undangan </p>
+                            <div class="card-block ">
+                                <form class="form-group">
+                                    <p class="f-w-900 m-b-10">Nama Tamu</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
+                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus value="<?= set_value('username'); ?>">
+                                    </div>
+                                    <p class="f-w-900 m-b-10">Email</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
+                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus value="<?= set_value('username'); ?>">
+                                    </div>
+                                    <p class="f-w-900 m-b-10">Nomor Tamu</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
+                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus value="<?= set_value('username'); ?>">
+                                    </div>
+                                    <!-- <p class="f-w-600 m-b-5">Nomor Whatssapp</p>
+                                    <input type="text" id="wa_tamu" class="form-control  form-control-round m-b-10">
+                                    <p class="f-w-600 m-b-5">Email</p>
+                                    <input type="text" id="email_tamu" class="form-control  form-control-round m-b-10"> -->
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Batal</button>
+                            <button type="button" class="btn btn-primary waves-effect waves-light ">Simpan</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!--END MODAL INPUTA DATA TAMU -->
 
             <div id="styleSelector">
 

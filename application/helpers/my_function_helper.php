@@ -148,3 +148,27 @@ function combobox($name, $id, $table, $field, $primary_key, $selected)
     $cmb .= "</select>";
     return $cmb;
 }
+
+
+function kode($table)
+{
+    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu');
+    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU');
+    $index_kode = array_search($table, $tabel);
+    return $kode[$index_kode];
+}
+function kode_otomatis($table, $colum)
+{
+    $ci = get_instance();
+    $query = $ci->db->query("SELECT MAX($colum) as Kode from $table");
+    $kode = kode($table);
+    $hasil = $query->row();
+    $kodeangka = substr($hasil->Kode, 3);
+    if ($hasil->Kode == null) {
+        return $kode . "1";
+    } else {
+        return $kode . "" . $kodeangka + 1;
+    }
+    // die;
+
+}

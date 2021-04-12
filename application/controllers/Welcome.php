@@ -65,14 +65,15 @@ class Welcome extends CI_Controller
 		// } else {
 		// 	echo "gak ada";
 		// }
-		$data = array(
-			'judul' => 'Acara',
-			'menu' => menu_mempelai()
-		);
+		// $data = array(
+		// 	'judul' => 'Acara',
+		// 	'menu' => menu_mempelai()
+		// );
 
-		$this->load->view('Mempelai/layout/header', $data);
-		$this->load->view('Mempelai/Acara/Acara_View');
-		$this->load->view('Mempelai/layout/footer');
+		// $this->load->view('Mempelai/layout/header', $data);
+		// $this->load->view('Mempelai/Acara/Acara_View');
+		// $this->load->view('Mempelai/layout/footer');
+		$this->load->view('welcome_message');
 	}
 
 	public function preview($halaman)

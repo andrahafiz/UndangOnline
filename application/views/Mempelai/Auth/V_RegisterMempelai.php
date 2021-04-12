@@ -117,13 +117,12 @@
                                     <div class="col-lg-12">
                                         <div class="input-group m-b-0">
                                             <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
-                                            <input type="text" id="wa" name="wa" class="form-control form-control-round" placeholder="No. Whatsapp" value="<?= set_value('wa'); ?>">
+                                            <input type="number" id="wa" name="wa" class="form-control form-control-round" placeholder="No. Whatsapp" value="<?= set_value('wa'); ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-12"><?= form_error('wa', '<span class="text-pink error m-l-40">', '</span>'); ?></div>
                                 </div>
                                 <!-- End Inputan Nomor Wa -->
-
 
                                 <div class="row">
                                     <!-- Inputan Password -->
@@ -145,7 +144,7 @@
                                     <!-- End Inputan Konfrimasi Password -->
 
                                 </div>
-                                <?= form_error('conf_password', '<p class="text-pink error m-l-40 m-b-10">', '</p>'); ?>
+                                <?= form_error('password', '<p class="text-pink error m-l-40 m-b-10">', '</p>'); ?>
                                 <!-- <p class="text-pink error m-l-40 m-b-10">Repeat password can't be blank</p> -->
 
                                 <div class="row m-t-30">
