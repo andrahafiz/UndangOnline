@@ -9,6 +9,7 @@ class Hadiah extends CI_Controller
         parent::__construct();
         $this->load->model('Temp_Model');
         $this->load->helper('my_function_helper');
+        cekaccess();
     }
     // }
     public function index()

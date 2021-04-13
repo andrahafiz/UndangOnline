@@ -47,23 +47,31 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr role="row" class="odd">
-                                                                <td class="sorting_1">Airi Satou</td>
-                                                                <td>Accountant</td>
-                                                                <td>Tokyo</td>
-                                                            </tr>
-
+                                                            <?php foreach ($tamu as $key => $value) { ?>
+                                                                <tr>
+                                                                    <td><?= $key + 1 ?></td>
+                                                                    <td><?= $value->Nama_Tamu ?></td>
+                                                                    <td class="card-block icon-btn">
+                                                                        <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Whatsapp <?= $value->Wa_Tamu ?>">
+                                                                            <i class="fa fa-whatsapp"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                <?php } ?>
+                                                                <!-- <tr role="row" class="odd">
+                                                                    <td class="sorting_1">Airi Satou</td>
+                                                                    <td>Accountant</td>
+                                                                    <td>Tokyo</td>
+                                                                </tr> -->
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
                                                                 <th rowspan="1" colspan="1">No</th>
                                                                 <th rowspan="1" colspan="1">Nama</th>
                                                                 <th rowspan="1" colspan="1">Aksi</th>
-
-
                                                             </tr>
                                                         </tfoot>
                                                     </table>
+
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -88,6 +96,7 @@
                             <!-- HTML5 Export Buttons end -->
                         </div>
                         <!-- END TABEL TAMU  -->
+
                     </div>
                 </div>
             </div>

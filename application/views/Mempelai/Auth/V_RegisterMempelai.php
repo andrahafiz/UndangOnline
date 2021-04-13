@@ -87,6 +87,7 @@
                                         <h3 class="text-center txt-primary">Daftar Akun</h3>
                                     </div>
                                 </div>
+                                <?= $this->session->flashdata('message'); ?>
                                 <!-- Inputan Username -->
                                 <div class="row m-b-15">
                                     <div class="col-lg-12">

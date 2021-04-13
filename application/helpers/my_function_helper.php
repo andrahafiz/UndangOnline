@@ -19,7 +19,7 @@ function menu_mempelai()
         //icon
         ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'feather icon-image', 'feather icon-log-out'],
         //url
-        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Galeri', ''],
+        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Galeri', 'Mempelai/Auth/logout'],
     ];
     return $menu;
 }
@@ -28,27 +28,8 @@ function cekaccess()
 {
     $ci = get_instance();
     if (!$ci->session->userdata("username")) {
-        redirect('Auth');
+        redirect('Mempelai/Auth');
     } else {
-        $role_id = $ci->session->userdata('role_id');
-        $menu = $ci->uri->segment(1);
-
-        //mengecek ke database pada tabel admin_menu , apakah ada nilai dari $menu sama dengan data yang ada di kolom menu 
-        $queryMenu = $ci->db->get_where('admin_menu', ['menu' => $menu])->row_array();
-        // var_dump($queryMenu);
-        $menu_id = $queryMenu['id'];
-        // var_dump($menu_id);
-
-        $userAccess = $ci->db->get_where('admin_access_menu', [
-            'role_id' => $role_id,
-            'menu_id' => $menu_id
-        ]);
-
-        // var_dump($userAccess);
-        if ($userAccess->num_rows() < 1) {
-            // echo "yes";
-            redirect('Auth/blocked');
-        }
     }
 }
 

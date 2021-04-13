@@ -8,15 +8,23 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_Model');
+        $this->load->model('Acara_Model');
+        $this->load->model('Mempelai_Model');
         $this->load->helper('my_function_helper');
     }
     // }
     public function index()
     {
-        $this->load->view('Mempelai/Auth/V_LoginMempelai');
-        // // var_dump(kode('tb_akun')[0]);
-        // // echo kode('tb_tamu');
-        // var_dump(kode_otomatis('tb_akun', 'ID_akun'));
+        if ($this->session->userdata("username")) {
+            redirect('Mempelai/Dashboard');
+        }
+        $this->form_validation->set_rules('email', 'email', 'required|trim');
+        // $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        if ($this->form_validation->run() == False) {
+            $this->load->view('Mempelai/Auth/V_LoginMempelai');
+        } else {
+            $this->_login();
+        }
     }
 
     private function _login()
@@ -30,39 +38,30 @@ class Auth extends CI_Controller
         if ($akun) {
             //ada
             //jika user aktif
-            if ($akun['admin_active'] == 1) {
+            if ($akun['Status_akun'] == 1) {
                 //cek password
-                if (password_verify($pass, $akun['admin_password'])) {
+                if (password_verify($pass, $akun['Password_akun'])) {
                     $data = [
-                        'username' => $akun['admin_user'],
-                        'nama_admin' => $akun['admin_nama'],
-                        'role_id' => $akun['role_id']
+                        'username' => $akun['Username'],
+                        'Email_akun' => $akun['Email_akun'],
+                        'ID' => $akun['ID_akun']
                     ];
                     $this->session->set_userdata($data);
-                    // if ($admin['role_id'] == 1) {
-                    //     redirect("Admin");
-                    // } else if ($admin['role_id'] == 2) {
-                    //     redirect("Kepdes");
-                    // } else {
-                    //     redirect("User");
-                    // }
-                    redirect("User");
+                    redirect('Mempelai/Dashboard');
                 } else {
-                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-rounded mb-3"> Password anda salah
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger alert-rounded mb-3"> Password anda salah
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
                                         </div>');
-                    redirect('/Auth');
+                    redirect('Mempelai/Auth');
                 }
             } else {
-                $this->session->set_flashdata('pesan', '<div class="alert alert-warning alert-rounded mb-3"> Akun belum diaktivasi
+                $this->session->set_flashdata('message', '<div class="alert alert-warning alert-rounded mb-3"> Akun belum diaktivasi
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
                                         </div>');
-
-                redirect('/Auth');
+                redirect('Mempelai/Auth');
             }
         } else {
-
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-rounded mb-3"> 
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-rounded mb-3"> 
             Akun tidak ditemukan                       
              <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button></div>');
             redirect('/Auth');
@@ -87,34 +86,28 @@ class Auth extends CI_Controller
                 'Status_akun' => '0'
             ];
 
-            // $token = base64_encode(random_bytes(32));
-            // // var_dump($token);
-            // $admin_token = [
-            //     'email' => $email,
-            //     'token' => $token,
-            //     'date_created' => time()
-            // ];
-            // // die;
-            $this->Auth_Model->tambah_data_akun($data);
-            $this->maketoken($email);
-            // echo "berhasil";
 
-            // $this->db->insert('tb_admin', $data);
-            // $this->db->insert('admin_token', $admin_token);
+            $this->Auth_Model->tambah_data_akun($data);
+
+            // $token = base64_encode(random_bytes(32));
+
+            // $this->maketoken($email, $token);
 
             // $this->_sendEmail($token, 'verify');
 
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-rounded mb-3"> 
-            // Selamat akun anda telah terdaftar. Silahkan lakukan aktifasi akun                       
-            //  <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button></div>');
+            $this->session->set_flashdata('message', ' <div class="alert alert-success background-success">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="icofont icofont-close-line-circled text-white"></i>
+            </button>
+            <strong>Sukses!</strong> Periksa email anda untuk verifikasi 
+        </div>');
 
-
-            // redirect('/Auth');
+            redirect('/Mempelai/Auth');
         }
     }
 
-    public function _formvalidation()
+    private function _formvalidation()
     {
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tb_akun.Email_akun]', [
@@ -133,9 +126,9 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('conf_password', 'Konfirmasi Password', 'required|trim|matches[password]');
     }
 
-    public function maketoken($email)
+    public function maketoken($email, $token)
     {
-        $token = base64_encode(random_bytes(32));
+
         // var_dump($token);
         $data_token = [
             'email' => $email,
@@ -169,11 +162,13 @@ class Auth extends CI_Controller
 
             $this->email->subject('Verifikasi Akun');
             $data['link'] = base_url() . 'Auth/verify?email=' . $this->input->post('Email') . '&token=' . urlencode($token);
-            $this->email->message($this->load->view('emailaktif', $data, true));
+            // $this->email->message($this->load->view('Mempelai/temp_email/emailaktif', $data, true));
+            $this->email->message("Yes");
         } else {
             $this->email->subject('Reset Password Akun');
             $data['link'] = base_url() . 'Auth/resetpassword?email=' . $this->input->post('Email') . '&token=' . urlencode($token);
-            $this->email->message($this->load->view('emailforget', $data, true));
+            // $this->email->message($this->load->view('emailforget', $data, true));
+            $this->email->message("Yes");
         }
 
         if ($this->email->send()) {
@@ -182,5 +177,18 @@ class Auth extends CI_Controller
             echo $this->email->print_debugger();
             die;
         }
+    }
+    public function logout()
+    {
+        $this->session->unset_userdata("username");
+        $this->session->unset_userdata("Email_akun");
+        $this->session->unset_userdata("ID");
+        redirect('Mempelai/Auth');
+    }
+
+    public function CreateDataAcara()
+    {
+        $kode = kode_otomatis('tb_acara', 'ID_Acara');
+        $this->Acara_Model->tambah_data_acara($kode);
     }
 }

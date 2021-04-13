@@ -78,7 +78,7 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
 
-                    <form class="md-float-material form-material form-group">
+                    <form class="md-float-material form-material form-group" method="POST">
                         <div class="text-center">
                             <img src="<?= base_url(); ?>assets\Mempelai\assets\images\logo.png" alt="logo.png">
                         </div>
@@ -89,13 +89,17 @@
                                         <h3 class="text-center">Login</h3>
                                     </div>
                                 </div>
+                                <?= $this->session->flashdata('message'); ?>
                                 <div class="input-group">
                                     <span class="input-group-addon round-left "><i class="icofont icofont-email"></i></span>
                                     <input type="email" id="email" name="email" class="form-control form-control-round" required="" placeholder="Email">
+                                    <?= form_error('email', '<span class="text-pink error m-l-40">', '</span>'); ?>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon round-left "><i class="icofont icofont-key"></i></span>
                                     <input type="password" id="password" name="user-name" class="form-control form-control-round" required="" placeholder="Password">
+                                    <?= form_error('password', '<span class="text-pink error m-l-40">', '</span>'); ?>
+
                                 </div>
                                 <div class="row m-t-25 text-left">
                                     <div class="col-12">
@@ -107,7 +111,7 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20 form-control-round">Login</button>
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20 form-control-round">Login</button>
                                         <p class="text-center"><a href="<?= base_url('Mempelai/Auth/register'); ?>">Belum Punya Akun?</a></p>
                                     </div>
                                 </div>

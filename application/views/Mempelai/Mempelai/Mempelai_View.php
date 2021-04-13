@@ -24,14 +24,19 @@
 
                 <div class="page-body">
                     <!-- <form class="form-group"> -->
-                    <?php echo form_open_multipart('Mempelai'); ?>
-                    <div class="form-group">
+                    <?= $this->session->flashdata('message'); ?>
+                    <?php
+                    // echo form_open_multipart('Mempelai/Mempelai/edit'); 
+                    ?>
+                    <form method="POST" action=<?= base_url('Mempelai/Mempelai'); ?> method="POST" class="form-group">
+                        <!-- <div class="form-group"> -->
                         <div class="row">
                             <div class="col-sm-6 ">
                                 <div class="card ">
                                     <div class="card-header">
                                         <h3 class="f-w-600">Mempelai Pria</h3>
                                         <span>Data diri memepelai pria</span>
+                                        <input type="hidden" name="id_mempelai" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->ID_Mempelai; ?>">
                                     </div>
                                     <div class="card-block ">
                                         <div class="text-center">
@@ -39,15 +44,17 @@
                                         </div>
                                         <input type="file" id="foto_mpria" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_pria')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
-                                        <input type="text" id="nama_mpria" class="form-control form-control-round m-b-10">
+                                        <input type="text" id="nama_mpria" name="nama_mpria" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->Nama_MPria; ?>">
                                         <p class="f-w-600 m-b-5">Nama Panggilan</p>
-                                        <input type="text" id="namal_mpria" class="form-control form-control-round m-b-10">
+                                        <input type="text" id="namal_mpria" name="namal_mpria" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->Panggilan_MPria; ?>">
                                         <p class="f-w-600 m-b-5">Nama Orang Tua ( Ayah )</p>
-                                        <input type="text" id="" class="form-control form-control-round m-b-10">
+                                        <input type="text" id="namaortuayah_mpria" name="namaortuayah_mpria" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->NamaOrtu_Ayah_MPria; ?>">
                                         <p class="f-w-600 m-b-5">Nama Orang Tua ( Ibu )</p>
-                                        <input type="text" id="namaortuibu_mpria" class="form-control  form-control-round m-b-10">
+                                        <input type="text" id="namaortuibu_mpria" name="namaortuibu_mpria" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NamaOrtu_Ibu_MPria; ?>">
+                                        <p class="f-w-600 m-b-5">Nomor HP</p>
+                                        <input type="text" id="nohp_mpria" name="nohp_mpria" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NoHp_MPria; ?>">
                                         <p class="f-w-600 m-b-5">Alamat</p>
-                                        <textarea class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"></textarea>
+                                        <textarea id="alamat_mpria" name="alamat_mpria" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"><?= $data_mempelai->Alamat_MPria; ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -64,17 +71,20 @@
                                         </div>
                                         <!-- <input type="file" class="custom-file-input" name="image_pria" id="file_pria"> -->
                                         <!-- <input type="file" class="custom-file-input" name="image_wanita" id="file_wanita" onchange="tampilkanPreview(this,'preview_2')"> -->
-                                        <input type="file" id="foto_mwanita" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_wanita')">
+                                        <input type="file" id="foto_mwanita" name="foto_mwanita" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_wanita')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
-                                        <input type="text" id="nama_mwanita" class="form-control form-control-round m-b-10">
+                                        <input type="text" id="nama_mwanita" name="nama_mwanita" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->Nama_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Nama Panggilan</p>
-                                        <input type="text" id="namal_mwanita" class="form-control form-control-round m-b-10">
+                                        <input type="text" id="namal_mwanita" name="namal_mwanita" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->Panggilan_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Nama Orang Tua ( Ayah )</p>
-                                        <input type="text" id="namaortuayah_mwanita" class="form-control form-control-round m-b-10">
+                                        <input type="text" id="namaortuayah_mwanita" name="namaortuayah_mwanita" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->NamaOrtu_Ayah_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Nama Orang Tua ( Ibu )</p>
-                                        <input type="text" id="namaortuibu_mwanita" class="form-control form-control-round m-b-10">
+                                        <input type="text" id="namaortuibu_mwanita" name="namaortuibu_mwanita" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->NamaOrtu_Ibu_MWanita; ?>">
+                                        <p class="f-w-600 m-b-5">Nomor HP</p>
+                                        <input type="text" id="nohp_mwanita" name="nohp_mwanita" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NoHp_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Alamat</p>
-                                        <textarea class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"></textarea>
+                                        <textarea id="alamat_mwanita" name="alamat_mwanita" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"><?= $data_mempelai->Alamat_MWanita; ?></textarea>
+
                                     </div>
                                 </div>
                             </div>
@@ -87,38 +97,38 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    </form>
                 </div>
+
+                </form>
             </div>
-            <script>
-                function tampilkanPreview(gambar, idpreview) {
-                    //                membuat objek gambar
-                    var gb = gambar.files;
+        </div>
+        <script>
+            function tampilkanPreview(gambar, idpreview) {
+                //                membuat objek gambar
+                var gb = gambar.files;
 
-                    //                loop untuk merender gambar
-                    for (var i = 0; i < gb.length; i++) {
-                        //                    bikin variabel
-                        var gbPreview = gb[i];
-                        var imageType = /image.*/;
-                        var preview = document.getElementById(idpreview);
-                        var reader = new FileReader();
+                //                loop untuk merender gambar
+                for (var i = 0; i < gb.length; i++) {
+                    //                    bikin variabel
+                    var gbPreview = gb[i];
+                    var imageType = /image.*/;
+                    var preview = document.getElementById(idpreview);
+                    var reader = new FileReader();
 
-                        if (gbPreview.type.match(imageType)) {
-                            //                        jika tipe data sesuai
-                            preview.file = gbPreview;
-                            reader.onload = (function(element) {
-                                return function(e) {
-                                    element.src = e.target.result;
-                                };
-                            })(preview);
-                            //                    membaca data URL gambar
-                            reader.readAsDataURL(gbPreview);
-                        } else {
-                            //                        jika tipe data tidak sesuai
-                            alert("Type file tidak sesuai. Khusus image.");
-                        }
+                    if (gbPreview.type.match(imageType)) {
+                        //                        jika tipe data sesuai
+                        preview.file = gbPreview;
+                        reader.onload = (function(element) {
+                            return function(e) {
+                                element.src = e.target.result;
+                            };
+                        })(preview);
+                        //                    membaca data URL gambar
+                        reader.readAsDataURL(gbPreview);
+                    } else {
+                        //                        jika tipe data tidak sesuai
+                        alert("Type file tidak sesuai. Khusus image.");
                     }
                 }
-            </script>
+            }
+        </script>
