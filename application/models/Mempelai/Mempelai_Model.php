@@ -15,7 +15,9 @@ class Mempelai_Model extends CI_Model
     public function selectbyid($id)
     {
         // $this->db->where('pekerjaan_id', $id);
-        $query = $this->db->query(" SELECT tb_mempelai.* FROM `tb_undangan`,`tb_mempelai` WHERE tb_undangan.ID_Akun ='$id'");
+        // $sql = "SELECT * FROM `view_mempelai` WHERE ID_akun='$id'";
+        // $query = $this->db->query($sql);
+        $query =  $this->db->get_where('view_mempelai', ['ID_akun' => $id]);
         $hasil = $query->row();
         return $hasil;
     }

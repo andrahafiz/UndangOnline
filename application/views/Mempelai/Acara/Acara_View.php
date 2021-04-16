@@ -37,21 +37,21 @@
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Tanggal</p>
-                                                <input type="date" id="tgl_akad" class="form-control form-control-round m-b-10">
+                                                <input type="date" id="tgl_akad" name="tgl_akad" class="form-control form-control-round m-b-10">
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Mulai</p>
-                                                <input type="time" id="ts_akad" class="form-control form-control-round m-b-10">
+                                                <input type="time" id="ts_akad" name="ts_akad" class="form-control form-control-round m-b-10">
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Berakhir</p>
-                                                <input type="time" id="tf_akad" class="form-control form-control-round m-b-10">
+                                                <input type="time" id="tf_akad" name="tf_akad" class="form-control form-control-round m-b-10">
                                             </div>
                                         </div>
                                         <p class="f-w-600 m-b-5">Tempat</p>
-                                        <input type="text" id="tpt_akad" class="form-control  form-control-round m-b-10">
+                                        <input type="text" id="tpt_akad" name="tpt_akad" class="form-control  form-control-round m-b-10">
                                         <p class="f-w-600 m-b-5">Alamat</p>
-                                        <textarea id="alamat_akad" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"></textarea>
+                                        <textarea id="alamat_akad" name="alamat_akad" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -64,21 +64,21 @@
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Tanggal</p>
-                                                <input type="date" id="tgl_resepsi" class="form-control form-control-round m-b-10">
+                                                <input type="date" id="tgl_resepsi" name="tgl_resepsi" class="form-control form-control-round m-b-10">
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Mulai</p>
-                                                <input type="time" id="ts_resepsi" class="form-control form-control-round m-b-10">
+                                                <input type="time" id="ts_resepsi" name="ts_resepsi" class="form-control form-control-round m-b-10">
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Berakhir</p>
-                                                <input type="time" id="tf_resepsi" class="form-control form-control-round m-b-10">
+                                                <input type="time" id="tf_resepsi" name="tf_resepsi" class="form-control form-control-round m-b-10">
                                             </div>
                                         </div>
                                         <p class="f-w-600 m-b-5">Tempat</p>
-                                        <input type="text" id="tpt_resepsi" class="form-control  form-control-round m-b-10">
+                                        <input type="text" id="tpt_resepsi" name="tpt_resepsi" class="form-control  form-control-round m-b-10">
                                         <p class="f-w-600 m-b-5">Alamat</p>
-                                        <textarea id="alamat_resepsi" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"></textarea>
+                                        <textarea id="alamat_resepsi" name="alamat_resepsi" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"></textarea>
                                     </div>
                                 </div>
                             </div>

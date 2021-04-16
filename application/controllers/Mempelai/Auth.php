@@ -8,8 +8,8 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_Model');
-        $this->load->model('Acara_Model');
-        $this->load->model('Mempelai_Model');
+        $this->load->model('Mempelai/Acara_Model');
+        $this->load->model('Mempelai/Mempelai_Model');
         $this->load->helper('my_function_helper');
     }
     // }
@@ -19,7 +19,7 @@ class Auth extends CI_Controller
             redirect('Mempelai/Dashboard');
         }
         $this->form_validation->set_rules('email', 'email', 'required|trim');
-        // $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
         if ($this->form_validation->run() == False) {
             $this->load->view('Mempelai/Auth/V_LoginMempelai');
         } else {
@@ -32,11 +32,10 @@ class Auth extends CI_Controller
 
         $email = $this->input->post('email');
         $pass = $this->input->post('password');
-
+        // echo $pass;
         $akun = $this->db->get_where('tb_akun', ['Email_akun' => $email])->row_array();
 
         if ($akun) {
-            //ada
             //jika user aktif
             if ($akun['Status_akun'] == 1) {
                 //cek password
@@ -47,24 +46,38 @@ class Auth extends CI_Controller
                         'ID' => $akun['ID_akun']
                     ];
                     $this->session->set_userdata($data);
-                    redirect('Mempelai/Dashboard');
+                    redirect("Mempelai/Dashboard");
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger alert-rounded mb-3"> Password anda salah
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
-                                        </div>');
+
+                    $this->session->set_flashdata('message', ' <div class="alert alert-danger background-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="icofont icofont-close-line-circled text-white"></i>
+                    </button>
+                    <strong>Gagal!</strong> passwrod anda salah
+                </div>');
+
                     redirect('Mempelai/Auth');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-warning alert-rounded mb-3"> Akun belum diaktivasi
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
-                                        </div>');
+                $this->session->set_flashdata('message', ' <div class="alert alert-warning background-warning">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="icofont icofont-close-line-circled text-white"></i>
+                </button>
+                <strong>Gagal!</strong> akun belum di aktifasi
+            </div>');
+
                 redirect('Mempelai/Auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-rounded mb-3"> 
-            Akun tidak ditemukan                       
-             <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button></div>');
-            redirect('/Auth');
+
+            $this->session->set_flashdata('message', ' <div class="alert alert-danger background-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="icofont icofont-close-line-circled text-white"></i>
+            </button>
+            <strong>Gagal!</strong> akun tidak ditemukan
+        </div>');
+
+            redirect('Mempelai/Auth');
         }
     }
 
@@ -75,25 +88,12 @@ class Auth extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('Mempelai/Auth/V_RegisterMempelai');
         } else {
-            $email = htmlspecialchars($this->input->post('email', true));
-            $data = [
-                'ID_akun' =>  htmlspecialchars(kode_otomatis('tb_akun', 'ID_akun')),
-                'Username' => htmlspecialchars($this->input->post('username', true)),
-                'Email_akun' => htmlspecialchars($email),
-                'NoHp_akun' => htmlspecialchars($this->input->post('wa', true)),
-                'Password_akun' => password_hash($this->input->post('Password'), PASSWORD_DEFAULT),
-                'Created_akun' => time(),
-                'Status_akun' => '0'
-            ];
+            $this->CreateDataAkun();
 
+            // $this->CreateDataUndangan();
+            // $this->CreateDataAcara();
+            // $this->CreateDataMempelai();
 
-            $this->Auth_Model->tambah_data_akun($data);
-
-            // $token = base64_encode(random_bytes(32));
-
-            // $this->maketoken($email, $token);
-
-            // $this->_sendEmail($token, 'verify');
 
 
             $this->session->set_flashdata('message', ' <div class="alert alert-success background-success">
@@ -102,7 +102,6 @@ class Auth extends CI_Controller
             </button>
             <strong>Sukses!</strong> Periksa email anda untuk verifikasi 
         </div>');
-
             redirect('/Mempelai/Auth');
         }
     }
@@ -137,6 +136,7 @@ class Auth extends CI_Controller
         ];
 
         $this->db->insert('token', $data_token);
+        $this->_sendEmail($token, 'verify');
     }
 
     private function _sendEmail($token, $tipe)
@@ -150,8 +150,10 @@ class Auth extends CI_Controller
         $config['smtp_user'] = 'joyoom34@gmail.com';
         $config['smtp_pass'] = 'tuf18ti082';
         $config['smtp_port'] = 465;
+        $config['smpt_crypto'] = 'ssl';
         $config['mailtype'] = 'html';
         $config['charset'] = 'utf-8';
+        // $config['set_newline'] = "\r\n";
         $this->email->initialize($config);
 
         $this->email->set_newline("\r\n");
@@ -186,9 +188,88 @@ class Auth extends CI_Controller
         redirect('Mempelai/Auth');
     }
 
+
     public function CreateDataAcara()
     {
         $kode = kode_otomatis('tb_acara', 'ID_Acara');
-        $this->Acara_Model->tambah_data_acara($kode);
+        $data = [
+            'ID_Acara' =>  $kode
+        ];
+        $this->Acara_Model->tambah_data_acara($data);
+        return $kode;
+    }
+
+    public function CreateDataMempelai()
+    {
+        $kode = kode_otomatis('tb_mempelai', 'ID_Mempelai');
+        $data = [
+            'ID_Mempelai' =>  $kode
+        ];
+        $this->Mempelai_Model->tambah_data_mempelai($data);
+        return $kode;
+    }
+
+    public function CreateDataAkun()
+
+    {
+        $email = htmlspecialchars($this->input->post('email', true));
+        $data = [
+            'ID_akun' =>  htmlspecialchars(kode_otomatis('tb_akun', 'ID_akun')),
+            'Username' => htmlspecialchars($this->input->post('username', true)),
+            'Email_akun' => htmlspecialchars($email),
+            'NoHp_akun' => htmlspecialchars($this->input->post('wa', true)),
+            'Password_akun' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+            'Created_akun' => time(),
+            'Status_akun' => '1'
+        ];
+        // var_dump($data);
+        // die;
+
+        // $token = base64_encode(random_bytes(32));
+        $this->Auth_Model->tambah_data_akun($data);
+        // $this->maketoken($email, $token);
+        $id_akun = $data['ID_akun'];
+        $id_acara = $this->CreateDataAcara();
+        $id_mempelai = $this->CreateDataMempelai();
+        $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
+
+
+        // $token = base64_encode(random_bytes(32));
+
+        // $this->maketoken($email, $token);
+
+        // $this->_sendEmail($token, 'verify');
+
+
+
+    }
+    public function CreateDataUndangan($id_akun, $id_acara, $id_mempelai)
+    {
+        $kode = kode_otomatis('tb_undangan', 'ID_Undangan');
+        $akun_id = $id_akun;
+        $acara_id = $id_acara;
+        $mempelai_id = $id_mempelai;
+        $data = [
+            'ID_Undangan' => $kode,
+            'ID_Mempelai' => $mempelai_id,
+            'ID_Acara' => $acara_id,
+            'ID_Akun' => $akun_id,
+            'ID_Kategori' => 'KTG1',
+            'ID_Tema' => 'THM1',
+            'tgl_buatakun' => time(),
+            'tgl_selesaiakun' => time() + (60 * 60 * 24 * 7)
+        ];
+
+
+        $this->Auth_Model->tambah_data_undangan($data);
+
+        // $token = base64_encode(random_bytes(32));
+
+        // $this->maketoken($email, $token);
+
+        // $this->_sendEmail($token, 'verify');
+
+
+
     }
 }

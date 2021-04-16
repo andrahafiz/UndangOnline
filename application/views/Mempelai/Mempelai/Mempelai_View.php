@@ -36,11 +36,12 @@
                                     <div class="card-header">
                                         <h3 class="f-w-600">Mempelai Pria</h3>
                                         <span>Data diri memepelai pria</span>
-                                        <input type="hidden" name="id_mempelai" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->ID_Mempelai; ?>">
+
+                                        <input type="text" name="id_mempelai" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->ID_Mempelai; ?>">
                                     </div>
                                     <div class="card-block ">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_pria.png" alt="" id="prev_pria" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\user_pria.png" alt="" id="prev_pria" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
                                         <input type="file" id="foto_mpria" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_pria')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
@@ -67,7 +68,7 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\Mempelai\images\user_wanita.png" alt="" id="prev_wanita" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\user_wanita.png" alt="" id="prev_wanita" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
                                         <!-- <input type="file" class="custom-file-input" name="image_pria" id="file_pria"> -->
                                         <!-- <input type="file" class="custom-file-input" name="image_wanita" id="file_wanita" onchange="tampilkanPreview(this,'preview_2')"> -->

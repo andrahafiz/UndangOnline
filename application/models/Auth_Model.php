@@ -11,4 +11,8 @@ class Auth_Model extends CI_Model
     {
         $this->db->insert('tb_akun', $data);
     }
+    public function tambah_data_undangan($data)
+    {
+        $this->db->insert('tb_undangan', $data);
+    }
 }

@@ -1,0 +1,19 @@
+---------------------VIEW MEMPELAI---------------------------
+SELECT tb_undangan.ID_Undangan ,tb_akun.ID_akun,tb_mempelai.* 
+FROM `tb_undangan`,`tb_mempelai`, `tb_akun`
+WHERE tb_undangan.ID_Mempelai = tb_mempelai.ID_Mempelai AND tb_undangan.ID_Akun = tb_akun.ID_akun
+------------------END VIEW MEMPELAI---------------------------
+
+---------------------VIEW Acara---------------------------
+SELECT tb_undangan.ID_Undangan ,tb_akun.ID_akun,tb_acara.* 
+FROM `tb_undangan`,`tb_acara` ,`tb_akun`
+WHERE tb_undangan.ID_Acara = tb_acara.ID_Acara AND tb_undangan.ID_Akun = tb_akun.ID_akun
+-------------------END VIEW Acara---------------------------
+
+---------------------VIEW ALL---------------------------
+SELECT tb_undangan.* ,tb_akun.*,tb_acara.* ,tb_mempelai.*
+FROM `tb_undangan`,`tb_acara` ,`tb_akun`,`tb_mempelai`
+WHERE tb_undangan.ID_Acara = tb_acara.ID_Acara 
+AND tb_undangan.ID_Akun = tb_akun.ID_akun 
+AND tb_undangan.ID_Mempelai = tb_mempelai.ID_Mempelai
+-------------------END VIEW ALL---------------------------

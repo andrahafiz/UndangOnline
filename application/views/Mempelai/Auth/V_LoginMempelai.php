@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon round-left "><i class="icofont icofont-key"></i></span>
-                                    <input type="password" id="password" name="user-name" class="form-control form-control-round" required="" placeholder="Password">
+                                    <input type="password" id="password" name="password" class="form-control form-control-round" required="" placeholder="Password">
                                     <?= form_error('password', '<span class="text-pink error m-l-40">', '</span>'); ?>
 
                                 </div>

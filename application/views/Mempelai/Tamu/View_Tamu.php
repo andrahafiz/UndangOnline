@@ -123,18 +123,15 @@
                                     </div>
                                     <p class="f-w-900 m-b-10">Email</p>
                                     <div class="input-group">
-                                        <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
-                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus value="<?= set_value('username'); ?>">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-email"></i></span>
+                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Email Tamu" autofocus value="<?= set_value('username'); ?>">
                                     </div>
-                                    <p class="f-w-900 m-b-10">Nomor Tamu</p>
+                                    <p class="f-w-900 m-b-10">Nomor Whatasapp Tamu</p>
                                     <div class="input-group">
-                                        <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
-                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus value="<?= set_value('username'); ?>">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
+                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu" autofocus value="<?= set_value('username'); ?>">
                                     </div>
-                                    <!-- <p class="f-w-600 m-b-5">Nomor Whatssapp</p>
-                                    <input type="text" id="wa_tamu" class="form-control  form-control-round m-b-10">
-                                    <p class="f-w-600 m-b-5">Email</p>
-                                    <input type="text" id="email_tamu" class="form-control  form-control-round m-b-10"> -->
+
 
                             </div>
                         </div>
