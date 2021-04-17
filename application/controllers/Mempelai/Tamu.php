@@ -13,10 +13,9 @@ class Tamu extends CI_Controller
     // }
     public function index()
     {
-        $id =   $this->session->userdata('ID');
+        $this->session->userdata('ID_undangan');
         $tamu = $this->Tamu_Model->selectAll();
         $data = array(
-            'id' => $id,
             'judul' => 'Tamu Undangan',
             'menu' => menu_mempelai(),
             'tamu' => $tamu

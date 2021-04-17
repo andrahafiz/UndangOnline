@@ -11,7 +11,7 @@
                                 <div class="card-header table-card-header">
                                     <div class="row m-b-20">
                                         <div class="col-md-8 m-b-5">
-                                            <h3 class="f-w-900">Daftar Tamu Undangan</h3>
+                                            <h3 class="f-w-900">Daftar Tamu Undangan <?= $this->session->userdata('ID_undangan'); ?></h3>
                                         </div>
                                         <div class="col-md-4 m-b-5">
                                             <!-- <button class="btn btn-primary f-right "></button> -->
@@ -121,7 +121,8 @@
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h3 class="modal-title">Tambah Tamu Undangan <?= $id ?></h3>
+                            <h3 class="modal-title">Tambah Tamu Undangan</h3>
+
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
