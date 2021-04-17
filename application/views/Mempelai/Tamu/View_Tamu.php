@@ -11,7 +11,7 @@
                                 <div class="card-header table-card-header">
                                     <div class="row m-b-20">
                                         <div class="col-md-8 m-b-5">
-                                            <h3 class="f-w-900">Daftar Tamu Undangan <?= $this->session->userdata('ID_undangan'); ?></h3>
+                                            <h3 class="f-w-900">Daftar Tamu Undangan </h3>
                                         </div>
                                         <div class="col-md-4 m-b-5">
                                             <!-- <button class="btn btn-primary f-right "></button> -->
@@ -61,8 +61,8 @@
                                                                         <button type="button" class="btn btn-info  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                                                             <i class="fa fa-edit"></i>
                                                                         </button>
-                                                                        <span data-toggle="modal" id="btn-detail" data-target="#detail-Modal" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>">
-                                                                            <button type="button" class="btn btn-warning  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Detail">
+                                                                        <span data-toggle="modal" data-target="#detail-Modal">
+                                                                            <button type="button" id="btn-detail" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>" class="btn btn-warning  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Detail">
                                                                                 <i class="fa fa-eye"></i>
                                                                             </button>
                                                                         </span>
@@ -130,18 +130,19 @@
                         <div class="modal-body">
                             <p class="text-muted">Masukan kontak Tamu untuk mengirim undangan </p>
                             <div class="card-block ">
-                                <form class="form-group" method="POST" action="<?= base_url(); ?>">
-                                    <p class="f-w-900 m-b-10">Nama Tamu</p>
+                                <form class="form-group" method="POST" action="<?= base_url('Mempelai/Tamu/tambahdata'); ?>">
+                                    <p class="f-w-900 m-b-5">Nama Tamu</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
+                                        <input type="hidden" id="id_undangan" name="id_undangan" value="<?= $this->session->userdata('ID_undangan'); ?>" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
                                         <input type="text" id="nama_tamu" name="nama_tamu" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
                                     </div>
-                                    <p class="f-w-900 m-b-10">Email</p>
+                                    <p class="f-w-900 m-b-5">Email</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-email"></i></span>
                                         <input type="text" id="email_tamu" name="email_tamu" class="form-control form-control-round  m-b-10" placeholder="Email Tamu">
                                     </div>
-                                    <p class="f-w-900 m-b-10">Nomor Whatasapp Tamu</p>
+                                    <p class="f-w-900 m-b-5">Nomor Whatasapp Tamu</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
                                         <input type="text" id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
@@ -151,8 +152,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Batal</button>
-                            <button type="button" class="btn btn-primary waves-effect waves-light ">Simpan</button>
+                            <button type="reset" class="btn btn-default waves-effect " data-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light ">Simpan</button>
                         </div>
                     </div>
                     </form>

@@ -13,7 +13,7 @@ $("#btn-detail").on("click", function() {
     const nomor = $(this).data('wa');
     const email = $(this).data('email');
     // $("#nama-detil").attr("value", nama);
-    $('.detail-body').text(nama + "+" + nomor);
+    $('.detail-body').append(nama + "+" + nomor);
     // $('.detail-body').append()
 
 })
