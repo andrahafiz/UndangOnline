@@ -91,6 +91,7 @@
 <script src="<?= base_url(); ?>assets\Mempelai\js\vartical-layout.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\js\jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\js\script.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\js\custom.js"></script>
 
 <!-- Switch component js -->
 <!-- <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\switchery\js\switchery.min.js"></script> -->
@@ -104,16 +105,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
-
-    
 </script>
 </body>
 

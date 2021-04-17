@@ -29,66 +29,11 @@ class Mempelai extends CI_Controller
             $this->load->view('Mempelai/layout/footer');
         } else {
 
-            $id = htmlspecialchars($this->input->post('id_mempelai', true));
-            $data = [
-                'Nama_MPria' =>  htmlspecialchars($this->input->post('nama_mpria', true)),
-                'NoHp_MPria' =>  htmlspecialchars($this->input->post('nohp_mpria', true)),
-                'Alamat_MPria' =>  htmlspecialchars($this->input->post('alamat_mpria', true)),
-                'Panggilan_MPria' =>  htmlspecialchars($this->input->post('namal_mpria', true)),
-                'NamaOrtu_Ayah_MPria' =>  htmlspecialchars($this->input->post('namaortuayah_mpria', true)),
-                'NamaOrtu_Ibu_MPria' =>  htmlspecialchars($this->input->post('namaortuibu_mpria', true)),
-                'Foto_MPria' => 'default.jpg',
-                'Nama_MWanita' =>  htmlspecialchars($this->input->post('nama_mwanita', true)),
-                'NoHp_MWanita' =>  htmlspecialchars($this->input->post('nohp_mwanita', true)),
-                'Alamat_MWanita' =>  htmlspecialchars($this->input->post('alamat_mwanita', true)),
-                'Panggilan_MWanita' =>  htmlspecialchars($this->input->post('namal_mwanita', true)),
-                'NamaOrtu_Ayah_MWanita' =>  htmlspecialchars($this->input->post('namaortuayah_mwanita', true)),
-                'NamaOrtu_Ibu_MWanita' =>  htmlspecialchars($this->input->post('namaortuibu_mwanita', true)),
-                'Foto_MWanita' => 'default.jpg',
-            ];
-
-            $this->Mempelai_Model->update($id, $data);
-            $this->session->set_flashdata('message', ' <div class="alert alert-success background-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="icofont icofont-close-line-circled text-white"></i>
-                </button>
-                <strong>Sukses!</strong> Data mempelai telah berubah
-            </div>');
-
+            $id = htmlspecialchars($this->input->post('id_mempelai', true));;
+            $this->Mempelai_Model->update($id, $this->data());
+            $this->pesan('sukses', 'Data mempelai telah diubah');
             redirect('Mempelai/Mempelai');
         }
-    }
-    public function edit()
-    {
-        // echo "tidak";
-        $id = htmlspecialchars($this->input->post('nama_mpria', true));
-        //     $data = [
-        //         'Nama_MPria' =>  htmlspecialchars($this->input->post('nama_mpria', true)),
-        //         'NoHp_MPria' =>  htmlspecialchars($this->input->post('nohp_mpria', true)),
-        //         'Alamat_MPria' =>  htmlspecialchars($this->input->post('alamat_mpria', true)),
-        //         'Panggilan_MPria' =>  htmlspecialchars($this->input->post('namal_mpria', true)),
-        //         'NamaOrtu_Ayah_MPria' =>  htmlspecialchars($this->input->post('namaortuayah_mpria', true)),
-        //         'NamaOrtu_Ibu_MPria' =>  htmlspecialchars($this->input->post('namaortuibu_mpria', true)),
-        //         'Foto_MPria' => 'default.jpg',
-        //         'Nama_MWanita' =>  htmlspecialchars($this->input->post('nama_mwanita', true)),
-        //         'NoHp_MWanita' =>  htmlspecialchars($this->input->post('nohp_mwanita', true)),
-        //         'Alamat_MWanita' =>  htmlspecialchars($this->input->post('alamat_mwanita', true)),
-        //         'Panggilan_MWanita' =>  htmlspecialchars($this->input->post('namal_mwanita', true)),
-        //         'NamaOrtu_Ayah_MWanita' =>  htmlspecialchars($this->input->post('namaortuayah_mwanita', true)),
-        //         'NamaOrtu_Ibu_MWanita' =>  htmlspecialchars($this->input->post('namaortuibu_mwanita', true)),
-        //         'Foto_MWanita' => 'default.jpg',
-        //     ];
-        var_dump($id);
-        die;
-        //     $this->Mempelai_Model->update($id, $data);
-        //     $this->session->set_flashdata('message', ' <div class="alert alert-success background-success">
-        //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        //         <i class="icofont icofont-close-line-circled text-white"></i>
-        //     </button>
-        //     <strong>Sukses!</strong> Data anda telah berubah
-        // </div>');
-
-        //     // redirect('Mempelai/Mempelai');
     }
 
     private function _formvalidation()
@@ -109,16 +54,47 @@ class Mempelai extends CI_Controller
         $this->form_validation->set_rules('nohp_mwanita', 'Nomor Hp ( Mempelai Wanita )', 'required');
     }
 
-    private function _dataIn()
+    function pesan($tipe, $pesan)
     {
-        // $data = [
-        //     'ID_akun' =>  htmlspecialchars($this->input->post('nama_mpria', true)),
-        //     'Username' => htmlspecialchars($this->input->post('username', true)),
-        //     'Email_akun' => htmlspecialchars($email),
-        //     'NoHp_akun' => htmlspecialchars($this->input->post('wa', true)),
-        //     'Password_akun' => password_hash($this->input->post('Password'), PASSWORD_DEFAULT),
-        //     'Created_akun' => time(),
-        //     'Status_akun' => '0'
-        // ];
+        $template = "";
+        switch ($tipe) {
+            case 'sukses':
+                $template = '<div class="alert alert-success background-success">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="icofont icofont-close-line-circled text-white"></i>
+                            </button>
+                            <strong>Sukses !</strong> ' . $pesan . '
+                            </div>';
+                break;
+            case 'gagal':
+
+                break;
+
+            default:
+
+                break;
+        }
+        $this->session->set_flashdata('message', $template);
+    }
+
+    private function data()
+    {
+        $data = [
+            'Nama_MPria' =>  htmlspecialchars($this->input->post('nama_mpria', true)),
+            'NoHp_MPria' =>  htmlspecialchars($this->input->post('nohp_mpria', true)),
+            'Alamat_MPria' =>  htmlspecialchars($this->input->post('alamat_mpria', true)),
+            'Panggilan_MPria' =>  htmlspecialchars($this->input->post('namal_mpria', true)),
+            'NamaOrtu_Ayah_MPria' =>  htmlspecialchars($this->input->post('namaortuayah_mpria', true)),
+            'NamaOrtu_Ibu_MPria' =>  htmlspecialchars($this->input->post('namaortuibu_mpria', true)),
+            'Foto_MPria' => 'default.jpg',
+            'Nama_MWanita' =>  htmlspecialchars($this->input->post('nama_mwanita', true)),
+            'NoHp_MWanita' =>  htmlspecialchars($this->input->post('nohp_mwanita', true)),
+            'Alamat_MWanita' =>  htmlspecialchars($this->input->post('alamat_mwanita', true)),
+            'Panggilan_MWanita' =>  htmlspecialchars($this->input->post('namal_mwanita', true)),
+            'NamaOrtu_Ayah_MWanita' =>  htmlspecialchars($this->input->post('namaortuayah_mwanita', true)),
+            'NamaOrtu_Ibu_MWanita' =>  htmlspecialchars($this->input->post('namaortuibu_mwanita', true)),
+            'Foto_MWanita' => 'default.jpg',
+        ];
+        return $data;
     }
 }

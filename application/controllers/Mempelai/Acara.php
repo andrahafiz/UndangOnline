@@ -9,55 +9,51 @@ class Acara extends CI_Controller
         parent::__construct();
         $this->load->model('Mempelai/Acara_Model');
         $this->load->helper('my_function_helper');
-        cekaccess();
+        // cekaccess();
     }
-    // }
+
     public function index()
     {
-        // $this->form_validation->set_rules('tgl_akad', 'Tanggal Akad ', 'required');
-        // $this->form_validation->set_rules('ts_akad', 'Waktu Mulai Akad', 'required');
-        // $this->form_validation->set_rules('tf_akad', 'Waktu Berakhir Akad', 'required');
-        // $this->form_validation->set_rules('tpt_akad', 'Tempat Akad', 'required');
-        // $this->form_validation->set_rules('alamat_akad', 'Alamat ', 'required');
-        // $this->form_validation->set_rules('tgl_resepsi', 'Tanggal Resepsi', 'required');
-        // $this->form_validation->set_rules('ts_resepsi', 'Waktu Mulai Resepsi', 'required|numeric');
-        // $this->form_validation->set_rules('tf_resepsi', 'Waktu Berakhir Resepsi', 'required');
-        // $this->form_validation->set_rules('tpt_resepsi', 'Tempat Resepsi ', 'required');
-        // $this->form_validation->set_rules('alamat_resepsi', 'Alamat Resepsi ', 'required');
+        $id =   $this->session->userdata('ID');
         $this->_formvalidation();
         if ($this->form_validation->run() == FALSE) {
             $data = array(
                 'judul' => 'Acara',
-                'menu' => menu_mempelai()
+                'menu' => menu_mempelai(),
+                'data_acara' => $this->Acara_Model->selectbyid($id)
             );
-
             $this->load->view('Mempelai/layout/header', $data);
-            $this->load->view('Mempelai/Acara/Acara_View');
+            $this->load->view('Mempelai/Acara/Acara_View', $data['data_acara']);
             $this->load->view('Mempelai/layout/footer');
         } else {
-
-            $data = [
-                'TglAkad' =>  htmlspecialchars($this->input->post('tgl_akad', true)),
-                'WaktuMulaiAkad' =>  htmlspecialchars($this->input->post('ts_akad', true)),
-                'WaktuSelesaiAkad' =>  htmlspecialchars($this->input->post('ts_akad', true)),
-                'TempatAkad' => htmlspecialchars($this->input->post('tpt_akad', true)),
-                'AlamatAkad' => htmlspecialchars($this->input->post('alamat_akad', true)),
-                'TglResepsi' => htmlspecialchars($this->input->post('tgl_resepsi', true)),
-                'WaktuMulaiResepsi' =>  htmlspecialchars($this->input->post('ts_resepsi', true)),
-                'WaktuSelesaiResepsi' =>  htmlspecialchars($this->input->post('ts_resepsi', true)),
-                'TempatResepsi' => htmlspecialchars($this->input->post('tpt_resepsi', true)),
-                'AlamatResepsi' => htmlspecialchars($this->input->post('alamat_resepsi', true)),
-            ];
-            $this->Acara_Model->tambah_data_acara($data);
-            $this->session->set_flashdata('message', ' <div class="alert alert-success background-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="icofont icofont-close-line-circled text-white"></i>
-                </button>
-                <strong>Sukses!</strong> Data mempelai telah berubah
-            </div>');
-
+            $this->update_data();
+            $this->pesan('sukses', 'Data anda berhasil di ubah');
             redirect('Mempelai/Acara');
         }
+    }
+
+    function update_data()
+    {
+        $id = htmlspecialchars($this->input->post('id_acara', true));
+        $this->Acara_Model->update($id,  $this->_data());
+    }
+
+    // method bertanggung jawab terhadap data yang masuk
+    private function _data()
+    {
+        $data = [
+            'TglAkad' =>  htmlspecialchars($this->input->post('tgl_akad', true)),
+            'WaktuMulaiAkad' =>  htmlspecialchars($this->input->post('ts_akad', true)),
+            'WaktuSelesaiAkad' =>  htmlspecialchars($this->input->post('tf_akad', true)),
+            'TempatAkad' => htmlspecialchars($this->input->post('tpt_akad', true)),
+            'AlamatAkad' => htmlspecialchars($this->input->post('alamat_akad', true)),
+            'TglResepsi' => htmlspecialchars($this->input->post('tgl_resepsi', true)),
+            'WaktuMulaiResepsi' =>  htmlspecialchars($this->input->post('ts_resepsi', true)),
+            'WaktuSelesaiResepsi' =>  htmlspecialchars($this->input->post('tf_resepsi', true)),
+            'TempatResepsi' => htmlspecialchars($this->input->post('tpt_resepsi', true)),
+            'AlamatResepsi' => htmlspecialchars($this->input->post('alamat_resepsi', true)),
+        ];
+        return $data;
     }
 
     private function _formvalidation()
@@ -72,5 +68,28 @@ class Acara extends CI_Controller
         $this->form_validation->set_rules('tf_resepsi', 'Tanggal Selesai Resepsi', 'required|trim');
         $this->form_validation->set_rules('tpt_resepsi', 'Tempat Resepsi', 'required|trim');
         $this->form_validation->set_rules('alamat_resepsi', 'Alamat Tempat Resepsi', 'required|trim');
+    }
+
+    function pesan($tipe, $pesan)
+    {
+        $template = "";
+        switch ($tipe) {
+            case 'sukses':
+                $template = '<div class="alert alert-success background-success">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="icofont icofont-close-line-circled text-white"></i>
+                            </button>
+                            <strong>Sukses !</strong> ' . $pesan . '
+                            </div>';
+                break;
+            case 'gagal':
+
+                break;
+
+            default:
+
+                break;
+        }
+        $this->session->set_flashdata('message', $template);
     }
 }

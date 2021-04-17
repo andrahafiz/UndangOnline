@@ -37,7 +37,7 @@
                                         <h3 class="f-w-600">Mempelai Pria</h3>
                                         <span>Data diri memepelai pria</span>
 
-                                        <input type="text" name="id_mempelai" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->ID_Mempelai; ?>">
+                                        <input type="hidden" name="id_mempelai" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->ID_Mempelai; ?>">
                                     </div>
                                     <div class="card-block ">
                                         <div class="text-center">

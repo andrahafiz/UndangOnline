@@ -15,7 +15,7 @@ class Acara_Model extends CI_Model
     public function selectbyid($id)
     {
         // $this->db->where('pekerjaan_id', $id);
-        $query = $this->db->query(" SELECT tb_acara.* FROM `tb_undangan`,`tb_acara` WHERE tb_undangan.ID_Akun ='$id'");
+        $query =  $this->db->get_where('view_acara', ['ID_akun' => $id]);
         $hasil = $query->row();
         return $hasil;
     }
@@ -23,7 +23,7 @@ class Acara_Model extends CI_Model
     public function update($id, $data)
     {
 
-        $this->db->where('ID_Mempelai', $id);
+        $this->db->where('ID_Acara', $id);
         $this->db->update('tb_acara', $data);
     }
 }

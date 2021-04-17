@@ -25,15 +25,15 @@
                                         <div id="simpletable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
-                                                    <div class="dataTables_length" id="simpletable_length"><label>Show <select name="simpletable_length" aria-controls="simpletable" class="form-control input-sm">
+                                                    <div class="dataTables_length" id="simpletable_length"><label>Menampilkan <select name="simpletable_length" aria-controls="simpletable" class="form-control input-sm">
                                                                 <option value="10">10</option>
                                                                 <option value="25">25</option>
                                                                 <option value="50">50</option>
                                                                 <option value="100">100</option>
-                                                            </select> entries</label></div>
+                                                            </select> data</label></div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-12 col-md-6">
-                                                    <div id="simpletable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="simpletable"></label></div>
+                                                    <div id="simpletable_filter" class="dataTables_filter"><label>Cari:<input type="Cari" class="form-control input-sm" placeholder="" aria-controls="simpletable"></label></div>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -48,12 +48,26 @@
                                                         </thead>
                                                         <tbody>
                                                             <?php foreach ($tamu as $key => $value) { ?>
-                                                                <tr>
+                                                                <tr class="align-center">
                                                                     <td><?= $key + 1 ?></td>
                                                                     <td><?= $value->Nama_Tamu ?></td>
                                                                     <td class="card-block icon-btn">
-                                                                        <button type="button" class="btn btn-success btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Whatsapp <?= $value->Wa_Tamu ?>">
+                                                                        <button type="button" id="btn-wa" class="btn btn-success btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" data-nowa="<?= $value->Wa_Tamu ?>" title="Whatsapp <?= $value->Wa_Tamu ?>">
                                                                             <i class="fa fa-whatsapp"></i>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Email">
+                                                                            <i class="fa fa-envelope"></i>
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-info  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </button>
+                                                                        <span data-toggle="modal" id="btn-detail" data-target="#detail-Modal" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>">
+                                                                            <button type="button" class="btn btn-warning  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Detail">
+                                                                                <i class="fa fa-eye"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+                                                                            <i class="fa fa-trash"></i>
                                                                         </button>
                                                                     </td>
                                                                 <?php } ?>
@@ -76,15 +90,15 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12 col-md-5">
-                                                    <div class="dataTables_info" id="simpletable_info" role="status" aria-live="polite">Showing 1 to 10 of 20 entries</div>
+                                                    <div class="dataTables_info" id="simpletable_info" role="status" aria-live="polite">Menampilkan 1 - 110 dari 20 data</div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-12 col-md-7">
                                                     <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
                                                         <ul class="pagination">
-                                                            <li class="paginate_button page-item previous disabled" id="simpletable_previous"><a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                                            <li class="paginate_button page-item Sebelumnya disabled" id="simpletable_Sebelumnya"><a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0" class="page-link">Sebelumnya</a></li>
                                                             <li class="paginate_button page-item active"><a href="#" aria-controls="simpletable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
                                                             <li class="paginate_button page-item "><a href="#" aria-controls="simpletable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                                                            <li class="paginate_button page-item next" id="simpletable_next"><a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li>
+                                                            <li class="paginate_button page-item next" id="simpletable_next"><a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0" class="page-link">Selanjutnya</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -107,7 +121,7 @@
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h3 class="modal-title">Tambah Tamu Unndangan</h3>
+                            <h3 class="modal-title">Tambah Tamu Undangan <?= $id ?></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -115,21 +129,21 @@
                         <div class="modal-body">
                             <p class="text-muted">Masukan kontak Tamu untuk mengirim undangan </p>
                             <div class="card-block ">
-                                <form class="form-group">
+                                <form class="form-group" method="POST" action="<?= base_url(); ?>">
                                     <p class="f-w-900 m-b-10">Nama Tamu</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
-                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus value="<?= set_value('username'); ?>">
+                                        <input type="text" id="nama_tamu" name="nama_tamu" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
                                     </div>
                                     <p class="f-w-900 m-b-10">Email</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-email"></i></span>
-                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="Email Tamu" autofocus value="<?= set_value('username'); ?>">
+                                        <input type="text" id="email_tamu" name="email_tamu" class="form-control form-control-round  m-b-10" placeholder="Email Tamu">
                                     </div>
                                     <p class="f-w-900 m-b-10">Nomor Whatasapp Tamu</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
-                                        <input type="text" id="nama_tamu" name="username" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu" autofocus value="<?= set_value('username'); ?>">
+                                        <input type="text" id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
                                     </div>
 
 
@@ -145,9 +159,27 @@
             </div>
             <!--END MODAL INPUTA DATA TAMU -->
 
-            <div id="styleSelector">
+            <!-- MODAL DETAIL TAMU -->
+            <div class="modal fade" id="detail-Modal" tabindex="-1" role="dialog" style="z-index: 1050; display: none;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Detail Tamu Undangan</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body detail-body">
 
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Kembali</button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- MODAL DETAIL TAMU -->
         </div>
     </div>
 </div>

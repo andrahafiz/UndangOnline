@@ -12,7 +12,7 @@ class Auth extends CI_Controller
         $this->load->model('Mempelai/Mempelai_Model');
         $this->load->helper('my_function_helper');
     }
-    // }
+
     public function index()
     {
         if ($this->session->userdata("username")) {
@@ -48,60 +48,27 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                     redirect("Mempelai/Dashboard");
                 } else {
-
-                    $this->session->set_flashdata('message', ' <div class="alert alert-danger background-danger">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <i class="icofont icofont-close-line-circled text-white"></i>
-                    </button>
-                    <strong>Gagal!</strong> passwrod anda salah
-                </div>');
-
+                    $this->pesan('gagal', 'Password anda salah');
                     redirect('Mempelai/Auth');
                 }
             } else {
-                $this->session->set_flashdata('message', ' <div class="alert alert-warning background-warning">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="icofont icofont-close-line-circled text-white"></i>
-                </button>
-                <strong>Gagal!</strong> akun belum di aktifasi
-            </div>');
-
+                $this->pesan('warning', 'Akun belum di aktifasi');
                 redirect('Mempelai/Auth');
             }
         } else {
-
-            $this->session->set_flashdata('message', ' <div class="alert alert-danger background-danger">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <i class="icofont icofont-close-line-circled text-white"></i>
-            </button>
-            <strong>Gagal!</strong> akun tidak ditemukan
-        </div>');
-
+            $this->pesan('gagal', 'Akun tidak ditemukan');
             redirect('Mempelai/Auth');
         }
     }
 
     public function register()
     {
-
         $this->_formvalidation();
         if ($this->form_validation->run() == false) {
             $this->load->view('Mempelai/Auth/V_RegisterMempelai');
         } else {
             $this->CreateDataAkun();
-
-            // $this->CreateDataUndangan();
-            // $this->CreateDataAcara();
-            // $this->CreateDataMempelai();
-
-
-
-            $this->session->set_flashdata('message', ' <div class="alert alert-success background-success">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <i class="icofont icofont-close-line-circled text-white"></i>
-            </button>
-            <strong>Sukses!</strong> Periksa email anda untuk verifikasi 
-        </div>');
+            $this->pesan('sukses', 'Periksa email anda untuk verifikasi');
             redirect('/Mempelai/Auth');
         }
     }
@@ -185,6 +152,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata("username");
         $this->session->unset_userdata("Email_akun");
         $this->session->unset_userdata("ID");
+        $this->session->sess_destroy();
         redirect('Mempelai/Auth');
     }
 
@@ -210,7 +178,6 @@ class Auth extends CI_Controller
     }
 
     public function CreateDataAkun()
-
     {
         $email = htmlspecialchars($this->input->post('email', true));
         $data = [
@@ -222,27 +189,14 @@ class Auth extends CI_Controller
             'Created_akun' => time(),
             'Status_akun' => '1'
         ];
-        // var_dump($data);
-        // die;
 
-        // $token = base64_encode(random_bytes(32));
         $this->Auth_Model->tambah_data_akun($data);
-        // $this->maketoken($email, $token);
         $id_akun = $data['ID_akun'];
         $id_acara = $this->CreateDataAcara();
         $id_mempelai = $this->CreateDataMempelai();
         $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
-
-
-        // $token = base64_encode(random_bytes(32));
-
-        // $this->maketoken($email, $token);
-
-        // $this->_sendEmail($token, 'verify');
-
-
-
     }
+
     public function CreateDataUndangan($id_akun, $id_acara, $id_mempelai)
     {
         $kode = kode_otomatis('tb_undangan', 'ID_Undangan');
@@ -260,16 +214,42 @@ class Auth extends CI_Controller
             'tgl_selesaiakun' => time() + (60 * 60 * 24 * 7)
         ];
 
-
+        $this->session->set_userdata('ID_undangan', $kode);
         $this->Auth_Model->tambah_data_undangan($data);
+    }
 
-        // $token = base64_encode(random_bytes(32));
+    function pesan($tipe, $pesan)
+    {
+        $template = "";
+        switch ($tipe) {
+            case 'sukses':
+                $template = '<div class="alert alert-success background-success">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="icofont icofont-close-line-circled text-white"></i>
+                            </button>
+                            <strong>Sukses !</strong> ' . $pesan . '
+                            </div>';
+                break;
+            case 'gagal':
+                $template = '<div class="alert alert-danger background-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="icofont icofont-close-line-circled text-white"></i>
+                            </button>
+                            <strong>Gagal ! </strong> ' . $pesan . '
+                            </div>';
+                break;
+            case 'warning':
+                $template = '<div class="alert alert-warning background-waning">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <i class="icofont icofont-close-line-circled text-white"></i>
+                                </button>
+                                <strong>Gagal ! </strong> ' . $pesan . '
+                                </div>';
+                break;
+            default:
 
-        // $this->maketoken($email, $token);
-
-        // $this->_sendEmail($token, 'verify');
-
-
-
+                break;
+        }
+        $this->session->set_flashdata('message', $template);
     }
 }
