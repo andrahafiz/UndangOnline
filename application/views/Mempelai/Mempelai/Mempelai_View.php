@@ -28,7 +28,7 @@
                     <?php
                     // echo form_open_multipart('Mempelai/Mempelai/edit'); 
                     ?>
-                    <form method="POST" action=<?= base_url('Mempelai/Mempelai'); ?> method="POST" class="form-group">
+                    <form enctype="multipart/form-data" action=<?= base_url('Mempelai/Mempelai/testupload'); ?> method="POST" class="form-group">
                         <!-- <div class="form-group"> -->
                         <div class="row">
                             <div class="col-sm-6 ">
@@ -41,9 +41,9 @@
                                     </div>
                                     <div class="card-block ">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\user_pria.png" alt="" id="prev_pria" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\<?= $data_mempelai->Foto_MPria == null ? 'user_pria.png' : $data_mempelai->Foto_MPria; ?>" alt="" id="prev_pria" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
-                                        <input type="file" id="foto_mpria" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_pria')">
+                                        <input type="file" id="foto_mpria" name="foto_MPria" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_pria')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
                                         <input type="text" id="nama_mpria" name="nama_mpria" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->Nama_MPria; ?>">
                                         <p class="f-w-600 m-b-5">Nama Panggilan</p>
@@ -68,11 +68,11 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\user_wanita.png" alt="" id="prev_wanita" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\<?= $data_mempelai->Foto_MPria == null ? 'user_wanita.png' : $data_mempelai->Foto_MPria; ?>" alt="" id="prev_wanita" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
                                         <!-- <input type="file" class="custom-file-input" name="image_pria" id="file_pria"> -->
                                         <!-- <input type="file" class="custom-file-input" name="image_wanita" id="file_wanita" onchange="tampilkanPreview(this,'preview_2')"> -->
-                                        <input type="file" id="foto_mwanita" name="foto_mwanita" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_wanita')">
+                                        <input type="file" id="foto_mwanita" name="foto_MPwanita" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_wanita')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
                                         <input type="text" id="nama_mwanita" name="nama_mwanita" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->Nama_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Nama Panggilan</p>

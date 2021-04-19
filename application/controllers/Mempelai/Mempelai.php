@@ -21,7 +21,7 @@ class Mempelai extends CI_Controller
             $data = array(
                 'judul' => 'Mempelai',
                 'menu' => menu_mempelai(),
-                'data_mempelai' => $this->Mempelai_Model->selectbyid($id)
+                'data_mempelai' => $this->data_mempelai($id)
             );
 
             $this->load->view('Mempelai/layout/header', $data);
@@ -33,6 +33,52 @@ class Mempelai extends CI_Controller
             $this->Mempelai_Model->update($id, $this->data());
             $this->pesan('sukses', 'Data mempelai telah diubah');
             redirect('Mempelai/Mempelai');
+        }
+    }
+
+    public function data_mempelai($id)
+    {
+        return $this->Mempelai_Model->selectbyid($id);
+    }
+
+    public function testupload()
+    {
+        $id =   $this->session->userdata('ID');
+        $data = array(
+            'datamempelai' => (array) $this->data_mempelai($id)
+        );
+        // var_dump($data['datamempelai']['ID_Undangan']);
+        // die;
+
+        $config['upload_path'] = './assets/Mempelai/images/image-mempelai/'; //path folder
+        $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+        $config['max_size']     = '2048';
+
+        $namefoto = array("MPria", "MWanita");
+        $this->load->library('upload', $config);
+        for ($i = 0; $i < count($namefoto); $i++) {
+            // echo 'foto_' . $namefoto[$i];
+
+            if (!empty($_FILES['foto_' . $namefoto[$i]]['name'])) {
+
+                if (!$this->upload->do_upload('foto_' . $namefoto[$i])) {
+                    //Kondisi Upload Gagal
+                    $this->upload->display_errors();
+                } else {
+                    //Kondisi Upload Berhasil
+                    // echo "Foto berhasil di upload";
+                    $old_image = $data['datamempelai']['Foto_' . $namefoto[$i]];
+                    // var_dump($old_image);
+                    // die;
+                    if ($old_image != 'default.jpg') {
+                        unlink(FCPATH . 'assets/Mempelai/images/image-mempelai/' . $old_image);
+                    }
+                    $new_image = $this->upload->data('file_name');
+                    $this->db->set('admin_image', $new_image);
+                }
+            } else {
+                echo "gagal";
+            }
         }
     }
 
