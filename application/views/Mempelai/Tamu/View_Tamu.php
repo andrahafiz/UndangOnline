@@ -11,7 +11,7 @@
                                 <div class="card-header table-card-header">
                                     <div class="row m-b-20">
                                         <div class="col-md-8 m-b-5">
-                                            <h3 class="f-w-900">Daftar Tamu Undangan </h3>
+                                            <h3 class="f-w-900">Daftar Tamu Undangan<?= $this->session->userdata('ID_Undangan') ?> </h3>
                                         </div>
                                         <div class="col-md-4 m-b-5">
                                             <!-- <button class="btn btn-primary f-right "></button> -->
@@ -41,45 +41,51 @@
                                                     <table id="simpletable" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="simpletable_info">
                                                         <thead>
                                                             <tr role="row">
-                                                                <th class="sorting_asc" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 185.2px;">No</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 288.4px;">Nama</th>
-                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 142px;">Aksi</th>
+                                                                <th class="sorting_asc" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 5%;">No</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="simpletable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width:auto;">Nama</th>
+                                                                <th tabindex="0" rowspan="1" colspan="1" style="width: 15%;">Aksi</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+
                                                             <?php foreach ($tamu as $key => $value) { ?>
                                                                 <tr class="align-center">
                                                                     <td><?= $key + 1 ?></td>
                                                                     <td><?= $value->Nama_Tamu ?></td>
                                                                     <td class="card-block icon-btn">
-                                                                        <button type="button" id="btn-wa" class="btn btn-success btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" data-nowa="<?= $value->Wa_Tamu ?>" title="Whatsapp <?= $value->Wa_Tamu ?>">
+                                                                        <?php
+                                                                        if (isset($value->Wa_Tamu)) {
+                                                                            echo '<button type="button" id="btn-wa" class="btn btn-success btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" data-nowa="' . $value->Wa_Tamu . '" title="Whatsapp ' . $value->Wa_Tamu . '">
                                                                             <i class="fa fa-whatsapp"></i>
-                                                                        </button>
-                                                                        <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Email">
+                                                                        </button>';
+                                                                        }
+
+                                                                        if (isset($value->Email_Tamu)) {
+                                                                            echo ' <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Email">
                                                                             <i class="fa fa-envelope"></i>
-                                                                        </button>
+                                                                        </button>';
+                                                                        }
+                                                                        ?>
+
                                                                         <button type="button" class="btn btn-info  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                                                             <i class="fa fa-edit"></i>
                                                                         </button>
                                                                         <span data-toggle="modal" data-target="#detail-Modal">
-                                                                            <button type="button" id="btn-detail" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>" class="btn btn-warning  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Detail">
+                                                                            <button type="button" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>" class="btn-detail btn btn-warning  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Detail">
                                                                                 <i class="fa fa-eye"></i>
                                                                             </button>
                                                                         </span>
                                                                         <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
                                                                             <i class="fa fa-trash"></i>
                                                                         </button>
+
                                                                     </td>
-                                                                <?php } ?>
-                                                                <!-- <tr role="row" class="odd">
-                                                                    <td class="sorting_1">Airi Satou</td>
-                                                                    <td>Accountant</td>
-                                                                    <td>Tokyo</td>
-                                                                </tr> -->
+                                                                </tr>
+                                                            <?php } ?>
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
-                                                                <th rowspan="1" colspan="1">No</th>
+                                                                <th rowspan="1" colspan="1" width="5%">No</th>
                                                                 <th rowspan="1" colspan="1">Nama</th>
                                                                 <th rowspan="1" colspan="1">Aksi</th>
                                                             </tr>
@@ -171,17 +177,23 @@
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div class="modal-body detail-body">
-
+                        <div class="modal-body">
+                            <dl class="dl-horizontal row p-3 m-b-0 f-20">
+                                <dt class="col-sm-4 m-b-15 ">Nama</dt>
+                                <dd class="col-sm-8 m-b-15 detail-nama"></dd>
+                                <dt class="col-sm-4 m-b-15">Email</dt>
+                                <dd class="col-sm-8 m-b-15 detail-email"></dd>
+                                <dt class="col-sm-4 m-b-15">No WA</dt>
+                                <dd class="col-sm-8 m-b-15 detail-wa"></dd>
+                            </dl>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Kembali</button>
-
+                            <button type="button" class="btn btn-primary waves-effect " data-dismiss="modal">Kembali</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- MODAL DETAIL TAMU -->
+            <!-- END DETAIL TAMU -->
         </div>
     </div>
 </div>

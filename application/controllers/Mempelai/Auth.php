@@ -34,7 +34,10 @@ class Auth extends CI_Controller
         $pass = $this->input->post('password');
         // echo $pass;
         $akun = $this->db->get_where('tb_akun', ['Email_akun' => $email])->row_array();
-
+        // $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun =$akun['ID_akun']");
+        $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun ='" . $akun['ID_akun'] . "'")->row_array();
+        // var_dump($id_undangan['ID_Undangan']);
+        // die;
         if ($akun) {
             //jika user aktif
             if ($akun['Status_akun'] == 1) {
@@ -43,7 +46,8 @@ class Auth extends CI_Controller
                     $data = [
                         'username' => $akun['Username'],
                         'Email_akun' => $akun['Email_akun'],
-                        'ID' => $akun['ID_akun']
+                        'ID' => $akun['ID_akun'],
+                        'ID_Undangan' => $id_undangan['ID_Undangan']
                     ];
                     $this->session->set_userdata($data);
                     redirect("Mempelai/Dashboard");
@@ -214,7 +218,7 @@ class Auth extends CI_Controller
             'tgl_selesaiakun' => time() + (60 * 60 * 24 * 7)
         ];
 
-        $this->session->set_userdata('ID_undangan', $kode);
+        // $this->session->set_userdata('ID_undangan', $kode);
         $this->Auth_Model->tambah_data_undangan($data);
     }
 

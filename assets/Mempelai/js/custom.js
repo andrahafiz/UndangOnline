@@ -8,12 +8,21 @@ gtag('js', new Date());
 gtag('config', 'UA-23581568-13');
 
 
-$("#btn-detail").on("click", function() {
-    const nama = $(this).data('nama');
-    const nomor = $(this).data('wa');
-    const email = $(this).data('email');
-    // $("#nama-detil").attr("value", nama);
-    $('.detail-body').append(nama + "+" + nomor);
+$(".btn-detail").on("click", function() {
+    var nama = $(this).data('nama');
+    var nomor = $(this).data('wa');
+    var email = $(this).data('email');
+
+    if(nomor ==""){
+        nomor="Tidak ada data";
+    }
+     if(email==""){
+        email="Tidak ada data";
+    }
+
+    $('.detail-nama').text(nama);
+    $('.detail-wa').text(nomor);
+    $('.detail-email').text(email);
     // $('.detail-body').append()
 
 })

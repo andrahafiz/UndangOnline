@@ -13,14 +13,21 @@ class Tamu extends CI_Controller
     // }
     public function index()
     {
-        $this->session->userdata('ID_undangan');
-        $tamu = $this->Tamu_Model->selectAll();
+        $id =   $this->session->userdata('ID_Undangan');
+        $tamu = $this->Tamu_Model->selectbyid($id);
         $data = array(
             'judul' => 'Tamu Undangan',
             'menu' => menu_mempelai(),
             'tamu' => $tamu
         );
-
+        // var_dump($data['tamu'][0]->UcapanSelamat);
+        // // echo $data['tamu']['UcapanSelamat'];
+        // if ($data['tamu'][0]->UcapanSelamat == null) {
+        //     echo "kosong";
+        // } else {
+        //     echo "berisi";
+        // }
+        // die;
         $this->load->view('Mempelai/layout/header', $data);
         $this->load->view('Mempelai/Tamu/View_Tamu', $data);
         $this->load->view('Mempelai/layout/footer');
@@ -57,7 +64,7 @@ class Tamu extends CI_Controller
     {
         $data = [
             'ID_TamuUndangan' => kode_otomatis('tb_tamu', 'ID_TamuUndangan'),
-            'ID_Undangan' => htmlspecialchars($this->input->post('ID_undangan', true)),
+            // 'ID_Undangan' => htmlspecialchars($this->input->post('ID_undangan', true)),
             'Nama_Tamu' => htmlspecialchars($this->input->post('nama_tamu', true)),
             'Email_Tamu' => htmlspecialchars($this->input->post('email_tamu', true)),
             'Wa_Tamu' => htmlspecialchars($this->input->post('wa_tamu', true)),

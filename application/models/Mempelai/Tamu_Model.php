@@ -7,6 +7,16 @@ class Tamu_Model extends CI_Model
         return $this->db->get('tb_tamu')->result();
     }
 
+    public function selectbyid($id)
+    {
+        // $this->db->where('pekerjaan_id', $id);
+        // $sql = "SELECT * FROM `view_mempelai` WHERE ID_akun='$id'";
+        // $query = $this->db->query($sql);
+        $query =  $this->db->get_where('tb_tamu', ['ID_Undangan' => $id]);
+        $hasil = $query->result();
+        return $hasil;
+    }
+
     public function tambah_data_tamu($data)
     {
         $this->db->insert('tb_tamu', $data);
