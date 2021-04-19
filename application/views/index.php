@@ -89,16 +89,16 @@
                                         <a class="page-scroll" href="#home">Beranda</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#features">Tema</a>
+                                        <a class="page-scroll" href="#features">Harga</a>
                                     </li>
                                     <!-- <li class="nav-item">
                                         <a class="page-scroll" href="#about">About</a>
                                     </li> -->
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#facts">Harga</a>
+                                        <a class="page-scroll" href="#facts">Survey</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#team">Login</a>
+                                        <a class="page-scroll" href="#team">Tema</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#blog">Blog</a>
@@ -122,7 +122,7 @@
                         <div class="header-hero-content text-center">
                             <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Website</h3>
                             <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Undangan Pernikahan Online</h2>
-                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Undang orang-orang terdekatmu, dengan menggunakan undangan pernikahan online yang praktis di GET MARRIED.</p>
                             <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Demo</a>
                         </div> <!-- header hero content -->
                     </div>
@@ -176,13 +176,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="subscribe-content mt-45">
-                        <h2 class="subscribe-title">Subscribe Our Newsletter <span>get reguler updates</span></h2>
+                        <h2 class="subscribe-title">Cari Undangan Kamu,<span> Dan Dapatkan Undangan Yang Menarik Disini!</span></h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="subscribe-form mt-50">
                         <form action="#">
-                            <input type="text" placeholder="Enter eamil">
+                            <input type="text" placeholder="Cari Undangan">
                             <button class="main-btn">Cari Undangan</button>
                         </form>
                     </div>
@@ -202,10 +202,9 @@
                 <div class="col-lg-10">
                     <div class="section-title text-center pb-40">
                         <div class="line m-auto"></div>
-                        <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Tema</h2>
-                        <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Temukan tema yang menarik dari GET MARRIED!</h3>
-
-                        <!-- <h3 class="title">Tema <span> Temukan tema yang menarik dari GET MARRIED!</span></h3> -->
+                        <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Cek Harga Disini,</h2>
+                        <h3 class="title"> <span> Dan Dapatkan Sesuai Yang Kamu Mau!</span></h3>
+                        <p class="text">Disini kamu dapat memilih harga paket undangan sesuai dengan yang kamu butuhkan.</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -370,9 +369,9 @@
                         <div class="counter-content">
                             <div class="section-title">
                                 <div class="line"></div>
-                                <h3 class="title">Cool facts <span> this about app</span></h3>
+                                <h3 class="title">Cek Harga Disini, <span> Dan Dapatkan Sesuai Yang Kamu Mau!</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <p class="text">Disini kamu dapat memilih harga paket undangan sesuai dengan yang kamu butuhkan.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
                             <div class="col-4">
@@ -416,7 +415,7 @@
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-30">
                         <div class="line m-auto"></div>
-                        <h3 class="title"><span>Meet Our</span> Creative Team Members</h3>
+                        <h3 class="title"> <span> Temukan tema yang menarik dari GET MARRIED!</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -492,7 +491,7 @@
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-40">
                         <div class="line m-auto"></div>
-                        <h3 class="title">Users sharing<span> their experience</span></h3>
+                        <h3 class="title">Alasan Memilih<span> Get Married</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -503,7 +502,10 @@
                             <div class="quota">
                                 <i class="lni-quotation"></i>
                             </div>
-                            <div class="star">
+                            <div>
+                                <h5 class="holder-name">Fiona Smith</a></h5>
+                            </div>
+                            <!-- <div class="star">
                                 <ul>
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
@@ -511,7 +513,7 @@
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="testimonial-text">
                             <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
@@ -534,7 +536,10 @@
                             <div class="quota">
                                 <i class="lni-quotation"></i>
                             </div>
-                            <div class="star">
+                            <div>
+                                <h5 class="holder-name">Fiona Smith</a></h5>
+                            </div>
+                            <!-- <div class="star">
                                 <ul>
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
@@ -542,7 +547,7 @@
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="testimonial-text">
                             <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
@@ -565,7 +570,10 @@
                             <div class="quota">
                                 <i class="lni-quotation"></i>
                             </div>
-                            <div class="star">
+                            <div>
+                                <h5 class="holder-name">Fiona Smith</a></h5>
+                            </div>
+                            <!-- <div class="star">
                                 <ul>
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
@@ -573,7 +581,7 @@
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="testimonial-text">
                             <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
@@ -596,7 +604,10 @@
                             <div class="quota">
                                 <i class="lni-quotation"></i>
                             </div>
-                            <div class="star">
+                            <div>
+                                <h5 class="holder-name">Fiona Smith</a></h5>
+                            </div>
+                            <!-- <div class="star">
                                 <ul>
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
@@ -604,7 +615,7 @@
                                     <li><i class="lni-star-filled"></i></li>
                                     <li><i class="lni-star-filled"></i></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="testimonial-text">
                             <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
