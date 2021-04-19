@@ -170,28 +170,25 @@
     <!-- </div> -->
 
     <!--====== BRAMD PART ENDS ======-->
-
-    <div class="container">
-        <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container mt-85">
+        <div class="undangan-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="subscribe-content mt-45">
-                        <h2 class="subscribe-title">Cari Undangan Kamu,<span> Dan Dapatkan Undangan Yang Menarik Disini!</span></h2>
+                <div class="col-lg-4">
+                    <div class="undangan-content mt-65">
+                        <h2 class="undangan-title">Cari undangan</h2>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="subscribe-form mt-50">
+                <div class="col-lg-8">
+                    <div class="undangan-form mt-50">
                         <form action="#">
-                            <input type="text" placeholder="Cari Undangan">
-                            <button class="main-btn">Cari Undangan</button>
+                            <input type="text" placeholder="Enter eamil">
+                            <button class="main-btn">Subscribe</button>
                         </form>
                     </div>
                 </div>
-            </div> <!-- row -->
-        </div> <!-- subscribe area -->
+            </div>
+        </div>
     </div>
-
-
     <!--====== SERVICES PART START ======-->
 
 
@@ -702,23 +699,42 @@
 
     <!--====== BLOG PART ENDS ======-->
 
+
     <!--====== FOOTER PART START ======-->
 
     <footer id="footer" class="footer-area pt-120">
         <div class="container">
+            <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="subscribe-content mt-45">
+                            <h2 class="subscribe-title">Subscribe Our Newsletter <span>get reguler updates</span></h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="subscribe-form mt-50">
+                            <form action="#">
+                                <input type="text" placeholder="Enter eamil">
+                                <button class="main-btn">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end subscribe area -->
             <div class="footer-widget pb-100">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-8">
                         <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <a class="logo" href="#">
-                                <img src="<?= base_url(); ?>assets/LandingPage/images/logo.svg" alt="logo">
+                                <img src="assets/images/logo.svg" alt="logo">
                             </a>
                             <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
                             <ul class="social">
-                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
                             </ul>
                         </div> <!-- footer about -->
                     </div>
@@ -790,15 +806,15 @@
 
     <!--====== PART START ======-->
 
-    <!--
-    <section class="">
+
+    <!-- <section class="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-"></div>
             </div>
         </div>
-    </section>
--->
+    </section> -->
+
 
     <!--====== PART ENDS ======-->
 
