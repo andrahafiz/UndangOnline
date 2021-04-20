@@ -72,7 +72,7 @@
                                         </div>
                                         <!-- <input type="file" class="custom-file-input" name="image_pria" id="file_pria"> -->
                                         <!-- <input type="file" class="custom-file-input" name="image_wanita" id="file_wanita" onchange="tampilkanPreview(this,'preview_2')"> -->
-                                        <input type="file" id="foto_mwanita" name="foto_MPwanita" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_wanita')">
+                                        <input type="file" id="foto_mwanita" name="foto_MWanita" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'prev_wanita')">
                                         <p class="f-w-600 m-b-5">Nama Lengkap</p>
                                         <input type="text" id="nama_mwanita" name="nama_mwanita" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->Nama_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Nama Panggilan</p>

@@ -26,7 +26,7 @@ class Mempelai extends CI_Controller
             $this->load->view('Mempelai/Mempelai/Mempelai_View');
             $this->load->view('Mempelai/layout/footer');
         } else {
-            $id = htmlspecialchars($this->input->post('id_mempelai', true));    
+            $id = htmlspecialchars($this->input->post('id_mempelai', true));
             $this->Mempelai_Model->update($id, $this->data());
             $this->pesan('sukses', 'Data mempelai telah diubah');
             redirect('Mempelai/Mempelai');
@@ -53,29 +53,37 @@ class Mempelai extends CI_Controller
 
         $namefoto = array("MPria", "MWanita");
         $this->load->library('upload', $config);
+        // echo count($namefoto);
+        // die;
         for ($i = 0; $i < count($namefoto); $i++) {
             // echo 'foto_' . $namefoto[$i];
 
-            if (!empty($_FILES['foto_' . $namefoto[$i]]['name'])) {
+            // echo $namefoto[$i];
+            // die;
 
+            if (!empty($_FILES['foto_' . $namefoto[$i]]['name'])) {
+                // echo "ada isi";
                 if (!$this->upload->do_upload('foto_' . $namefoto[$i])) {
                     //Kondisi Upload Gagal
                     $this->upload->display_errors();
                 } else {
-                    
                     //Kondisi Upload Berhasil
                     // echo "Foto berhasil di upload";
+                    // $new_image = $this->upload->data('file_name');
+                    // echo $new_image;
                     $old_image = $data['datamempelai']['Foto_' . $namefoto[$i]];
                     // var_dump($old_image);
+                    // var_dump($data['datamempelai']['Foto_' . $namefoto[$i]]);
                     // die;
-                    if ($old_image != 'default.jpg') {
+                    if ($old_image != Null) {
                         unlink(FCPATH . 'assets/Mempelai/images/image-mempelai/' . $old_image);
                     }
                     $new_image = $this->upload->data('file_name');
-                    $this->db->set('admin_image', $new_image);
+                    $this->db->set('tb_mempelai', $new_image);
+                    $this->db->where('tb_mempelai', $username);
+                    $this->db->update('tb_admin');
+                    // echo $new_image;
                 }
-            } else {
-                echo "gagal";
             }
         }
     }
