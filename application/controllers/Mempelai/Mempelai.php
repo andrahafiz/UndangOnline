@@ -26,7 +26,7 @@ class Mempelai extends CI_Controller
             $this->load->view('Mempelai/Mempelai/Mempelai_View');
             $this->load->view('Mempelai/layout/footer');
         } else {
-            $id = htmlspecialchars($this->input->post('id_mempelai', true));
+            $id = htmlspecialchars($this->input->post('id_mempelai', true));    
             $this->Mempelai_Model->update($id, $this->data());
             $this->pesan('sukses', 'Data mempelai telah diubah');
             redirect('Mempelai/Mempelai');
@@ -62,6 +62,7 @@ class Mempelai extends CI_Controller
                     //Kondisi Upload Gagal
                     $this->upload->display_errors();
                 } else {
+                    
                     //Kondisi Upload Berhasil
                     // echo "Foto berhasil di upload";
                     $old_image = $data['datamempelai']['Foto_' . $namefoto[$i]];
