@@ -56,15 +56,13 @@ class Tamu extends CI_Controller
         // } else {
         //     echo "asd";
         // }
-
-
     }
 
     private function _datatamu()
     {
         $data = [
             'ID_TamuUndangan' => kode_otomatis('tb_tamu', 'ID_TamuUndangan'),
-            // 'ID_Undangan' => htmlspecialchars($this->input->post('ID_undangan', true)),
+            'ID_Undangan' => $this->session->userdata('ID_Undangan'),
             'Nama_Tamu' => htmlspecialchars($this->input->post('nama_tamu', true)),
             'Email_Tamu' => htmlspecialchars($this->input->post('email_tamu', true)),
             'Wa_Tamu' => htmlspecialchars($this->input->post('wa_tamu', true)),

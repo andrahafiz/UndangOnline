@@ -55,7 +55,7 @@
                                                                     <td class="card-block icon-btn">
                                                                         <?php
                                                                         if (isset($value->Wa_Tamu)) {
-                                                                            echo '<button type="button" id="btn-wa" class="btn btn-success btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" data-nowa="' . $value->Wa_Tamu . '" title="Whatsapp ' . $value->Wa_Tamu . '">
+                                                                            echo '<button type="button" id="" class="btn-wa btn btn-success btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" data-nowa="' . $value->Wa_Tamu . '" title="Whatsapp ' . $value->Wa_Tamu . '">
                                                                             <i class="fa fa-whatsapp"></i>
                                                                         </button>';
                                                                         }
@@ -116,11 +116,9 @@
                             <!-- HTML5 Export Buttons end -->
                         </div>
                         <!-- END TABEL TAMU  -->
-
                     </div>
                 </div>
             </div>
-
 
             <!-- MODAL INPUTA DATA TAMU -->
             <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog">
@@ -128,7 +126,6 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h3 class="modal-title">Tambah Tamu Undangan</h3>
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
