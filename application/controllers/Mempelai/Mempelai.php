@@ -15,7 +15,6 @@ class Mempelai extends CI_Controller
     public function index()
     {
         $id =   $this->session->userdata('ID');
-
         $this->_formvalidation();
         if ($this->form_validation->run() == FALSE) {
             $data = array(
@@ -23,13 +22,11 @@ class Mempelai extends CI_Controller
                 'menu' => menu_mempelai(),
                 'data_mempelai' => $this->data_mempelai($id)
             );
-
             $this->load->view('Mempelai/layout/header', $data);
             $this->load->view('Mempelai/Mempelai/Mempelai_View');
             $this->load->view('Mempelai/layout/footer');
         } else {
-
-            $id = htmlspecialchars($this->input->post('id_mempelai', true));;
+            $id = htmlspecialchars($this->input->post('id_mempelai', true));
             $this->Mempelai_Model->update($id, $this->data());
             $this->pesan('sukses', 'Data mempelai telah diubah');
             redirect('Mempelai/Mempelai');
