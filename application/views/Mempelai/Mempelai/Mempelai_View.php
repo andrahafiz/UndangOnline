@@ -18,8 +18,11 @@
                 <?php
                 if (validation_errors()) {
                     echo "<div class='alert alert-danger'>" . validation_errors() . "</div>";
-                }
+                };
+                $this->session->flashdata('message');
                 ?>
+
+
                 <!-- Page-header end -->
 
                 <div class="page-body">
@@ -28,7 +31,7 @@
                     <?php
                     // echo form_open_multipart('Mempelai/Mempelai/edit'); 
                     ?>
-                    <form enctype="multipart/form-data" action=<?= base_url('Mempelai/Mempelai/testupload'); ?> method="POST" class="form-group">
+                    <form enctype="multipart/form-data" action=<?= base_url('Mempelai/Mempelai'); ?> method="POST" class="form-group">
                         <!-- <div class="form-group"> -->
                         <div class="row">
                             <div class="col-sm-6 ">
@@ -37,7 +40,7 @@
                                         <h3 class="f-w-600">Mempelai Pria</h3>
                                         <span>Data diri memepelai pria</span>
 
-                                        <input type="hidden" name="id_mempelai" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->ID_Mempelai; ?>">
+                                        <input type="text" name="id_mempelai" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->ID_Mempelai; ?>">
                                     </div>
                                     <div class="card-block ">
                                         <div class="text-center">
@@ -53,7 +56,7 @@
                                         <p class="f-w-600 m-b-5">Nama Orang Tua ( Ibu )</p>
                                         <input type="text" id="namaortuibu_mpria" name="namaortuibu_mpria" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NamaOrtu_Ibu_MPria; ?>">
                                         <p class="f-w-600 m-b-5">Nomor HP</p>
-                                        <input type="text" id="nohp_mpria" name="nohp_mpria" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NoHp_MPria; ?>">
+                                        <input type="number" id="nohp_mpria" name="nohp_mpria" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NoHp_MPria; ?>">
                                         <p class="f-w-600 m-b-5">Alamat</p>
                                         <textarea id="alamat_mpria" name="alamat_mpria" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"><?= $data_mempelai->Alamat_MPria; ?></textarea>
                                     </div>
@@ -68,7 +71,7 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="text-center">
-                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\<?= $data_mempelai->Foto_MPria == null ? 'user_wanita.png' : $data_mempelai->Foto_MPria; ?>" alt="" id="prev_wanita" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
+                                            <img src="<?= base_url(); ?>assets\Mempelai\images\mempelai\<?= $data_mempelai->Foto_MWanita == null ? 'user_wanita.png' : $data_mempelai->Foto_MWanita; ?>" alt="" id="prev_wanita" class="img-fluid img-thumbnail w-75 h-75 form-control-round m-b-30 z-depth-bottom-0">
                                         </div>
                                         <!-- <input type="file" class="custom-file-input" name="image_pria" id="file_pria"> -->
                                         <!-- <input type="file" class="custom-file-input" name="image_wanita" id="file_wanita" onchange="tampilkanPreview(this,'preview_2')"> -->
@@ -82,7 +85,7 @@
                                         <p class="f-w-600 m-b-5">Nama Orang Tua ( Ibu )</p>
                                         <input type="text" id="namaortuibu_mwanita" name="namaortuibu_mwanita" class="form-control form-control-round m-b-10" value="<?= $data_mempelai->NamaOrtu_Ibu_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Nomor HP</p>
-                                        <input type="text" id="nohp_mwanita" name="nohp_mwanita" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NoHp_MWanita; ?>">
+                                        <input type="number" id="nohp_mwanita" name="nohp_mwanita" class="form-control  form-control-round m-b-10" value="<?= $data_mempelai->NoHp_MWanita; ?>">
                                         <p class="f-w-600 m-b-5">Alamat</p>
                                         <textarea id="alamat_mwanita" name="alamat_mwanita" class="form-control max-textarea form-control-round p-20" maxlength="255" rows="4"><?= $data_mempelai->Alamat_MWanita; ?></textarea>
 

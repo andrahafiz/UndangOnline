@@ -72,6 +72,7 @@ class Tamu extends CI_Controller
         return $data;
     }
 
+   
 
     public function coba()
     {

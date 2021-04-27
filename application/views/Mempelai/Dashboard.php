@@ -10,10 +10,12 @@
                             <div class="card widget-card-1">
                                 <div class="card-block-small">
                                     <i class="feather icon-user bg-c-blue card1-icon"></i>
-                                    <span class="text-c-blue f-w-900 f-20">Tamu Undangan</span>
-                                    <h3 class="m-t-15">100 Orang</h3>
+                                    <span class="text-c-blue f-w-900 f-20">Tamu Undangan
+
+                                    </span>
+                                    <h3 class="m-t-15"> <?= $jml_tamu ?> Orang</h3>
                                 </div>
-                                <a href="<?= base_url("Mempelai"); ?>">
+                                <a href="<?= base_url("Mempelai/Tamu"); ?>">
                                     <div class="card-footer bg-c-blue">
                                         <div class="row align-items-center  text-left">
                                             <div class="col">

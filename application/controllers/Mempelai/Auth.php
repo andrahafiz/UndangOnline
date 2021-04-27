@@ -4,6 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Auth extends CI_Controller
 {
 
+
     function __construct()
     {
         parent::__construct();
@@ -46,7 +47,7 @@ class Auth extends CI_Controller
                     $data = [
                         'username' => $akun['Username'],
                         'Email_akun' => $akun['Email_akun'],
-                        'ID' => $akun['ID_akun'],
+                        'ID_Akun' => $akun['ID_akun'],
                         'ID_Undangan' => $id_undangan['ID_Undangan']
                     ];
                     $this->session->set_userdata($data);

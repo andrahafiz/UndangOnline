@@ -14,7 +14,7 @@ class Acara extends CI_Controller
 
     public function index()
     {
-        $id =   $this->session->userdata('ID');
+        $id =   $this->session->userdata('ID_Akun');
         $this->_formvalidation();
         if ($this->form_validation->run() == FALSE) {
             $data = array(
