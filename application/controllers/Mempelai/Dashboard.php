@@ -17,8 +17,6 @@ class Dashboard extends CI_Controller
 
         // var_dump($result);
         $id_undangan = $this->session->userdata('ID_Undangan');
-
-
         $data = array(
             'judul' => 'Dashboard',
             'menu' => menu_mempelai(),
