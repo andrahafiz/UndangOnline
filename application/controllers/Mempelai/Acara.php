@@ -9,7 +9,7 @@ class Acara extends CI_Controller
         parent::__construct();
         $this->load->model('Mempelai/Acara_Model');
         $this->load->helper('my_function_helper');
-        // cekaccess();
+        cekaccess();
     }
 
     public function index()

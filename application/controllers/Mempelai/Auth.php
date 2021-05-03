@@ -45,8 +45,8 @@ class Auth extends CI_Controller
                 //cek password
                 if (password_verify($pass, $akun['Password_akun'])) {
                     $data = [
-                        'username' => $akun['Username'],
-                        'Email_akun' => $akun['Email_akun'],
+                        'Username' => $akun['Username'],
+                        'Email_Akun' => $akun['Email_akun'],
                         'ID_Akun' => $akun['ID_akun'],
                         'ID_Undangan' => $id_undangan['ID_Undangan']
                     ];
@@ -154,9 +154,10 @@ class Auth extends CI_Controller
     }
     public function logout()
     {
-        $this->session->unset_userdata("username");
-        $this->session->unset_userdata("Email_akun");
-        $this->session->unset_userdata("ID");
+        $this->session->unset_userdata("Username");
+        $this->session->unset_userdata("Email_Akun");
+        $this->session->unset_userdata("ID_Akun");
+        $this->session->unset_userdata("ID_Undangan");
         $this->session->sess_destroy();
         redirect('Mempelai/Auth');
     }

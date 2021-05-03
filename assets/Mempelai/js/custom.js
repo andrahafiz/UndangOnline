@@ -1,3 +1,4 @@
+$("#Modal-P").modal({ backdrop: 'static', keyboard: false, show: true });
 window.dataLayer = window.dataLayer || [];
 
 function gtag() {
@@ -8,16 +9,16 @@ gtag('js', new Date());
 gtag('config', 'UA-23581568-13');
 
 
-$(".btn-detail").on("click", function() {
+$(".btn-detail").on("click", function () {
     var nama = $(this).data('nama');
     var nomor = $(this).data('wa');
     var email = $(this).data('email');
 
-    if(nomor ==""){
-        nomor="Tidak ada data";
+    if (nomor == "") {
+        nomor = "Tidak ada data";
     }
-     if(email==""){
-        email="Tidak ada data";
+    if (email == "") {
+        email = "Tidak ada data";
     }
 
     $('.detail-nama').text(nama);
@@ -26,7 +27,7 @@ $(".btn-detail").on("click", function() {
     // $('.detail-body').append()
 
 })
-$(".btn-wa").on("click", function() {
+$(".btn-wa").on("click", function () {
     const nomor = $(this).data('nowa');
     // console.log(nomor);
     // https://api.whatsapp.com/send?phone=6289661083456&text=Halo%0ASaya%20Ingin%20Bekerja%20Sama
@@ -40,3 +41,4 @@ $(".btn-wa").on("click", function() {
     }
     return false;
 })
+
