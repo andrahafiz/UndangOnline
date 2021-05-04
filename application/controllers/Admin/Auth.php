@@ -16,11 +16,11 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata("username")) {
-            redirect('Mempelai/Dashboard');
-        }
-        $this->form_validation->set_rules('email', 'email', 'required|trim');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        // if ($this->session->userdata("username")) {
+        //     redirect('Mempelai/Dashboard');
+        // }
+        $this->form_validation->set_rules('username', 'username', 'required|trim');
+        $this->form_validation->set_rules('password', 'password', 'required|trim');
         if ($this->form_validation->run() == False) {
             $this->load->view('Admin/Auth/V_LoginAdmin');
         } else {
@@ -31,40 +31,28 @@ class Auth extends CI_Controller
     private function _login()
     {
 
-        $email = $this->input->post('email');
+        $username = $this->input->post('username');
         $pass = $this->input->post('password');
-        // echo $pass;
-        $akun = $this->db->get_where('tb_akun', ['Email_akun' => $email])->row_array();
-        // $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun =$akun['ID_akun']");
-        $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun ='" . $akun['ID_akun'] . "'")->row_array();
-        // var_dump($id_undangan['ID_Undangan']);
-        // die;
+        #echo $email;
+        #echo $pass;
+        $akun = $this->db->get_where('tb_admin', ['Username_Admin' => $username])->row_array();
+        // var_dump($akun);
         if ($akun) {
-            //jika user aktif
-            if ($akun['Status_akun'] == 1) {
-                //cek password
-                if (password_verify($pass, $akun['Password_akun'])) {
-                    $data = [
-                        'Username' => $akun['Username'],
-                        'Email_Akun' => $akun['Email_akun'],
-                        'ID_Akun' => $akun['ID_akun'],
-                        'ID_Undangan' => $id_undangan['ID_Undangan']
-                    ];
-                    $this->session->set_userdata($data);
-                    redirect("Mempelai/Dashboard");
+            if ($akun["Status_Admin"] == 1) {
+                if ($pass == $akun["Password_Admin"]) {
+                    echo "berhasil";
                 } else {
-                    $this->pesan('gagal', 'Password anda salah');
-                    redirect('Mempelai/Auth');
+
+                    echo "Salah masukkan password";
                 }
             } else {
-                $this->pesan('warning', 'Akun belum di aktifasi');
-                redirect('Mempelai/Auth');
+                echo "akun tidak aktif";
             }
         } else {
-            $this->pesan('gagal', 'Akun tidak ditemukan');
-            redirect('Mempelai/Auth');
+            echo "Akun anda tidak ada,Silahkan daftar";
         }
     }
+
 
     public function register()
     {
