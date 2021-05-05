@@ -4,33 +4,7 @@
         <div class="main-body">
             <div class="page-wrapper">
                 <!-- Page-header start -->
-                <div class="page-header">
-                    <div class="row align-items-end">
-                        <div class="col-lg-8">
-                            <div class="page-header-title">
-                                <div class="d-inline">
-                                    <h4>HTML 5 Data Export</h4>
-                                    <span>HTML5 buttons provides the local file saving features</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="page-header-breadcrumb">
-                                <ul class="breadcrumb-title">
-                                    <li class="breadcrumb-item">
-                                        <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#!">Data Table Extensions</a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#!">Button</a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#!">HTML5 Data-Export</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- Page-header end -->
 
                 <!-- Page-body start -->
@@ -40,7 +14,7 @@
                             <!-- HTML5 Export Buttons table start -->
                             <div class="card">
                                 <div class="card-header table-card-header">
-                                    <h5>HTML5 Export Buttons</h5>
+                                    <h3>Data Akun Terdaftar</h3>
                                 </div>
                                 <div class="card-block">
                                     <div class="dt-responsive table-responsive">
