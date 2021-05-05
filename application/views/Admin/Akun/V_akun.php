@@ -50,26 +50,17 @@
                                             <table id="basic-btn" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="basic-btn_info">
                                                 <thead>
                                                     <tr role="row">
-                                                        <th class="sorting_asc" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188.4px;">Name</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282px;">Position</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Office</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68.4px;">Age</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 140.4px;">Start date</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Salary</th>
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188.4px;">ID Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282px;">Username</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Email Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68.4px;">No HP Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 140.4px;">Password Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Created Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Status Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Aksi </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -156,12 +147,15 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th rowspan="1" colspan="1">Name</th>
-                                                        <th rowspan="1" colspan="1">Position</th>
-                                                        <th rowspan="1" colspan="1">Office</th>
-                                                        <th rowspan="1" colspan="1">Age</th>
-                                                        <th rowspan="1" colspan="1">Start date</th>
-                                                        <th rowspan="1" colspan="1">Salary</th>
+                                                        <th rowspan="1" colspan="1">ID Akun</th>
+                                                        <th rowspan="1" colspan="1">Username</th>
+                                                        <th rowspan="1" colspan="1">Email Akun</th>
+                                                        <th rowspan="1" colspan="1">No HP Akun</th>
+                                                        <th rowspan="1" colspan="1">Password Akun</th>
+                                                        <th rowspan="1" colspan="1">Cretaed Akun</th>
+                                                        <th rowspan="1" colspan="1">Status Akun</th>
+                                                        <th rowspan="1" colspan="1">Aksi</th>
+
                                                     </tr>
                                                 </tfoot>
                                             </table>
