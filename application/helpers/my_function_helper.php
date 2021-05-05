@@ -23,6 +23,18 @@ function menu_mempelai()
     ];
     return $menu;
 }
+function menu_admin()
+{
+    $menu = [
+        //nama menu
+        ['Dashboard', 'Akun', 'Logout'],
+        //icon
+        ['feather icon-home', 'feather icon-users', 'feather icon-log-out'],
+        //url
+        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Auth/logout'],
+    ];
+    return $menu;
+}
 //cek login
 function cekaccess()
 {
