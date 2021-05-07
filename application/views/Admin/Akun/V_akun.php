@@ -20,6 +20,7 @@
                                             <table id="basic-btn" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="basic-btn_info">
                                                 <thead>
                                                     <tr role="row">
+                                                        <th rowspan="1" colspan="1">No Urut</th>
                                                         <th class="sorting_asc" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188.4px;">ID Akun</th>
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282px;">Username</th>
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Email Akun</th>
@@ -31,23 +32,30 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">Airi Satou</td>
-                                                        <td>Accountant</td>
-                                                        <td>Tokyo</td>
-                                                        <td>33</td>
-                                                        <td>2008/11/28</td>
-                                                        <td>$162,700</td>
-                                                        <td>$162,700</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light disabled" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
-                                                                <i class="fa fa-trash"></i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
+                                                    <?php
+                                                    foreach ($data_akun as $key => $value) {
+                                                    ?>
+                                                        <tr role="row">
+                                                            <td class="sorting_1"><?php echo $key + 1 ?></td>
+                                                            <td><?php echo $value->ID_akun ?></td>
+                                                            <td><?php echo $value->Username ?></td>
+                                                            <td><?php echo $value->Email_akun ?></td>
+                                                            <td><?php echo $value->NoHp_akun ?></td>
+                                                            <td></td>
+                                                            <td><?php echo $value->Created_akun ?></td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light disabled" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+                                                                    <i class="fa fa-trash"></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+
+
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
+                                                        <th rowspan="1" colspan="1">No Urut</th>
                                                         <th rowspan="1" colspan="1">ID Akun</th>
                                                         <th rowspan="1" colspan="1">Username</th>
                                                         <th rowspan="1" colspan="1">Email Akun</th>

@@ -40,7 +40,12 @@ class Auth extends CI_Controller
         if ($akun) {
             if ($akun["Status_Admin"] == 1) {
                 if ($pass == $akun["Password_Admin"]) {
-                    echo "berhasil";
+                    $data = [
+                        'ID_Akun' => $akun["ID_akun"],
+                        'Username_akun' => $akun["ID_Username"]
+                    ];
+
+                    redirect('Admin/Akun');
                 } else {
 
                     echo "Salah masukkan password";
