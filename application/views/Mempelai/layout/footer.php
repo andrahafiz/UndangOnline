@@ -68,11 +68,11 @@
 <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\js\jszip.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\js\pdfmake.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\js\vfs_fonts.js"></script>
-<!-- <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\dataTables.buttons.min.js"></script> -->
-<!-- <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\buttons.flash.min.js"></script> -->
-<!-- <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\jszip.min.js"></script> -->
-<!-- <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\vfs_fonts.js"></script> -->
-<!-- <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\buttons.colVis.min.js"></script> -->
+<script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\dataTables.buttons.min.js"></script>
+<script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\buttons.flash.min.js"></script>
+<script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\jszip.min.js"></script>
+<script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\vfs_fonts.js"></script>
+<script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\buttons.colVis.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\bower_components\datatables.net-buttons\js\buttons.print.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\bower_components\datatables.net-buttons\js\buttons.html5.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js"></script>
@@ -86,6 +86,7 @@
 
 <!-- Custom js -->
 <!-- <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\pages\advance-elements\swithces.js"></script> -->
+<script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\js\data-table-custom.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\pages\data-table\extensions\buttons\js\extension-btns-custom.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\js\pcoded.min.js"></script>
 <script src="<?= base_url(); ?>assets\Mempelai\js\vartical-layout.min.js"></script>
