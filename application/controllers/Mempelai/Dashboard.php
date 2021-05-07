@@ -17,10 +17,12 @@ class Dashboard extends CI_Controller
 
         // var_dump($result);
         $id_undangan = $this->session->userdata('ID_Undangan');
+        $tamu = $this->Tamu_Model->selectbyid($id_undangan);
         $data = array(
             'judul' => 'Dashboard',
             'menu' => menu_mempelai(),
-            'jml_tamu' => $this->Tamu_Model->jumlahtamu($id_undangan)
+            'jml_tamu' => $this->Tamu_Model->jumlahtamu($id_undangan),
+            'tamu' => $tamu
         );
 
         $this->load->view('Mempelai/layout/header', $data);

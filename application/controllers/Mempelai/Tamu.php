@@ -13,8 +13,8 @@ class Tamu extends CI_Controller
     // }
     public function index()
     {
-        $id =   $this->session->userdata('ID_Undangan');
-        $tamu = $this->Tamu_Model->selectbyid($id);
+        $id_undangan =   $this->session->userdata('ID_Undangan');
+        $tamu = $this->Tamu_Model->selectbyid($id_undangan);
         $data = array(
             'judul' => 'Tamu Undangan',
             'menu' => menu_mempelai(),
@@ -72,7 +72,7 @@ class Tamu extends CI_Controller
         return $data;
     }
 
-   
+
 
     public function coba()
     {
