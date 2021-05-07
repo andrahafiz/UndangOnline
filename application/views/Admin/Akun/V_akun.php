@@ -25,7 +25,6 @@
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282px;">Username</th>
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Email Akun</th>
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68.4px;">No HP Akun</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 140.4px;">Password Akun</th>
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Created Akun</th>
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Status Akun</th>
                                                         <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Aksi </th>
@@ -41,10 +40,17 @@
                                                             <td><?php echo $value->Username ?></td>
                                                             <td><?php echo $value->Email_akun ?></td>
                                                             <td><?php echo $value->NoHp_akun ?></td>
-                                                            <td></td>
                                                             <td><?php echo $value->Created_akun ?></td>
+                                                            <td><?php
+
+                                                                if ($value->Status_akun == 1) {
+                                                                    echo '<label class="badge badge-lg bg-success">Aktif</label>';
+                                                                } elseif ($value->Status_akun == 0) {
+                                                                    echo '<label class="badge badge-lg bg-danger">Tidak Aktif</label>';
+                                                                }
+                                                                ?></td>
                                                             <td>
-                                                                <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light disabled" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+                                                                <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
                                                                     <i class="fa fa-trash"></i>
                                                                 </button>
                                                             </td>
@@ -60,7 +66,6 @@
                                                         <th rowspan="1" colspan="1">Username</th>
                                                         <th rowspan="1" colspan="1">Email Akun</th>
                                                         <th rowspan="1" colspan="1">No HP Akun</th>
-                                                        <th rowspan="1" colspan="1">Password Akun</th>
                                                         <th rowspan="1" colspan="1">Cretaed Akun</th>
                                                         <th rowspan="1" colspan="1">Status Akun</th>
                                                         <th rowspan="1" colspan="1">Aksi</th>

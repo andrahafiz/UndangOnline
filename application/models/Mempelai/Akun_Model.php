@@ -23,10 +23,10 @@ class Akun_Model extends CI_Model
         return $hasil;
     }
 
-    public function update($id, $data)
+    public function ganti_status($id, $data)
     {
 
-        $this->db->where('ID_Acara', $id);
-        $this->db->update('tb_acara', $data);
+        $this->db->where('ID_akun', $id);
+        $this->db->update('tb_akun', $data);
     }
 }

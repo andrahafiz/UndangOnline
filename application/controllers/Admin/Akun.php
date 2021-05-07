@@ -24,4 +24,8 @@ class Akun extends CI_Controller
         $this->load->view('Admin/Akun/V_Akun', $data);
         $this->load->view('Admin/layout/footer');
     }
+    public function ubah_status($id)
+    {
+        $this->Akun_Model->
+    }
 }
