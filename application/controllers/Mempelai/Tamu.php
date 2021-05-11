@@ -20,6 +20,10 @@ class Tamu extends CI_Controller
             'menu' => menu_mempelai(),
             'tamu' => $tamu
         );
+        // var_dump($tamu);
+        // echo "<br><br>";
+        // var_dump($data);
+        // die;
         // var_dump($data['tamu'][0]->UcapanSelamat);
         // // echo $data['tamu']['UcapanSelamat'];
         // if ($data['tamu'][0]->UcapanSelamat == null) {
@@ -33,9 +37,16 @@ class Tamu extends CI_Controller
         $this->load->view('Mempelai/layout/footer');
     }
 
-    public function test()
+    public function delete($id_undangan)
     {
-        echo "test";
+        $this->Tamu_Model->delete($id_undangan);
+        if ($this->db->affected_rows() > 0) {
+            echo "<script> alert('data berhasil di hapus');</script>";
+            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+        } else {
+            echo "<script> alert('data tidak berhasil di hapus');</script>";
+            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+        }
     }
 
     public function tambahdata()
@@ -43,8 +54,9 @@ class Tamu extends CI_Controller
         $data = $this->_datatamu();
         $this->Tamu_Model->tambah_data_tamu($data);
         if ($this->db->affected_rows() > 0) {
-            echo "<script> alert('data berhasil');</script>";
-            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            // echo "<script> alert('data berhasil');</script>";
+            // echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+
         } else {
             echo "<script> alert('data tidak berhasil');</script>";
             echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";

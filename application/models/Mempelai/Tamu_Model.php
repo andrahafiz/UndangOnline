@@ -28,4 +28,10 @@ class Tamu_Model extends CI_Model
         $this->db->from('tb_tamu');
         return $this->db->count_all_results();
     }
+
+    public function delete($id_tamu)
+    {
+        $this->db->where('ID_TamuUndangan', $id_tamu);
+        $this->db->delete('tb_tamu');
+    }
 }

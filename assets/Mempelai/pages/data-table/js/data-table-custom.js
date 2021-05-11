@@ -503,8 +503,16 @@ $(document).ready(function () {
     // Styling js end
 
 
-    $('#simpletable').DataTable();
-    $('#table-tamu-ds').DataTable();
+    $('#simpletable').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
+        }
+    });
+    $('#table-tamu-ds').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
+        }
+    });
 
     $('#order-table').DataTable({
         "order": [
@@ -588,7 +596,7 @@ $(document).ready(function () {
 
     $('#lang-file').DataTable({
         "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
         }
     });
 

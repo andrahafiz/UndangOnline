@@ -100,6 +100,11 @@
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\bootstrap-tagsinput\js\bootstrap-tagsinput.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
 
+<!-- jquery file upload js -->
+<script src="<?= base_url(); ?>assets\Mempelai\pages\jquery.filer\js\jquery.filer.min.js"></script>
+<script src="<?= base_url(); ?>assets\Mempelai\pages\filer\custom-filer.js" type="text/javascript"></script>
+<script src="<?= base_url(); ?>assets\Mempelai\pages\filer\jquery.fileuploads.init.js" type="text/javascript"></script>
+
 <!-- Max-length js -->
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\bootstrap-maxlength\js\bootstrap-maxlength.js"></script>
 
