@@ -6,9 +6,9 @@
 * File Uploads
 */
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-	'use-strict';
+    'use-strict';
 
     //Example single
     $('#filer_input_single').filer({
@@ -28,12 +28,12 @@ $(document).ready(function(){
         addMore: true
     });
 
-	//Example 1
+    //Example 1
     $("#filer_input1").filer({
-        limit: null,
+        limit: 3,
         maxSize: null,
-        extensions: null,
-        changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-cloud-up-o"></i></div><div class="jFiler-input-text"><h3>Drag & Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn btn btn-primary waves-effect waves-light">Browse Files</a></div></div>',
+        extensions: ['jpg', 'jpeg', 'png'],
+        changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-cloud-up-o"></i></div><div class="jFiler-input-text"><h3>Tarik & Letakan file di sini</h3> <span style="display:inline-block; margin: 15px 0">atau</span></div><a class="jFiler-input-choose-btn btn btn-primary waves-effect waves-light">Cari File</a></div></div>',
         showThumbs: true,
         theme: "dragdropbox",
         templates: {
@@ -61,7 +61,7 @@ $(document).ready(function(){
                         </div>\
                     </li>',
             itemAppend: '<li class="jFiler-item">\
-                            <div class="jFiler-item-container">\
+                            <div class="jFiler  -item-container">\
                                 <div class="jFiler-item-inner">\
                                     <div class="jFiler-item-thumb">\
                                         <div class="jFiler-item-status"></div>\
@@ -102,16 +102,16 @@ $(document).ready(function(){
             data: null,
             type: 'POST',
             enctype: 'multipart/form-data',
-            beforeSend: function(){},
-            success: function(data, el){
+            beforeSend: function () { },
+            success: function (data, el) {
                 var parent = el.find(".jFiler-jProgressBar").parent();
-                el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
+                el.find(".jFiler-jProgressBar").fadeOut("slow", function () {
                     $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");
                 });
             },
-            error: function(el){
+            error: function (el) {
                 var parent = el.find(".jFiler-jProgressBar").parent();
-                el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
+                el.find(".jFiler-jProgressBar").fadeOut("slow", function () {
                     $("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");
                 });
             },
@@ -119,20 +119,20 @@ $(document).ready(function(){
             onProgress: null,
             onComplete: null
         },
-		files: [
-			{
-				name: "Desert.jpg",
-				size: 145,
-				type: "image/jpg",
-				file: "../files/assets/images/file-upload/Desert.jpg"
-			},
-			{
-				name: "overflow.jpg",
-				size: 145,
-				type: "image/jpg",
-				file: "../files/assets/images/file-upload/Desert.jpg"
-			}
-		],
+        files: [
+            {
+                name: "Desert.jpg",
+                size: 145,
+                type: "image/jpg",
+                file: "../files/assets/images/file-upload/Desert.jpg"
+            },
+            {
+                name: "overflow.jpg",
+                size: 145,
+                type: "image/jpg",
+                file: "../files/assets/images/file-upload/Desert.jpg"
+            }
+        ],
         addMore: false,
         clipBoardPaste: true,
         excludeName: null,
@@ -142,23 +142,23 @@ $(document).ready(function(){
         beforeSelect: null,
         onSelect: null,
         afterShow: null,
-        onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
+        onRemove: function (itemEl, file, id, listEl, boxEl, newInputEl, inputEl) {
             var file = file.name;
-            $.post('../plugins/jquery.filer/php/remove_file.php', {file: file});
+            $.post('../plugins/jquery.filer/php/remove_file.php', { file: file });
         },
         onEmpty: null,
         options: null,
         captions: {
-            button: "Choose Files",
-            feedback: "Choose files To Upload",
-            feedback2: "files were chosen",
-            drop: "Drop file here to Upload",
-            removeConfirmation: "Are you sure you want to remove this file?",
+            button: "Pilih File",
+            feedback: "Pilih File untuk di upload",
+            feedback2: "File telah dipilih",
+            drop: "Letakan file di sini untuk di upload",
+            removeConfirmation: "Apakah kamu yakin menghapus file ini?",
             errors: {
-                filesLimit: "Only {{fi-limit}} files are allowed to be uploaded.",
-                filesType: "Only Images are allowed to be uploaded.",
-                filesSize: "{{fi-name}} is too large! Please upload file up to {{fi-maxSize}} MB.",
-                filesSizeAll: "Files you've choosed are too large! Please upload files up to {{fi-maxSize}} MB."
+                filesLimit: "Hanya {{fi-limit}} file yang boleh di upload.",
+                filesType: "Hanya gambar yang dapat di upload.",
+                filesSize: "{{fi-name}} ukuran file terlalu! Harap unggah file hingga {{fi-maxSize}} MB.",
+                filesSizeAll: "File yang Anda pilih terlalu besar! Harap unggah file hingga  {{fi-maxSize}} MB."
             }
         }
     });

@@ -8,11 +8,18 @@ gtag('js', new Date());
 
 gtag('config', 'UA-23581568-13');
 
+$(".tombolUbah").on("click", function () {
+    var id = $(this).data("id");
+    alert(id);
+    // console.log(id);
+    $("#edit_id_undangan").attr("value", id);
+})
 
 $(".btn-detail").on("click", function () {
     var nama = $(this).data('nama');
     var nomor = $(this).data('wa');
     var email = $(this).data('email');
+
 
     if (nomor == "") {
         nomor = "Tidak ada data";

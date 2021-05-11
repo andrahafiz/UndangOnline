@@ -20,7 +20,7 @@ class Galeri extends CI_Controller
         );
 
         $this->load->view('Mempelai/layout/header', $data);
-        $this->load->view('Mempelai/Dashboard');
+        $this->load->view('Mempelai/Galeri/V_Galeri');
         $this->load->view('Mempelai/layout/footer');
     }
 }

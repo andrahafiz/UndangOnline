@@ -3,6 +3,7 @@
         <div class="main-body">
             <div class="page-wrapper">
                 <div class="page-body">
+                    <?= $this->session->flashdata('message'); ?>
                     <div class="row">
                         <!--  TABEL TAMU  -->
                         <div class="col-xl-12 col-md-12">
@@ -36,7 +37,10 @@
                                                         </thead>
                                                         <tbody>
 
-                                                            <?php foreach ($tamu as $key => $value) { ?>
+                                                            <?php
+                                                            // if ($tamu->num_rows > 0) {
+
+                                                            foreach ($tamu as $key => $value) { ?>
                                                                 <tr class="align-center">
                                                                     <td><?= $key + 1 ?></td>
                                                                     <td><?= $value->Nama_Tamu ?></td>
@@ -54,22 +58,25 @@
                                                                         </button>';
                                                                         }
                                                                         ?>
-
-                                                                        <button type="button" class="btn btn-info  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                                                            <i class="fa fa-edit"></i>
-                                                                        </button>
+                                                                        <span data-toggle="modal" data-target="#edit-Modal">
+                                                                            <button type="button" id="" data-id="<?= $value->ID_TamuUndangan ?>" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>" class="tombolUbah btn btn-info  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                                                                <i class="fa fa-edit"></i>
+                                                                            </button>
+                                                                        </span>
                                                                         <span data-toggle="modal" data-target="#detail-Modal">
                                                                             <button type="button" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>" class="btn-detail btn btn-warning  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Detail">
                                                                                 <i class="fa fa-eye"></i>
                                                                             </button>
                                                                         </span>
-                                                                        <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
-                                                                            <i class="fa fa-trash"></i>
-                                                                        </button>
-
+                                                                        <a href="<?= base_url('Mempelai/Tamu/delete/' . $value->ID_TamuUndangan) ?>">
+                                                                            <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+                                                                                <i class="fa fa-trash"></i>
+                                                                            </button>
+                                                                        </a>
                                                                     </td>
                                                                 </tr>
-                                                            <?php } ?>
+                                                            <?php
+                                                            } ?>
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
@@ -112,17 +119,17 @@
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
                                         <input type="hidden" id="id_undangan" name="id_undangan" value="<?= $this->session->userdata('ID_undangan'); ?>" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
-                                        <input type="text" id="nama_tamu" name="nama_tamu" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
+                                        <input type="text" required id="nama_tamu" name="nama_tamu" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
                                     </div>
                                     <p class="f-w-900 m-b-5">Email</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-email"></i></span>
-                                        <input type="text" id="email_tamu" name="email_tamu" class="form-control form-control-round  m-b-10" placeholder="Email Tamu">
+                                        <input type="text" required id="email_tamu" name="email_tamu" class="form-control form-control-round  m-b-10" placeholder="Email Tamu">
                                     </div>
                                     <p class="f-w-900 m-b-5">Nomor Whatasapp Tamu</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
-                                        <input type="text" id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
+                                        <input type="text" required id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
                                     </div>
 
 
@@ -165,6 +172,47 @@
                 </div>
             </div>
             <!-- END DETAIL TAMU -->
+
+            <!-- MODAL EDIT DATA TAMU -->
+            <div class="modal fade" id="edit-Modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Edit Tamu Undangan</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card-block ">
+                                <form class="form-group" method="POST" action="<?= base_url('Mempelai/Tamu/tambahdata'); ?>">
+                                    <p class="f-w-900 m-b-5">Nama Tamu</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
+                                        <input type="text" id="edit_id_undangan" name="edit_id_undangan" value="<?= $this->session->userdata('ID_undangan'); ?>" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
+                                        <input type="text" required id="edit_nama_tamu" name="edit_nama_tamu" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
+                                    </div>
+                                    <p class="f-w-900 m-b-5">Email</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-email"></i></span>
+                                        <input type="text" required id="edit_email_tamu" name="edit_email_tamu" class="form-control form-control-round  m-b-10" placeholder="Email Tamu">
+                                    </div>
+                                    <p class="f-w-900 m-b-5">Nomor Whatasapp Tamu</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
+                                        <input type="text" required id="edit_wa_tamu" name="edit_wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-default waves-effect " data-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light ">Simpan</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!--END MODAL EDIT DATA TAMU -->
         </div>
     </div>
 </div>

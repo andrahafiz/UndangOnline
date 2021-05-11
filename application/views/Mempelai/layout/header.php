@@ -30,6 +30,10 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\icon\feather\css\feather.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\icon\font-awesome\css\font-awesome.min.css">
+    <!-- jquery file upload Frame work -->
+    <link href="<?= base_url(); ?>assets\Mempelai\pages\jquery.filer\css\jquery.filer.css" type="text/css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\Mempelai\pages\jquery.filer\css\themes\jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet">
+    <!-- themify-icons line icon -->
     <!-- Data Table Css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\data-table\css\buttons.dataTables.min.css">
