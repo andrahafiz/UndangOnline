@@ -35,7 +35,7 @@ function menu_admin()
     ];
     return $menu;
 }
-//cek login
+//cek login user mempelai
 function cekaccess()
 {
     $ci = get_instance();
@@ -44,6 +44,16 @@ function cekaccess()
     } else {
     }
 }
+
+function cekaccess_admin()
+{
+    $ci = get_instance();
+    if (!$ci->session->userdata("Username_akun")) {
+        redirect('Admin/Auth');
+    } else {
+    }
+}
+
 function format_nohp($nohp)
 {
     // return $nohp;

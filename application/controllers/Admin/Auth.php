@@ -42,8 +42,9 @@ class Auth extends CI_Controller
                 if ($pass == $akun["Password_Admin"]) {
                     $data = [
                         'ID_Akun' => $akun["ID_akun"],
-                        'Username_akun' => $akun["ID_Username"]
+                        'Username_akun' => $akun["Username_Admin"]
                     ];
+                    $this->session->set_userdata($data);
 
                     redirect('Admin/Akun');
                 } else {
@@ -152,7 +153,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata("ID_Akun");
         $this->session->unset_userdata("ID_Undangan");
         $this->session->sess_destroy();
-        redirect('Mempelai/Auth');
+        redirect('Admin\/Auth');
     }
 
 

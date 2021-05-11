@@ -13,6 +13,7 @@
                             <div class="card">
                                 <div class="card-header table-card-header">
                                     <h3>Data Akun Terdaftar</h3>
+
                                 </div>
                                 <div class="card-block">
                                     <div class="dt-responsive table-responsive">
@@ -50,14 +51,23 @@
                                                                 }
                                                                 ?></td>
                                                             <td>
-                                                                <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
-                                                                    <i class="fa fa-trash"></i>
-                                                                </button>
+
+                                                                <?php if ($value->Status_akun == 1) { ?>
+                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/0"); ?>"> <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Nonaktifkan Akun">
+                                                                            <i class="fa fa-key"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                <?php
+                                                                } elseif ($value->Status_akun == 0) { ?>
+                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/1"); ?>"> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Aktifkan  Akun">
+                                                                            <i class="fa fa-key"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                <?php }
+                                                                ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
-
-
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
