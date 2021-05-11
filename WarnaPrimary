@@ -1,2 +1,15 @@
 Warna Primary = #FF7588
 Primary Hover button = 	 #ff334e
+
+
+<?php
+
+$con  = new mysqli('localhost', 'root', '', 'tes');
+
+$sql   = "DELETE a*, b* FROM t_user a, t_tinggi b WHERE a.id = 1 AND b.id_user = 1";
+
+$exe  = mysqli_query($con, $sql);
+
+?>
+
+https://jagowebdev.com/membuat-mengedit-menghapus-foreign-key-dengan-phpmyadmin/
