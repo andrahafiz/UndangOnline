@@ -4,10 +4,8 @@ class Undangan_Model extends CI_Model
 
     public function selectAll()
     {
-        $this->db->select("*");
-        $this->db->from("tb_akun");
-        $this->db->join("tb_undangan", 'tb_akun.ID_Akun=tb_undangan.ID_Akun');
-        return $this->db->get()->result();
+        $sql = "SELECT a.ID_akun, a.Email_akun, u.ID_Undangan, m.Nama_MPria, m.Nama_MWanita FROM `tb_akun` as a,`tb_undangan` as u,`tb_mempelai` as m WHERE a.ID_akun = u.ID_Akun and m.ID_Mempelai = u.ID_Mempelai";
+        return $this->db->query($sql)->result();
     }
 
     public function tambah_data_acara($data)
@@ -18,14 +16,8 @@ class Undangan_Model extends CI_Model
     public function selectbyid($id)
     {
         // $this->db->where('pekerjaan_id', $id);
-        $query =  $this->db->get_where('view_acara', ['ID_akun' => $id]);
+        $query =  $this->db->get_where('view_all', ['ID_Undangan' => $id]);
         $hasil = $query->row();
         return $hasil;
-    }
-
-    public function ganti_status($id, $status)
-    {
-
-        $this->db->update('tb_akun', array('Status_akun' => $status), "ID_akun='$id'");
     }
 }

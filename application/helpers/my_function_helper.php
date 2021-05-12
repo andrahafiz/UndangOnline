@@ -27,11 +27,11 @@ function menu_admin()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Akun', 'Logout'],
+        ['Dashboard', 'Akun', 'Undangan', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'feather icon-users', 'feather icon-log-out'],
         //url
-        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Auth/logout'],
+        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Auth/logout'],
     ];
     return $menu;
 }
