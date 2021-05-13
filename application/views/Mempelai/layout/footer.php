@@ -94,8 +94,6 @@
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\js\script.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\js\custom.js"></script>
 
-<!-- Switch component js -->
-<!-- <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\switchery\js\switchery.min.js"></script> -->
 <!-- Tags js -->
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\bootstrap-tagsinput\js\bootstrap-tagsinput.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>

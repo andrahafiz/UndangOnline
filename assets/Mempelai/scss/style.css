@@ -1666,8 +1666,8 @@
 .btn-primary:hover,
 .wizard>.actions a:hover,
 .sweet-alert button.confirm:hover {
-	background-color: #01dbdf;
-	border-color: #01dbdf;
+	background-color: #ff334e;
+	border-color: #ff334e;
 }
 
 .btn-primary:active,
@@ -1686,7 +1686,7 @@
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	color: #fff;
-	background-color: #01dbdf;
+	background-color: #ff334e;
 }
 
 .btn-primary.disabled,
@@ -2929,13 +2929,13 @@
 }
 
 .input-group-button .input-group-addon:hover {
-	background-color: #01dbdf;
-	border-color: #01dbdf;
+	background-color: #ff334e;
+	border-color: #ff334e;
 }
 
 .input-group-button .input-group-addon:hover .btn {
-	background-color: #01dbdf;
-	border-color: #01dbdf;
+	background-color: #ff334e;
+	border-color: #ff334e;
 }
 
 .input-group-dropdown [class*=btn-] {

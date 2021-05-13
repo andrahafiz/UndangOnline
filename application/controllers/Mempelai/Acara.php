@@ -7,7 +7,7 @@ class Acara extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Mempelai/Acara_Model');
+        $this->load->model('Acara_Model');
         $this->load->helper('my_function_helper');
         cekaccess();
     }

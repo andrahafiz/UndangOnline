@@ -3147,13 +3147,13 @@
 }
 
 .input-group-button .input-group-addon:hover {
-	background-color: #01dbdf;
-	border-color: #01dbdf;
+	background-color: #ff334e;
+	border-color: #ff334e;
 }
 
 .input-group-button .input-group-addon:hover .btn {
-	background-color: #01dbdf;
-	border-color: #01dbdf;
+	background-color: #ff334e;
+	border-color: #ff334e;
 }
 
 .input-group-dropdown [class*="btn-"] {
@@ -15482,8 +15482,8 @@ a.mytooltip {
 }
 
 .jFiler-input-choose-btn:hover {
-	background: #fff;
-	border: 1px solid #ff7588;
+	background: #ff334e;
+	border: 1px solid #ff334e;
 	color: #fff !important;
 }
 

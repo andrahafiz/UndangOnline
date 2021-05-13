@@ -23,4 +23,8 @@ class Galeri extends CI_Controller
         $this->load->view('Mempelai/Galeri/V_Galeri');
         $this->load->view('Mempelai/layout/footer');
     }
+
+    public function add_video()
+    {
+    }
 }

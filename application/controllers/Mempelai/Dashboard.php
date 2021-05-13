@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Mempelai/Tamu_Model');
+        $this->load->model('Tamu_Model');
         $this->load->helper('my_function_helper');
         cekaccess();
     }

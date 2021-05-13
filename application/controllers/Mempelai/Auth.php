@@ -9,8 +9,8 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_Model');
-        $this->load->model('Mempelai/Acara_Model');
-        $this->load->model('Mempelai/Mempelai_Model');
+        $this->load->model('Acara_Model');
+        $this->load->model('Mempelai_Model');
         $this->load->helper('my_function_helper');
     }
 

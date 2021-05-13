@@ -10,9 +10,14 @@ gtag('config', 'UA-23581568-13');
 
 $(".tombolUbah").on("click", function () {
     var id = $(this).data("id");
-    alert(id);
+    var wa = $(this).data("wa");
+    var email = $(this).data("email");
+    var nama = $(this).data("nama");
     // console.log(id);
     $("#edit_id_undangan").attr("value", id);
+    $("#edit_nama_tamu").attr("value", nama);
+    $("#edit_email_tamu").attr("value", email);
+    $("#edit_wa_tamu").attr("value", wa);
 })
 
 $(".btn-detail").on("click", function () {
