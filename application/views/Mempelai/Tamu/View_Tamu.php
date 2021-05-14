@@ -131,8 +131,6 @@
                                         <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
                                         <input type="text" required id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
                                     </div>
-
-
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -186,10 +184,14 @@
                         <div class="modal-body">
                             <div class="card-block ">
                                 <form class="form-group" method="POST" action="<?= base_url('Mempelai/Tamu/tambahdata'); ?>">
+                                    <p class="f-w-900 m-b-5">ID Tamu</p>
+                                    <div class="input-group">
+                                        <span class="input-group-addon round-left "><i class="icofont icofont-key"></i></span>
+                                        <input type="text" id="edit_id_undangan" readonly name="edit_id_undangan" value="<?= $this->session->userdata('ID_undangan'); ?>" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
+                                    </div>
                                     <p class="f-w-900 m-b-5">Nama Tamu</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-user-alt-3"></i></span>
-                                        <input type="text" id="edit_id_undangan" name="edit_id_undangan" value="<?= $this->session->userdata('ID_undangan'); ?>" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
                                         <input type="text" required id="edit_nama_tamu" name="edit_nama_tamu" class="form-control form-control-round  m-b-10" placeholder="Nama Tamu" autofocus>
                                     </div>
                                     <p class="f-w-900 m-b-5">Email</p>

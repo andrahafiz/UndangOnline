@@ -39,6 +39,9 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\data-table\css\buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\assets\pages\data-table\extensions\buttons\css\buttons.dataTables.min.css"> -->
+    <!-- hover-effect.css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\hover-effect\normalize.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\hover-effect\set2.css">
     <!-- jpro forms css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\j-pro\css\demo.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\j-pro\css\font-awesome.min.css">

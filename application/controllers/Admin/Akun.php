@@ -8,8 +8,8 @@ class Akun extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('my_function_helper');
-        $this->load->model('Mempelai/Tamu_Model');
-        $this->load->model('Mempelai/Akun_Model');
+        $this->load->model('Tamu_Model');
+        $this->load->model('Akun_Model');
         cekaccess_admin();
     }
     // }
