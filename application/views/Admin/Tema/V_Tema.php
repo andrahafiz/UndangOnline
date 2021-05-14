@@ -25,6 +25,22 @@
                                                     <img class="card-img-top img-fluid" src="<?php echo base_url() . 'assets/Tema/' . $value->image_thema ?>" alt="Card image cap">
                                                     <div class="card-block">
                                                         <h4 class="card-title"><?php echo $value->nama_thema ?></h4>
+                                                        <a href=""> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Detail">
+                                                                <i class="fa fa-file-text-o"></i>
+                                                            </button>
+                                                        </a>
+                                                        <a href=""> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                                                <i class="fa fa-edit"></i>
+                                                            </button>
+                                                        </a>
+                                                        <a href=""> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="NonAktif">
+                                                                <i class="fa fa-eye"></i>
+                                                            </button>
+                                                        </a>
+                                                        <a href=""> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+                                                                <i class="fa fa-trash-o"></i>
+                                                            </button>
+                                                        </a>
                                                         <p class="card-text"></p>
                                                     </div>
                                                 </div>
