@@ -1,0 +1,42 @@
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-header start -->
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- HTML5 Export Buttons table start -->
+                            <div class="card">
+                                <div class="card-header table-card-header">
+                                    <h3>Data Tema </h3>
+
+                                </div>
+                                <div class="card-block">
+                                    <div class="row">
+                                        <?php
+                                        foreach ($tema as $key => $value) {
+                                        ?>
+                                            <div class="col-lg-12 col-xl-3">
+                                                <div class="card-sub">
+                                                    <img class="card-img-top img-fluid" src="<?php echo base_url() . 'assets/Tema/' . $value->image_thema ?>" alt="Card image cap">
+                                                    <div class="card-block">
+                                                        <h4 class="card-title"><?php echo $value->nama_thema ?></h4>
+                                                        <p class="card-text"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php }; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
