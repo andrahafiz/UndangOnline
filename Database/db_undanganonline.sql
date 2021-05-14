@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Bulan Mei 2021 pada 11.00
+-- Waktu pembuatan: 14 Bulan Mei 2021 pada 11.27
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -61,6 +61,13 @@ CREATE TABLE `tb_admin` (
   `Status_Admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tb_admin`
+--
+
+INSERT INTO `tb_admin` (`ID_Admin`, `Username_Admin`, `Password_Admin`, `Status_Admin`) VALUES
+('ADM1', 'asd', 'asd', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -91,11 +98,14 @@ INSERT INTO `tb_akun` (`ID_akun`, `Username`, `Email_akun`, `NoHp_akun`, `Passwo
 --
 
 CREATE TABLE `tb_gallery` (
-  `ID_Foto` int(11) NOT NULL,
+  `ID_Media` int(11) NOT NULL,
   `ID_Undangan` text NOT NULL,
-  `Nama_foto` varchar(100) NOT NULL,
-  `Tglupload_foto` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status_foto` varchar(10) NOT NULL
+  `Judul_Media` varchar(100) NOT NULL,
+  `Link_Media` text DEFAULT NULL,
+  `Tipe_Media` enum('Foto','Video') DEFAULT NULL,
+  `Size_Media` int(11) NOT NULL,
+  `Tglupload_Media` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Status_Media` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -201,7 +211,33 @@ CREATE TABLE `tb_tamu` (
 --
 
 INSERT INTO `tb_tamu` (`ID_TamuUndangan`, `ID_Undangan`, `Nama_Tamu`, `Wa_Tamu`, `Email_Tamu`, `UcapanSelamat`) VALUES
-('TMU1', 'UND1', 'Kom', '123', 'kom@gmail.com', 'kosong');
+('TMU01', 'UND3', 'Wilson', '02532126148', 'king.chase@example.net', 'Velit nihil quasi nobis dolorem perferendis. Eos sunt exercitationem repudiandae libero a.'),
+('TMU02', 'UND1', 'Dale', '1-566-070-8458x', 'laurence08@example.net', 'Error dolor omnis numquam. Quae est non quaerat. Id aut quasi non voluptatem aut enim alias.'),
+('TMU03', 'UND1', 'Shea', '736.886.4532', 'hills.elinor@example.com', 'Excepturi ipsam enim autem et repellendus. Explicabo consectetur libero corporis et aliquid.'),
+('TMU06', 'UND1', 'Gina', '(799)115-4459x2', 'cummerata.alena@example.org', 'Rem consequatur optio quisquam explicabo totam porro voluptates. Dolore sint voluptas aliquid.'),
+('TMU09', 'UND1', 'Gilda', '646.128.1094x28', 'gaylord.brent@example.com', 'Repellat corporis eos culpa aut ipsa ut. Animi quis nobis veniam voluptatem quia ipsum.'),
+('TMU1', 'UND1', 'Andra', '082276853382', 'andra18ti@mahasiswa.pcr.ac.id', 'Selamat'),
+('TMU12', 'UND2', 'Mossie', '04460419649', 'fbailey@example.com', 'Officia iure rem et tempora fugit odio cum. Assumenda nihil sit iusto non ut.'),
+('TMU15', 'UND2', 'Letitia', '(613)386-7030x2', 'irma.feest@example.com', 'Aliquid quos non enim nostrum. Aut quas voluptas et porro eos quo.'),
+('TMU19', 'UND3', 'Ebba', '1-134-282-6590', 'smith.ruben@example.com', 'Occaecati quas dolore tenetur aliquid. Eius aut vel iusto vero ut. Deleniti qui non labore.'),
+('TMU21', 'UND3', 'Ashlynn', '038-645-9326', 'wilderman.dawson@example.net', 'Assumenda nulla veniam explicabo numquam fugit. Ipsa quaerat dolorum cum iusto.'),
+('TMU23', 'UND1', 'Anjali', '(599)882-5616', 'tlockman@example.org', 'Est facere et iure ut reprehenderit cumque. Tempora odit error aliquid.'),
+('TMU29', 'UND1', 'Autumn', '335.513.8444x51', 'boyer.mitchel@example.com', 'Dolor vitae et aspernatur repellat. Consequuntur non sequi nesciunt unde. Quia rem hic dolorem non.'),
+('TMU3', 'UND1', 'xzc', '21', 'qwe@gmail.com', 'kosong'),
+('TMU30', 'UND3', 'Urban', '483.350.5882', 'welch.elvis@example.com', 'Sint dicta repellendus in nesciunt. Non repellendus et earum tempora dolores in.'),
+('TMU33', 'UND3', 'Cory', '155-871-7947', 'boyle.saul@example.com', 'Quo quaerat quos quas enim. Sit est eum fuga id dignissimos harum quisquam.'),
+('TMU38', 'UND3', 'Domenica', '09290939679', 'joelle87@example.org', 'Nisi rerum cum cupiditate. Accusamus excepturi dolor quis possimus ullam consequuntur.'),
+('TMU41', 'UND1', 'Queenie', '762.080.8263', 'sonya18@example.org', 'Molestias repudiandae velit minus nulla. Autem ex quia ex voluptatibus.'),
+('TMU43', 'UND3', 'Marley', '537-093-4692', 'lorine.raynor@example.net', 'Et veniam eius aut velit. Deleniti aut tempore error praesentium nemo. Unde incidunt id et aut est.'),
+('TMU46', 'UND3', 'Maryjane', '(088)502-4445', 'malcolm61@example.com', 'Sit et corrupti est veritatis. Minima iste nesciunt facere. Quam dolorem voluptatem quo eveniet.'),
+('TMU63', 'UND1', 'Damon', '(874)778-6130x7', 'damon.hamill@example.org', 'Eius totam occaecati hic non enim inventore id. Aut vitae velit praesentium tenetur.'),
+('TMU70', 'UND2', 'Alexandro', '06007347279', 'remington25@example.com', 'Dolores culpa tempora nobis neque. Perferendis id autem molestias et. Enim in a et eveniet modi.'),
+('TMU72', 'UND2', 'Haven', '166.905.6443x35', 'martina28@example.org', 'Autem ea maxime iste. Autem quia autem rerum quidem quo.'),
+('TMU73', 'UND2', 'Barton', '1-132-169-6630x', 'kendall59@example.org', 'Facilis sapiente labore magnam aut. Dolor ut at est enim est est porro ut. Et fugit aliquid optio.'),
+('TMU75', 'UND2', 'Chanel', '1-335-453-9958', 'rachelle.mckenzie@example.org', 'Iste animi quaerat error sed est. Sed fuga quam nihil et ad. Culpa aut et a.'),
+('TMU79', 'UND1', 'Mohamed', '104-722-4157x29', 'royce07@example.net', 'Autem amet reprehenderit nihil unde natus. Ad ut magnam ex est voluptas. In officia nemo quia.'),
+('TMU92', 'UND2', 'Chloe', '290.206.4776', 'ritchie.kylie@example.com', 'Perspiciatis et animi eos modi beatae. Ipsa non officia occaecati dolorem temporibus repellat.'),
+('TMU95', 'UND1', 'Edmond', '1-438-394-0638x', 'reynolds.devyn@example.org', 'Nemo cumque quia magni. Ea necessitatibus vel vero non optio.');
 
 -- --------------------------------------------------------
 
@@ -237,6 +273,7 @@ CREATE TABLE `thema` (
   `id_thema` varchar(100) NOT NULL,
   `nama_thema` varchar(50) NOT NULL,
   `view_thema` varchar(50) DEFAULT NULL,
+  `image_tema` varchar(256) NOT NULL,
   `status_thema` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -244,12 +281,8 @@ CREATE TABLE `thema` (
 -- Dumping data untuk tabel `thema`
 --
 
-INSERT INTO `thema` (`id_thema`, `nama_thema`, `view_thema`, `status_thema`) VALUES
-('asd', 'asd', '', 'a'),
-('asdasd', 'asd', '', 'asd'),
-('asdd', '', '', ''),
-('S', 'ASD', NULL, 'ASD'),
-('THM1', 'butterfly.', 'butterfly.php', 'aktif');
+INSERT INTO `thema` (`id_thema`, `nama_thema`, `view_thema`, `image_tema`, `status_thema`) VALUES
+('THM1', 'butterfly.', 'butterfly.php', '', 'aktif');
 
 -- --------------------------------------------------------
 
@@ -409,7 +442,7 @@ ALTER TABLE `tb_akun`
 -- Indeks untuk tabel `tb_gallery`
 --
 ALTER TABLE `tb_gallery`
-  ADD PRIMARY KEY (`ID_Foto`);
+  ADD PRIMARY KEY (`ID_Media`);
 
 --
 -- Indeks untuk tabel `tb_kategori`
@@ -461,7 +494,7 @@ ALTER TABLE `token`
 -- AUTO_INCREMENT untuk tabel `tb_gallery`
 --
 ALTER TABLE `tb_gallery`
-  MODIFY `ID_Foto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Media` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `token`
