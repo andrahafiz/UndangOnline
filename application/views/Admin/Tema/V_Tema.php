@@ -26,7 +26,7 @@
                                                     <div class="card-block">
                                                         <h4 class="card-title"><?php echo $value->nama_thema ?></h4>
                                                         <div class="card-block tooltip-icon">
-                                                            <a href="">
+                                                            <a href="<?php echo base_url('Admin/Tema/Detail/' . $value->id_thema); ?>">
                                                                 <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Detail">
                                                                     <i class="fa fa-file-text-o"></i>
                                                                 </button>
@@ -36,11 +36,28 @@
                                                                     <i class="fa fa-edit"></i>
                                                                 </button>
                                                             </a>
-                                                            <a href="">
-                                                                <button type="button" class="btn btn-warning  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Non Aktif">
-                                                                    <i class="fa fa-eye"></i>
-                                                                </button>
-                                                            </a>
+                                                            <?php if ($value->status_thema == 1) { ?>
+                                                                <!-- <a href=""> <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Nonaktifkan Akun">
+                                                                        <i class="fa fa-key"></i>
+                                                                    </button>
+                                                                </a> -->
+                                                                <a href="<?php echo base_url("Admin/Tema/ubah_status/" . $value->id_thema . "/0"); ?>">
+                                                                    <button type="button" class="btn btn-warning  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title=" Non Aktifkan Tema">
+
+                                                                        <i class="fa fa-eye-slash"></i>
+                                                                    </button>
+                                                                </a>
+                                                            <?php
+                                                            } elseif ($value->status_thema == 0) { ?>
+                                                                <a href="<?php echo base_url("Admin/Tema/ubah_status/" . $value->id_thema . "/1"); ?>">
+                                                                    <button type="button" class="btn btn-warning  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Aktifkan Tema">
+                                                                        <i class="fa fa-eye"></i>
+
+                                                                    </button>
+                                                                </a>
+                                                            <?php }
+                                                            ?>
+
                                                             <a href="">
                                                                 <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Hapus">
                                                                     <i class="fa fa-trash"></i>

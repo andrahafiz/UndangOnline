@@ -10,12 +10,11 @@ class Tema_Model extends CI_Model
     public function selectbyid($id)
     {
         // $this->db->where('pekerjaan_id', $id);
-        // $sql = "SELECT * FROM `view_mempelai` WHERE ID_akun='$id'";
-        // $query = $this->db->query($sql);
         $query =  $this->db->get_where('thema', ['id_thema' => $id]);
-        $hasil = $query->result();
+        $hasil = $query->row();
         return $hasil;
     }
+
 
     public function tambah_data_tamu($data)
     {
@@ -33,5 +32,10 @@ class Tema_Model extends CI_Model
     {
         $this->db->where('id_thema', $id_thema);
         $this->db->delete('thema');
+    }
+    public function ganti_status($id, $status)
+    {
+
+        $this->db->update('thema', array('status_thema' => $status), "id_thema='$id'");
     }
 }

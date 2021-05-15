@@ -24,4 +24,27 @@ class Tema extends CI_Controller
         $this->load->view('Admin/Tema/V_Tema', $data['tema']);
         $this->load->view('Admin/layout/footer');
     }
+    public function ubah_status($id, $status)
+    {
+        $this->Tema_Model->ganti_status($id, $status);
+        // echo $id;
+        // die();
+        redirect('Admin/Tema');
+    }
+
+    public function Detail($id_undangan)
+    {
+        // $detail = $this->Undangan_Model->selectbyid($id_undangan);
+        $data = array(
+            'judul' => 'Detail Undangan',
+            'menu' => menu_admin(),
+            'detail_data' => $this->Tema_Model->selectbyid($id_undangan)
+        );
+        // echo $id_undangan;
+        // var_dump($data['detail_data']->NoHp_akun);
+        // die;
+        $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/Tema/V_DetailTema', $data['detail_data']);
+        $this->load->view('Admin/layout/footer');
+    }
 }
