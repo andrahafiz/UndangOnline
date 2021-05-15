@@ -29,7 +29,7 @@ function menu_admin()
         //nama menu
         ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'feather icon-users', 'feather icon-users', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', 'feather icon-log-out'],
         //url
         ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Auth/logout'],
     ];
