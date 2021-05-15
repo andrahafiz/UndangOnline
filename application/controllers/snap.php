@@ -49,7 +49,8 @@ class Snap extends CI_Controller
 	public function token()
 	{
 		$nama = $this->input->post('nama');
-		$jml_bayar = "10000";
+		$jenis_kelamin = $this->input->post('jenis_kelamin');
+		$jml_bayar = $this->input->post('jml_bayar');
 		// Required
 		$transaction_details = array(
 			'order_id' => rand(),
@@ -61,7 +62,7 @@ class Snap extends CI_Controller
 			'id' => 'a1',
 			'price' => $jml_bayar,
 			'quantity' => 1,
-			'name' => "Pembayarann Undangan"
+			'name' => "Pembayarann Undangan", $jenis_kelamin
 		);
 
 		$item_details = array($item1_details);

@@ -10,9 +10,6 @@ class Pembayaran extends CI_Controller
         $this->load->model('Mempelai_Model');
         $this->load->helper('my_function_helper');
         cekaccess();
-		$params = array('server_key' => 'SB-Mid-server-J-xEaxEObhTfsr5UvuF_O5T4', 'production' => false);
-		$this->load->library('midtrans');
-		$this->midtrans->config($params);
     }
     // }
     public function index()
@@ -21,11 +18,10 @@ class Pembayaran extends CI_Controller
         $data = array(
             'judul' => 'Pembayaran',
             'menu' => menu_mempelai(),
-            'data_akun' => $this->data_akun($id),
-            'undangan_online' =>$this->db->get('pembayaran_undangan')->result()
+            'data_akun' => $this->data_akun($id)
         );
-        var_dump($data['undangan_online']);
-        die;
+        // var_dump($data['data_akun']);
+        // die;
         $this->load->view('Mempelai/layout/header', $data);
         $this->load->view('Mempelai/Pay/View_Pay2', $data);
         $this->load->view('Mempelai/layout/footer');
