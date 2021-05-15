@@ -8,25 +8,25 @@
 
 $(document).ready(function () {
 
-    'use-strict';
+    // 'use-strict';
 
-    //Example single
-    $('#filer_input_single').filer({
-        extensions: ['jpg', 'jpeg', 'png', 'gif', 'psd'],
-        changeInput: true,
-        showThumbs: true,
-        addMore: false
-    });
+    // //Example single
+    // $('#filer_input_single').filer({
+    //     extensions: ['jpg', 'jpeg', 'png', 'gif', 'psd'],
+    //     changeInput: true,
+    //     showThumbs: true,
+    //     addMore: false
+    // });
 
-    //Example 2
-    $('#filer_input').filer({
-        limit: 3,
-        maxSize: 3,
-        extensions: ['jpg', 'jpeg', 'png', 'gif', 'psd'],
-        changeInput: true,
-        showThumbs: true,
-        addMore: true
-    });
+    // //Example 2
+    // $('#filer_input').filer({
+    //     limit: 3,
+    //     maxSize: 3,
+    //     extensions: ['jpg', 'jpeg', 'png', 'gif', 'psd'],
+    //     changeInput: true,
+    //     showThumbs: true,
+    //     addMore: true
+    // });
 
     //Example 1
     $("#filer_input1").filer({
@@ -98,22 +98,25 @@ $(document).ready(function () {
             drop: null,
         },
         uploadFile: {
-            url: "../plugins/jquery.filer/php/upload.php",
+            url: "<?<?= base_url('Admin/changeAccess'); ?>",
+            // data: 'a',
             data: null,
             type: 'POST',
             enctype: 'multipart/form-data',
             beforeSend: function () { },
             success: function (data, el) {
-                var parent = el.find(".jFiler-jProgressBar").parent();
-                el.find(".jFiler-jProgressBar").fadeOut("slow", function () {
-                    $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");
-                });
+                // var parent = el.find(".jFiler-jProgressBar").parent();
+                // el.find(".jFiler-jProgressBar").fadeOut("slow", function () {
+                //     $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");
+                // })
+                alert("Sukes");
             },
-            error: function (el) {
-                var parent = el.find(".jFiler-jProgressBar").parent();
-                el.find(".jFiler-jProgressBar").fadeOut("slow", function () {
-                    $("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");
-                });
+            error: function (data, el) {
+                // var parent = el.find(".jFiler-jProgressBar").parent();
+                // el.find(".jFiler-jProgressBar").fadeOut("slow", function () {
+                //     $("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");
+                // });
+                alert("Gagal");
             },
             statusCode: null,
             onProgress: null,

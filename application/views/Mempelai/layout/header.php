@@ -46,6 +46,9 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\j-pro\css\demo.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\j-pro\css\font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\pages\j-pro\css\j-pro-modern.css">
+    <!-- light-box css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\bower_components\ekko-lightbox\css\ekko-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\bower_components\lightbox2\css\lightbox.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\css\style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\css\jquery.mCustomScrollbar.css">

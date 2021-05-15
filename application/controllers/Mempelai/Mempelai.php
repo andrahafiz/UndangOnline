@@ -53,7 +53,7 @@ class Mempelai extends CI_Controller
 
         $config['upload_path'] = './assets/Mempelai/images/mempelai/'; //path folder
         $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
-        $config['max_size']     = '2048';
+        $config['max_size']     = '5000';
         // $config['remove_spaces'] = TRUE;
         // $config['encrypt_name'] = TRUE;
 
