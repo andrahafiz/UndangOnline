@@ -52,6 +52,7 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\css\style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Mempelai\css\jquery.mCustomScrollbar.css">
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-6NV2MTOLU1VB-kDR"></script>
 </head>
 
 <body>
