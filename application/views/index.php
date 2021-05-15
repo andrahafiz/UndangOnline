@@ -353,10 +353,10 @@
                         <img class="dots" src="<?= base_url(); ?>assets/LandingPage/images/dots.svg" alt="dots">
                         <div class="video-wrapper">
                             <div class="video-image">
-                                <img src="<?= base_url(); ?>assets/LandingPage/images/video.png" alt="video">
+                                <img src="<?= base_url(); ?>assets/LandingPage/images/video.jpg" width="50%" alt="video">
                             </div>
                             <div class="video-icon">
-                                <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" class="video-popup"><i class="lni-play"></i></a>
+                                <a href="https://www.youtube.com/watch?v=_GUEOfnm8u8" class="video-popup"><i class="lni-play"></i></a>
                             </div>
                         </div> <!-- video wrapper -->
                     </div> <!-- video content -->
@@ -366,35 +366,35 @@
                         <div class="counter-content">
                             <div class="section-title">
                                 <div class="line"></div>
-                                <h3 class="title">Cek Harga Disini, <span> Dan Dapatkan Sesuai Yang Kamu Mau!</span></h3>
+                                <h3 class="title">Survey<span> Menggunakan Website Getmarried kami.</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Disini kamu dapat memilih harga paket undangan sesuai dengan yang kamu butuhkan.</p>
+                            <p class="text">Berikut anda dapat melihat berapa banyak pengguna website getmarried dibawah ini.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
                                         <span class="count"><span class="counter">125</span>K</span>
-                                        <p class="text">Downloads</p>
+                                        <p class="text">Pengguna Web</p>
                                     </div>
                                 </div> <!-- single counter -->
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
                                         <span class="count"><span class="counter">87</span>K</span>
-                                        <p class="text">Active Users</p>
+                                        <p class="text">Tema</p>
                                     </div>
                                 </div> <!-- single counter -->
                             </div>
-                            <div class="col-4">
+                            <!-- <div class="col-4">
                                 <div class="single-counter counter-color-3 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
                                         <span class="count"><span class="counter">4.8</span></span>
                                         <p class="text">User Rating</p>
                                     </div>
-                                </div> <!-- single counter -->
-                            </div>
+                                </div> 
+                            </div> -->
                         </div> <!-- row -->
                     </div> <!-- counter wrapper -->
                 </div>
