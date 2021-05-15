@@ -1,4 +1,5 @@
-$("#Modal-P").modal({ backdrop: 'static', keyboard: false, show: true });
+// $("#Modal-P").modal({ backdrop: 'static', keyboard: false, show: true });
+$('#Modal-P').modal('show');
 window.dataLayer = window.dataLayer || [];
 
 function gtag() {

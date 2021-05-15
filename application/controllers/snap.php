@@ -27,6 +27,8 @@ class Snap extends CI_Controller
 		$this->load->library('midtrans');
 		$this->midtrans->config($params);
 		$this->load->helper('url');
+		$this->load->model('Mempelai_Model');
+        $this->load->helper('my_function_helper');
 	}
 
 	public function index()
@@ -36,9 +38,21 @@ class Snap extends CI_Controller
 
 	public function spp()
 	{
-		$data['undangan_online'] = $this->db->get('pembayaran_undangan')->result();
+		// $data['undangan_online'] = $this->db->get('pembayaran_undangan')->result();
+		$id =   $this->session->userdata('ID_Akun');
+		$data = array(
+            'undangan_online' =>$this->db->get('pembayaran_undangan')->result(),
+			'data_akun' => $this->data_akun($id)
+        );
+
 		$this->load->view('pembayaranspp', $data);
 	}
+	public function data_akun($id)
+    {
+        // $this->db->where('ID_akun', $id);
+
+        return  $this->db->get_where('tb_akun', array('ID_akun' => $id))->row_array();
+    }
 
 	public function hadiah()
 	{
