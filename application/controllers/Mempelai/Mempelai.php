@@ -45,8 +45,6 @@ class Mempelai extends CI_Controller
         $id_mempelai = $this->input->post('id_mempelai');
         $data = array(
             'datamempelai' => (array) $this->data_mempelai($id)
-
-
         );
         // var_dump($data['datamempelai']);
         // die;
