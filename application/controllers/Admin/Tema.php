@@ -17,7 +17,7 @@ class Tema extends CI_Controller
         $data = array(
             'judul' => 'Tema',
             'menu' => menu_admin(),
-            'tema' => $this->Tema_Model->selectAll()
+            'tema' => 
 
         );
         $this->load->view('Admin/layout/header', $data);
@@ -80,5 +80,9 @@ class Tema extends CI_Controller
     private function data_tema_singel($id_undangan)
     {
         return $this->Tema_Model->selectbyid($id_undangan);
+    }
+
+    private function data_all(){
+        return $this->Tema_Model->selectAll();
     }
 }
