@@ -54,8 +54,8 @@ class Tamu extends CI_Controller
         $data = $this->_datatamu();
         $this->Tamu_Model->tambah_data_tamu($data);
         if ($this->db->affected_rows() > 0) {
-            // echo "<script> alert('data berhasil');</script>";
-            // echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            echo "<script> alert('data berhasil');</script>";
+            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
 
         } else {
             echo "<script> alert('data tidak berhasil');</script>";

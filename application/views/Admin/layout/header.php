@@ -39,6 +39,8 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Admin\pages\j-pro\css\demo.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Admin\pages\j-pro\css\font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Admin\pages\j-pro\css\j-pro-modern.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Admin\bower_components\ekko-lightbox\css\ekko-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Admin\bower_components\lightbox2\css\lightbox.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Admin\css\style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets\Admin\css\jquery.mCustomScrollbar.css">

@@ -183,8 +183,8 @@ function combobox($name, $id, $table, $field, $primary_key, $selected)
 
 function kode($table)
 {
-    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu');
-    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU');
+    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema');
+    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM');
     $index_kode = array_search($table, $tabel);
     return $kode[$index_kode];
 }

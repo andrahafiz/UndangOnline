@@ -19,7 +19,11 @@
                 <?= $this->session->flashdata('message'); ?>
                 <?php
                 if (validation_errors()) {
-                    echo "<div class='alert alert-danger'>" . validation_errors() . "</div>";
+                    echo "<div class='alert alert-warning icons-alert'> 
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'> 
+                    <i class='icofont icofont-close-line-circled'></i>
+                    </button> <p><strong>Gagal!</strong>" . validation_errors() . "</p>
+                    </div>";
                 }
                 ?>
                 <!-- Page-header end -->
