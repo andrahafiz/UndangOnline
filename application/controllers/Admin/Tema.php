@@ -10,7 +10,7 @@ class Tema extends CI_Controller
         $this->load->model('Tema_Model');
         $this->load->helper('my_function_helper');
     }
-    // }
+
     public function index()
     {
         // echo $this->Tema_Model->jumlahtema();
@@ -24,40 +24,35 @@ class Tema extends CI_Controller
         $this->load->view('Admin/Tema/V_Tema', $data['tema']);
         $this->load->view('Admin/layout/footer');
     }
+
     public function ubah_status($id, $status)
     {
         $this->Tema_Model->ganti_status($id, $status);
-        // echo $id;
-        // die();
         redirect('Admin/Tema');
     }
 
-    public function Detail($id_undangan)
+    public function Detail($id_thema)
     {
-        // $detail = $this->Undangan_Model->selectbyid($id_undangan);
+
         $data = array(
             'judul' => 'Detail Undangan',
             'menu' => menu_admin(),
-            'detail_data' => $this->Tema_Model->selectbyid($id_undangan)
+            'detail_data' => $this->data_tema_singel($id_thema)
         );
-        // echo $id_undangan;
-        // var_dump($data['detail_data']->NoHp_akun);
-        // die;
+
         $this->load->view('Admin/layout/header', $data);
         $this->load->view('Admin/Tema/V_DetailTema', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
     }
     public function Edit($id_thema)
     {
-        // $detail = $this->Undangan_Model->selectbyid($id_undangan);
+
         $data = array(
             'judul' => 'Edit Tema',
             'menu' => menu_admin(),
-            'detail_data' => $this->Tema_Model->selectbyid($id_thema)
+            'detail_data' => $this->data_tema_singel($id_thema)
         );
-        // echo $id_undangan;
-        // var_dump($data['detail_data']->NoHp_akun);
-        // die;
+
         $this->load->view('Admin/layout/header', $data);
         $this->load->view('Admin/Tema/V_EditTema', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
@@ -76,9 +71,14 @@ class Tema extends CI_Controller
             // $config['remove_spaces'] = TRUE;
             // $config['encrypt_name'] = TRUE;
             $this->load->library('upload', $config);
-            if($this->upload->do_upload('image'))[
-                
-            ]
+            //     if($this->upload->do_upload('image'))[
+
+            //     ]
         }
+    }
+
+    private function data_tema_singel($id_undangan)
+    {
+        return $this->Tema_Model->selectbyid($id_undangan);
     }
 }
