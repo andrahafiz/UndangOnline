@@ -17,7 +17,7 @@ class Tema extends CI_Controller
         $data = array(
             'judul' => 'Tema',
             'menu' => menu_admin(),
-            'tema' => 
+            'tema' => $this->data_all()
 
         );
         $this->load->view('Admin/layout/header', $data);
@@ -59,7 +59,10 @@ class Tema extends CI_Controller
     }
     public function upload_foto()
     {
-        $data = [
+        $data= array(
+            'data_tema'=>$this->$data_tema_singel
+        )
+        $data_inputan = [
             'nama_thema' => htmlspecialchars($this->input->post('nama_thema', true)),
             'view_thema' => htmlspecialchars($this->input->post('view_tema', true)),
         ];
@@ -82,7 +85,8 @@ class Tema extends CI_Controller
         return $this->Tema_Model->selectbyid($id_undangan);
     }
 
-    private function data_all(){
+    private function data_all()
+    {
         return $this->Tema_Model->selectAll();
     }
 }
