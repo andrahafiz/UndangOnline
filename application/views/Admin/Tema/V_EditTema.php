@@ -27,7 +27,7 @@
 
                                                 <p class="f-w-600 m-b-5">View Tema</p>
                                                 <input type="text" id="view_tema" name="view_tema" class="form-control  form-control-round m-b-15" value="<?= $detail_data->view_thema; ?>">
-
+                                                <input type="file" id="file" name="image" class="form-control  form-control-round m-b-10 " onchange="tampilkanPreview(this,'preview')">
                                                 <p class="f-w-600 m-b-5">Status Thema</p>
                                                 <?= $detail_data->status_thema != 0 ? ' <label class="badge badge-lg bg-success">Aktif</label>' : '<label class="badge badge-lg bg-danger">Non Aktif</label>'; ?>
 
@@ -43,7 +43,7 @@
                                                 <div class="thumbnail">
                                                     <div class="thumb">
                                                         <a href="<?= base_url('') . 'assets/Tema/' . $image_thema ?>" data-lightbox="1" data-title="Tema <?= $detail_data->nama_thema; ?>">
-                                                            <img src="<?= base_url('') . 'assets/Tema/' . $image_thema ?>" alt="<?= $detail_data->nama_thema; ?>" class="img-fluid img-thumbnail ">
+                                                            <img id="preview" src="<?= base_url('') . 'assets/Tema/' . $image_thema ?>" alt="<?= $detail_data->nama_thema; ?>" class="img-fluid img-thumbnail ">
                                                         </a>
                                                     </div>
                                                 </div>

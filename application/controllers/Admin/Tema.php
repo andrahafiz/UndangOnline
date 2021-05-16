@@ -62,4 +62,23 @@ class Tema extends CI_Controller
         $this->load->view('Admin/Tema/V_EditTema', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
     }
+    public function upload_foto()
+    {
+        $data = [
+            'nama_thema' => htmlspecialchars($this->input->post('nama_thema', true)),
+            'view_thema' => htmlspecialchars($this->input->post('view_tema', true)),
+        ];
+        $uploadimage = $_FILES['image']['name'];
+        if ($uploadimage) {
+            $config['upload_path'] = './assets/Mempelai/images/mempelai/'; //path folder
+            $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+            $config['max_size']     = '5000';
+            // $config['remove_spaces'] = TRUE;
+            // $config['encrypt_name'] = TRUE;
+            $this->load->library('upload', $config);
+            if($this->upload->do_upload('image'))[
+                
+            ]
+        }
+    }
 }
