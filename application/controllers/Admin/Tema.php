@@ -47,4 +47,19 @@ class Tema extends CI_Controller
         $this->load->view('Admin/Tema/V_DetailTema', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
     }
+    public function Edit($id_thema)
+    {
+        // $detail = $this->Undangan_Model->selectbyid($id_undangan);
+        $data = array(
+            'judul' => 'Edit Tema',
+            'menu' => menu_admin(),
+            'detail_data' => $this->Tema_Model->selectbyid($id_thema)
+        );
+        // echo $id_undangan;
+        // var_dump($data['detail_data']->NoHp_akun);
+        // die;
+        $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/Tema/V_EditTema', $data['detail_data']);
+        $this->load->view('Admin/layout/footer');
+    }
 }

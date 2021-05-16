@@ -31,7 +31,7 @@
                                                                     <i class="fa fa-file-text-o"></i>
                                                                 </button>
                                                             </a>
-                                                            <a href="">
+                                                            <a href="<?php echo base_url('Admin/Tema/Edit/' . $value->id_thema); ?>">
                                                                 <button type="button" class="btn btn-info  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                                                     <i class="fa fa-edit"></i>
                                                                 </button>
