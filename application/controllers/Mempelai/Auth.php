@@ -54,15 +54,15 @@ class Auth extends CI_Controller
                     redirect("Mempelai/Dashboard");
                 } else {
                     $this->pesan('gagal', 'Password anda salah');
-                    redirect('Mempelai/Auth');
+                    redirect('Mempelai');
                 }
             } else {
                 $this->pesan('warning', 'Akun belum di aktifasi');
-                redirect('Mempelai/Auth');
+                redirect('Mempelai');
             }
         } else {
             $this->pesan('gagal', 'Akun tidak ditemukan');
-            redirect('Mempelai/Auth');
+            redirect('Mempelai');
         }
     }
 
@@ -159,7 +159,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata("ID_Akun");
         $this->session->unset_userdata("ID_Undangan");
         $this->session->sess_destroy();
-        redirect('Mempelai/Auth');
+        redirect('Mempelai');
     }
 
 

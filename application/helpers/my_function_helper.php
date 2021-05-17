@@ -40,7 +40,7 @@ function cekaccess()
 {
     $ci = get_instance();
     if (!$ci->session->userdata("Username")) {
-        redirect('Mempelai/Auth');
+        redirect('Mempelai');
     } else {
     }
 }
