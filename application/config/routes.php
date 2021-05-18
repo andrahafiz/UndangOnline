@@ -53,4 +53,4 @@ $route['default_controller'] = 'Welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['Admin'] = 'Admin/Auth';
-$route['Mempelai'] = 'Mempelai/Auth';
+$route['Mempelai'] = 'Mempelai/Auth/index';
