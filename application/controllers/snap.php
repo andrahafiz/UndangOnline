@@ -28,7 +28,7 @@ class Snap extends CI_Controller
 		$this->midtrans->config($params);
 		$this->load->helper('url');
 		$this->load->model('Mempelai_Model');
-        $this->load->helper('my_function_helper');
+		$this->load->helper('my_function_helper');
 	}
 
 	public function index()
@@ -41,18 +41,18 @@ class Snap extends CI_Controller
 		// $data['undangan_online'] = $this->db->get('pembayaran_undangan')->result();
 		$id =   $this->session->userdata('ID_Akun');
 		$data = array(
-            'undangan_online' =>$this->db->get('pembayaran_undangan')->result(),
+			'undangan_online' => $this->db->get('pembayaran_undangan')->result(),
 			'data_akun' => $this->data_akun($id)
-        );
+		);
 
 		$this->load->view('pembayaranspp', $data);
 	}
 	public function data_akun($id)
-    {
-        // $this->db->where('ID_akun', $id);
+	{
+		// $this->db->where('ID_akun', $id);
 
-        return  $this->db->get_where('tb_akun', array('ID_akun' => $id))->row_array();
-    }
+		return  $this->db->get_where('tb_akun', array('ID_akun' => $id))->row_array();
+	}
 
 	public function hadiah()
 	{
@@ -76,14 +76,19 @@ class Snap extends CI_Controller
 			'id' => 'a1',
 			'price' => $jml_bayar,
 			'quantity' => 1,
-			'name' => "Pembayarann Undangan", $jenis_kelamin
+			'name' => "Pembayarann Undangan",
+
 		);
 
 		$item_details = array($item1_details);
 
 		// Optional
 		$customer_details = array(
-			'first_name'    => $nama,
+			"first_name" => "budi",
+			"last_name" => "pratama",
+			"email" => "budi.pra@example.com",
+			"phone" => "08111222333",
+
 		);
 
 		// Data yang akan dikirim untuk request redirect_url.
@@ -115,10 +120,12 @@ class Snap extends CI_Controller
 	public function finish()
 	{
 		$result = json_decode($this->input->post('result_data'), true);
-		
-		// echo "<prev>";
 		// var_dump($result);
-		// echo $result['va_numbers'][0]['bank'];
+
+
+		// // echo "<prev>";
+		// // var_dump($result);
+		// // echo $result['va_numbers'][0]['bank'];
 		// die;
 		$data = [
 			'order_id' => $result['order_id'],
@@ -130,6 +137,7 @@ class Snap extends CI_Controller
 			'pdf_url' => $result['pdf_url'],
 			'status_code' => $result['status_code']
 		];
+
 		$simpan = $this->db->insert('pembayaran_undangan', $data);
 		if ($simpan) {
 			echo "Sukses";

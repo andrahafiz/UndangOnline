@@ -3,7 +3,7 @@
         <div class="main-body">
             <div class="page-wrapper">
                 <div class="page-body">
-                
+
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
 
                                 <div class="row m-t-25 m-b-10">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-block btn-round bg-c-green p-15"  id="pay-button"><i class="icofont icofont-check-circled"></i><b>Bayar</b></button>
+                                        <button class="btn-show-modal btn btn-block btn-round bg-c-green p-15" id="pay-button"><i class="icofont icofont-check-circled"></i><b>Bayar</b></button>
                                         <!-- <button class="btn  btn-disabled btn-round disabled">Disabled Button</button> -->
                                     </div>
                                 </div>

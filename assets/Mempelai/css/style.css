@@ -14825,7 +14825,8 @@ p {
 }
 
 .modal {
-	z-index: 99999999999;
+	/* z-index: 99999999999; */
+	z-index: 10000;
 }
 
 .bd-example .modal {

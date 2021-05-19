@@ -1,5 +1,8 @@
 // $("#Modal-P").modal({ backdrop: 'static', keyboard: false, show: true });
 $('#Modal-P').modal('show');
+$(".btn-show-modal").on("click", function () {
+    $('#Modal-P').modal('hide');
+})
 window.dataLayer = window.dataLayer || [];
 
 function gtag() {
