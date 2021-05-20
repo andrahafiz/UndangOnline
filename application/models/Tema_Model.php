@@ -23,8 +23,6 @@ class Tema_Model extends CI_Model
 
     public function jumlahtema()
     {
-
-
         return $this->db->count_all_results('thema');
     }
 
@@ -39,7 +37,6 @@ class Tema_Model extends CI_Model
     }
     public function update_tema($id, $data)
     {
-
         $this->db->where('id_thema', $id);
         $this->db->update('thema', $data);
     }

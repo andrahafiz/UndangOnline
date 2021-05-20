@@ -374,7 +374,7 @@
                             <div class="col-6">
                                 <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">125</span>K</span>
+                                        <span class="count"><span class="counter"><?= $jml_akun ?></span></span>
                                         <p class="text">Pengguna Web</p>
                                     </div>
                                 </div> <!-- single counter -->
@@ -382,7 +382,7 @@
                             <div class="col-6">
                                 <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">87</span>K</span>
+                                        <span class="count"><span class="counter"><?= $jml_tema ?></span></span>
                                         <p class="text">Tema</p>
                                     </div>
                                 </div> <!-- single counter -->

@@ -28,7 +28,7 @@ class Akun_Model extends CI_Model
 
         $this->db->update('tb_akun', array('Status_akun' => $status), "ID_akun='$id'");
     }
-    public function jumlahtamu()
+    public function jumlahakun()
     {
         $this->db->from('tb_akun');
         return $this->db->count_all_results();

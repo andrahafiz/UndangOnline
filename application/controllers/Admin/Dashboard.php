@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller
             'judul' => 'Dashboard',
             'menu' => menu_admin(),
             'data_akun' => $akun,
-            'jumlah_akun' => $this->Akun_Model->jumlahtamu()
+            'jumlah_akun' => $this->Akun_Model->jumlahakun()
         );
         $this->load->view('Admin/layout/header', $data);
         $this->load->view('Admin/Dashboard', $data);
