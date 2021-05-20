@@ -199,7 +199,6 @@ class Tema extends CI_Controller
             return $return;
         }
     }
-<<<<<<< HEAD
 
 
     function pesan($tipe, $pesan)
@@ -248,6 +247,4 @@ class Tema extends CI_Controller
     {
         return $this->Tema_Model->selectAll();
     }
-=======
->>>>>>> parent of 3f705be (Merge branch 'main' of https://github.com/andrahafiz/UndangOnline into main)
 }
