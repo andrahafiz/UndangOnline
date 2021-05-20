@@ -23,7 +23,8 @@ class Galeri extends CI_Controller
             'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
             'data_video' => $this->Galeri_Model->selectSingle($id_undangan, 'Video')
         );
-
+        // var_dump($data['data_video']);
+        // die;
         // $query = $this->db->get('tb_gallery')->result();
         // if ($query->num_rows() > 0) {
         //     echo $query->num_rows();
@@ -60,7 +61,7 @@ class Galeri extends CI_Controller
                 $_FILES['file']['size'] = $_FILES['files']['size'][$i];
 
 
-                $config['upload_path'] = './assets/Mempelai/images/mempelai/'; //path folder
+                $config['upload_path'] = './assets/Mempelai/images/gallery/'; //path folder
                 $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
                 $config['max_size']     = '1000';
                 $config['file_name'] = $_FILES['files']['name'][$i];
@@ -74,8 +75,10 @@ class Galeri extends CI_Controller
                     $this->upload->display_errors();
                     redirect('Mempelai/Mempelai');
                 }
-            }
+            };
+        }
     }
+
     public function add_video()
     {
         $id_undangan = $this->session->userdata('ID_Undangan');
