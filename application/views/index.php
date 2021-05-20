@@ -417,60 +417,27 @@
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="team-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/team-1.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni lni-search"></i> Preview </a></li>
-                                </ul>
+                <?php foreach ($tema_favorite as $key => $value) { ?>
+
+                    <div class="col-lg-4 col-md-7 col-sm-8">
+                        <div class="single-team text-center mt-30 wow fadeIn shadow bg-white rounded-lg" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="team-image">
+                                <img src="<?= base_url() . "assets/Tema/" . $value->image_thema . "" ?> " alt="Team" class="border-bottom border-dark" style="height:310px; width:370px">
+
+                                <div class="social">
+                                    <ul>
+                                        <li><a href="#"><i class="lni lni-search"></i> Preview </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5 class="holder-name "><a href="#"><span class="text-uppercase"><?= $value->nama_thema ?></span> </a></h5>
+                                <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p>
                             </div>
                         </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Isabela Moreira</a></h5>
-                            <p class="text">Founder and CEO</p>
-                        </div>
-                    </div> <!-- single team -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="team-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/team-2.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Elon Musk</a></h5>
-                            <p class="text">Sr. Software Engineer</p>
-                        </div>
-                    </div> <!-- single team -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="team-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/team-3.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Fiona Smith</a></h5>
-                            <p class="text">Business Development Manager</p>
-                        </div>
-                    </div> <!-- single team -->
-                </div>
+                    </div>
+
+                <?php } ?>
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
