@@ -161,8 +161,6 @@ class Tema extends CI_Controller
     public function uploadImage($id_thema = NULL)
     {
 
-        echo $id_thema;
-
         $config['upload_path']          = './assets/Tema/';
         $config['allowed_types']        = 'gif|jpg|png';
         // $config['overwrite']            = true;
