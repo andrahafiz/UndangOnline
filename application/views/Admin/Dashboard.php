@@ -75,12 +75,12 @@
                                         </div>
                                         <div class="col">
                                             <h6 class="m-b-0">Mail</h6>
-                                            <p>231.2w downloads</p>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
+                                            <p>231.568 Balasan </p>
+                                            <p class="m-b-0">Mari Hubungi kami seperti anda butuh relasi sosial</p>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="youtube.com" class="download-icon"><i class="feather icon-arrow-down"></i></a>
+                                <a href="https://www.youtube.com/watch?v=BK3uGeoLMak" class="download-icon"><i class="feather icon-arrow-down"></i></a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
@@ -92,12 +92,12 @@
                                         </div>
                                         <div class="col">
                                             <h6 class="m-b-0">twitter</h6>
-                                            <p>231.2w downloads</p>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
+                                            <p>251.568 Pengikut </p>
+                                            <p class="m-b-0">Mari Hubungi kami seperti anda butuh relasi sosial</p>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#!" class="download-icon"><i class="feather icon-arrow-down"></i></a>
+                                <a href="https://twitter.com/elonmusk" class="download-icon"><i class="feather icon-arrow-down"></i></a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-12">
@@ -109,12 +109,12 @@
                                         </div>
                                         <div class="col">
                                             <h6 class="m-b-0">Instagram</h6>
-                                            <p>231.2w downloads</p>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
+                                            <p>231.568 Pengikut </p>
+                                            <p class="m-b-0">Mari Hubungi kami seperti anda butuh relasi sosial</p>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#!" class="download-icon"><i class="feather icon-arrow-down"></i></a>
+                                <a href="https://www.instagram.com/propstore20/" class="download-icon"><i class="feather icon-arrow-down"></i></a>
                             </div>
                         </div>
                         <!-- social download  end -->
