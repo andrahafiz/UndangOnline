@@ -1463,9 +1463,9 @@ p {
 ===========================*/
 .undangan-area {
   padding: 40px 50px 90px;
-  -webkit-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
-  -moz-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
-  box-shadow: 0px 0px 18px 0px #361cc1;
+  -webkit-box-shadow: 0px 0px 12 0px rgba(50, 77, 215, 0.14);
+  -moz-box-shadow: 0px 0px 12 0px rgba(50, 77, 215, 0.14);
+  /* box-shadow: 0px 0px 18px 0px #361cc1; */
   border-radius: 10px;
   /* background-color: #fff;  */
   background: rgb(255,255,255);
