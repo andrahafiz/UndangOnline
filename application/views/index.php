@@ -170,7 +170,7 @@
     <!--====== END CARI UNDANGAN ======-->
 
     <!--====== TEMA PART START ======-->
-    <section id="tema" class="services-area pt-120">
+    <section id="tema" class="about-area pt-120">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
@@ -204,13 +204,15 @@
                 <?php } ?>
             </div> <!-- row -->
         </div> <!-- container -->
+        <div class="about-shape-2">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-2.svg" alt="shape">
+        </div>
     </section>
     <!--====== TEMA PART ENDS ======-->
 
     <!--====== STATISTIC  ======-->
     <section id="statistik" class="about-area pt-70">
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-6">
                     <div class="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -270,54 +272,9 @@
     </section>
     <!--====== STATISTIC ENDS ======-->
 
-
-    <!--====== SERVICES PART START ======-->
-    <section id="about" class="about-area pt-70">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeftBig;">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title">Quick &amp; Easy <span>to Use Bootstrap Template</span></h3>
-                        </div> <!-- section title -->
-                        <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
-                    </div> <!-- about content -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-services text-center mt-30 wow fadeIn shadow-lg " data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="services-icon">
-                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-2.svg" alt="shape">
-                            <i class="lni lni-diamond-alt"></i>
-                        </div>
-                        <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Rp. 100.000</a></h4>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-        <div class="about-shape-1">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
-        </div>
-    </section>
-
-
     <!--====== HARGA  ======-->
-    <section id="harga" class="services-area pt-120">
+    <section id="harga" class="about-area pt-120">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="section-title text-center pb-40">
-                        <div class="line m-auto"></div>
-                        <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Cek Harga Disini,</h2>
-                        <p class="text">Disini kamu dapat memilih harga paket undangan sesuai dengan yang kamu butuhkan.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
             <div class="row justify-content-center ">
                 <div class="col-lg-6">
                     <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeftBig;">
@@ -325,8 +282,12 @@
                             <div class="line"></div>
                             <h3 class="title">Quick &amp; Easy <span>to Use Bootstrap Template</span></h3>
                         </div> <!-- section title -->
-                        <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
+                        <ul class="text">
+                            <li>- 100 Tema</li>
+                            <li>- 10 Gambar Upload</li>
+                            <li>- 3 Video Upload</li>
+                        </ul>
+                        <a href="#" class="main-btn">Buat Undangan</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="col-lg-5 col-md-12 col-sm-12 ">
@@ -337,19 +298,15 @@
                             <i class="lni lni-diamond-alt"></i>
                         </div>
                         <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Rp. 100.000</a></h4>
-                            <ul class="text">
-                                <li>* 100 Tema</li>
-                                <li>* 10 Gambar Upload</li>
-                                <li>* 3 Video Upload</li>
-                            </ul>
+                            <h1 class="services-title"><a href="#">Rp. 100.000</a></h1>
                         </div>
                     </div> <!-- single services -->
                 </div>
             </div> <!-- row -->
-
         </div> <!-- container -->
-
+        <div class="about-shape-2">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-2.svg" alt="shape">
+        </div>
     </section>
     <!--====== END HARGA  ======-->
 

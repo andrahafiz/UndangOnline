@@ -15,11 +15,11 @@ function menu_mempelai()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Mempelai', 'Acara', 'Tamu Undangan', 'Hadiah', 'Galeri', 'Pembayaran', 'Logout'],
+        ['Dashboard', 'Mempelai', 'Acara', 'Tamu Undangan', 'Hadiah', 'Galeri', 'Pembayaran', 'Feedback', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'feather icon-image', 'fa fa-credit-card', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'feather icon-image', 'fa fa-credit-card', 'fa fa-list-alt', 'feather icon-log-out'],
         //url
-        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Galeri', 'Mempelai/Pembayaran', 'Mempelai/Auth/logout'],
+        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Galeri', 'Mempelai/Pembayaran', 'Mempelai/Feedback', 'Mempelai/Auth/logout'],
     ];
     return $menu;
 }
