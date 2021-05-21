@@ -89,25 +89,28 @@
                                         <a class="page-scroll" href="#home">Beranda</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#features">Harga</a>
-                                    </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="page-scroll" href="#about">About</a>
-                                    </li> -->
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#facts">Survey</a>
+                                        <a class="page-scroll" href="#harga">Harga</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#team">Tema</a>
+                                        <a class="page-scroll" href="#statistik">Statistik</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#blog">Blog</a>
+                                        <a class="page-scroll" href="#tema">Tema</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#testimoni">Testimoni</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#testimoni">Demo</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="<?= base_url('Mempelai') ?>">Login</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
 
                             <div class="navbar-btn d-none d-sm-inline-block">
-                                <a class="main-btn" data-scroll-nav="0" href="#pricing">Buat Undangan</a>
+                                <a class="main-btn" data-scroll-nav="0" href="<?= base_url('Register') ?>">Buat Undangan</a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>
@@ -139,214 +142,75 @@
         </div> <!-- header hero -->
     </header>
 
-    <!--====== HEADER PART ENDS ======-->
-
-    <!--====== BRAMD PART START ======-->
-
-    <!-- <div class="brand-area pt-90">
+    <!--====== CARI UNDANGAN ======-->
+    <div class="brand-area pt-90">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="brand-logo d-flex align-items-center justify-content-center justify-content-md-between">
-                        <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-1.png" alt="brand"> -->
-    <!-- </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-2.png" alt="brand">
-                        </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-3.png" alt="brand">
-                        </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-4.png" alt="brand">
-                        </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-5.png" alt="brand">
-                        </div> single logo -->
-    <!-- </div> brand logo -->
-    <!-- </div> -->
-    <!-- </div>   row -->
-    <!-- </div> container -->
-    <!-- </div> -->
-
-    <!--====== BRAMD PART ENDS ======-->
-    <div class="container mt-85">
-        <div class="undangan-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="undangan-content mt-65">
-                        <h2 class="undangan-title">Cari undangan</h2>
+            <div class="col-lg-12">
+                <div class="undangan-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="undangan-content mt-65">
+                                <div class="line m-auto"></div>
+                                <h2 class="undangan-title">Cari undangan</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="undangan-form mt-50">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter eamil">
+                                    <button class="main-btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="undangan-form mt-50">
-                        <form action="#">
-                            <input type="text" placeholder="Enter eamil">
-                            <button class="main-btn">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
     </div>
-    <!--====== SERVICES PART START ======-->
+    <!--====== END CARI UNDANGAN ======-->
 
-
-
-    <section id="features" class="services-area pt-120">
+    <!--====== TEMA PART START ======-->
+    <section id="tema" class="services-area pt-120">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="section-title text-center pb-40">
+                <div class="col-lg-5">
+                    <div class="section-title text-center pb-30">
                         <div class="line m-auto"></div>
-                        <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Cek Harga Disini,</h2>
-                        <h3 class="title"> <span> Dan Dapatkan Sesuai Yang Kamu Mau!</span></h3>
-                        <p class="text">Disini kamu dapat memilih harga paket undangan sesuai dengan yang kamu butuhkan.</p>
+                        <h3 class="title">Tema Terfavorit Di <span> Getmarried</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="services-icon">
-                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-1.svg" alt="shape">
-                            <i class="lni-baloon"></i>
+                <?php foreach ($tema_favorite as $key => $value) { ?>
+
+                    <div class="col-lg-4 col-md-7 col-sm-8">
+                        <div class="single-team text-center mt-30 wow fadeIn shadow bg-white rounded-lg" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="team-image">
+                                <img src="<?= base_url() . "assets/Tema/" . $value->image_thema . "" ?> " alt="Team" class="" style="height:300px; width:370px; object-fit:contain;">
+
+                                <div class="social">
+                                    <ul>
+                                        <li> <a href="#"><i class="lni lni-search"></i><strong>Preview</strong> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5 class="holder-name "><a href="#"><span class="text-uppercase"><?= $value->nama_thema ?></span> </a></h5>
+                                <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p>
+                            </div>
                         </div>
-                        <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Clean</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="services-icon">
-                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-2.svg" alt="shape">
-                            <i class="lni-cog"></i>
-                        </div>
-                        <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Robust</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="services-icon">
-                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-3.svg" alt="shape">
-                            <i class="lni-bolt-alt"></i>
-                        </div>
-                        <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Powerful</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
+                    </div>
+
+                <?php } ?>
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
+    <!--====== TEMA PART ENDS ======-->
 
-    <!--====== SERVICES PART ENDS ======-->
-
-    <!--====== ABOUT PART START ======-->
-
-    <!-- <section id="about" class="about-area pt-70">
+    <!--====== STATISTIC  ======-->
+    <section id="statistik" class="about-area pt-70">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title">Quick & Easy <span>to Use Bootstrap Template</span></h3> -->
-    <!-- </div> section title -->
-    <!-- <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
-                    </div> <!-- about content -->
-    <!-- </div>
-                <div class="col-lg-6">
-                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="<?= base_url(); ?>assets/LandingPage/images/about1.svg" alt="about">
-                    </div> about image -->
-    <!-- </div> 
-            </div> <!-- row -->
-    </div> <!-- container -->
-    <!-- <div class="about-shape-1">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
-        </div>
-    </section> -->
 
-    <!--====== ABOUT PART ENDS ======-->
-
-    <!--====== ABOUT PART START ======-->
-
-    <!-- <section class="about-area pt-70">
-        <div class="about-shape-2">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-2.svg" alt="shape">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 order-lg-last">
-                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title">Modern design <span> with Essential Features</span></h3>
-                        </div> section title -->
-    <!-- <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
-                    </div>  about content -->
-    <!-- </div>
-                <div class="col-lg-6 order-lg-first">
-                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="<?= base_url(); ?>assets/LandingPage/images/about2.svg" alt="about">
-                    </div> about image -->
-    <!-- </div>
-            </div> <!-- row -->
-    </div> <!-- container -->
-    <!-- </section>   -->
-
-
-    <!--====== ABOUT PART START ======-->
-
-    <!-- <section class="about-area pt-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title"><span>Crafted for</span> SaaS, App and Software Landing Page</h3>
-                        </div> section title -->
-    <!-- <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
-                    </div> <!-- about content -->
-    <!-- </div>
-                <div class="col-lg-6">
-                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="<?= base_url(); ?>assets/LandingPage/images/about3.svg" alt="about">  -->
-    <!-- </div> <!-- about image -->
-    <!-- </div> -->
-    <!-- </div> row -->
-    <!-- </div> container -->
-    <!-- <div class="about-shape-1">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
-        </div>
-    </section> -->
-
-    <!--====== ABOUT PART ENDS ======-->
-
-
-    <!--====== ABOUT PART ENDS ======-->
-
-    <!--====== VIDEO COUNTER PART START ======-->
-
-    <section id="facts" class="video-counter pt-70">
-        <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -366,9 +230,9 @@
                         <div class="counter-content">
                             <div class="section-title">
                                 <div class="line"></div>
-                                <h3 class="title">Survey<span> Menggunakan Website Getmarried kami.</span></h3>
+                                <h3 class="title">Data Statistik<span> Website Getmarried Kami.</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Berikut anda dapat melihat berapa banyak pengguna website getmarried dibawah ini.</p>
+                            <p class="text">Berikut anda dapat melihat statistik website getmarried dibawah ini.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
                             <div class="col-6">
@@ -400,53 +264,100 @@
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
+        <div class="about-shape-1">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
+        </div>
+    </section>
+    <!--====== STATISTIC ENDS ======-->
+
+
+    <!--====== SERVICES PART START ======-->
+    <section id="about" class="about-area pt-70">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeftBig;">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Quick &amp; Easy <span>to Use Bootstrap Template</span></h3>
+                        </div> <!-- section title -->
+                        <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+                        <a href="#" class="main-btn">Try it Free</a>
+                    </div> <!-- about content -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-services text-center mt-30 wow fadeIn shadow-lg " data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="services-icon">
+                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-2.svg" alt="shape">
+                            <i class="lni lni-diamond-alt"></i>
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title"><a href="#">Rp. 100.000</a></h4>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="about-shape-1">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
+        </div>
     </section>
 
-    <!--====== VIDEO COUNTER PART ENDS ======-->
 
-    <!--====== TEAM PART START ======-->
-
-    <section id="team" class="team-area pt-120">
+    <!--====== HARGA  ======-->
+    <section id="harga" class="services-area pt-120">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="section-title text-center pb-30">
+                <div class="col-lg-10">
+                    <div class="section-title text-center pb-40">
                         <div class="line m-auto"></div>
-                        <h3 class="title">Tema Terfavorit Di <span> Getmarried</span></h3>
+                        <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Cek Harga Disini,</h2>
+                        <p class="text">Disini kamu dapat memilih harga paket undangan sesuai dengan yang kamu butuhkan.</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
-            <div class="row justify-content-center">
-                <?php foreach ($tema_favorite as $key => $value) { ?>
-
-                    <div class="col-lg-4 col-md-7 col-sm-8">
-                        <div class="single-team text-center mt-30 wow fadeIn shadow bg-white rounded-lg" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <div class="team-image">
-                                <img src="<?= base_url() . "assets/Tema/" . $value->image_thema . "" ?> " alt="Team" class="border-bottom border-dark" style="height:310px; width:370px">
-
-                                <div class="social">
-                                    <ul>
-                                        <li><a href="#"><i class="lni lni-search"></i> Preview </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-content">
-                                <h5 class="holder-name "><a href="#"><span class="text-uppercase"><?= $value->nama_thema ?></span> </a></h5>
-                                <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p>
-                            </div>
+            <div class="row justify-content-center ">
+                <div class="col-lg-6">
+                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeftBig;">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Quick &amp; Easy <span>to Use Bootstrap Template</span></h3>
+                        </div> <!-- section title -->
+                        <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+                        <a href="#" class="main-btn">Try it Free</a>
+                    </div> <!-- about content -->
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 ">
+                    <div class="single-services text-center mt-30 wow fadeIn shadow-lg " data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="services-icon">
+                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-2.svg" alt="shape">
+                            <i class="lni lni-diamond-alt"></i>
                         </div>
-                    </div>
-
-                <?php } ?>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title"><a href="#">Rp. 100.000</a></h4>
+                            <ul class="text">
+                                <li>* 100 Tema</li>
+                                <li>* 10 Gambar Upload</li>
+                                <li>* 3 Video Upload</li>
+                            </ul>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
             </div> <!-- row -->
+
         </div> <!-- container -->
+
     </section>
+    <!--====== END HARGA  ======-->
 
-    <!--====== TEAM PART ENDS ======-->
 
-    <!--====== TESTIMONIAL PART START ======-->
 
-    <section id="testimonial" class="testimonial-area pt-120">
+    <!--====== TEMA PART START ======-->
+
+    <section id="testimoni" class="testimonial-area pt-120">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
@@ -607,14 +518,16 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="subscribe-content mt-45">
-                            <h2 class="subscribe-title">Subscribe Our Newsletter <span>get reguler updates</span></h2>
+                            <h2 class="subscribe-title">Kontak kami<span>get reguler updates</span></h2>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="subscribe-form mt-50">
                             <form action="#">
                                 <input type="text" placeholder="Enter eamil">
-                                <button class="main-btn">Subscribe</button>
+                                <input type="text" placeholder="Enter eamil">
+                                <input type="text" placeholder="Enter eamil">
+
                             </form>
                         </div>
                     </div>
@@ -637,35 +550,24 @@
                             </ul>
                         </div> <!-- footer about -->
                     </div>
-                    <div class="col-lg-5 col-md-7 col-sm-7">
+                    <div class="col-lg-3 col-md-5 col-sm-5 ">
                         <div class="footer-link d-flex mt-50 justify-content-md-between">
-                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                                <div class="footer-title">
-                                    <h4 class="title">Quick Link</h4>
-                                </div>
-                                <ul class="link">
-                                    <li><a href="#">Road Map</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Refund Policy</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Pricing</a></li>
-                                </ul>
-                            </div> <!-- footer wrapper -->
                             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                                 <div class="footer-title">
-                                    <h4 class="title">Resources</h4>
+                                    <h4 class="title">Menu</h4>
                                 </div>
                                 <ul class="link">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Page</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#home">Beranda</a></li>
+                                    <li><a href="#harga">Harga</a></li>
+                                    <li><a href="#statistik">Statistik</a></li>
+                                    <li><a href="#tema">Tema</a></li>
+
                                 </ul>
+
                             </div> <!-- footer wrapper -->
                         </div> <!-- footer link -->
                     </div>
-                    <div class="col-lg-3 col-md-5 col-sm-5">
+                    <div class="col-lg-5 col-md-7 col-sm-7">
                         <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="footer-title">
                                 <h4 class="title">Contact Us</h4>
@@ -685,7 +587,7 @@
                     <div class="col-lg-12">
                         <div class="copyright d-sm-flex justify-content-between">
                             <div class="copyright-content">
-                                <p class="text">Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
+                                <p class="text">Desain By <a href="https://uideck.com" rel="nofollow">UIdeck & Tim Undangan Online</a></p>
                             </div> <!-- copyright content -->
                         </div> <!-- copyright -->
                     </div>
@@ -696,28 +598,6 @@
     </footer>
 
     <!--====== FOOTER PART ENDS ======-->
-
-    <!--====== BACK TOP TOP PART START ======-->
-
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-
-    <!--====== BACK TOP TOP PART ENDS ======-->
-
-    <!--====== PART START ======-->
-
-
-    <!-- <section class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-"></div>
-            </div>
-        </div>
-    </section> -->
-
-
-    <!--====== PART ENDS ======-->
-
-
 
 
     <!--====== Jquery js ======-->

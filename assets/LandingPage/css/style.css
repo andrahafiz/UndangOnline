@@ -754,7 +754,7 @@ p {
   color: #2E2E2E; }
 
 .sticky .navbar-nav .nav-item.active > a, .sticky .navbar-nav .nav-item:hover > a {
-  color: #361CC1; }
+  color: #fe8464 ; }
 
 /*===== HEADER HERO =====*/
 .header-hero {
@@ -884,8 +884,8 @@ p {
       transform: translate(-50%, -50%); }
     .single-services .services-icon i {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 52%;
+      left: 47%;
       -webkit-transform: translate(-50%, -50%);
       -moz-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -1138,7 +1138,7 @@ p {
       right: 0;
       bottom: 25px; }
       .single-team .team-image .social ul {
-        background-color: rgba(255, 255, 255, 0.23);
+        background: linear-gradient(#fe836483 0%, #fe6e9948 100%);
         display: inline-block;
         border-radius: 50px;
         padding: 0 13px;
@@ -1469,7 +1469,8 @@ p {
   border-radius: 10px;
   /* background-color: #fff;  */
   background: rgb(255,255,255);
-background: linear-gradient(184deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 50%);
+  /* background: linear-gradient(184deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 50%); */
+  background: linear-gradient(to right, #33c8c1 0%, #119bd2 50%, #33c8c1 100%);
   /* background: linear-gradient(to right, #361cc1 0%, #2e82ef 100%); */
 }
   @media (max-width: 767px) {
