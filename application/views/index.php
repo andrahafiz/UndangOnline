@@ -118,7 +118,7 @@
             </div> <!-- container -->
         </div> <!-- navbar area -->
 
-        <div id="home" class="header-hero bg_cover" style="background-image: url(<?= base_url(); ?>assets/LandingPage/images/banner-bg-2.jpg)">
+        <div id="home" class="header-hero bg_cover" style="background-image: url(<?= base_url(); ?>assets/LandingPage/images/banner-bg.jpg)">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
