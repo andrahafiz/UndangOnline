@@ -19,7 +19,7 @@ class Galeri extends CI_Controller
         $data = array(
             'judul' => 'Galeri',
             'menu' => menu_mempelai(),
-            'data_all' => $this->Galeri_Model->selectAll($id_undangan),
+            'q' => $this->Galeri_Model->selectAll($id_undangan),
             'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
             'data_video' => $this->Galeri_Model->selectSingle($id_undangan, 'Video')
         );
@@ -45,9 +45,6 @@ class Galeri extends CI_Controller
         // redirect('Mempelai/Mempelai');
         echo "<script>alert('y');</script>";
 
-
-        // $data = [];
-
         $count = count($_FILES['files']['name']);
 
         for ($i = 0; $i < $count; $i++) {
@@ -70,6 +67,16 @@ class Galeri extends CI_Controller
 
                 if ($this->upload->do_upload('file')) {
                     $uploadData = $this->upload->data();
+                    $data = [
+                        'ID_Undangan' =>  $this->session->userdata('ID_Undangan'),
+                        'Tipe_Media' => 'Foto',
+                        'Link_Media' => $uploadData['file_name'],
+                        'Size_Media' => $uploadData['size'],
+                        'Status_Media' => '0',
+                    ];
+                    // var_dump($uploadData);
+                    // die();
+                    $this->Galeri_Model->tambah_data_media($data);
                     redirect('Mempelai/Galeri');
                 } else {
                     $this->upload->display_errors();

@@ -9,6 +9,12 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4>File Upload</h4>
+                                    <div class="card-header-right">
+                                        <button type="button" onClick="window.location.reload();" class="btn btn-primary btn-icon" data-toggle="tooltip" data-placement="bottom" data-original-title="Refresh">
+                                            <i class="fa fa-refresh" style="color: white;"></i>
+                                        </button>
+                                    </div>
+
 
                                     <!-- <a href="<?= base_url('Mempelai/Galeri/add_foto'); ?>">asd</a> -->
                                     <!-- <div class="card-header-right">
@@ -128,8 +134,8 @@
                                                                 <figcaption>
                                                                     <h2><span><?= $value->Judul_Media ?></span></h2>
                                                                     <p>
-                                                                        <a href="#"><i class="fa fa-fw fa-star-o"></i></a>
                                                                         <a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
+                                                                        <a href="#"><i class="fa fa-fw fa-star"></i></a>
                                                                         <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
                                                                     </p>
                                                                 </figcaption>
