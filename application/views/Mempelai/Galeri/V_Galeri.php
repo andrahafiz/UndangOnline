@@ -129,13 +129,25 @@
                                                 if (count($data_foto) > 0) {
                                                     foreach ($data_foto as $key => $value) { ?>
                                                         <div class="col-lg-4 ">
-                                                            <figure class="effect-winston  text-center">
-                                                                <img src="<?= base_url(); ?>assets\Mempelai\images\gallery\<?= $value->Link_Media ?>" alt="img30">
+                                                            <!-- <figure class="effect-winston  text-center" style="height:55%;">
+                                                                <img src="<?= base_url(); ?>assets\Mempelai\images\gallery\<?= $value->Link_Media ?>" style="height:1600;width:1070px;  object-fit: cover;" lt="img30">
                                                                 <figcaption>
                                                                     <h2><span><?= $value->Judul_Media ?></span></h2>
                                                                     <p>
                                                                         <a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
                                                                         <a href="#"><i class="fa fa-fw fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+                                                                    </p>
+                                                                </figcaption>
+                                                            </figure> -->
+                                                            <figure class="effect-winston" style="height: 215px;">
+                                                                <center>
+                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\gallery\<?= $value->Link_Media ?>" alt="img30" style="height: 215px;">
+                                                                </center>
+                                                                <figcaption>
+                                                                    <h2><span><?= $value->Judul_Media ?></span></h2>
+                                                                    <p>
+                                                                        <a href="#"><i class="fa fa-fw fa-star-o"></i></a>
                                                                         <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
                                                                     </p>
                                                                 </figcaption>
