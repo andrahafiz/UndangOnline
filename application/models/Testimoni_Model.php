@@ -1,5 +1,5 @@
 <?php
-class Tetstimoni_Model extends CI_Model
+class Testimoni_Model extends CI_Model
 {
 
     public function selectAll()
