@@ -7,11 +7,11 @@ class Tetstimoni_Model extends CI_Model
         $this->db->select("*");
         $this->db->from("tb_testimoni");
         $this->db->join("tb_undangan", 'tb_testimoni.ID_Undangan=tb_undangan.ID_Undangan');
-        $this->db->join("tb_akun", 'tb_testimoni.ID_Akun=tb_undangan.ID_Akun');
+        $this->db->join("tb_akun", 'tb_testimoni.ID_Akun=tb_akun.ID_Akun');
         return $this->db->get()->result();
     }
 
-    public function tambah_data_acara($data)
+    public function tambah_data_testimoni($data)
     {
         $this->db->insert('tb_testimoni', $data);
     }
@@ -19,7 +19,7 @@ class Tetstimoni_Model extends CI_Model
     public function selectbyid($id)
     {
         // $this->db->where('pekerjaan_id', $id);
-        $query =  $this->db->get_where('view_acara', ['ID_akun' => $id]);
+        $query =  $this->db->get_where('tb_testimoni', ['ID_Testimoni' => $id]);
         $hasil = $query->row();
         return $hasil;
     }
@@ -28,9 +28,9 @@ class Tetstimoni_Model extends CI_Model
     {
         $this->db->update('tb_testimoni', array('Status_testimoni' => $status), "ID_Testimoni='$id'");
     }
-    public function jumlahakun()
+    public function jumlahtestimoni()
     {
-        $this->db->from('tb_akun');
+        $this->db->from('tb_testimoni');
         return $this->db->count_all_results();
     }
 }
