@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Feedback extends CI_Controller
+class Testimoni extends CI_Controller
 {
 
     function __construct()
@@ -21,7 +21,7 @@ class Feedback extends CI_Controller
         );
 
         $this->load->view('Mempelai/layout/header', $data);
-        $this->load->view('Mempelai/Tetstimoni/V_Tetstimoni', $data);
+        $this->load->view('Mempelai/Testimoni/V_Testimoni', $data);
         $this->load->view('Mempelai/layout/footer');
     }
 }
