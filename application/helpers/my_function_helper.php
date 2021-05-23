@@ -147,9 +147,6 @@ function getBulan($bln)
     }
 }
 
-
-
-
 // Fungsi untuk menampilkan data dalam bentuk combobox
 function comboboxmanual($name, $id, $value, $isi, $selected)
 {
@@ -183,8 +180,8 @@ function combobox($name, $id, $table, $field, $primary_key, $selected)
 
 function kode($table)
 {
-    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema');
-    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM');
+    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema', 'tb_testimoni');
+    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM', 'TSM');
     $index_kode = array_search($table, $tabel);
     return $kode[$index_kode];
 }
