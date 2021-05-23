@@ -22,7 +22,7 @@ class Testimoni extends CI_Controller
             'data_akun' => $akun
         );
         $this->load->view('Admin/layout/header', $data);
-        $this->load->view('Admin/Akun/V_Akun', $data);
+        $this->load->view('Admin/Testimoni/V_Testimoni', $data);
         $this->load->view('Admin/layout/footer');
     }
     public function ubah_status($id, $status)
