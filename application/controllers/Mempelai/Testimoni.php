@@ -27,7 +27,7 @@ class Testimoni extends CI_Controller
             $this->load->view('Mempelai/layout/footer');
         } else {
             $this->Testimoni_Model->tambah_data_testimoni($this->_data());
-            $this->pesan('success', 'data berhasil di tambahkan');
+            $this->pesan('sukses', 'data berhasil di tambahkan');
             redirect('Mempelai/Testimoni');
         }
     }

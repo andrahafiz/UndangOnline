@@ -10,10 +10,10 @@
                                     <div class="col-md-6 m-auto">
                                         <div class="card-sub" style="cursor: auto;">
 
+                                            <?= $this->session->flashdata('message'); ?>
                                             <img class="card-img-top img-fluid" src="<?= base_url(); ?>assets\Mempelai\images\feedback.jpg" alt=" Card image cap">
                                             <div class="card-block">
                                                 <h1 class="card-title f-w-600">Testimoni</h1>
-                                                <?= $this->session->flashdata('message'); ?>
                                                 <p class="card-text">Terima kasih telah memberikan testimoni ke website kami, kritik dan saran dari kamu sebagai semangat kami untuk membangun website ini menjadi lebih baik.</p>
                                                 <p class="card-text text-warning f-12">* Testimoni kamu akan di berikan kesempatan di tampilkan di halaman utama website</p>
                                                 <form class="form-group" method="POST">
