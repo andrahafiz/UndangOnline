@@ -42,7 +42,7 @@
 <body>
     <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+<![endif]-->
 
 
     <!--====== PRELOADER PART START ======-->
@@ -280,7 +280,7 @@
                     <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeftBig;">
                         <div class="section-title">
                             <div class="line"></div>
-                            <h3 class="title">Quick &amp; Easy <span>to Use Bootstrap Template</span></h3>
+                            <h3 class="title">Harga &amp; Paket<span><br> untuk undangan yang sudah disediakan dibawah ini.</span></h3>
                         </div> <!-- section title -->
                         <ul class="text">
                             <li>- 100 Tema</li>
@@ -332,7 +332,7 @@
                                 <i class="lni-quotation"></i>
                             </div>
                             <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
+                                <h5 class="holder-name">@GetMarried</a></h5>
                             </div>
                             <!-- <div class="star">
                                 <ul>
@@ -345,7 +345,7 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                            <p class="text">Sangat mudah digunakan, undangan pernikahan langsung bisa dibagikan dengan cepat! Sukses terus kedepannya!</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -353,8 +353,8 @@
                                 <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-1.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Jenny Deo</h6>
-                                <p class="text">CEO, SpaceX</p>
+                                <h6 class="holder-name">Annisa Ariani</h6>
+                                <p class="text">Karyawan Swasta</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -366,7 +366,7 @@
                                 <i class="lni-quotation"></i>
                             </div>
                             <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
+                                <h5 class="holder-name">@GetMarried</a></h5>
                             </div>
                             <!-- <div class="star">
                                 <ul>
@@ -379,7 +379,7 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                            <p class="text">Baru kali ini ada platform undangan pernikahan online yang gratis dan simple. Terimakasih</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -387,8 +387,8 @@
                                 <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Marjin Otte</h6>
-                                <p class="text">UX Specialist, Yoast</p>
+                                <h6 class="holder-name">Hardana</h6>
+                                <p class="text">Wirausahawan</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -400,7 +400,7 @@
                                 <i class="lni-quotation"></i>
                             </div>
                             <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
+                                <h5 class="holder-name">@GetMarried</a></h5>
                             </div>
                             <!-- <div class="star">
                                 <ul>
@@ -413,7 +413,7 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                            <p class="text">Awalnya sempat ragu, kenapa murah sekali. Begitu di coba luar biasa, fiturnya lengkap sekali, tidak mengecewakan. Sukses terus!!</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -421,8 +421,8 @@
                                 <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-3.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">David Smith</h6>
-                                <p class="text">CTO, Alphabet</p>
+                                <h6 class="holder-name">Lidia Setia</h6>
+                                <p class="text">Karyawan swasta</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -434,7 +434,7 @@
                                 <i class="lni-quotation"></i>
                             </div>
                             <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
+                                <h5 class="holder-name">@GetMarried</a></h5>
                             </div>
                             <!-- <div class="star">
                                 <ul>
@@ -447,7 +447,7 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                            <p class="text">Gak salah banget sih pilih platform ini untuk buat undangan. Harga terjangkau dan simple lagi. suksess!!</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -456,7 +456,7 @@
                             </div>
                             <div class="author-content media-body">
                                 <h6 class="holder-name">Fajar Siddiq</h6>
-                                <p class="text">COO, MakerFlix</p>
+                                <p class="text">Dokter</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -471,14 +471,20 @@
 
     <footer id="footer" class="footer-area pt-120">
         <div class="container">
-            <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="subscribe-content mt-45">
-                            <h2 class="subscribe-title">Kontak kami<span>get reguler updates</span></h2>
-                        </div>
+
+                        <h6 class="text">Berikut beberapa keunggulan website undangan pernikahan online Datengdong :</h6>
+                        <p> <span>1. Undangan Pernikahan Hemat</span>
+                            <span>2. Undangan Pernikahan Simple</span>
+                            <span>3. Undangan Pernikahan Efektif</span>
+                            <span>4. Undangan Pernikahan Fitur Terlengkap</span>
+                            <span>5. Undangan Pernikahan Kekinian</span>
+                        </p>
+
                     </div>
-                    <div class="col-lg-6">
+                    <!-- <div class="col-lg-6">
                         <div class="subscribe-form mt-50">
                             <form action="#">
                                 <input type="text" placeholder="Enter eamil">
@@ -487,7 +493,7 @@
 
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- end subscribe area -->
@@ -498,7 +504,8 @@
                             <a class="logo" href="#">
                                 <img src="assets/images/logo.svg" alt="logo">
                             </a>
-                            <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <p class="text">Getmarried adalah platform yang diciptakan untuk memudahkan setiap pasangan yang ingin membuat website undangan pernikahan online secara mandiri.
+                                Jika dulu kita selalu memanfaatkan kertas untuk difungsikan sebagai media penyebaran kabar pernikahan, kini sudah tersedia Getmarried yang hadir sebagai solusi hemat, efektif, efisien dan tentunya sangat praktis untuk digunakan.</p>
                             <ul class="social">
                                 <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
@@ -518,6 +525,8 @@
                                     <li><a href="#harga">Harga</a></li>
                                     <li><a href="#statistik">Statistik</a></li>
                                     <li><a href="#tema">Tema</a></li>
+                                    <li><a href="#tema">Testimoni</a></li>
+                                    <li><a href="#tema">Demo</a></li>
 
                                 </ul>
 
@@ -530,10 +539,10 @@
                                 <h4 class="title">Contact Us</h4>
                             </div>
                             <ul class="contact">
-                                <li>+809272561823</li>
-                                <li>info@gmail.com</li>
-                                <li>www.yourweb.com</li>
-                                <li>123 Stree New York City , United <br> States Of America 750.</li>
+                                <li>+62812345678</li>
+                                <li>getmarried@gmail.com</li>
+                                <li>www.getmarried.com</li>
+                                <li>Buah batu, bojongsoang,<br> Kota Bandung</li>
                             </ul>
                         </div> <!-- footer contact -->
                     </div>
@@ -544,7 +553,7 @@
                     <div class="col-lg-12">
                         <div class="copyright d-sm-flex justify-content-between">
                             <div class="copyright-content">
-                                <p class="text">Desain By <a href="https://uideck.com" rel="nofollow">UIdeck & Tim Undangan Online</a></p>
+                                <p class="text">© 2021 - 2022 getmarried. <a href="https://uideck.com" rel="nofollow">Made by in team PCR</a></p>
                             </div> <!-- copyright content -->
                         </div> <!-- copyright -->
                     </div>
