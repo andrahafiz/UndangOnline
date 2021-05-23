@@ -180,13 +180,8 @@ function combobox($name, $id, $table, $field, $primary_key, $selected)
 
 function kode($table)
 {
-<<<<<<< Updated upstream
     $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema', 'tb_testimoni');
     $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM', 'TSM');
-=======
-    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema','');
-    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM');
->>>>>>> Stashed changes
     $index_kode = array_search($table, $tabel);
     return $kode[$index_kode];
 }
