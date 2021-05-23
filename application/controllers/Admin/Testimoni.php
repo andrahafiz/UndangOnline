@@ -9,17 +9,17 @@ class Testimoni extends CI_Controller
         parent::__construct();
         $this->load->helper('my_function_helper');
         $this->load->model('Tamu_Model');
-        $this->load->model('Akun_Model');
+        $this->load->model('Testimoni_Model');
         cekaccess_admin();
     }
     // }
     public function index()
     {
-        $akun = $this->Akun_Model->selectAll();
+        $testimoni = $this->Testimoni_Model->selectAll();
         $data = array(
             'judul' => 'Akun',
             'menu' => menu_admin(),
-            'data_akun' => $akun
+            'data_testimoni' => $testimoni
         );
         $this->load->view('Admin/layout/header', $data);
         $this->load->view('Admin/Testimoni/V_Testimoni', $data);
@@ -27,9 +27,9 @@ class Testimoni extends CI_Controller
     }
     public function ubah_status($id, $status)
     {
-        $this->Akun_Model->ganti_status($id, $status);
+        $this->Testimoni_Model->ganti_status($id, $status);
         // echo $id;
         // die();
-        redirect('Admin/Akun');
+        redirect('Admin/Testimoni');
     }
 }
