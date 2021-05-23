@@ -38,7 +38,7 @@
                                                             <td class="sorting_1"><?php echo $key + 1 ?></td>
                                                             <td><?php echo $value->ID_Undangan ?></td>
                                                             <td><?php echo $value->ID_akun ?></td>
-                                                            <td><?php echo $value->Testimoni ?></td>
+                                                            <td><?php echo character_limiter($value->Testimoni, 50) ?></td>
                                                             <td><?php echo $value->Tgl_Testimoni ?></td>
 
 
@@ -71,6 +71,7 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
+                                                        <th rowspan="1" colspan="1">No Urut</th>
                                                         <th rowspan="1" colspan="1">ID Akun</th>
                                                         <th rowspan="1" colspan="1">ID Undangan</th>
                                                         <th rowspan="1" colspan="1">Komentar</th>
