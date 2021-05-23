@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Bulan Mei 2021 pada 11.27
+-- Waktu pembuatan: 23 Bulan Mei 2021 pada 09.50
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -20,6 +20,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_undanganonline`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pembayaran_undangan`
+--
+
+CREATE TABLE `pembayaran_undangan` (
+  `order_id` varchar(20) NOT NULL,
+  `gross_amount` int(13) NOT NULL,
+  `payment_type` varchar(15) NOT NULL,
+  `transaction_time` varchar(19) NOT NULL,
+  `bank` varchar(10) NOT NULL,
+  `va_numbers` varchar(30) NOT NULL,
+  `pdf_url` text NOT NULL,
+  `status_code` char(15) NOT NULL,
+  `kode_undangan` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pembayaran_undangan`
+--
+
+INSERT INTO `pembayaran_undangan` (`order_id`, `gross_amount`, `payment_type`, `transaction_time`, `bank`, `va_numbers`, `pdf_url`, `status_code`, `kode_undangan`) VALUES
+('1164512009', 1000000, 'bank_transfer', '2021-05-15 22:53:38', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/ddbacda2-14a8-4f51-be97-d44719d3e71d/pdf', '1', ''),
+('1367626161', 300000, 'bank_transfer', '2021-05-15 22:12:53', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/a0963cad-0874-4a27-8f88-4fb26f89fcc1/pdf', '201', ''),
+('1493257444', 30000, 'bank_transfer', '2021-05-09 20:59:56', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/19727e89-5862-416d-940e-2b7390ed7d13/pdf', '201', ''),
+('1672725878', 123, 'bank_transfer', '2021-05-15 22:32:42', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/b629dce6-ca1a-43f8-8b6f-1214e38ae907/pdf', '201', ''),
+('1678796896', 10000, 'bank_transfer', '2021-05-15 23:27:16', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/5a834f3a-270e-4f45-ac9f-26273a1de806/pdf', '201', '');
 
 -- --------------------------------------------------------
 
@@ -46,7 +75,8 @@ CREATE TABLE `tb_acara` (
 --
 
 INSERT INTO `tb_acara` (`ID_Acara`, `TglAkad`, `WaktuMulaiAkad`, `WaktuSelesaiAkad`, `TempatAkad`, `AlamatAkad`, `TglResepsi`, `WaktuMulaiResepsi`, `WaktuSelesaiResepsi`, `TempatResepsi`, `AlamatResepsi`) VALUES
-('ACR1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+('ACR1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('ACR2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -89,7 +119,8 @@ CREATE TABLE `tb_akun` (
 --
 
 INSERT INTO `tb_akun` (`ID_akun`, `Username`, `Email_akun`, `NoHp_akun`, `Password_akun`, `Created_akun`, `Status_akun`) VALUES
-('AKN1', 'Andra Hafiz', 'asd@gmail', '082276853382', '$2y$10$EjkyNFYFZKtPiEhlU0nKJ.Pc.y.i/Df4z0UUNs4dO.XpUAf6KvlPy', 1618680851, '1');
+('AKN1', 'Andra Hafiz', 'asd@gmail', '082276853382', '$2y$10$EjkyNFYFZKtPiEhlU0nKJ.Pc.y.i/Df4z0UUNs4dO.XpUAf6KvlPy', 1618680851, '1'),
+('AKN2', 'zxc', 'zxc@gmail.com', '123', '$2y$10$E68AYEYM1rC0y3SYrNkiOOoL9SEs35RVFB2fD.jCU12QuZ7mfYg5G', 1621157202, '1');
 
 -- --------------------------------------------------------
 
@@ -103,10 +134,26 @@ CREATE TABLE `tb_gallery` (
   `Judul_Media` varchar(100) NOT NULL,
   `Link_Media` text DEFAULT NULL,
   `Tipe_Media` enum('Foto','Video') DEFAULT NULL,
-  `Size_Media` int(11) NOT NULL,
+  `Size_Media` int(11) DEFAULT NULL,
   `Tglupload_Media` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Status_Media` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_gallery`
+--
+
+INSERT INTO `tb_gallery` (`ID_Media`, `ID_Undangan`, `Judul_Media`, `Link_Media`, `Tipe_Media`, `Size_Media`, `Tglupload_Media`, `Status_Media`) VALUES
+(27, 'UND1', 'Gambar 1', 'gambar1.jpg', 'Foto', 12, '2021-05-17 18:35:28', '1'),
+(28, 'UND1', 'Gambar 2', 'gambar2.jpg', 'Foto', 12, '2021-05-17 18:35:28', '1'),
+(29, 'UND2', 'Gambar 2', 'gambar2.jpg', 'Foto', 12, '2021-05-17 18:35:28', '1'),
+(35, 'UND1', 'asd', 'https://www.youtube.com/watch?v=iOeDvImB8wI&amp;t=350s', 'Video', NULL, '2021-05-18 07:22:09', '1'),
+(38, 'UND1', '', 'NoobeID.png', 'Foto', NULL, '2021-05-22 05:36:42', '0'),
+(39, 'UND1', '', 'NoobeID2.png', 'Foto', NULL, '2021-05-22 05:36:42', '0'),
+(40, 'UND1', '', 'NoobeID3.png', 'Foto', NULL, '2021-05-22 05:36:42', '0'),
+(41, 'UND1', '', 'NoobeID3.png', 'Foto', NULL, '2021-05-22 13:58:43', '0'),
+(42, 'UND1', '', 'NoobeID2.png', 'Foto', NULL, '2021-05-22 13:58:43', '0'),
+(43, 'UND1', '', 'NoobeID.png', 'Foto', NULL, '2021-05-22 13:58:44', '0');
 
 -- --------------------------------------------------------
 
@@ -157,7 +204,8 @@ CREATE TABLE `tb_mempelai` (
 --
 
 INSERT INTO `tb_mempelai` (`ID_Mempelai`, `Nama_MPria`, `Nama_MWanita`, `NoHp_MPria`, `NoHp_MWanita`, `Alamat_MPria`, `Alamat_MWanita`, `Panggilan_MPria`, `Panggilan_MWanita`, `NamaOrtu_Ayah_MPria`, `NamaOrtu_Ibu_MPria`, `NamaOrtu_Ayah_MWanita`, `NamaOrtu_Ibu_MWanita`, `Foto_MPria`, `Foto_MWanita`) VALUES
-('MPL1', 'asd', 'asd', '123', '123', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'foto_pria.jpg', 'foto_cewek.jpg');
+('MPL1', 'zxc', 'xcz', '123', '123', 'zxc', 'cxz', 'zxc', 'zxc', 'xcz', 'xcz', 'zxc', 'zxc', 'KTP_AndraHotmartuaAlHafiz.JPG', 'logo_usu.png'),
+('MPL2', 'asd', 'zx', '123', '123', 'zxc', 'zxc', 'zxc', 'zxc', 'zxc', 'zx', 'zxc', 'zx', 'NoobeID31.png', 'NoobeID21.png');
 
 -- --------------------------------------------------------
 
@@ -230,14 +278,28 @@ INSERT INTO `tb_tamu` (`ID_TamuUndangan`, `ID_Undangan`, `Nama_Tamu`, `Wa_Tamu`,
 ('TMU41', 'UND1', 'Queenie', '762.080.8263', 'sonya18@example.org', 'Molestias repudiandae velit minus nulla. Autem ex quia ex voluptatibus.'),
 ('TMU43', 'UND3', 'Marley', '537-093-4692', 'lorine.raynor@example.net', 'Et veniam eius aut velit. Deleniti aut tempore error praesentium nemo. Unde incidunt id et aut est.'),
 ('TMU46', 'UND3', 'Maryjane', '(088)502-4445', 'malcolm61@example.com', 'Sit et corrupti est veritatis. Minima iste nesciunt facere. Quam dolorem voluptatem quo eveniet.'),
-('TMU63', 'UND1', 'Damon', '(874)778-6130x7', 'damon.hamill@example.org', 'Eius totam occaecati hic non enim inventore id. Aut vitae velit praesentium tenetur.'),
 ('TMU70', 'UND2', 'Alexandro', '06007347279', 'remington25@example.com', 'Dolores culpa tempora nobis neque. Perferendis id autem molestias et. Enim in a et eveniet modi.'),
 ('TMU72', 'UND2', 'Haven', '166.905.6443x35', 'martina28@example.org', 'Autem ea maxime iste. Autem quia autem rerum quidem quo.'),
 ('TMU73', 'UND2', 'Barton', '1-132-169-6630x', 'kendall59@example.org', 'Facilis sapiente labore magnam aut. Dolor ut at est enim est est porro ut. Et fugit aliquid optio.'),
 ('TMU75', 'UND2', 'Chanel', '1-335-453-9958', 'rachelle.mckenzie@example.org', 'Iste animi quaerat error sed est. Sed fuga quam nihil et ad. Culpa aut et a.'),
-('TMU79', 'UND1', 'Mohamed', '104-722-4157x29', 'royce07@example.net', 'Autem amet reprehenderit nihil unde natus. Ad ut magnam ex est voluptas. In officia nemo quia.'),
 ('TMU92', 'UND2', 'Chloe', '290.206.4776', 'ritchie.kylie@example.com', 'Perspiciatis et animi eos modi beatae. Ipsa non officia occaecati dolorem temporibus repellat.'),
-('TMU95', 'UND1', 'Edmond', '1-438-394-0638x', 'reynolds.devyn@example.org', 'Nemo cumque quia magni. Ea necessitatibus vel vero non optio.');
+('TMU93', 'UND1', 'asd', '', 'asd@gmail.com', 'kosong'),
+('TMU94', 'UND1', 'zxc', '123', '', 'kosong');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_testimoni`
+--
+
+CREATE TABLE `tb_testimoni` (
+  `ID_Testiomoni` varchar(255) NOT NULL,
+  `ID_Undangan` varchar(255) NOT NULL,
+  `ID_Akun` varchar(255) NOT NULL,
+  `Testimoni` text NOT NULL,
+  `Tgl_Testimoni` int(11) NOT NULL,
+  `Status_akun` enum('Posting','Non Aktif','','') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -261,7 +323,14 @@ CREATE TABLE `tb_undangan` (
 --
 
 INSERT INTO `tb_undangan` (`ID_Undangan`, `ID_Mempelai`, `ID_Acara`, `ID_Kategori`, `ID_Tema`, `ID_Akun`, `tgl_buatakun`, `tgl_selesaiakun`) VALUES
-('UND1', 'MPL1', 'ACR1', 'KTG1', 'THM1', 'AKN1', 1618680851, 1619285651);
+('UND1', 'MPL1', 'ACR1', 'KTG1', 'THM1', 'AKN1', 1618680851, 1619285651),
+('UND2', 'MPL2', 'ACR2', 'KTG1', 'THM1', 'AKN2', 1621157202, 1621762002),
+('UND3', 'MPL2', 'ACR2', 'KTG1', 'THM2', 'AKN2', 1621157202, 1621762002),
+('UND4', 'MPL2', 'ACR2', 'KTG1', 'THM4', 'AKN2', 1621157202, 1621762002),
+('UND5', 'MPL1', 'ACR1', 'KTG1', 'THM4', 'AKN1', 1618680851, 1619285651),
+('UND6', 'MPL2', 'ACR2', 'KTG1', 'THM4', 'AKN2', 1621157202, 1621762002),
+('UND7', 'MPL1', 'ACR1', 'KTG1', 'THM2', 'AKN1', 1618680851, 1619285651),
+('UND8', 'MPL1', 'ACR1', 'KTG1', 'THM3', 'AKN1', 1618680851, 1619285651);
 
 -- --------------------------------------------------------
 
@@ -273,16 +342,18 @@ CREATE TABLE `thema` (
   `id_thema` varchar(100) NOT NULL,
   `nama_thema` varchar(50) NOT NULL,
   `view_thema` varchar(50) DEFAULT NULL,
-  `image_tema` varchar(256) NOT NULL,
-  `status_thema` varchar(50) NOT NULL
+  `image_thema` varchar(256) NOT NULL DEFAULT 'NoImage.png',
+  `status_thema` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `thema`
 --
 
-INSERT INTO `thema` (`id_thema`, `nama_thema`, `view_thema`, `image_tema`, `status_thema`) VALUES
-('THM1', 'butterfly.', 'butterfly.php', '', 'aktif');
+INSERT INTO `thema` (`id_thema`, `nama_thema`, `view_thema`, `image_thema`, `status_thema`) VALUES
+('THM1', 'Butterfly ab', 'buterfly.php ab', 'tema-THM11.png', 0),
+('THM2', 'tes', 'tes', 'tema-THM21.png', 1),
+('THM3', 'asda', 'asda', 'NoImage.png', 1);
 
 -- --------------------------------------------------------
 
@@ -420,6 +491,12 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
+-- Indeks untuk tabel `pembayaran_undangan`
+--
+ALTER TABLE `pembayaran_undangan`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indeks untuk tabel `tb_acara`
 --
 ALTER TABLE `tb_acara`
@@ -469,6 +546,12 @@ ALTER TABLE `tb_tamu`
   ADD PRIMARY KEY (`ID_TamuUndangan`);
 
 --
+-- Indeks untuk tabel `tb_testimoni`
+--
+ALTER TABLE `tb_testimoni`
+  ADD PRIMARY KEY (`ID_Testiomoni`);
+
+--
 -- Indeks untuk tabel `tb_undangan`
 --
 ALTER TABLE `tb_undangan`
@@ -494,7 +577,7 @@ ALTER TABLE `token`
 -- AUTO_INCREMENT untuk tabel `tb_gallery`
 --
 ALTER TABLE `tb_gallery`
-  MODIFY `ID_Media` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Media` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT untuk tabel `token`
