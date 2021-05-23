@@ -21,7 +21,7 @@ class Feedback extends CI_Controller
         );
 
         $this->load->view('Mempelai/layout/header', $data);
-        $this->load->view('Mempelai/Feedback/V_Feedback', $data);
+        $this->load->view('Mempelai/Tetstimoni/V_Tetstimoni', $data);
         $this->load->view('Mempelai/layout/footer');
     }
 }
