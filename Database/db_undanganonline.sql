@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2021 pada 10.10
+-- Waktu pembuatan: 23 Bulan Mei 2021 pada 10.36
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -293,7 +293,7 @@ INSERT INTO `tb_tamu` (`ID_TamuUndangan`, `ID_Undangan`, `Nama_Tamu`, `Wa_Tamu`,
 --
 
 CREATE TABLE `tb_testimoni` (
-  `ID_Testiomoni` varchar(255) NOT NULL,
+  `ID_Testimoni` varchar(255) NOT NULL,
   `ID_Undangan` varchar(255) NOT NULL,
   `ID_Akun` varchar(255) NOT NULL,
   `Testimoni` text NOT NULL,
@@ -305,7 +305,7 @@ CREATE TABLE `tb_testimoni` (
 -- Dumping data untuk tabel `tb_testimoni`
 --
 
-INSERT INTO `tb_testimoni` (`ID_Testiomoni`, `ID_Undangan`, `ID_Akun`, `Testimoni`, `Tgl_Testimoni`, `Status_Testimoni`) VALUES
+INSERT INTO `tb_testimoni` (`ID_Testimoni`, `ID_Undangan`, `ID_Akun`, `Testimoni`, `Tgl_Testimoni`, `Status_Testimoni`) VALUES
 ('TSM1', 'UND1', 'AKN1', 'Website ini sangat mantab', 1618680851, 'Non Aktif');
 
 -- --------------------------------------------------------
@@ -556,7 +556,7 @@ ALTER TABLE `tb_tamu`
 -- Indeks untuk tabel `tb_testimoni`
 --
 ALTER TABLE `tb_testimoni`
-  ADD PRIMARY KEY (`ID_Testiomoni`);
+  ADD PRIMARY KEY (`ID_Testimoni`);
 
 --
 -- Indeks untuk tabel `tb_undangan`
