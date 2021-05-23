@@ -22,12 +22,12 @@
                                                 <thead>
                                                     <tr role="row">
                                                         <th rowspan="1" colspan="1">No Urut</th>
-                                                        <th class="sorting_asc" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188.4px;">ID Akun</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282px;">Username</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Email Akun</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68.4px;">No HP Akun</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Created Akun</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Aksi </th>
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188.4px;">ID Undangan</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282px;">ID Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Tanggapan</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68.4px;">Tanggal Posting</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Status Akun</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 96.4px;">Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -41,6 +41,31 @@
                                                             <td><?php echo $value->Email_akun ?></td>
                                                             <td><?php echo $value->NoHp_akun ?></td>
                                                             <td><?php echo $value->Created_akun ?></td>
+                                                            <td><?php echo $value->Created_akun ?></td>
+                                                            <td><?php
+
+                                                                if ($value->Status_akun == 1) {
+                                                                    echo '<label class="badge badge-lg bg-success">Aktif</label>';
+                                                                } elseif ($value->Status_akun == 0) {
+                                                                    echo '<label class="badge badge-lg bg-danger">Tidak Aktif</label>';
+                                                                }
+                                                                ?></td>
+                                                            <td>
+
+                                                                <?php if ($value->Status_akun == 1) { ?>
+                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/0"); ?>"> <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Nonaktifkan Akun">
+                                                                            <i class="fa fa-key"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                <?php
+                                                                } elseif ($value->Status_akun == 0) { ?>
+                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/1"); ?>"> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Aktifkan  Akun">
+                                                                            <i class="fa fa-key"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                <?php }
+                                                                ?>
+                                                            </td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>
@@ -52,7 +77,6 @@
                                                         <th rowspan="1" colspan="1">Email Akun</th>
                                                         <th rowspan="1" colspan="1">No HP Akun</th>
                                                         <th rowspan="1" colspan="1">Cretaed Akun</th>
-                                                        <th rowspan="1" colspan="1">Aksi</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
