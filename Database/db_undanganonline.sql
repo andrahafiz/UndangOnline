@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2021 pada 09.50
+-- Waktu pembuatan: 23 Bulan Mei 2021 pada 10.04
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -300,6 +300,13 @@ CREATE TABLE `tb_testimoni` (
   `Tgl_Testimoni` int(11) NOT NULL,
   `Status_akun` enum('Posting','Non Aktif','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_testimoni`
+--
+
+INSERT INTO `tb_testimoni` (`ID_Testiomoni`, `ID_Undangan`, `ID_Akun`, `Testimoni`, `Tgl_Testimoni`, `Status_akun`) VALUES
+('TSM1', 'UND1', 'AKN1', 'Website ini sangat mantab', 1618680851, 'Non Aktif');
 
 -- --------------------------------------------------------
 
