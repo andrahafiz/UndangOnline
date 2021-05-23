@@ -30,6 +30,6 @@ class Testimoni extends CI_Controller
         $this->Testimoni_Model->ganti_status($id, $status);
         // echo $id;
         // die();
-        redirect('Admin/Akun');
+        redirect('Admin/Testimoni');
     }
 }

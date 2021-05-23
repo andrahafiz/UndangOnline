@@ -46,21 +46,21 @@
 
                                                                 if ($value->Status_Testimoni == "Posting") {
                                                                     echo '<label class="badge badge-lg bg-success">Posting</label>';
-                                                                } elseif ($value->Status_Testimoni == "Non Aktif") {
-                                                                    echo '<label class="badge badge-lg bg-danger">Tidak Aktif</label>';
+                                                                } elseif ($value->Status_Testimoni == "Non-Aktif") {
+                                                                    echo '<label class="badge badge-lg bg-warning">Belum diposting</label>';
                                                                 }
                                                                 ?></td>
                                                             <td>
 
-                                                                <?php if ($value->Status_Testimoni == "Non Aktif") { ?>
-                                                                    <a href="<?php echo base_url("Admin/Testimoni/ubah_status/" . $value->ID_Testimoni . "/Posting"); ?>"> <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Nonaktifkan Akun">
-                                                                            <i class="fa fa-key"></i>
+                                                                <?php if ($value->Status_Testimoni == "Non-Aktif") { ?>
+                                                                    <a href="<?php echo base_url("Admin/Testimoni/ubah_status/" . $value->ID_Testimoni . "/Posting"); ?>"> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Posting">
+                                                                            <i class="fa fa-eye"></i>
                                                                         </button>
                                                                     </a>
                                                                 <?php
                                                                 } elseif ($value->Status_Testimoni == "Posting") { ?>
-                                                                    <a href="<?php echo base_url("Admin/Testimoni/ubah_status/" . $value->ID_Testimoni . "/TIdak Aktif"); ?>"> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Aktifkan  Akun">
-                                                                            <i class="fa fa-key"></i>
+                                                                    <a href="<?php echo base_url("Admin/Testimoni/ubah_status/" . $value->ID_Testimoni . "/Non-Aktif"); ?>"> <button type="button" class="btn btn-warning  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Non Aktif">
+                                                                            <i class="fa fa-eye-slash"></i>
                                                                         </button>
                                                                     </a>
                                                                 <?php }
