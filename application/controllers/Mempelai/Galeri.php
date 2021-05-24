@@ -19,7 +19,7 @@ class Galeri extends CI_Controller
         $data = array(
             'judul' => 'Galeri',
             'menu' => menu_mempelai(),
-            'data_all' => $this->Galeri_Model->selectAll($id_undangan),
+            'q' => $this->Galeri_Model->selectAll($id_undangan),
             'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
             'data_video' => $this->Galeri_Model->selectSingle($id_undangan, 'Video')
         );
@@ -43,11 +43,8 @@ class Galeri extends CI_Controller
     public function add_foto()
     {
         // redirect('Mempelai/Mempelai');
-        echo "<script>alert('y');</script>";
 
-
-        // $data = [];
-
+        $id_undangan = $this->session->userdata('ID_Undangan');
         $count = count($_FILES['files']['name']);
 
         for ($i = 0; $i < $count; $i++) {
@@ -63,16 +60,29 @@ class Galeri extends CI_Controller
 
                 $config['upload_path'] = './assets/Mempelai/images/gallery/'; //path folder
                 $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
-                $config['max_size']     = '1000';
-                $config['file_name'] = $_FILES['files']['name'][$i];
+                $config['max_size']     = '1025';
+                $config['file_name'] = $id_undangan . "_" . $i . "_" . $_FILES['files']['name'][$i];
                 $this->load->library('upload', $config);
 
 
                 if ($this->upload->do_upload('file')) {
                     $uploadData = $this->upload->data();
-                    redirect('Mempelai/Galeri');
+                    $data = [
+                        'ID_Undangan' =>  $id_undangan,
+                        'Tipe_Media' => 'Foto',
+                        'Judul_Media' => $uploadData['file_name'],
+                        'Link_Media' => $uploadData['file_name'],
+                        'Size_Media' => $uploadData['size'],
+                        'Status_Media' => '0',
+                    ];
+                    // var_dump($uploadData);
+                    // die();
+                    $this->Galeri_Model->tambah_data_media($data);
+                    echo "<script> alert('data berhasil');</script>";
                 } else {
-                    $this->upload->display_errors();
+
+                    echo "<script> alert('" . $this->upload->display_errors() . "');</script>";
+
                     redirect('Mempelai/Mempelai');
                 }
             };

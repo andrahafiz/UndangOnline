@@ -16,7 +16,7 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata("username")) {
+        if ($this->session->userdata("Username")) {
             redirect('Mempelai/Dashboard');
         }
         $this->form_validation->set_rules('email', 'email', 'required|trim');

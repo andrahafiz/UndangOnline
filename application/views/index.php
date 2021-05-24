@@ -42,7 +42,7 @@
 <body>
     <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+<![endif]-->
 
 
     <!--====== PRELOADER PART START ======-->
@@ -89,25 +89,28 @@
                                         <a class="page-scroll" href="#home">Beranda</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#features">Harga</a>
-                                    </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="page-scroll" href="#about">About</a>
-                                    </li> -->
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#facts">Survey</a>
+                                        <a class="page-scroll" href="#harga">Harga</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#team">Tema</a>
+                                        <a class="page-scroll" href="#statistik">Statistik</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#blog">Blog</a>
+                                        <a class="page-scroll" href="#tema">Tema</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#testimoni">Testimoni</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#testimoni">Demo</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="<?= base_url('Mempelai') ?>">Login</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
 
                             <div class="navbar-btn d-none d-sm-inline-block">
-                                <a class="main-btn" data-scroll-nav="0" href="#pricing">Buat Undangan</a>
+                                <a class="main-btn" data-scroll-nav="0" href="<?= base_url('Register') ?>">Buat Undangan</a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>
@@ -115,7 +118,7 @@
             </div> <!-- container -->
         </div> <!-- navbar area -->
 
-        <div id="home" class="header-hero bg_cover" style="background-image: url(<?= base_url(); ?>assets/LandingPage/images/banner-bg-2.jpg)">
+        <div id="home" class="header-hero bg_cover" style="background-image: url(<?= base_url(); ?>assets/LandingPage/images/banner-bg.jpg)">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
@@ -130,7 +133,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/header-hero.png" alt="hero">
+                            <img src="<?= base_url(); ?>assets/LandingPage/images/undangan-banner.png" alt="hero">
                         </div> <!-- header hero image -->
                     </div>
                 </div> <!-- row -->
@@ -139,213 +142,77 @@
         </div> <!-- header hero -->
     </header>
 
-    <!--====== HEADER PART ENDS ======-->
-
-    <!--====== BRAMD PART START ======-->
-
-    <!-- <div class="brand-area pt-90">
+    <!--====== CARI UNDANGAN ======-->
+    <div class="brand-area pt-90">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="brand-logo d-flex align-items-center justify-content-center justify-content-md-between">
-                        <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-1.png" alt="brand"> -->
-    <!-- </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-2.png" alt="brand">
-                        </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-3.png" alt="brand">
-                        </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-4.png" alt="brand">
-                        </div> single logo -->
-    <!-- <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/brand-5.png" alt="brand">
-                        </div> single logo -->
-    <!-- </div> brand logo -->
-    <!-- </div> -->
-    <!-- </div>   row -->
-    <!-- </div> container -->
-    <!-- </div> -->
-
-    <!--====== BRAMD PART ENDS ======-->
-    <div class="container mt-85">
-        <div class="undangan-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="undangan-content mt-65">
-                        <h2 class="undangan-title">Cari undangan</h2>
+            <div class="line"></div>
+            <div class="col-lg-12">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="undangan-content mt-65">
+                                <h2 class="undangan-title">Cari undangan</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="undangan-form mt-50">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter eamil">
+                                    <button class="main-btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="undangan-form mt-50">
-                        <form action="#">
-                            <input type="text" placeholder="Enter eamil">
-                            <button class="main-btn">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div> <!-- row -->
+            <div class="line mt-5"></div>
+        </div> <!-- container -->
     </div>
-    <!--====== SERVICES PART START ======-->
+    <!--====== END CARI UNDANGAN ======-->
 
-
-
-    <section id="features" class="services-area pt-120">
+    <!--====== TEMA PART START ======-->
+    <section id="tema" class="about-area pt-120">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="section-title text-center pb-40">
+                <div class="col-lg-5">
+                    <div class="section-title text-center pb-30">
+                        <h3 class="title mb-2">Tema Terfavorit Di <span> Getmarried</span></h3>
                         <div class="line m-auto"></div>
-                        <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Cek Harga Disini,</h2>
-                        <h3 class="title"> <span> Dan Dapatkan Sesuai Yang Kamu Mau!</span></h3>
-                        <p class="text">Disini kamu dapat memilih harga paket undangan sesuai dengan yang kamu butuhkan.</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="services-icon">
-                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-1.svg" alt="shape">
-                            <i class="lni-baloon"></i>
+                <?php foreach ($tema_favorite as $key => $value) { ?>
+
+                    <div class="col-lg-4 col-md-7 col-sm-8">
+                        <div class="single-team text-center mt-30 wow fadeIn shadow bg-white rounded-lg" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="team-image">
+                                <img src="<?= base_url() . "assets/Tema/" . $value->image_thema . "" ?> " alt="Team" class="" style="height:300px; width:370px; object-fit:contain;">
+
+                                <div class="social">
+                                    <ul>
+                                        <li> <a href="#"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5 class="holder-name "><a href="#"><span class="text-uppercase"><?= $value->nama_thema ?></span> </a></h5>
+                                <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p>
+                            </div>
                         </div>
-                        <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Clean</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="services-icon">
-                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-2.svg" alt="shape">
-                            <i class="lni-cog"></i>
-                        </div>
-                        <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Robust</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="services-icon">
-                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
-                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-3.svg" alt="shape">
-                            <i class="lni-bolt-alt"></i>
-                        </div>
-                        <div class="services-content mt-30">
-                            <h4 class="services-title"><a href="#">Powerful</a></h4>
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
+                    </div>
+
+                <?php } ?>
             </div> <!-- row -->
         </div> <!-- container -->
-    </section>
-
-    <!--====== SERVICES PART ENDS ======-->
-
-    <!--====== ABOUT PART START ======-->
-
-    <!-- <section id="about" class="about-area pt-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title">Quick & Easy <span>to Use Bootstrap Template</span></h3> -->
-    <!-- </div> section title -->
-    <!-- <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
-                    </div> <!-- about content -->
-    <!-- </div>
-                <div class="col-lg-6">
-                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="<?= base_url(); ?>assets/LandingPage/images/about1.svg" alt="about">
-                    </div> about image -->
-    <!-- </div> 
-            </div> <!-- row -->
-    </div> <!-- container -->
-    <!-- <div class="about-shape-1">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
-        </div>
-    </section> -->
-
-    <!--====== ABOUT PART ENDS ======-->
-
-    <!--====== ABOUT PART START ======-->
-
-    <!-- <section class="about-area pt-70">
         <div class="about-shape-2">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-2.svg" alt="shape">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 order-lg-last">
-                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title">Modern design <span> with Essential Features</span></h3>
-                        </div> section title -->
-    <!-- <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
-                    </div>  about content -->
-    <!-- </div>
-                <div class="col-lg-6 order-lg-first">
-                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="<?= base_url(); ?>assets/LandingPage/images/about2.svg" alt="about">
-                    </div> about image -->
-    <!-- </div>
-            </div> <!-- row -->
-    </div> <!-- container -->
-    <!-- </section>   -->
-
-
-    <!--====== ABOUT PART START ======-->
-
-    <!-- <section class="about-area pt-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <div class="line"></div>
-                            <h3 class="title"><span>Crafted for</span> SaaS, App and Software Landing Page</h3>
-                        </div> section title -->
-    <!-- <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" class="main-btn">Try it Free</a>
-                    </div> <!-- about content -->
-    <!-- </div>
-                <div class="col-lg-6">
-                    <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="<?= base_url(); ?>assets/LandingPage/images/about3.svg" alt="about">  -->
-    <!-- </div> <!-- about image -->
-    <!-- </div> -->
-    <!-- </div> row -->
-    <!-- </div> container -->
-    <!-- <div class="about-shape-1">
             <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
         </div>
-    </section> -->
+    </section>
+    <!--====== TEMA PART ENDS ======-->
 
-    <!--====== ABOUT PART ENDS ======-->
-
-
-    <!--====== ABOUT PART ENDS ======-->
-
-    <!--====== VIDEO COUNTER PART START ======-->
-
-    <section id="facts" class="video-counter pt-70">
+    <!--====== STATISTIC  ======-->
+    <section id="statistik" class="about-area pt-70">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -366,23 +233,25 @@
                         <div class="counter-content">
                             <div class="section-title">
                                 <div class="line"></div>
-                                <h3 class="title">Survey<span> Menggunakan Website Getmarried kami.</span></h3>
+                                <h3 class="title">Data Statistik<span> Website Getmarried Kami.</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Berikut anda dapat melihat berapa banyak pengguna website getmarried dibawah ini.</p>
+                            <p class="text">Berikut anda dapat melihat statistik website getmarried dibawah ini.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
+
                             <div class="col-6">
                                 <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">125</span>K</span>
+                                        <span class="count"><span class="counter"><?= $jml_akun ?></span></span>
                                         <p class="text">Pengguna Web</p>
                                     </div>
                                 </div> <!-- single counter -->
                             </div>
+
                             <div class="col-6">
                                 <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">87</span>K</span>
+                                        <span class="count"><span class="counter"><?= $jml_tema ?></span></span>
                                         <p class="text">Tema</p>
                                     </div>
                                 </div> <!-- single counter -->
@@ -400,99 +269,94 @@
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
+        <div class="about-shape-1">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
+        </div>
     </section>
+    <!--====== STATISTIC ENDS ======-->
 
-    <!--====== VIDEO COUNTER PART ENDS ======-->
-
-    <!--====== TEAM PART START ======-->
-
-    <section id="team" class="team-area pt-120">
+    <!--====== HARGA  ======-->
+    <section id="harga" class="about-area pt-120">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="section-title text-center pb-30">
-                        <div class="line m-auto"></div>
-                        <h3 class="title"> <span> Temukan tema yang menarik dari GET MARRIED!</span></h3>
-                    </div> <!-- section title -->
+            <div class="row justify-content-center ">
+                <div class="col-lg-6">
+                    <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInLeftBig;">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Harga &amp; Paket<span><br> untuk undangan yang sudah disediakan dibawah ini.</span></h3>
+                        </div> <!-- section title -->
+                        <ul class="text">
+                            <li>- 100 Tema</li>
+                            <li>- 10 Gambar Upload</li>
+                            <li>- 3 Video Upload</li>
+                        </ul>
+                        <a href="#" class="main-btn">Buat Undangan</a>
+                    </div> <!-- about content -->
                 </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="team-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/team-1.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
+
+                <div class="col-lg-5 col-md-12 col-sm-12 ">
+
+                    <div class="single-services text-center mt-30 wow fadeIn shadow-lg " data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="services-icon">
+                            <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="<?= base_url(); ?>assets/LandingPage/images/services-shape-2.svg" alt="shape">
+                            <i class="lni lni-diamond-alt"></i>
                         </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Isabela Moreira</a></h5>
-                            <p class="text">Founder and CEO</p>
+                        <div class="services-content mt-30">
+                            <h5>Harga</h5>
+                            <h class="services-title ">Rp. 100.000</h>
                         </div>
-                    </div> <!-- single team -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="team-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/team-2.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Elon Musk</a></h5>
-                            <p class="text">Sr. Software Engineer</p>
-                        </div>
-                    </div> <!-- single team -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="team-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/team-3.png" alt="Team">
-                            <div class="social">
-                                <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h5 class="holder-name"><a href="#">Fiona Smith</a></h5>
-                            <p class="text">Business Development Manager</p>
-                        </div>
-                    </div> <!-- single team -->
+                    </div> <!-- single services -->
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
+        <div class="about-shape-2">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-2.svg" alt="shape">
+        </div>
     </section>
+    <!--====== END HARGA  ======-->
 
-    <!--====== TEAM PART ENDS ======-->
 
-    <!--====== TESTIMONIAL PART START ======-->
 
-    <section id="testimonial" class="testimonial-area pt-120">
+    <!--====== Testimoni PART START ======-->
+
+    <section id="testimoni" class="testimonial-area pt-120">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-40">
                         <div class="line m-auto"></div>
-                        <h3 class="title">Alasan Memilih<span> Get Married</span></h3>
+                        <h3 class="title">Apa Kata Meraka Tentang<span> Get Married</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
             <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+                <?php foreach ($testimoni as $key => $value) { ?>
+                    <div class="col-lg-4">
+                        <div class="single-testimonial">
+                            <div class="testimonial-review d-flex align-items-center justify-content-between">
+                                <div class="quota">
+                                    <i class="lni-quotation"></i>
+                                </div>
+                                <div>
+                                    <h5 class="holder-name"><?= $value->Username ?></a></h5>
+                                </div>
+                            </div>
+                            <div class="testimonial-text">
+                                <p class="text"><?= $value->Testimoni ?></p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="author-image">
+                                    <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/textimonial-shape.svg" alt="shape">
+                                    <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
+                                </div>
+                                <div class="author-content media-body">
+                                    <h3 class="holder-name">Hardana</h3>
+                                </div>
+                            </div>
+                        </div> <!-- single testimonial -->
+                    </div>
+                <?php } ?>
                 <div class="col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
@@ -500,7 +364,7 @@
                                 <i class="lni-quotation"></i>
                             </div>
                             <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
+                                <h5 class="holder-name">@GetMarried</a></h5>
                             </div>
                             <!-- <div class="star">
                                 <ul>
@@ -513,41 +377,7 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
-                        </div>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="author-image">
-                                <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-1.png" alt="author">
-                            </div>
-                            <div class="author-content media-body">
-                                <h6 class="holder-name">Jenny Deo</h6>
-                                <p class="text">CEO, SpaceX</p>
-                            </div>
-                        </div>
-                    </div> <!-- single testimonial -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testimonial">
-                        <div class="testimonial-review d-flex align-items-center justify-content-between">
-                            <div class="quota">
-                                <i class="lni-quotation"></i>
-                            </div>
-                            <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
-                            </div>
-                            <!-- <div class="star">
-                                <ul>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                </ul>
-                            </div> -->
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                            <p class="text">Baru kali ini ada platform undangan pernikahan online yang gratis dan simple. Terimakasih</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -555,8 +385,8 @@
                                 <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Marjin Otte</h6>
-                                <p class="text">UX Specialist, Yoast</p>
+                                <h6 class="holder-name">Hardana</h6>
+                                <p class="text">Wirausahawan</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -568,7 +398,7 @@
                                 <i class="lni-quotation"></i>
                             </div>
                             <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
+                                <h5 class="holder-name">@GetMarried</a></h5>
                             </div>
                             <!-- <div class="star">
                                 <ul>
@@ -581,41 +411,7 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
-                        </div>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="author-image">
-                                <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-3.png" alt="author">
-                            </div>
-                            <div class="author-content media-body">
-                                <h6 class="holder-name">David Smith</h6>
-                                <p class="text">CTO, Alphabet</p>
-                            </div>
-                        </div>
-                    </div> <!-- single testimonial -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testimonial">
-                        <div class="testimonial-review d-flex align-items-center justify-content-between">
-                            <div class="quota">
-                                <i class="lni-quotation"></i>
-                            </div>
-                            <div>
-                                <h5 class="holder-name">Fiona Smith</a></h5>
-                            </div>
-                            <!-- <div class="star">
-                                <ul>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                </ul>
-                            </div> -->
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                            <p class="text">Baru kali ini ada platform undangan pernikahan online yang gratis dan simple. Terimakasih</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -623,113 +419,94 @@
                                 <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Fajar Siddiq</h6>
-                                <p class="text">COO, MakerFlix</p>
+                                <h6 class="holder-name">Hardana</h6>
+                                <p class="text">Wirausahawan</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
                 </div>
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div>
+                                <h5 class="holder-name">@GetMarried</a></h5>
+                            </div>
+                            <!-- <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="text">Baru kali ini ada platform undangan pernikahan online yang gratis dan simple. Terimakasih</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/textimonial-shape.svg" alt="shape">
+                                <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">Hardana</h6>
+                                <p class="text">Wirausahawan</p>
+                            </div>
+                        </div>
+                    </div> <!-- single testimonial -->
+                </div>
+
+
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
 
     <!--====== TESTIMONIAL PART ENDS ======-->
 
-    <!--====== BLOG PART START ======-->
-
-    <section id="blog" class="blog-area pt-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title pb-35">
-                        <div class="line"></div>
-                        <h3 class="title"><span>Our Recent</span> Blog Posts</h3>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7">
-                    <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="blog-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/blog-1.jpg" alt="blog">
-                        </div>
-                        <div class="blog-content">
-                            <ul class="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
-                                <li>03 June, 2023</li>
-                            </ul>
-                            <p class="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
-                <div class="col-lg-4 col-md-7">
-                    <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="blog-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/blog-2.jpg" alt="blog">
-                        </div>
-                        <div class="blog-content">
-                            <ul class="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
-                                <li>03 June, 2023</li>
-                            </ul>
-                            <p class="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
-                <div class="col-lg-4 col-md-7">
-                    <div class="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="blog-image">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/blog-3.jpg" alt="blog">
-                        </div>
-                        <div class="blog-content">
-                            <ul class="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
-                                <li>03 June, 2023</li>
-                            </ul>
-                            <p class="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="more" href="#">Learn More <i class="lni-chevron-right"></i></a>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== BLOG PART ENDS ======-->
-
-
     <!--====== FOOTER PART START ======-->
 
     <footer id="footer" class="footer-area pt-120">
         <div class="container">
-            <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="subscribe-content mt-45">
-                            <h2 class="subscribe-title">Subscribe Our Newsletter <span>get reguler updates</span></h2>
-                        </div>
+
+                        <h6 class="text">Berikut beberapa keunggulan website undangan pernikahan online Datengdong :</h6>
+                        <p> <span>1. Undangan Pernikahan Hemat</span>
+                            <span>2. Undangan Pernikahan Simple</span>
+                            <span>3. Undangan Pernikahan Efektif</span>
+                            <span>4. Undangan Pernikahan Fitur Terlengkap</span>
+                            <span>5. Undangan Pernikahan Kekinian</span>
+                        </p>
+
                     </div>
-                    <div class="col-lg-6">
+                    <!-- <div class="col-lg-6">
                         <div class="subscribe-form mt-50">
                             <form action="#">
                                 <input type="text" placeholder="Enter eamil">
-                                <button class="main-btn">Subscribe</button>
+                                <input type="text" placeholder="Enter eamil">
+                                <input type="text" placeholder="Enter eamil">
+
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- end subscribe area -->
             <div class="footer-widget pb-100">
                 <div class="row">
+
                     <div class="col-lg-4 col-md-6 col-sm-8">
                         <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <a class="logo" href="#">
                                 <img src="assets/images/logo.svg" alt="logo">
                             </a>
-                            <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <p class="text">Getmarried adalah platform yang diciptakan untuk memudahkan setiap pasangan yang ingin membuat website undangan pernikahan online secara mandiri.
+                                Jika dulu kita selalu memanfaatkan kertas untuk difungsikan sebagai media penyebaran kabar pernikahan, kini sudah tersedia Getmarried yang hadir sebagai solusi hemat, efektif, efisien dan tentunya sangat praktis untuk digunakan.</p>
                             <ul class="social">
                                 <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
@@ -738,44 +515,35 @@
                             </ul>
                         </div> <!-- footer about -->
                     </div>
-                    <div class="col-lg-5 col-md-7 col-sm-7">
+                    <div class="col-lg-3 col-md-5 col-sm-5 ">
                         <div class="footer-link d-flex mt-50 justify-content-md-between">
-                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                                <div class="footer-title">
-                                    <h4 class="title">Quick Link</h4>
-                                </div>
-                                <ul class="link">
-                                    <li><a href="#">Road Map</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Refund Policy</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Pricing</a></li>
-                                </ul>
-                            </div> <!-- footer wrapper -->
                             <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                                 <div class="footer-title">
-                                    <h4 class="title">Resources</h4>
+                                    <h4 class="title">Menu</h4>
                                 </div>
                                 <ul class="link">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Page</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#home">Beranda</a></li>
+                                    <li><a href="#harga">Harga</a></li>
+                                    <li><a href="#statistik">Statistik</a></li>
+                                    <li><a href="#tema">Tema</a></li>
+                                    <li><a href="#tema">Testimoni</a></li>
+                                    <li><a href="#tema">Demo</a></li>
+
                                 </ul>
+
                             </div> <!-- footer wrapper -->
                         </div> <!-- footer link -->
                     </div>
-                    <div class="col-lg-3 col-md-5 col-sm-5">
+                    <div class="col-lg-5 col-md-7 col-sm-7">
                         <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="footer-title">
                                 <h4 class="title">Contact Us</h4>
                             </div>
                             <ul class="contact">
-                                <li>+809272561823</li>
-                                <li>info@gmail.com</li>
-                                <li>www.yourweb.com</li>
-                                <li>123 Stree New York City , United <br> States Of America 750.</li>
+                                <li>+62812345678</li>
+                                <li>getmarried@gmail.com</li>
+                                <li>www.getmarried.com</li>
+                                <li>Buah batu, bojongsoang,<br> Kota Bandung</li>
                             </ul>
                         </div> <!-- footer contact -->
                     </div>
@@ -786,7 +554,7 @@
                     <div class="col-lg-12">
                         <div class="copyright d-sm-flex justify-content-between">
                             <div class="copyright-content">
-                                <p class="text">Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
+                                <p class="text">© <?= date('Y') ?> getmarried. <a href="https://uideck.com" rel="nofollow">Made by in team PCR</a></p>
                             </div> <!-- copyright content -->
                         </div> <!-- copyright -->
                     </div>
@@ -797,28 +565,6 @@
     </footer>
 
     <!--====== FOOTER PART ENDS ======-->
-
-    <!--====== BACK TOP TOP PART START ======-->
-
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-
-    <!--====== BACK TOP TOP PART ENDS ======-->
-
-    <!--====== PART START ======-->
-
-
-    <!-- <section class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-"></div>
-            </div>
-        </div>
-    </section> -->
-
-
-    <!--====== PART ENDS ======-->
-
-
 
 
     <!--====== Jquery js ======-->

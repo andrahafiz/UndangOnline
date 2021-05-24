@@ -9,6 +9,12 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4>File Upload</h4>
+                                    <div class="card-header-right">
+                                        <button type="button" onClick="window.location.reload();" class="btn btn-primary btn-icon" data-toggle="tooltip" data-placement="bottom" data-original-title="Refresh">
+                                            <i class="fa fa-refresh" style="color: white;"></i>
+                                        </button>
+                                    </div>
+
 
                                     <!-- <a href="<?= base_url('Mempelai/Galeri/add_foto'); ?>">asd</a> -->
                                     <!-- <div class="card-header-right">
@@ -123,13 +129,25 @@
                                                 if (count($data_foto) > 0) {
                                                     foreach ($data_foto as $key => $value) { ?>
                                                         <div class="col-lg-4 ">
-                                                            <figure class="effect-winston  text-center">
-                                                                <img src="<?= base_url(); ?>assets\Mempelai\images\gallery\<?= $value->Link_Media ?>" alt="img30">
+                                                            <!-- <figure class="effect-winston  text-center" style="height:55%;">
+                                                                <img src="<?= base_url(); ?>assets\Mempelai\images\gallery\<?= $value->Link_Media ?>" style="height:1600;width:1070px;  object-fit: cover;" lt="img30">
+                                                                <figcaption>
+                                                                    <h2><span><?= $value->Judul_Media ?></span></h2>
+                                                                    <p>
+                                                                        <a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
+                                                                        <a href="#"><i class="fa fa-fw fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+                                                                    </p>
+                                                                </figcaption>
+                                                            </figure> -->
+                                                            <figure class="effect-winston" style="height: 215px;">
+                                                                <center>
+                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\gallery\<?= $value->Link_Media ?>" alt="img30" style="height: 215px;">
+                                                                </center>
                                                                 <figcaption>
                                                                     <h2><span><?= $value->Judul_Media ?></span></h2>
                                                                     <p>
                                                                         <a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-                                                                        <a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
                                                                         <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
                                                                     </p>
                                                                 </figcaption>

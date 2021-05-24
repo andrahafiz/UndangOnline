@@ -44,7 +44,7 @@
                                                         <a href="<?= base_url('Admin/Tema') ?>">
                                                             <button type="reset" class="btn btn-inverse btn-outline-inverse w-25"><i class="icofont icofont-close-circled "></i>Batal</button>
                                                         </a>
-                                                        <input type="submit" name="submit" class="btn btn-success w-25"><i class="icofont icofont-check-circled"></i>Simpan</input>
+                                                        <button type="submit" name="submit" class="btn btn-success w-25"><i class="icofont icofont-check-circled"></i>Simpan</button>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 text-center">
