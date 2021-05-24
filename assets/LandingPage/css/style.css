@@ -156,6 +156,13 @@ p {
     background-position: right center; }
 
 /*===== All SECTION TITLE Style =====*/
+.line{
+  background: -webkit-linear-gradient(#fe8464 0%, #fe6e9a 100%);
+  background: -o-linear-gradient(#fe8464 0%, #fe6e9a 100%);
+  background: linear-gradient(#fe8464 0%, #fe6e9a 100%);
+  /* width: 150px; */
+  height: 5px;
+  margin-bottom: 5px !important; }
 .section-title .line {
   background: -webkit-linear-gradient(#fe8464 0%, #fe6e9a 100%);
   background: -o-linear-gradient(#fe8464 0%, #fe6e9a 100%);
@@ -849,11 +856,7 @@ p {
       04.SERVICES css 
 ===========================*/
 .single-services {
-  background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-  background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-  background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-  -webkit-box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
-  -moz-box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
+ 
   box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -888,15 +891,14 @@ p {
       position: absolute;
       top: 52%;
       left: 47%;
+      color:#fff;
       -webkit-transform: translate(-50%, -50%);
       -moz-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       -o-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       font-size: 34px;
-      background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-      background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-      background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%); }
+    }
   .single-services .services-content .services-title a {
     font-size: 26px;
     font-weight: 700;
@@ -980,6 +982,9 @@ p {
   .about-content .text {
     margin-top: 15px; }
   .about-content .main-btn {
+    /* background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+    background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+    background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%); */
     background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
@@ -1092,9 +1097,10 @@ p {
           max-width: 155px;
           height: 120px; } }
     .counter-wrapper .single-counter.counter-color-1::before {
-      background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-      background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
-      background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);}
+      /* background: linear-gradient(#33c8c1 0%, #119bd2 100%);  */
+      background: -webkit-linear-gradient(left, #33c8c1 0%, #119bd2 100%);
+      background: -o-linear-gradient(left, #33c8c1 0%, #119bd2 100%);
+      background: linear-gradient(to right, #33c8c1 0%, #119bd2 100%);}
     .counter-wrapper .single-counter.counter-color-2::before {
       background: -webkit-linear-gradient(#fe8464 0%, #fe6e9a 100%);
       background: -o-linear-gradient(#fe8464 0%, #fe6e9a 100%);
@@ -1530,6 +1536,10 @@ p {
     background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+    
+/* background: -webkit-linear-gradient(left, #33c8c1 0%, #119bd2 50%, #33c8c1 100%);
+background: -o-linear-gradient(left, #33c8c1 0%, #119bd2 50%, #33c8c1 100%);
+background: linear-gradient(to right, #33c8c1 0%, #119bd2 50%, #33c8c1 100%); */
     background-size: 200%; }
     @media (max-width: 767px) {
       .undangan-form button {

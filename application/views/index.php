@@ -133,7 +133,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                            <img src="<?= base_url(); ?>assets/LandingPage/images/header-hero.png" alt="hero">
+                            <img src="<?= base_url(); ?>assets/LandingPage/images/undangan-banner.png" alt="hero">
                         </div> <!-- header hero image -->
                     </div>
                 </div> <!-- row -->
@@ -145,12 +145,12 @@
     <!--====== CARI UNDANGAN ======-->
     <div class="brand-area pt-90">
         <div class="container">
+            <div class="line"></div>
             <div class="col-lg-12">
-                <div class="undangan-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="undangan-content mt-65">
-                                <div class="line m-auto"></div>
                                 <h2 class="undangan-title">Cari undangan</h2>
                             </div>
                         </div>
@@ -165,6 +165,7 @@
                     </div>
                 </div>
             </div> <!-- row -->
+            <div class="line mt-5"></div>
         </div> <!-- container -->
     </div>
     <!--====== END CARI UNDANGAN ======-->
@@ -175,8 +176,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-30">
+                        <h3 class="title mb-2">Tema Terfavorit Di <span> Getmarried</span></h3>
                         <div class="line m-auto"></div>
-                        <h3 class="title">Tema Terfavorit Di <span> Getmarried</span></h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -190,7 +191,7 @@
 
                                 <div class="social">
                                     <ul>
-                                        <li> <a href="#"><i class="lni lni-search"></i><strong>Preview</strong> </a></li>
+                                        <li> <a href="#"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -205,7 +206,7 @@
             </div> <!-- row -->
         </div> <!-- container -->
         <div class="about-shape-2">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-2.svg" alt="shape">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
         </div>
     </section>
     <!--====== TEMA PART ENDS ======-->
@@ -237,6 +238,7 @@
                             <p class="text">Berikut anda dapat melihat statistik website getmarried dibawah ini.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
+
                             <div class="col-6">
                                 <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
@@ -245,6 +247,7 @@
                                     </div>
                                 </div> <!-- single counter -->
                             </div>
+
                             <div class="col-6">
                                 <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
@@ -290,7 +293,9 @@
                         <a href="#" class="main-btn">Buat Undangan</a>
                     </div> <!-- about content -->
                 </div>
+
                 <div class="col-lg-5 col-md-12 col-sm-12 ">
+
                     <div class="single-services text-center mt-30 wow fadeIn shadow-lg " data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="services-icon">
                             <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/services-shape.svg" alt="shape">
@@ -298,7 +303,8 @@
                             <i class="lni lni-diamond-alt"></i>
                         </div>
                         <div class="services-content mt-30">
-                            <h1 class="services-title"><a href="#">Rp. 100.000</a></h1>
+                            <h5>Harga</h5>
+                            <h class="services-title ">Rp. 100.000</h>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -312,7 +318,7 @@
 
 
 
-    <!--====== TEMA PART START ======-->
+    <!--====== Testimoni PART START ======-->
 
     <section id="testimoni" class="testimonial-area pt-120">
         <div class="container">
@@ -325,6 +331,32 @@
                 </div>
             </div> <!-- row -->
             <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+                <?php foreach ($testimoni as $key => $value) { ?>
+                    <div class="col-lg-4">
+                        <div class="single-testimonial">
+                            <div class="testimonial-review d-flex align-items-center justify-content-between">
+                                <div class="quota">
+                                    <i class="lni-quotation"></i>
+                                </div>
+                                <div>
+                                    <h5 class="holder-name"><?= $value->Username ?></a></h5>
+                                </div>
+                            </div>
+                            <div class="testimonial-text">
+                                <p class="text"><?= $value->Testimoni ?></p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="author-image">
+                                    <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/textimonial-shape.svg" alt="shape">
+                                    <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
+                                </div>
+                                <div class="author-content media-body">
+                                    <h3 class="holder-name">Hardana</h3>
+                                </div>
+                            </div>
+                        </div> <!-- single testimonial -->
+                    </div>
+                <?php } ?>
                 <div class="col-lg-4">
                     <div class="single-testimonial">
                         <div class="testimonial-review d-flex align-items-center justify-content-between">
@@ -345,16 +377,16 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Sangat mudah digunakan, undangan pernikahan langsung bisa dibagikan dengan cepat! Sukses terus kedepannya!</p>
+                            <p class="text">Baru kali ini ada platform undangan pernikahan online yang gratis dan simple. Terimakasih</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
                                 <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-1.png" alt="author">
+                                <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Annisa Ariani</h6>
-                                <p class="text">Karyawan Swasta</p>
+                                <h6 class="holder-name">Hardana</h6>
+                                <p class="text">Wirausahawan</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
@@ -413,41 +445,7 @@
                             </div> -->
                         </div>
                         <div class="testimonial-text">
-                            <p class="text">Awalnya sempat ragu, kenapa murah sekali. Begitu di coba luar biasa, fiturnya lengkap sekali, tidak mengecewakan. Sukses terus!!</p>
-                        </div>
-                        <div class="testimonial-author d-flex align-items-center">
-                            <div class="author-image">
-                                <img class="shape" src="<?= base_url(); ?>assets/LandingPage/images/textimonial-shape.svg" alt="shape">
-                                <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-3.png" alt="author">
-                            </div>
-                            <div class="author-content media-body">
-                                <h6 class="holder-name">Lidia Setia</h6>
-                                <p class="text">Karyawan swasta</p>
-                            </div>
-                        </div>
-                    </div> <!-- single testimonial -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testimonial">
-                        <div class="testimonial-review d-flex align-items-center justify-content-between">
-                            <div class="quota">
-                                <i class="lni-quotation"></i>
-                            </div>
-                            <div>
-                                <h5 class="holder-name">@GetMarried</a></h5>
-                            </div>
-                            <!-- <div class="star">
-                                <ul>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                    <li><i class="lni-star-filled"></i></li>
-                                </ul>
-                            </div> -->
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="text">Gak salah banget sih pilih platform ini untuk buat undangan. Harga terjangkau dan simple lagi. suksess!!</p>
+                            <p class="text">Baru kali ini ada platform undangan pernikahan online yang gratis dan simple. Terimakasih</p>
                         </div>
                         <div class="testimonial-author d-flex align-items-center">
                             <div class="author-image">
@@ -455,12 +453,14 @@
                                 <img class="author" src="<?= base_url(); ?>assets/LandingPage/images/author-2.png" alt="author">
                             </div>
                             <div class="author-content media-body">
-                                <h6 class="holder-name">Fajar Siddiq</h6>
-                                <p class="text">Dokter</p>
+                                <h6 class="holder-name">Hardana</h6>
+                                <p class="text">Wirausahawan</p>
                             </div>
                         </div>
                     </div> <!-- single testimonial -->
                 </div>
+
+
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
@@ -499,6 +499,7 @@
             <!-- end subscribe area -->
             <div class="footer-widget pb-100">
                 <div class="row">
+
                     <div class="col-lg-4 col-md-6 col-sm-8">
                         <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <a class="logo" href="#">
@@ -553,7 +554,7 @@
                     <div class="col-lg-12">
                         <div class="copyright d-sm-flex justify-content-between">
                             <div class="copyright-content">
-                                <p class="text">© 2021 - 2022 getmarried. <a href="https://uideck.com" rel="nofollow">Made by in team PCR</a></p>
+                                <p class="text">© <?= date('Y') ?> getmarried. <a href="https://uideck.com" rel="nofollow">Made by in team PCR</a></p>
                             </div> <!-- copyright content -->
                         </div> <!-- copyright -->
                     </div>
