@@ -103,7 +103,33 @@ function sex($sex)
         return "Laki-laki";
     }
 }
-
+//fungsi untuk mengubah hari ke dalam bahasa indonesia
+function getHari($hari)
+{
+    switch ($hari) {
+        case "Mon":
+            return "Senin";
+            break;
+        case "Tue":
+            return "Selasa";
+            break;
+        case "Wed":
+            return "Rabu";
+            break;
+        case "Thu":
+            return "Kamis";
+            break;
+        case "Fri":
+            return "Jum'at";
+            break;
+        case "Sat":
+            return "Sabtu";
+            break;
+        case "Sun":
+            return "Minggu";
+            break;
+    }
+}
 // Fungsi untuk membuat bulan dengan format Indonesia
 function getBulan($bln)
 {

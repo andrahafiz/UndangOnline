@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2021 pada 10.36
+-- Waktu pembuatan: 24 Bulan Mei 2021 pada 12.22
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -58,14 +58,14 @@ INSERT INTO `pembayaran_undangan` (`order_id`, `gross_amount`, `payment_type`, `
 
 CREATE TABLE `tb_acara` (
   `ID_Acara` varchar(256) NOT NULL,
-  `TglAkad` date DEFAULT NULL,
-  `WaktuMulaiAkad` time DEFAULT NULL,
-  `WaktuSelesaiAkad` time DEFAULT NULL,
+  `TglAkad` int(11) DEFAULT NULL,
+  `WaktuMulaiAkad` int(11) DEFAULT NULL,
+  `WaktuSelesaiAkad` int(11) DEFAULT NULL,
   `TempatAkad` varchar(150) DEFAULT NULL,
   `AlamatAkad` text DEFAULT NULL,
-  `TglResepsi` date DEFAULT NULL,
-  `WaktuMulaiResepsi` time DEFAULT NULL,
-  `WaktuSelesaiResepsi` time DEFAULT NULL,
+  `TglResepsi` int(11) DEFAULT NULL,
+  `WaktuMulaiResepsi` int(11) DEFAULT NULL,
+  `WaktuSelesaiResepsi` int(11) DEFAULT NULL,
   `TempatResepsi` varchar(150) DEFAULT NULL,
   `AlamatResepsi` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -75,7 +75,7 @@ CREATE TABLE `tb_acara` (
 --
 
 INSERT INTO `tb_acara` (`ID_Acara`, `TglAkad`, `WaktuMulaiAkad`, `WaktuSelesaiAkad`, `TempatAkad`, `AlamatAkad`, `TglResepsi`, `WaktuMulaiResepsi`, `WaktuSelesaiResepsi`, `TempatResepsi`, `AlamatResepsi`) VALUES
-('ACR1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('ACR1', 1622239200, 1621839600, 1621807200, 'Mutiara Palace', 'Jl. Ahmad Yani', 1622844000, 1621839600, 1621807200, 'Monas', 'Jl. Gatot'),
 ('ACR2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -298,7 +298,7 @@ CREATE TABLE `tb_testimoni` (
   `ID_Akun` varchar(255) NOT NULL,
   `Testimoni` text NOT NULL,
   `Tgl_Testimoni` int(11) NOT NULL,
-  `Status_Testimoni` enum('Posting','Non Aktif') NOT NULL
+  `Status_Testimoni` enum('Posting','Non-Aktif') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -306,7 +306,7 @@ CREATE TABLE `tb_testimoni` (
 --
 
 INSERT INTO `tb_testimoni` (`ID_Testimoni`, `ID_Undangan`, `ID_Akun`, `Testimoni`, `Tgl_Testimoni`, `Status_Testimoni`) VALUES
-('TSM1', 'UND1', 'AKN1', 'Website ini sangat mantab', 1618680851, 'Non Aktif');
+('TSM1', 'UND1', 'AKN1', 'cicak', 1621796413, 'Posting');
 
 -- --------------------------------------------------------
 
@@ -330,14 +330,7 @@ CREATE TABLE `tb_undangan` (
 --
 
 INSERT INTO `tb_undangan` (`ID_Undangan`, `ID_Mempelai`, `ID_Acara`, `ID_Kategori`, `ID_Tema`, `ID_Akun`, `tgl_buatakun`, `tgl_selesaiakun`) VALUES
-('UND1', 'MPL1', 'ACR1', 'KTG1', 'THM1', 'AKN1', 1618680851, 1619285651),
-('UND2', 'MPL2', 'ACR2', 'KTG1', 'THM1', 'AKN2', 1621157202, 1621762002),
-('UND3', 'MPL2', 'ACR2', 'KTG1', 'THM2', 'AKN2', 1621157202, 1621762002),
-('UND4', 'MPL2', 'ACR2', 'KTG1', 'THM4', 'AKN2', 1621157202, 1621762002),
-('UND5', 'MPL1', 'ACR1', 'KTG1', 'THM4', 'AKN1', 1618680851, 1619285651),
-('UND6', 'MPL2', 'ACR2', 'KTG1', 'THM4', 'AKN2', 1621157202, 1621762002),
-('UND7', 'MPL1', 'ACR1', 'KTG1', 'THM2', 'AKN1', 1618680851, 1619285651),
-('UND8', 'MPL1', 'ACR1', 'KTG1', 'THM3', 'AKN1', 1618680851, 1619285651);
+('UND1', 'MPL1', 'ACR1', 'KTG1', 'THM1', 'AKN1', 1618680851, 1619285651);
 
 -- --------------------------------------------------------
 
@@ -385,14 +378,14 @@ CREATE TABLE `view_acara` (
 `ID_Undangan` varchar(256)
 ,`ID_akun` varchar(256)
 ,`ID_Acara` varchar(256)
-,`TglAkad` date
-,`WaktuMulaiAkad` time
-,`WaktuSelesaiAkad` time
+,`TglAkad` int(11)
+,`WaktuMulaiAkad` int(11)
+,`WaktuSelesaiAkad` int(11)
 ,`TempatAkad` varchar(150)
 ,`AlamatAkad` text
-,`TglResepsi` date
-,`WaktuMulaiResepsi` time
-,`WaktuSelesaiResepsi` time
+,`TglResepsi` int(11)
+,`WaktuMulaiResepsi` int(11)
+,`WaktuSelesaiResepsi` int(11)
 ,`TempatResepsi` varchar(150)
 ,`AlamatResepsi` text
 );
@@ -413,14 +406,14 @@ CREATE TABLE `view_all` (
 ,`Created_akun` int(11)
 ,`Status_akun` varchar(10)
 ,`ID_Acara` varchar(256)
-,`TglAkad` date
-,`WaktuMulaiAkad` time
-,`WaktuSelesaiAkad` time
+,`TglAkad` int(11)
+,`WaktuMulaiAkad` int(11)
+,`WaktuSelesaiAkad` int(11)
 ,`TempatAkad` varchar(150)
 ,`AlamatAkad` text
-,`TglResepsi` date
-,`WaktuMulaiResepsi` time
-,`WaktuSelesaiResepsi` time
+,`TglResepsi` int(11)
+,`WaktuMulaiResepsi` int(11)
+,`WaktuSelesaiResepsi` int(11)
 ,`TempatResepsi` varchar(150)
 ,`AlamatResepsi` text
 ,`ID_Mempelai` varchar(256)

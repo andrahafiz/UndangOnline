@@ -43,15 +43,15 @@
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Tanggal</p>
-                                                <input type="date" id="tgl_akad" name="tgl_akad" class="form-control form-control-round m-b-10" value='<?= $data_acara->TglAkad; ?>'>
+                                                <input type="date" id="tgl_akad" name="tgl_akad" class="form-control form-control-round m-b-10" value='<?= date('Y-m-d', $data_acara->TglAkad); ?>'>
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Mulai</p>
-                                                <input type="time" id="ts_akad" name="ts_akad" class="form-control form-control-round m-b-10" value="<?= $data_acara->WaktuMulaiAkad; ?>">
+                                                <input type="time" id="ts_akad" name="ts_akad" class="form-control form-control-round m-b-10" value="<?= date('H:i', $data_acara->WaktuMulaiAkad); ?>">
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Berakhir</p>
-                                                <input type="time" id="tf_akad" name="tf_akad" class="form-control form-control-round m-b-10" value="<?= $data_acara->WaktuSelesaiAkad; ?>">
+                                                <input type="time" id="tf_akad" name="tf_akad" class="form-control form-control-round m-b-10" value="<?= date('H:i', $data_acara->WaktuSelesaiAkad); ?>">
                                             </div>
                                         </div>
                                         <p class="f-w-600 m-b-5">Tempat</p>
@@ -70,15 +70,15 @@
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Tanggal</p>
-                                                <input type="date" id="tgl_resepsi" name="tgl_resepsi" class="form-control form-control-round m-b-10" value="<?= $data_acara->TglResepsi; ?>">
+                                                <input type="date" id="tgl_resepsi" name="tgl_resepsi" class="form-control form-control-round m-b-10" value="<?= date('Y-m-d', $data_acara->TglResepsi); ?>">
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Mulai</p>
-                                                <input type="time" id="ts_resepsi" name="ts_resepsi" class="form-control form-control-round m-b-10" value="<?= $data_acara->WaktuMulaiResepsi; ?>">
+                                                <input type="time" id="ts_resepsi" name="ts_resepsi" class="form-control form-control-round m-b-10" value="<?= date('H:i', $data_acara->WaktuMulaiResepsi); ?>">
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Berakhir</p>
-                                                <input type="time" id="tf_resepsi" name="tf_resepsi" class="form-control form-control-round m-b-10" value="<?= $data_acara->WaktuSelesaiResepsi; ?>">
+                                                <input type="time" id="tf_resepsi" name="tf_resepsi" class="form-control form-control-round m-b-10" value="<?= date('H:i', $data_acara->WaktuSelesaiResepsi); ?>">
                                             </div>
                                         </div>
                                         <p class="f-w-600 m-b-5">Tempat</p>
