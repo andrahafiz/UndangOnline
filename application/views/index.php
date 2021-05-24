@@ -206,7 +206,7 @@
             </div> <!-- row -->
         </div> <!-- container -->
         <div class="about-shape-2">
-            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-1.svg" alt="shape">
+            <img src="<?= base_url(); ?>assets/LandingPage/images/about-shape-2.svg" alt="shape">
         </div>
     </section>
     <!--====== TEMA PART ENDS ======-->

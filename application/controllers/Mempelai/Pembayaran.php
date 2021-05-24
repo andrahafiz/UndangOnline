@@ -17,7 +17,7 @@ class Pembayaran extends CI_Controller
         $id =   $this->session->userdata('ID_Akun');
         $data = array(
             'judul' => 'Pembayaran',
-            'menu' => menu_mempelai(),
+            'menu' =>   $menu = [['Pembayaran'], ['fa fa-credit-card'], ['Mempelai/Pembayaran']],
             'data_akun' => $this->data_akun($id)
         );
         // var_dump($data['data_akun']);
