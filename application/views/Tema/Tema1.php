@@ -70,7 +70,8 @@
 </head>
 
 <body>
-
+    <!-- <audio src="http://www.jplayer.org/audio/mp3/Miaow-snip-Stirring-of-a-fool.mp3" autoplay="autoplay" hidden="hidden"></audio> -->
+    <audio src="<?= base_url('assets/Music/') ?>music.mp3" autoplay="autoplay" hidden="hidden"></audio>
     <div class="fh5co-loader"></div>
 
     <div id="page">
@@ -117,7 +118,7 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <div class="display-t">
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                <h1><?= $data->Nama_MPria ?> &amp; <?= $data->Nama_MPria ?></h1>
+                                <h1><?= $data->Nama_MPria ?> &amp; <?= $data->Nama_MWanita ?></h1>
                                 <!-- <h2>We Are Getting Married</h2> -->
                                 <!-- <div class="simply-countdown simply-countdown-one"></div> -->
                                 <!-- <p><a href="#" class="btn btn-default btn-sm">Save the date</a></p> -->
@@ -133,7 +134,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                         <h2>Hallo!</h2>
-                        <h3>November 28th, 2016 New York, USA</h3>
+                        <h3><?= getBulan(date('m', $data->TglAkad)) . " " . date('d', $data->TglResepsi); ?>, <?= date('Y', $data->TglResepsi) ?></h3>
                         <p>Kami mengundang anda untuk merayakan pernikahan kami</p>
                     </div>
                 </div>
@@ -153,7 +154,7 @@
                             <img src="<?= base_url('assets/Mempelai/images/mempelai/') . $data->Foto_MWanita ?>" alt="Mempelai Wanita" class="img-responsive">
                         </div>
                         <div class="desc-bride">
-                            <h1><?= $data->Nama_MPria ?></h1>
+                            <h1> <?= $data->Nama_MWanita ?></h1>
                             <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
                         </div>
                     </div>
@@ -218,92 +219,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                        <span>Our Memories</span>
-                        <h2>Wedding Gallery</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <!-- <span>M</span> -->
+                        <h2>Galeri</h2>
+                        <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                     </div>
                 </div>
                 <div class="row row-bottom-padded-md">
                     <div class="col-md-12">
                         <ul id="fh5co-gallery-list">
-
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); ">
-                                <a href="images/gallery-1.jpg">
-                                    <div class="case-studies-summary">
-                                        <span>14 Photos</span>
-                                        <h2>Two Glas of Juice</h2>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-                                <a href="#" class="color-2">
-                                    <div class="case-studies-summary">
-                                        <span>30 Photos</span>
-                                        <h2>Timer starts now!</h2>
-                                    </div>
-                                </a>
-                            </li>
-
-
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-                                <a href="#" class="color-3">
-                                    <div class="case-studies-summary">
-                                        <span>90 Photos</span>
-                                        <h2>Beautiful sunset</h2>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-                                <a href="#" class="color-4">
-                                    <div class="case-studies-summary">
-                                        <span>12 Photos</span>
-                                        <h2>Company's Conference Room</h2>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-                                <a href="#" class="color-3">
-                                    <div class="case-studies-summary">
-                                        <span>50 Photos</span>
-                                        <h2>Useful baskets</h2>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
-                                <a href="#" class="color-4">
-                                    <div class="case-studies-summary">
-                                        <span>45 Photos</span>
-                                        <h2>Skater man in the road</h2>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
-                                <a href="#" class="color-4">
-                                    <div class="case-studies-summary">
-                                        <span>35 Photos</span>
-                                        <h2>Two Glas of Juice</h2>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); ">
-                                <a href="#" class="color-5">
-                                    <div class="case-studies-summary">
-                                        <span>90 Photos</span>
-                                        <h2>Timer starts now!</h2>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-                                <a href="#" class="color-6">
-                                    <div class="case-studies-summary">
-                                        <span>56 Photos</span>
-                                        <h2>Beautiful sunset</h2>
-                                    </div>
-                                </a>
-                            </li>
+                            <?php foreach ($data_foto as $key => $value) { ?>
+                                <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(<?= base_url('assets/Mempelai/images/gallery/') . '' . $value->Link_Media; ?>); ">
+                                    <a href="<?= base_url('assets/Mempelai/images/gallery/') . '' . $value->Link_Media; ?>">
+                                        <div class="case-studies-summary">
+                                            <!-- <span>14 Photos</span> -->
+                                            <h2><?= $value->Judul_Media; ?></h2>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                            <!--                           -->
                         </ul>
                     </div>
                 </div>
@@ -363,7 +297,7 @@
             </div>
         </div> -->
 
-        <div id="fh5co-testimonial">
+        <!-- <div id="fh5co-testimonial">
             <div class="container">
                 <div class="row">
                     <div class="row animate-box">
@@ -415,9 +349,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div id="fh5co-services" class="fh5co-section-gray">
+        <!-- <div id="fh5co-services" class="fh5co-section-gray">
             <div class="container">
 
                 <div class="row animate-box">
@@ -471,7 +405,7 @@
 
 
             </div>
-        </div>
+        </div> -->
 
 
         <!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
@@ -533,7 +467,7 @@
 
     <div class="gototop js-top">
 
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i> Kirim hadiah</a>
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
 
     <!-- jQuery -->

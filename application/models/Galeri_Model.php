@@ -19,6 +19,7 @@ class Galeri_Model extends CI_Model
         $this->db->join("tb_undangan", 'tb_gallery.ID_Undangan = tb_undangan.ID_Undangan');
         $this->db->where("tb_gallery.ID_Undangan", $id_undangan);
         $this->db->where("tb_gallery.Tipe_Media", $tipe);
+        $this->db->limit(10);
         return $this->db->get()->result();
     }
 

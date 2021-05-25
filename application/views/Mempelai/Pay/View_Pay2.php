@@ -57,14 +57,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
-</div> -->
-</div>
-</div>
-</div>
-</div>
-</div>
+
 <!-- MODAL INPUTA DATA TAMU -->
 <div class="modal fade" id="Modal-P" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
