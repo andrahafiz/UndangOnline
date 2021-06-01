@@ -129,7 +129,7 @@
                                     <p class="f-w-900 m-b-5">Nomor Whatasapp Tamu</p>
                                     <div class="input-group">
                                         <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
-                                        <input type="text" required id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
+                                        <input type="number" required id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
                                     </div>
                             </div>
                         </div>

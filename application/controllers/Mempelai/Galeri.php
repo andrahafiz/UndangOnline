@@ -21,7 +21,8 @@ class Galeri extends CI_Controller
             'menu' => menu_mempelai(),
             'q' => $this->Galeri_Model->selectAll($id_undangan),
             'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
-            'data_video' => $this->Galeri_Model->selectSingle($id_undangan, 'Video')
+            'data_video' => $this->Galeri_Model->selectSingle($id_undangan, 'Video'),
+            'jml_foto' => $this->jumlah_foto($id_undangan)
         );
         // var_dump($data['data_video']);
         // die;
@@ -37,7 +38,7 @@ class Galeri extends CI_Controller
         // die;
         $this->load->view('Mempelai/layout/header', $data);
         $this->load->view('Mempelai/Galeri/V_Galeri', $data);
-        $this->load->view('Mempelai/layout/footer');
+        $this->load->view('Mempelai/layout/footer', $data['jml_foto']);
     }
 
     public function add_foto()
@@ -61,7 +62,8 @@ class Galeri extends CI_Controller
                 $config['upload_path'] = './assets/Mempelai/images/gallery/'; //path folder
                 $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
                 $config['max_size']     = '1025';
-                $config['file_name'] = $id_undangan . "_" . $i . "_" . $_FILES['files']['name'][$i];
+                $config['file_name'] = $id_undangan . "_" . $_FILES['files']['name'][$i];
+                $filename = pathinfo($_FILES['file']['name'], PATHINFO_FILENAME);
                 $this->load->library('upload', $config);
 
 
@@ -70,9 +72,9 @@ class Galeri extends CI_Controller
                     $data = [
                         'ID_Undangan' =>  $id_undangan,
                         'Tipe_Media' => 'Foto',
-                        'Judul_Media' => $uploadData['file_name'],
+                        'Judul_Media' => $filename,
                         'Link_Media' => $uploadData['file_name'],
-                        'Size_Media' => $uploadData['size'],
+                        'Size_Media' => $uploadData['file_size'],
                         'Status_Media' => '0',
                     ];
                     // var_dump($uploadData);
@@ -119,6 +121,25 @@ class Galeri extends CI_Controller
             redirect('Mempelai/Galeri');
         }
     }
+
+    public function delete_media($id_media)
+    {
+        $old_image = $this->Galeri_Model->selectbyid($id_media);
+        // print_r($old_image->Link_Media);
+        // die;
+        $query = $this->Galeri_Model->hapus_media($id_media);
+        if ($old_image->Tipe_Media == "Foto") {
+            // $query = $this->db->delete('tb_gallery', ['ID_Media' => $id_media]);
+            if ($query) {
+                unlink(FCPATH . 'assets/Mempelai/images/gallery/' . $old_image->Link_Media);
+                $this->pesan('sukses', 'Foto sudah di hapus');
+                redirect('Mempelai/Galeri');
+            }
+        }
+        // var_dump($query);
+        // if ($query) {
+        // }
+    }
     // method bertanggung jawab terhadap data video
     private function _datavideo()
     {
@@ -135,10 +156,16 @@ class Galeri extends CI_Controller
 
     private function cekurlyoutube($url)
     {
+        // $rx = '~
+        // ^(?:https?://)?
+        // (?:www[.])?
+        // (?:youtube[.]com/watch[?]v=|youtu[.]be/)
+        // ([^&]{11})
+        // ~x';
         $rx = '~
         ^(?:https?://)?
         (?:www[.])?
-        (?:youtube[.]com/watch[?]v=|youtu[.]be/)
+        (?:youtube[.]com/embed/)
         ([^&]{11})
         ~x';
         $has_match = preg_match($rx, $url, $matches);

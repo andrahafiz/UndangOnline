@@ -28,10 +28,16 @@ class Galeri_Model extends CI_Model
         $this->db->insert('tb_gallery', $data);
     }
 
-    public function selectbyid($id)
+    public function hapus_media($id_media)
+    {
+        $this->db->where('ID_Media', $id_media);
+        return $this->db->delete('tb_gallery');
+    }
+
+    public function selectbyid($id_media)
     {
         // $this->db->where('pekerjaan_id', $id);
-        $query =  $this->db->get_where('view_acara', ['ID_akun' => $id]);
+        $query =  $this->db->get_where('tb_gallery', ['ID_Media' => $id_media]);
         $hasil = $query->row();
         return $hasil;
     }
