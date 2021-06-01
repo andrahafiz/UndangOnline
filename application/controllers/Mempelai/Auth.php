@@ -81,7 +81,7 @@ class Auth extends CI_Controller
     private function _formvalidation()
     {
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tb_akun.Email_akun]', [
+        $this->form_validation->set_rules('email', 'Email', 'required|trim', [
             'is_unique' => 'Email ini telah terdaftar'
         ]);
         $this->form_validation->set_rules('wa', 'Nomor Whatasapp', 'required|trim|numeric');
@@ -111,47 +111,7 @@ class Auth extends CI_Controller
         $this->_sendEmail($token, 'verify');
     }
 
-    private function _sendEmail($token, $tipe)
-    {
 
-        $this->load->library('email');
-
-        $config = array();
-        $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        $config['smtp_user'] = 'joyoom34@gmail.com';
-        $config['smtp_pass'] = 'tuf18ti082';
-        $config['smtp_port'] = 465;
-        $config['smpt_crypto'] = 'ssl';
-        $config['mailtype'] = 'html';
-        $config['charset'] = 'utf-8';
-        // $config['set_newline'] = "\r\n";
-        $this->email->initialize($config);
-
-        $this->email->set_newline("\r\n");
-
-        $this->email->from('joyoom34@gmail.com', 'Desa Sayur Mahincat');
-        $this->email->to($this->input->post('Email'));
-        if ($tipe == 'verify') {
-
-            $this->email->subject('Verifikasi Akun');
-            $data['link'] = base_url() . 'Auth/verify?email=' . $this->input->post('Email') . '&token=' . urlencode($token);
-            // $this->email->message($this->load->view('Mempelai/temp_email/emailaktif', $data, true));
-            $this->email->message("Yes");
-        } else {
-            $this->email->subject('Reset Password Akun');
-            $data['link'] = base_url() . 'Auth/resetpassword?email=' . $this->input->post('Email') . '&token=' . urlencode($token);
-            // $this->email->message($this->load->view('emailforget', $data, true));
-            $this->email->message("Yes");
-        }
-
-        if ($this->email->send()) {
-            return true;
-        } else {
-            echo $this->email->print_debugger();
-            die;
-        }
-    }
     public function logout()
     {
         $this->session->unset_userdata("Username");
@@ -193,14 +153,91 @@ class Auth extends CI_Controller
             'NoHp_akun' => htmlspecialchars($this->input->post('wa', true)),
             'Password_akun' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             'Created_akun' => time(),
-            'Status_akun' => '1'
+            'Status_akun' => '0'
+        ];
+        $token = base64_encode(random_bytes(32));
+        $akun_token = [
+            'email' => $email,
+            'token' => $token,
+            'date_created' => time()
+        ];
+        $this->Auth_Model->tambah_data_akun($data);
+        $this->db->insert('token', $akun_token);
+        $this->_sendEmail($token, 'verify');
+
+
+        // $id_akun = $data['ID_akun'];
+        // $id_acara = $this->CreateDataAcara();
+        // $id_mempelai = $this->CreateDataMempelai();
+        // $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
+    }
+    private function _sendEmail($token, $type)
+    {
+        $config = [
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'joyoom34@gmail.com',
+            'smtp_pass' => 'tuf18ti082',
+            'smtp_port' => 465,
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n",
         ];
 
-        $this->Auth_Model->tambah_data_akun($data);
-        $id_akun = $data['ID_akun'];
-        $id_acara = $this->CreateDataAcara();
-        $id_mempelai = $this->CreateDataMempelai();
-        $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+
+        $this->email->from('joyoom34@gmail.com', 'Get Married');
+        $this->email->to($this->input->post('email'));
+        if ($type == 'verify') {
+
+            $this->email->subject('Verifikasi Akun');
+            $this->email->message('Click this link to verify you account :
+                <a href="' . base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Aktifasi</a>');
+        }
+
+        if ($this->email->send()) {
+            return true;
+        } else {
+            echo $this->email->print_debugger();
+            die();
+        }
+    }
+
+    public function Verifikasi()
+    {
+        $email = $this->input->get('Email');
+        $token = $this->input->get('token');
+
+        $akun = $this->db->get_where('tb_akun', ['Email_akun' => $email])->row_array();
+
+        if ($akun) {
+            $akun_token = $this->db->get_where('token', ['token' => $token])->row_array();
+            if ($akun_token) {
+                if (time() - $akun_token['date_created'] < (60 * 60 * 24)) {
+                    $this->db->set('Status_akun', 1);
+                    $this->db->where('Email_akun', $email);
+                    $this->db->update('tb_akun');
+
+                    $this->db->delete('token', ['email' => $email]);
+
+                    $this->pesan('sukses', 'Akun denga email ' . $email . ' sudah aktif, silahkan login');
+                    redirect('Mempelai/Auth');
+                } else {
+                    $this->Akun_Model->delete_akun($email);
+                    $this->db->delete('token', ['email' => $email]);
+
+                    $this->pesan('gagal', 'Token telah habis masa');
+                    redirect('Mempelai/Auth');
+                }
+            } else {
+                $this->pesan('gagal', 'Token tidak di kenali di sistem kami');
+                redirect('Mempelai/Auth');
+            }
+        } else {
+            $this->pesan('gagal', 'Email anda tidak terdapat di sistem kami');
+            redirect('Mempelai/Auth');
+        }
     }
 
     public function CreateDataUndangan($id_akun, $id_acara, $id_mempelai)
