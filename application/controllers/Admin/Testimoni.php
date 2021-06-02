@@ -17,7 +17,7 @@ class Testimoni extends CI_Controller
     {
         $testimoni = $this->Testimoni_Model->selectAll();
         $data = array(
-            'judul' => 'Akun',
+            'judul' => 'Testimoni',
             'menu' => menu_admin(),
             'data_testimoni' => $testimoni
         );
