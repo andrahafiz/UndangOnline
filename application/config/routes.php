@@ -56,3 +56,4 @@ $route['Admin'] = 'Admin/Auth';
 $route['Mempelai'] = 'Mempelai/Auth/index';
 $route['Register'] = 'Mempelai/Auth/register';
 $route['Demo'] = 'Mempelai/Tema/Demo';
+$route['Mempelai/GantiPassword'] = 'Mempelai/Profile/GantiPassword';

@@ -240,6 +240,7 @@ class Auth extends CI_Controller
         }
     }
 
+   
     public function CreateDataUndangan($id_akun, $id_acara, $id_mempelai)
     {
         $kode = kode_otomatis('tb_undangan', 'ID_Undangan');

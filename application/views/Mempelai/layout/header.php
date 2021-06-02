@@ -140,8 +140,8 @@
                                     <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 
                                         <li>
-                                            <a href="user-profile.htm">
-                                                <i class="feather icon-user"></i> Profile
+                                            <a href="<?= base_url('Mempelai/Profile/GantiPassword') ?>">
+                                                <i class="fa fa-gears"></i> Ganti Paassword
                                             </a>
                                         </li>
 
