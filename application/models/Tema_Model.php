@@ -35,6 +35,7 @@ class Tema_Model extends CI_Model
     {
         $this->db->update('thema', array('status_thema' => $status), "id_thema='$id'");
     }
+    
     public function update_tema($id, $data)
     {
         $this->db->where('id_thema', $id);

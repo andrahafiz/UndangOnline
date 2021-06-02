@@ -20,4 +20,9 @@ class Undangan_Model extends CI_Model
         $hasil = $query->row();
         return $hasil;
     }
+    public function undangan_update($id, $data)
+    {
+        $this->db->where('ID_Undangan', $id);
+        $this->db->update('tb_undangan', $data);
+    }
 }
