@@ -157,8 +157,8 @@
                         <div class="col-lg-8">
                             <div class="undangan-form mt-50">
                                 <form action="#">
-                                    <input type="text" placeholder="Enter eamil">
-                                    <button class="main-btn">Subscribe</button>
+                                    <input type="text" placeholder="Masukkan Kode Undangan">
+                                    <button class="main-btn">Cari</button>
                                 </form>
                             </div>
                         </div>
