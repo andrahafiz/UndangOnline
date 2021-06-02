@@ -469,13 +469,139 @@
 
     <!--====== FOOTER PART START ======-->
 
-    <footer id="footer" class="footer-area pt-120">
+    <div class="pricing-page feature-area section-padding" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Berikut beberapa keunggulan website undangan pernikahan online GetMarried</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-blue">
+                            <i class="fal fa-trophy-alt"></i>
+                        </div>
+                        <div class="widget-text">
+                            <!-- <h3 class="title">Tema Menarik</h3> -->
+                            <p>1. Undangan Pernikahan Hemat</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-red">
+                            <i class="fal fa-user-friends"></i>
+                        </div>
+                        <div class="widget-text">
+                            <h3 class="title">Informasi Pasangan</h3>
+                            <p>Semua informasi mempelai tertampil secara lengkap di undangan</p>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-green">
+                            <i class="fal fa-calendar-check"></i>
+                        </div>
+                        <div class="widget-text">
+                            <!-- <h3 class="title">Waktu & Lokasi</h3> -->
+                            <p>2. Undangan Pernikahan Simple</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-ash">
+                            <i class="fal fa-images"></i>
+                        </div>
+                        <div class="widget-text">
+                            <!-- <h3 class="title">Foto, Video & Musik</h3> -->
+                            <p>3. Undangan Pernikahan Efektif</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-yellow">
+                            <i class="fal fa-map-marker-check"></i>
+                        </div>
+                        <div class="widget-text">
+                            <!-- <h3 class="title">Petunjuk Peta</h3> -->
+                            <p>4. Undangan Pernikahan Fitur Terlengkap</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-blue">
+                            <i class="fal fa-heart-circle"></i>
+                        </div>
+                        <div class="widget-text">
+                            <!-- <h3 class="title">Couple Story & Quotes</h3> -->
+                            <p>5. Undangan Pernikahan Kekinian</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-blue">
+                            <i class="fal fa-user-plus"></i>
+                        </div>
+                        <div class="widget-text">
+                            <h3 class="title">Tamu Undangan</h3>
+                            <p>Setiap undangan yang dibagikan akan menampilkan nama tamu secara otomatis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-red">
+                            <i class="fal fa-book-user"></i>
+                        </div>
+                        <div class="widget-text">
+                            <h3 class="title">Buku Tamu</h3>
+                            <p>Tamu undangan bisa mengirim ucapan dan doa melalui fitur buku tamu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-blue">
+                            <i class="fal fa-envelope"></i>
+                        </div>
+                        <div class="widget-text">
+                            <h3 class="title">Hadiah</h3>
+                            <p>Tersedia fitur kirim hadiah sumbangan secara online melalui undanganmu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
+                    <div class="feature-widget">
+                        <div class="widget-icon bg-red">
+                            <i class="fal fa-alarm-clock"></i>
+                        </div>
+                        <div class="widget-text">
+                            <h3 class="title">Countdown Timer</h3>
+                            <p>Tersedia fitur countdown timer yang dapat berfungsi sebagai pengingat waktu acara</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <footer id="footer" class="footer-area pt-120">
         <div class="container">
             <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <h6 class="text">Berikut beberapa keunggulan website undangan pernikahan online Datengdong :</h6>
+                        <h6 class="text">Berikut beberapa keunggulan website undangan pernikahan online GetMarried :</h6>
                         <p> <span>1. Undangan Pernikahan Hemat</span>
                             <span>2. Undangan Pernikahan Simple</span>
                             <span>3. Undangan Pernikahan Efektif</span>
@@ -483,8 +609,8 @@
                             <span>5. Undangan Pernikahan Kekinian</span>
                         </p>
 
-                    </div>
-                    <!-- <div class="col-lg-6">
+                    </div> -->
+    <!-- <div class="col-lg-6">
                         <div class="subscribe-form mt-50">
                             <form action="#">
                                 <input type="text" placeholder="Enter eamil">
@@ -494,74 +620,74 @@
                             </form>
                         </div>
                     </div> -->
-                </div>
+    </div>
+    </div>
+    <!-- end subscribe area -->
+    <div class="footer-widget pb-100">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <a class="logo" href="#">
+                        <img src="assets/images/logo.svg" alt="logo">
+                    </a>
+                    <p class="text">Getmarried adalah platform yang diciptakan untuk memudahkan setiap pasangan yang ingin membuat website undangan pernikahan online secara mandiri.
+                        Jika dulu kita selalu memanfaatkan kertas untuk difungsikan sebagai media penyebaran kabar pernikahan, kini sudah tersedia Getmarried yang hadir sebagai solusi hemat, efektif, efisien dan tentunya sangat praktis untuk digunakan.</p>
+                    <ul class="social">
+                        <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                        <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+                        <li><a href="#"><i class="lni lni-instagram-filled"></i></a></li>
+                        <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                    </ul>
+                </div> <!-- footer about -->
             </div>
-            <!-- end subscribe area -->
-            <div class="footer-widget pb-100">
-                <div class="row">
+            <div class="col-lg-3 col-md-5 col-sm-5 ">
+                <div class="footer-link d-flex mt-50 justify-content-md-between">
+                    <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                        <div class="footer-title">
+                            <h4 class="title">Menu</h4>
+                        </div>
+                        <ul class="link">
+                            <li><a href="#home">Beranda</a></li>
+                            <li><a href="#harga">Harga</a></li>
+                            <li><a href="#statistik">Statistik</a></li>
+                            <li><a href="#tema">Tema</a></li>
+                            <li><a href="#tema">Testimoni</a></li>
+                            <li><a href="#tema">Demo</a></li>
 
-                    <div class="col-lg-4 col-md-6 col-sm-8">
-                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <a class="logo" href="#">
-                                <img src="assets/images/logo.svg" alt="logo">
-                            </a>
-                            <p class="text">Getmarried adalah platform yang diciptakan untuk memudahkan setiap pasangan yang ingin membuat website undangan pernikahan online secara mandiri.
-                                Jika dulu kita selalu memanfaatkan kertas untuk difungsikan sebagai media penyebaran kabar pernikahan, kini sudah tersedia Getmarried yang hadir sebagai solusi hemat, efektif, efisien dan tentunya sangat praktis untuk digunakan.</p>
-                            <ul class="social">
-                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
-                                <li><a href="#"><i class="lni lni-instagram-filled"></i></a></li>
-                                <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-                            </ul>
-                        </div> <!-- footer about -->
-                    </div>
-                    <div class="col-lg-3 col-md-5 col-sm-5 ">
-                        <div class="footer-link d-flex mt-50 justify-content-md-between">
-                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                                <div class="footer-title">
-                                    <h4 class="title">Menu</h4>
-                                </div>
-                                <ul class="link">
-                                    <li><a href="#home">Beranda</a></li>
-                                    <li><a href="#harga">Harga</a></li>
-                                    <li><a href="#statistik">Statistik</a></li>
-                                    <li><a href="#tema">Tema</a></li>
-                                    <li><a href="#tema">Testimoni</a></li>
-                                    <li><a href="#tema">Demo</a></li>
+                        </ul>
 
-                                </ul>
-
-                            </div> <!-- footer wrapper -->
-                        </div> <!-- footer link -->
+                    </div> <!-- footer wrapper -->
+                </div> <!-- footer link -->
+            </div>
+            <div class="col-lg-5 col-md-7 col-sm-7">
+                <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="footer-title">
+                        <h4 class="title">Contact Us</h4>
                     </div>
-                    <div class="col-lg-5 col-md-7 col-sm-7">
-                        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <div class="footer-title">
-                                <h4 class="title">Contact Us</h4>
-                            </div>
-                            <ul class="contact">
-                                <li>+62812345678</li>
-                                <li>getmarried@gmail.com</li>
-                                <li>www.getmarried.com</li>
-                                <li>Buah batu, bojongsoang,<br> Kota Bandung</li>
-                            </ul>
-                        </div> <!-- footer contact -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- footer widget -->
-            <div class="footer-copyright">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright d-sm-flex justify-content-between">
-                            <div class="copyright-content">
-                                <p class="text">© <?= date('Y') ?> getmarried. <a href="https://uideck.com" rel="nofollow">Made by in team PCR</a></p>
-                            </div> <!-- copyright content -->
-                        </div> <!-- copyright -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- footer copyright -->
-        </div> <!-- container -->
-        <div id="particles-2"></div>
+                    <ul class="contact">
+                        <li>+62812345678</li>
+                        <li>getmarried@gmail.com</li>
+                        <li>www.getmarried.com</li>
+                        <li>Buah batu, bojongsoang,<br> Kota Bandung</li>
+                    </ul>
+                </div> <!-- footer contact -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- footer widget -->
+    <div class="footer-copyright">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copyright d-sm-flex justify-content-between">
+                    <div class="copyright-content">
+                        <p class="text">© <?= date('Y') ?> getmarried. <a href="https://uideck.com" rel="nofollow">Made by in team PCR</a></p>
+                    </div> <!-- copyright content -->
+                </div> <!-- copyright -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- footer copyright -->
+    </div> <!-- container -->
+    <div id="particles-2"></div>
     </footer>
 
     <!--====== FOOTER PART ENDS ======-->
