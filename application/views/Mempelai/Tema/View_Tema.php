@@ -6,7 +6,7 @@
                 <div class="page-body">
                     <?= $this->session->flashdata('message'); ?>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 col-lg-12 col-md-12   ">
                             <!-- HTML5 Export Buttons table start -->
                             <div class="card">
                                 <div class="card-header table-card-header">
@@ -22,17 +22,27 @@
                                         <?php
                                         foreach ($tema as $key => $value) {
                                         ?>
-                                            <div class="col-lg-12 col-xl-3">
-                                                <div class="card-sub">
-                                                    <img class="card-img-top img-fluid" src="<?php echo base_url() . 'assets/Tema/' . $value->image_thema ?>" alt="Card image cap" style="width:268px; height:224px; object-fit: scale-down;">
+                                            <div class="col-lg-4">
+                                                <div class=" card-sub mb-4" style="cursor:auto">
+                                                    <img class="card-img-top img-fluid" src="<?php echo base_url() . 'assets/Tema/' . $value->image_thema ?>" alt="Card image cap" style="width:100%; height:224px; object-fit: scale-down;">
 
                                                     <div class="card-block text-center">
                                                         <h4 class="card-title f-w-600 mb-3 "><?php echo $value->nama_thema ?> </h4>
-                                                        <hr style="width:50%">
+                                                        <hr style="width:50%; margin-bottom:5px">
+
+
                                                         <a href="<?= base_url('Mempelai/Tema/Preview/') . "" . $this->session->userdata('ID_Undangan') . "/" . $value->id_thema; ?>">
-                                                            <button class="btn btn-inverse btn-round">Preview</button>
+                                                            <button class="btn btn-inverse btn-round mt-2">Preview</button>
                                                         </a>
-                                                        <button class="btn btn-primary btn-round">Pakai</button>
+
+                                                        <?php if ($value->id_thema == $undangan->ID_Tema) {
+                                                            echo '<button class="btn btn-disabled btn-round disabled mt-2 ">Terpakai</button>';
+                                                        } else {
+                                                            echo '<button class="btn btn-primary btn-round  mt-2">Gunakan</button>';
+                                                        } ?>
+
+
+
                                                         <!-- <div class="text-center tooltip-icon">
                                                             <a href="<?php echo base_url('Admin/Tema/Detail/' . $value->id_thema); ?>">
                                                                 <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Detail">

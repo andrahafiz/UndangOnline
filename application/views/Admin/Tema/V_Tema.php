@@ -40,7 +40,7 @@
                                         foreach ($tema as $key => $value) {
                                         ?>
                                             <div class="col-lg-12 col-xl-3">
-                                                <div class="card-sub">
+                                                <div class="card-sub" style="cursor: auto">
                                                     <img class="card-img-top img-fluid" src="<?php echo base_url() . 'assets/Tema/' . $value->image_thema ?>" alt="Card image cap">
 
                                                     <div class="card-block">

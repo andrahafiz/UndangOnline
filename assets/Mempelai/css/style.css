@@ -1775,8 +1775,9 @@
 .btn-primary.disabled,
 .wizard > .actions a.disabled,
 .sweet-alert button.disabled.confirm {
-	background-color: rgba(1, 169, 172, 0.5);
-	border-color: rgba(1, 169, 172, 0.5);
+	background-color: rgba(255, 117, 135, 0.9);
+	border-color: rgba(255, 117, 135, 0.9);
+	cursor : not-allowed;
 }
 
 .btn-warning {

@@ -8,9 +8,9 @@ class Tema extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Undangan_Model');
-        $this->load->model('Galeri_Model');
         $this->load->model('Tema_Model');
         $this->load->helper('my_function_helper');
+        cekaccess();
     }
 
     public function index()
@@ -20,11 +20,14 @@ class Tema extends CI_Controller
         $data = array(
             'judul' => 'Tema',
             'menu' => menu_mempelai(),
-            'tema' => $this->data_all()
+            'tema' => $this->data_all(),
+            'undangan' => $this->Undangan_Model->selectbyid($this->session->userdata('ID_Undangan')),
 
         );
+        // var_dump($data['undangan']->ID_Tema);
+        // die;
         $this->load->view('Mempelai/layout/header', $data);
-        $this->load->view('Mempelai/Tema/View_Tema', $data['tema']);
+        $this->load->view('Mempelai/Tema/View_Tema', $data);
         $this->load->view('Mempelai/layout/footer');
 
 
