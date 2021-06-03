@@ -9,6 +9,7 @@ class Tema extends CI_Controller
         parent::__construct();
         $this->load->model('Undangan_Model');
         $this->load->model('Tema_Model');
+        $this->load->model('Galeri_Model');
         $this->load->helper('my_function_helper');
         cekaccess();
     }
@@ -67,19 +68,20 @@ class Tema extends CI_Controller
         $this->load->view('Tema/' . $tema, $data);
     }
 
-    public function Demo()
-    {
-        $this->load->view('Tema/TemaDemo');
-    }
+ 
 
-    public function sampel_tema()
+    public function PickTema($id_tema)
     {
+        $id_undangan = $this->session->userdata('ID_Undangan');
+        $data = ['ID_Tema' => $id_tema];
+        $this->Undangan_Model->undangan_update($id_undangan, $data);
+        redirect('Mempelai/Tema');
     }
 
     public function ubah_status($id, $status)
     {
         $this->Tema_Model->ganti_status($id, $status);
-        redirect('Admin/Tema');
+        // redirect('Admin/Tema');
     }
 
     public function Detail($id_thema)

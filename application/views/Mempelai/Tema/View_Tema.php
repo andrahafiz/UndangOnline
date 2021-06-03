@@ -24,7 +24,7 @@
                                         ?>
                                             <div class="col-lg-4">
                                                 <div class=" card-sub mb-4" style="cursor:auto">
-                                                    <img class="card-img-top img-fluid" src="<?php echo base_url() . 'assets/Tema/' . $value->image_thema ?>" alt="Card image cap" style="width:100%; height:224px; object-fit: scale-down;">
+                                                    <img class="pt-2 pb-2 card-img-top img-fluid" src="<?php echo base_url() . 'assets/Tema/' . $value->image_thema ?>" alt="Card image cap" style="width:100%; height:224px; object-fit:contain;">
 
                                                     <div class="card-block text-center">
                                                         <h4 class="card-title f-w-600 mb-3 "><?php echo $value->nama_thema ?> </h4>
@@ -38,7 +38,10 @@
                                                         <?php if ($value->id_thema == $undangan->ID_Tema) {
                                                             echo '<button class="btn btn-disabled btn-round disabled mt-2 ">Terpakai</button>';
                                                         } else {
-                                                            echo '<button class="btn btn-primary btn-round  mt-2">Gunakan</button>';
+                                                            echo '
+                                                            <a href=' . base_url('Undangan/PickTema/' . $value->id_thema) . '>
+                                                            <button class="btn btn-primary btn-round  mt-2">Gunakan</button>
+                                                            </a>';
                                                         } ?>
 
 

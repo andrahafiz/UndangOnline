@@ -55,5 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Admin'] = 'Admin/Auth';
 $route['Mempelai'] = 'Mempelai/Auth/index';
 $route['Register'] = 'Mempelai/Auth/register';
-$route['Demo'] = 'Mempelai/Tema/Demo';
+$route['Demo'] = 'Undangan/Demo';
 $route['Mempelai/GantiPassword'] = 'Mempelai/Profile/GantiPassword';

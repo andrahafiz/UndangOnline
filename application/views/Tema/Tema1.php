@@ -84,6 +84,18 @@
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
                             <li class="active"><a href="#">Home</a></li>
+                            <li class="">
+
+
+                                <!-- <a href="#">Kirim Hadiah</a> -->
+                                <!-- <form class="form-inline"> -->
+                                <button class="btn btn-primary btn-outline-primary" type="button">
+                                    <i class="icon-heart"></i> Kirim Hadiah</button>
+                                <!-- </form> -->
+
+
+                            </li>
+
                             <!-- <li><a href="#fh5co-event">Story</a></li>
                             <li class="has-dropdown">
                                 <a href="">Services</a>
@@ -297,13 +309,13 @@
             </div>
         </div> -->
 
-        <!-- <div id="fh5co-testimonial">
+        <div id="fh5co-testimonial">
             <div class="container">
                 <div class="row">
                     <div class="row animate-box">
                         <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                            <span>Best Wishes</span>
-                            <h2>Friends Wishes</h2>
+                            <span>Harapan Mereka</span>
+                            <h2>Ucapan Selamat</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -312,9 +324,6 @@
                                 <div class="owl-carousel-fullwidth">
                                     <div class="item">
                                         <div class="testimony-slide active text-center">
-                                            <figure>
-                                                <img src="images/couple-1.jpg" alt="user">
-                                            </figure>
                                             <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
                                             <blockquote>
                                                 <p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
@@ -323,9 +332,6 @@
                                     </div>
                                     <div class="item">
                                         <div class="testimony-slide active text-center">
-                                            <figure>
-                                                <img src="images/couple-2.jpg" alt="user">
-                                            </figure>
                                             <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
                                             <blockquote>
                                                 <p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
@@ -334,10 +340,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="testimony-slide active text-center">
-                                            <figure>
-                                                <img src="images/couple-3.jpg" alt="user">
-                                            </figure>
-                                            <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+                                            <h2>John Doe, via <a href="#" class="twitter">Twitter</a></h2>
                                             <blockquote>
                                                 <p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
                                             </blockquote>
@@ -349,7 +352,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- <div id="fh5co-services" class="fh5co-section-gray">
             <div class="container">
@@ -407,10 +410,36 @@
             </div>
         </div> -->
 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch demo modal
+        </button>
 
-        <!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
             <div class="overlay"></div>
             <div class="container">
+
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2>Are You Attending?</h2>
@@ -418,30 +447,33 @@
                     </div>
                 </div>
                 <div class="row animate-box">
-                    <div class="col-md-10 col-md-offset-1">
-                        <form class="form-inline">
-                            <div class="col-md-4 col-sm-4">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <form class=" form-inline">
+                            <div class="col-md-8 col-md-offset-2 ">
                                 <div class="form-group">
                                     <label for="name" class="sr-only">Name</label>
                                     <input type="name" class="form-control" id="name" placeholder="Name">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-8 col-md-offset-2 ">
                                 <div class="form-group">
                                     <label for="email" class="sr-only">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <!-- <input type="email" class="form-control" id="email" placeholder="Email"> -->
+                                    <textarea class="form-control" placeholder="A" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4">
-                                <button type="submit" class="btn btn-default btn-block">I am Attending</button>
+                            <div class="col-md-8 col-md-offset-2 ">
+                                <button type="submit" class="btn btn-default">I am Attending</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+    </div>
 
-        <!-- <footer id="fh5co-footer" role="contentinfo">
+
+    <!-- <footer id="fh5co-footer" role="contentinfo">
             <div class="container">
 
                 <div class="row copyright">
@@ -469,6 +501,13 @@
 
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
+
+    <div class="sendgift js-top">
+
+        <a href="index.html"> Kirim Hadiah</a>
+
+    </div>
+
 
     <!-- jQuery -->
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.min.js"></script>
