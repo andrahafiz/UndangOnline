@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Bulan Mei 2021 pada 11.27
+-- Waktu pembuatan: 02 Jun 2021 pada 11.30
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -24,19 +24,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `pembayaran_undangan`
+--
+
+CREATE TABLE `pembayaran_undangan` (
+  `order_id` varchar(20) NOT NULL,
+  `gross_amount` int(13) NOT NULL,
+  `payment_type` varchar(15) NOT NULL,
+  `transaction_time` varchar(19) NOT NULL,
+  `bank` varchar(10) NOT NULL,
+  `va_numbers` varchar(30) NOT NULL,
+  `pdf_url` text NOT NULL,
+  `status_code` char(15) NOT NULL,
+  `kode_undangan` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pembayaran_undangan`
+--
+
+INSERT INTO `pembayaran_undangan` (`order_id`, `gross_amount`, `payment_type`, `transaction_time`, `bank`, `va_numbers`, `pdf_url`, `status_code`, `kode_undangan`) VALUES
+('1164512009', 1000000, 'bank_transfer', '2021-05-15 22:53:38', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/ddbacda2-14a8-4f51-be97-d44719d3e71d/pdf', '1', ''),
+('1367626161', 300000, 'bank_transfer', '2021-05-15 22:12:53', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/a0963cad-0874-4a27-8f88-4fb26f89fcc1/pdf', '201', ''),
+('1493257444', 30000, 'bank_transfer', '2021-05-09 20:59:56', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/19727e89-5862-416d-940e-2b7390ed7d13/pdf', '201', ''),
+('1672725878', 123, 'bank_transfer', '2021-05-15 22:32:42', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/b629dce6-ca1a-43f8-8b6f-1214e38ae907/pdf', '201', ''),
+('1678796896', 10000, 'bank_transfer', '2021-05-15 23:27:16', 'bca', 'bca', 'https://app.sandbox.midtrans.com/snap/v1/transactions/5a834f3a-270e-4f45-ac9f-26273a1de806/pdf', '201', '');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_acara`
 --
 
 CREATE TABLE `tb_acara` (
   `ID_Acara` varchar(256) NOT NULL,
-  `TglAkad` date DEFAULT NULL,
-  `WaktuMulaiAkad` time DEFAULT NULL,
-  `WaktuSelesaiAkad` time DEFAULT NULL,
+  `TglAkad` int(11) DEFAULT NULL,
+  `WaktuMulaiAkad` int(11) DEFAULT NULL,
+  `WaktuSelesaiAkad` int(11) DEFAULT NULL,
   `TempatAkad` varchar(150) DEFAULT NULL,
   `AlamatAkad` text DEFAULT NULL,
-  `TglResepsi` date DEFAULT NULL,
-  `WaktuMulaiResepsi` time DEFAULT NULL,
-  `WaktuSelesaiResepsi` time DEFAULT NULL,
+  `TglResepsi` int(11) DEFAULT NULL,
+  `WaktuMulaiResepsi` int(11) DEFAULT NULL,
+  `WaktuSelesaiResepsi` int(11) DEFAULT NULL,
   `TempatResepsi` varchar(150) DEFAULT NULL,
   `AlamatResepsi` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -89,7 +118,9 @@ CREATE TABLE `tb_akun` (
 --
 
 INSERT INTO `tb_akun` (`ID_akun`, `Username`, `Email_akun`, `NoHp_akun`, `Password_akun`, `Created_akun`, `Status_akun`) VALUES
-('AKN1', 'Andra Hafiz', 'asd@gmail', '082276853382', '$2y$10$EjkyNFYFZKtPiEhlU0nKJ.Pc.y.i/Df4z0UUNs4dO.XpUAf6KvlPy', 1618680851, '1');
+('AKN1', 'Andra Hafiz', 'asd@gmail', '0822', '$2y$10$zkLAGuhhhdUugSC3ENgPZ.d0t0euUVQZIb7D3B2I2b9t2yocJ7bu.', 1621911293, '1'),
+('AKN2', 'andra', 'andrahafizhsb03@gmail.com', '123', '$2y$10$quUphTJIz4lyGI.9OepUaOwwRZjPfRBMG0GtwqxXkc4eLSUTktr1e', 1622534421, '1'),
+('AKN3', 'Andra Hafiz', 'andrahafizhsb03@gmail.com', '123', '$2y$10$vvzUC4cGuP08XcIMnCJGjuIvlkUnAfhEJupMTjsBwU/TklVfTNEve', 1622543157, '1');
 
 -- --------------------------------------------------------
 
@@ -103,10 +134,20 @@ CREATE TABLE `tb_gallery` (
   `Judul_Media` varchar(100) NOT NULL,
   `Link_Media` text DEFAULT NULL,
   `Tipe_Media` enum('Foto','Video') DEFAULT NULL,
-  `Size_Media` int(11) NOT NULL,
+  `Size_Media` int(11) DEFAULT NULL,
   `Tglupload_Media` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Status_Media` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_gallery`
+--
+
+INSERT INTO `tb_gallery` (`ID_Media`, `ID_Undangan`, `Judul_Media`, `Link_Media`, `Tipe_Media`, `Size_Media`, `Tglupload_Media`, `Status_Media`) VALUES
+(130, 'UND1', 'Wedding Clip', 'https://www.youtube.com/embed/9tCFRiUFTwk', 'Video', NULL, '2021-06-01 20:22:30', '1'),
+(131, 'UND1', 'Wedding Clip', 'https://www.youtube.com/embed/9tCFRiUFTwk', 'Video', NULL, '2021-06-01 20:22:36', '1'),
+(132, 'UND1', 'Wedding Clip', 'https://www.youtube.com/embed/9tCFRiUFTwk', 'Video', NULL, '2021-06-01 20:22:48', '1'),
+(133, 'UND1', 'NoobeID', 'UND1_NoobeID.png', 'Foto', 823, '2021-06-02 08:04:51', '0');
 
 -- --------------------------------------------------------
 
@@ -157,7 +198,7 @@ CREATE TABLE `tb_mempelai` (
 --
 
 INSERT INTO `tb_mempelai` (`ID_Mempelai`, `Nama_MPria`, `Nama_MWanita`, `NoHp_MPria`, `NoHp_MWanita`, `Alamat_MPria`, `Alamat_MWanita`, `Panggilan_MPria`, `Panggilan_MWanita`, `NamaOrtu_Ayah_MPria`, `NamaOrtu_Ibu_MPria`, `NamaOrtu_Ayah_MWanita`, `NamaOrtu_Ibu_MWanita`, `Foto_MPria`, `Foto_MWanita`) VALUES
-('MPL1', 'asd', 'asd', '123', '123', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'foto_pria.jpg', 'foto_cewek.jpg');
+('MPL1', 'Leo', 'Sarah', '123', '123', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'PasPhoto_AndraHotmartuaAlHafiz.jpg', 'logo_usu.png');
 
 -- --------------------------------------------------------
 
@@ -230,14 +271,35 @@ INSERT INTO `tb_tamu` (`ID_TamuUndangan`, `ID_Undangan`, `Nama_Tamu`, `Wa_Tamu`,
 ('TMU41', 'UND1', 'Queenie', '762.080.8263', 'sonya18@example.org', 'Molestias repudiandae velit minus nulla. Autem ex quia ex voluptatibus.'),
 ('TMU43', 'UND3', 'Marley', '537-093-4692', 'lorine.raynor@example.net', 'Et veniam eius aut velit. Deleniti aut tempore error praesentium nemo. Unde incidunt id et aut est.'),
 ('TMU46', 'UND3', 'Maryjane', '(088)502-4445', 'malcolm61@example.com', 'Sit et corrupti est veritatis. Minima iste nesciunt facere. Quam dolorem voluptatem quo eveniet.'),
-('TMU63', 'UND1', 'Damon', '(874)778-6130x7', 'damon.hamill@example.org', 'Eius totam occaecati hic non enim inventore id. Aut vitae velit praesentium tenetur.'),
 ('TMU70', 'UND2', 'Alexandro', '06007347279', 'remington25@example.com', 'Dolores culpa tempora nobis neque. Perferendis id autem molestias et. Enim in a et eveniet modi.'),
 ('TMU72', 'UND2', 'Haven', '166.905.6443x35', 'martina28@example.org', 'Autem ea maxime iste. Autem quia autem rerum quidem quo.'),
 ('TMU73', 'UND2', 'Barton', '1-132-169-6630x', 'kendall59@example.org', 'Facilis sapiente labore magnam aut. Dolor ut at est enim est est porro ut. Et fugit aliquid optio.'),
 ('TMU75', 'UND2', 'Chanel', '1-335-453-9958', 'rachelle.mckenzie@example.org', 'Iste animi quaerat error sed est. Sed fuga quam nihil et ad. Culpa aut et a.'),
-('TMU79', 'UND1', 'Mohamed', '104-722-4157x29', 'royce07@example.net', 'Autem amet reprehenderit nihil unde natus. Ad ut magnam ex est voluptas. In officia nemo quia.'),
 ('TMU92', 'UND2', 'Chloe', '290.206.4776', 'ritchie.kylie@example.com', 'Perspiciatis et animi eos modi beatae. Ipsa non officia occaecati dolorem temporibus repellat.'),
-('TMU95', 'UND1', 'Edmond', '1-438-394-0638x', 'reynolds.devyn@example.org', 'Nemo cumque quia magni. Ea necessitatibus vel vero non optio.');
+('TMU93', 'UND1', 'asd', '', 'asd@gmail.com', 'kosong'),
+('TMU94', 'UND1', 'zxc', '123', '', 'kosong');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_testimoni`
+--
+
+CREATE TABLE `tb_testimoni` (
+  `ID_Testimoni` varchar(255) NOT NULL,
+  `ID_Undangan` varchar(255) NOT NULL,
+  `ID_Akun` varchar(255) NOT NULL,
+  `Testimoni` text NOT NULL,
+  `Tgl_Testimoni` int(11) NOT NULL,
+  `Status_Testimoni` enum('Posting','Non-Aktif') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_testimoni`
+--
+
+INSERT INTO `tb_testimoni` (`ID_Testimoni`, `ID_Undangan`, `ID_Akun`, `Testimoni`, `Tgl_Testimoni`, `Status_Testimoni`) VALUES
+('TSM1', 'UND1', 'AKN1', 'MANTAB', 1622189713, 'Non-Aktif');
 
 -- --------------------------------------------------------
 
@@ -249,7 +311,6 @@ CREATE TABLE `tb_undangan` (
   `ID_Undangan` varchar(256) NOT NULL,
   `ID_Mempelai` varchar(256) NOT NULL,
   `ID_Acara` varchar(256) NOT NULL,
-  `ID_Kategori` varchar(10) NOT NULL,
   `ID_Tema` varchar(100) NOT NULL,
   `ID_Akun` varchar(256) NOT NULL,
   `tgl_buatakun` int(11) NOT NULL,
@@ -260,8 +321,8 @@ CREATE TABLE `tb_undangan` (
 -- Dumping data untuk tabel `tb_undangan`
 --
 
-INSERT INTO `tb_undangan` (`ID_Undangan`, `ID_Mempelai`, `ID_Acara`, `ID_Kategori`, `ID_Tema`, `ID_Akun`, `tgl_buatakun`, `tgl_selesaiakun`) VALUES
-('UND1', 'MPL1', 'ACR1', 'KTG1', 'THM1', 'AKN1', 1618680851, 1619285651);
+INSERT INTO `tb_undangan` (`ID_Undangan`, `ID_Mempelai`, `ID_Acara`, `ID_Tema`, `ID_Akun`, `tgl_buatakun`, `tgl_selesaiakun`) VALUES
+('UND1', 'MPL1', 'ACR1', 'THM1', 'AKN1', 1621911293, 1622516093);
 
 -- --------------------------------------------------------
 
@@ -273,16 +334,18 @@ CREATE TABLE `thema` (
   `id_thema` varchar(100) NOT NULL,
   `nama_thema` varchar(50) NOT NULL,
   `view_thema` varchar(50) DEFAULT NULL,
-  `image_tema` varchar(256) NOT NULL,
-  `status_thema` varchar(50) NOT NULL
+  `image_thema` varchar(256) NOT NULL DEFAULT 'NoImage.png',
+  `status_thema` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `thema`
 --
 
-INSERT INTO `thema` (`id_thema`, `nama_thema`, `view_thema`, `image_tema`, `status_thema`) VALUES
-('THM1', 'butterfly.', 'butterfly.php', '', 'aktif');
+INSERT INTO `thema` (`id_thema`, `nama_thema`, `view_thema`, `image_thema`, `status_thema`) VALUES
+('THM1', 'Butterfly ab', 'Tema1.php', 'tema-THM11.png', 1),
+('THM2', 'tes', 'Tema2.php', 'tema-THM21.png', 1),
+('THM3', 'asda', 'asda', 'NoImage.png', 1);
 
 -- --------------------------------------------------------
 
@@ -307,14 +370,14 @@ CREATE TABLE `view_acara` (
 `ID_Undangan` varchar(256)
 ,`ID_akun` varchar(256)
 ,`ID_Acara` varchar(256)
-,`TglAkad` date
-,`WaktuMulaiAkad` time
-,`WaktuSelesaiAkad` time
+,`TglAkad` int(11)
+,`WaktuMulaiAkad` int(11)
+,`WaktuSelesaiAkad` int(11)
 ,`TempatAkad` varchar(150)
 ,`AlamatAkad` text
-,`TglResepsi` date
-,`WaktuMulaiResepsi` time
-,`WaktuSelesaiResepsi` time
+,`TglResepsi` int(11)
+,`WaktuMulaiResepsi` int(11)
+,`WaktuSelesaiResepsi` int(11)
 ,`TempatResepsi` varchar(150)
 ,`AlamatResepsi` text
 );
@@ -327,6 +390,9 @@ CREATE TABLE `view_acara` (
 --
 CREATE TABLE `view_all` (
 `ID_Undangan` varchar(256)
+,`ID_Tema` varchar(100)
+,`tgl_buatakun` int(11)
+,`tgl_selesaiakun` int(11)
 ,`ID_akun` varchar(256)
 ,`Username` varchar(100)
 ,`Email_akun` varchar(100)
@@ -335,14 +401,14 @@ CREATE TABLE `view_all` (
 ,`Created_akun` int(11)
 ,`Status_akun` varchar(10)
 ,`ID_Acara` varchar(256)
-,`TglAkad` date
-,`WaktuMulaiAkad` time
-,`WaktuSelesaiAkad` time
+,`TglAkad` int(11)
+,`WaktuMulaiAkad` int(11)
+,`WaktuSelesaiAkad` int(11)
 ,`TempatAkad` varchar(150)
 ,`AlamatAkad` text
-,`TglResepsi` date
-,`WaktuMulaiResepsi` time
-,`WaktuSelesaiResepsi` time
+,`TglResepsi` int(11)
+,`WaktuMulaiResepsi` int(11)
+,`WaktuSelesaiResepsi` int(11)
 ,`TempatResepsi` varchar(150)
 ,`AlamatResepsi` text
 ,`ID_Mempelai` varchar(256)
@@ -404,7 +470,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `view_all`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_all`  AS SELECT `tb_undangan`.`ID_Undangan` AS `ID_Undangan`, `tb_akun`.`ID_akun` AS `ID_akun`, `tb_akun`.`Username` AS `Username`, `tb_akun`.`Email_akun` AS `Email_akun`, `tb_akun`.`NoHp_akun` AS `NoHp_akun`, `tb_akun`.`Password_akun` AS `Password_akun`, `tb_akun`.`Created_akun` AS `Created_akun`, `tb_akun`.`Status_akun` AS `Status_akun`, `tb_acara`.`ID_Acara` AS `ID_Acara`, `tb_acara`.`TglAkad` AS `TglAkad`, `tb_acara`.`WaktuMulaiAkad` AS `WaktuMulaiAkad`, `tb_acara`.`WaktuSelesaiAkad` AS `WaktuSelesaiAkad`, `tb_acara`.`TempatAkad` AS `TempatAkad`, `tb_acara`.`AlamatAkad` AS `AlamatAkad`, `tb_acara`.`TglResepsi` AS `TglResepsi`, `tb_acara`.`WaktuMulaiResepsi` AS `WaktuMulaiResepsi`, `tb_acara`.`WaktuSelesaiResepsi` AS `WaktuSelesaiResepsi`, `tb_acara`.`TempatResepsi` AS `TempatResepsi`, `tb_acara`.`AlamatResepsi` AS `AlamatResepsi`, `tb_mempelai`.`ID_Mempelai` AS `ID_Mempelai`, `tb_mempelai`.`Nama_MPria` AS `Nama_MPria`, `tb_mempelai`.`Nama_MWanita` AS `Nama_MWanita`, `tb_mempelai`.`NoHp_MPria` AS `NoHp_MPria`, `tb_mempelai`.`NoHp_MWanita` AS `NoHp_MWanita`, `tb_mempelai`.`Alamat_MPria` AS `Alamat_MPria`, `tb_mempelai`.`Alamat_MWanita` AS `Alamat_MWanita`, `tb_mempelai`.`Panggilan_MPria` AS `Panggilan_MPria`, `tb_mempelai`.`Panggilan_MWanita` AS `Panggilan_MWanita`, `tb_mempelai`.`NamaOrtu_Ayah_MPria` AS `NamaOrtu_Ayah_MPria`, `tb_mempelai`.`NamaOrtu_Ibu_MPria` AS `NamaOrtu_Ibu_MPria`, `tb_mempelai`.`NamaOrtu_Ayah_MWanita` AS `NamaOrtu_Ayah_MWanita`, `tb_mempelai`.`NamaOrtu_Ibu_MWanita` AS `NamaOrtu_Ibu_MWanita`, `tb_mempelai`.`Foto_MPria` AS `Foto_MPria`, `tb_mempelai`.`Foto_MWanita` AS `Foto_MWanita` FROM (((`tb_undangan` join `tb_acara`) join `tb_akun`) join `tb_mempelai`) WHERE `tb_undangan`.`ID_Acara` = `tb_acara`.`ID_Acara` AND `tb_undangan`.`ID_Akun` = `tb_akun`.`ID_akun` AND `tb_undangan`.`ID_Mempelai` = `tb_mempelai`.`ID_Mempelai` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_all`  AS SELECT `tb_undangan`.`ID_Undangan` AS `ID_Undangan`, `tb_undangan`.`ID_Tema` AS `ID_Tema`, `tb_undangan`.`tgl_buatakun` AS `tgl_buatakun`, `tb_undangan`.`tgl_selesaiakun` AS `tgl_selesaiakun`, `tb_akun`.`ID_akun` AS `ID_akun`, `tb_akun`.`Username` AS `Username`, `tb_akun`.`Email_akun` AS `Email_akun`, `tb_akun`.`NoHp_akun` AS `NoHp_akun`, `tb_akun`.`Password_akun` AS `Password_akun`, `tb_akun`.`Created_akun` AS `Created_akun`, `tb_akun`.`Status_akun` AS `Status_akun`, `tb_acara`.`ID_Acara` AS `ID_Acara`, `tb_acara`.`TglAkad` AS `TglAkad`, `tb_acara`.`WaktuMulaiAkad` AS `WaktuMulaiAkad`, `tb_acara`.`WaktuSelesaiAkad` AS `WaktuSelesaiAkad`, `tb_acara`.`TempatAkad` AS `TempatAkad`, `tb_acara`.`AlamatAkad` AS `AlamatAkad`, `tb_acara`.`TglResepsi` AS `TglResepsi`, `tb_acara`.`WaktuMulaiResepsi` AS `WaktuMulaiResepsi`, `tb_acara`.`WaktuSelesaiResepsi` AS `WaktuSelesaiResepsi`, `tb_acara`.`TempatResepsi` AS `TempatResepsi`, `tb_acara`.`AlamatResepsi` AS `AlamatResepsi`, `tb_mempelai`.`ID_Mempelai` AS `ID_Mempelai`, `tb_mempelai`.`Nama_MPria` AS `Nama_MPria`, `tb_mempelai`.`Nama_MWanita` AS `Nama_MWanita`, `tb_mempelai`.`NoHp_MPria` AS `NoHp_MPria`, `tb_mempelai`.`NoHp_MWanita` AS `NoHp_MWanita`, `tb_mempelai`.`Alamat_MPria` AS `Alamat_MPria`, `tb_mempelai`.`Alamat_MWanita` AS `Alamat_MWanita`, `tb_mempelai`.`Panggilan_MPria` AS `Panggilan_MPria`, `tb_mempelai`.`Panggilan_MWanita` AS `Panggilan_MWanita`, `tb_mempelai`.`NamaOrtu_Ayah_MPria` AS `NamaOrtu_Ayah_MPria`, `tb_mempelai`.`NamaOrtu_Ibu_MPria` AS `NamaOrtu_Ibu_MPria`, `tb_mempelai`.`NamaOrtu_Ayah_MWanita` AS `NamaOrtu_Ayah_MWanita`, `tb_mempelai`.`NamaOrtu_Ibu_MWanita` AS `NamaOrtu_Ibu_MWanita`, `tb_mempelai`.`Foto_MPria` AS `Foto_MPria`, `tb_mempelai`.`Foto_MWanita` AS `Foto_MWanita` FROM (((`tb_undangan` join `tb_acara`) join `tb_akun`) join `tb_mempelai`) WHERE `tb_undangan`.`ID_Acara` = `tb_acara`.`ID_Acara` AND `tb_undangan`.`ID_Akun` = `tb_akun`.`ID_akun` AND `tb_undangan`.`ID_Mempelai` = `tb_mempelai`.`ID_Mempelai` ;
 
 -- --------------------------------------------------------
 
@@ -418,6 +484,12 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `pembayaran_undangan`
+--
+ALTER TABLE `pembayaran_undangan`
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indeks untuk tabel `tb_acara`
@@ -469,6 +541,12 @@ ALTER TABLE `tb_tamu`
   ADD PRIMARY KEY (`ID_TamuUndangan`);
 
 --
+-- Indeks untuk tabel `tb_testimoni`
+--
+ALTER TABLE `tb_testimoni`
+  ADD PRIMARY KEY (`ID_Testimoni`);
+
+--
 -- Indeks untuk tabel `tb_undangan`
 --
 ALTER TABLE `tb_undangan`
@@ -494,13 +572,13 @@ ALTER TABLE `token`
 -- AUTO_INCREMENT untuk tabel `tb_gallery`
 --
 ALTER TABLE `tb_gallery`
-  MODIFY `ID_Media` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Media` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- AUTO_INCREMENT untuk tabel `token`
 --
 ALTER TABLE `token`
-  MODIFY `idtoken` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idtoken` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -15,11 +15,11 @@ function menu_mempelai()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Mempelai', 'Acara', 'Tamu Undangan', 'Hadiah', 'Galeri', 'Pembayaran', 'Logout'],
+        ['Dashboard', 'Mempelai', 'Acara', 'Tamu Undangan', 'Hadiah', 'Tema', 'Galeri', 'Pembayaran', 'Testimoni', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'feather icon-image', 'fa fa-credit-card', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'ti-palette', 'feather icon-image', 'fa fa-credit-card', 'fa fa-list-alt', 'feather icon-log-out'],
         //url
-        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Galeri', 'Mempelai/Pembayaran', 'Mempelai/Auth/logout'],
+        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Tema', 'Mempelai/Galeri', 'Mempelai/Pembayaran', 'Mempelai/Testimoni', 'Mempelai/Auth/logout'],
     ];
     return $menu;
 }
@@ -27,11 +27,11 @@ function menu_admin()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Logout'],
+        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Pembayaran', 'Testimoni', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', ' fa fa-money', 'fa fa-list-alt', 'feather icon-log-out'],
         //url
-        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Auth/logout'],
+        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Pembayaran', 'Admin/Testimoni', 'Admin/Auth/logout'],
     ];
     return $menu;
 }
@@ -40,7 +40,7 @@ function cekaccess()
 {
     $ci = get_instance();
     if (!$ci->session->userdata("Username")) {
-        redirect('Mempelai/Auth');
+        redirect('Mempelai');
     } else {
     }
 }
@@ -103,7 +103,33 @@ function sex($sex)
         return "Laki-laki";
     }
 }
-
+//fungsi untuk mengubah hari ke dalam bahasa indonesia
+function getHari($hari)
+{
+    switch ($hari) {
+        case "Mon":
+            return "Senin";
+            break;
+        case "Tue":
+            return "Selasa";
+            break;
+        case "Wed":
+            return "Rabu";
+            break;
+        case "Thu":
+            return "Kamis";
+            break;
+        case "Fri":
+            return "Jum'at";
+            break;
+        case "Sat":
+            return "Sabtu";
+            break;
+        case "Sun":
+            return "Minggu";
+            break;
+    }
+}
 // Fungsi untuk membuat bulan dengan format Indonesia
 function getBulan($bln)
 {
@@ -147,9 +173,6 @@ function getBulan($bln)
     }
 }
 
-
-
-
 // Fungsi untuk menampilkan data dalam bentuk combobox
 function comboboxmanual($name, $id, $value, $isi, $selected)
 {
@@ -183,8 +206,8 @@ function combobox($name, $id, $table, $field, $primary_key, $selected)
 
 function kode($table)
 {
-    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu');
-    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU');
+    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema', 'tb_testimoni');
+    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM', 'TSM');
     $index_kode = array_search($table, $tabel);
     return $kode[$index_kode];
 }

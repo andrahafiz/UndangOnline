@@ -26,7 +26,6 @@ $(".btn-detail").on("click", function () {
     var nomor = $(this).data('wa');
     var email = $(this).data('email');
 
-
     if (nomor == "") {
         nomor = "Tidak ada data";
     }

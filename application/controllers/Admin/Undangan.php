@@ -30,7 +30,7 @@ class Undangan extends CI_Controller
     {
         // $detail = $this->Undangan_Model->selectbyid($id_undangan);
         $data = array(
-            'judul' => 'Detail Undangan',
+            'judul' => 'Undangan',
             'menu' => menu_admin(),
             'detail_data' => $this->Undangan_Model->selectbyid($id_undangan)
         );
@@ -41,6 +41,8 @@ class Undangan extends CI_Controller
         $this->load->view('Admin/Undangan/V_Detailundangan', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
     }
+
+
     public function ubah_status($id, $status)
     {
         $this->Akun_Model->ganti_status($id, $status);

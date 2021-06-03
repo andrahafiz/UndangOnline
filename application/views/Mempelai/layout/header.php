@@ -136,14 +136,14 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <img src="<?= base_url(); ?>assets\Mempelai\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                        <span><?= $this->session->userdata('Username'); ?></span>
+                                        <span><?= $this->session->userdata('Username'); ?>/<?= $this->session->userdata('ID_Undangan'); ?>/<?= $this->session->userdata('ID_Akun'); ?></span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 
                                         <li>
-                                            <a href="user-profile.htm">
-                                                <i class="feather icon-user"></i> Profile
+                                            <a href="<?= base_url('Mempelai/Profile/GantiPassword') ?>">
+                                                <i class="fa fa-gears"></i> Ganti Paassword
                                             </a>
                                         </li>
 

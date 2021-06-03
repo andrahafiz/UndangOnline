@@ -2,7 +2,7 @@
 	position: relative;
 	clear: both;
 	margin: 0 auto;
-	padding: 1em 0 4em;
+	padding: 1em 0 2em;
 	max-width: 1000px;
 	list-style: none;
 	text-align: center;
@@ -33,7 +33,7 @@
 }
 
 .grid figure figcaption {
-	background-color: rgba(121, 85, 72, 0.20);
+	background-color: rgb(57 57 57 / 15%);
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
@@ -334,7 +334,7 @@ figure.effect-hera:hover p i:empty {
 /*-----------------*/
 
 figure.effect-winston {
-	background: #162633;
+	background: rgb(255 135 135 / 10%);
 	text-align: left;
 }
 
@@ -373,7 +373,7 @@ figure.effect-winston p {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	padding: 0 1.5em 7% 0;
+	padding: 0 1em 4% 0;
 }
 
 figure.effect-winston a {

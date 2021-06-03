@@ -153,7 +153,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata("ID_Akun");
         $this->session->unset_userdata("ID_Undangan");
         $this->session->sess_destroy();
-        redirect('Admin\/Auth');
+        redirect('Admin\Auth');
     }
 
 

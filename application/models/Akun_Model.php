@@ -28,4 +28,19 @@ class Akun_Model extends CI_Model
 
         $this->db->update('tb_akun', array('Status_akun' => $status), "ID_akun='$id'");
     }
+    public function jumlahakun()
+    {
+        $this->db->from('tb_akun');
+        return $this->db->count_all_results();
+    }
+
+    public function delete_akun($email = null, $id = null)
+    {
+        if ($email != null) {
+            $this->db->delete('tb_akun', ['Email_akun' => $email]);
+        }
+        if ($id != null) {
+            $this->db->delete('tb_akun', ['ID_akun' => $id]);
+        }
+    }
 }

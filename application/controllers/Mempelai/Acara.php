@@ -26,6 +26,8 @@ class Acara extends CI_Controller
             $this->load->view('Mempelai/Acara/Acara_View', $data['data_acara']);
             $this->load->view('Mempelai/layout/footer');
         } else {
+            // var_dump($this->_data());
+            // die();
             $this->update_data();
             $this->pesan('sukses', 'Data anda berhasil di ubah');
             redirect('Mempelai/Acara');
@@ -42,14 +44,14 @@ class Acara extends CI_Controller
     private function _data()
     {
         $data = [
-            'TglAkad' =>  htmlspecialchars($this->input->post('tgl_akad', true)),
-            'WaktuMulaiAkad' =>  htmlspecialchars($this->input->post('ts_akad', true)),
-            'WaktuSelesaiAkad' =>  htmlspecialchars($this->input->post('tf_akad', true)),
+            'TglAkad' =>  htmlspecialchars(strtotime($this->input->post('tgl_akad', true))),
+            'WaktuMulaiAkad' =>  htmlspecialchars(strtotime($this->input->post('ts_akad', true))),
+            'WaktuSelesaiAkad' =>  htmlspecialchars(strtotime($this->input->post('tf_akad', true))),
             'TempatAkad' => htmlspecialchars($this->input->post('tpt_akad', true)),
             'AlamatAkad' => htmlspecialchars($this->input->post('alamat_akad', true)),
-            'TglResepsi' => htmlspecialchars($this->input->post('tgl_resepsi', true)),
-            'WaktuMulaiResepsi' =>  htmlspecialchars($this->input->post('ts_resepsi', true)),
-            'WaktuSelesaiResepsi' =>  htmlspecialchars($this->input->post('tf_resepsi', true)),
+            'TglResepsi' => htmlspecialchars(strtotime($this->input->post('tgl_resepsi', true))),
+            'WaktuMulaiResepsi' =>  htmlspecialchars(strtotime($this->input->post('ts_resepsi', true))),
+            'WaktuSelesaiResepsi' =>  htmlspecialchars(strtotime($this->input->post('tf_resepsi', true))),
             'TempatResepsi' => htmlspecialchars($this->input->post('tpt_resepsi', true)),
             'AlamatResepsi' => htmlspecialchars($this->input->post('alamat_resepsi', true)),
         ];
