@@ -15,24 +15,25 @@ class Undangan extends CI_Controller
 
     public function index($id_undangan)
     {
-        // // echo $this->Tema_Model->jumlahtema();
-        // $id = 'UND1';
-        $data = array(
-            'judul' => 'Tema',
-            'page' => 'view',
-            'menu' => menu_mempelai(),
-            'data' => $this->Undangan_Model->selectbyid($id_undangan),
-            'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
-            'thema' => $this->Tema_Model->selectbyid($thema)
-        );
+        echo $id_undangan;
+        // // // echo $this->Tema_Model->jumlahtema();
+        // // $id = 'UND1';
+        // $data = array(
+        //     'judul' => 'Tema',
+        //     'page' => 'view',
+        //     'menu' => menu_mempelai(),
+        //     'data' => $this->Undangan_Model->selectbyid($id_undangan),
+        //     'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
+        //     // 'thema' => $this->Tema_Model->selectbyid($thema)
+        // );
 
-        // var_dump($data['thema']->view_thema);
-        $tema =  preg_replace("/.php/", "", ($data['thema']->view_thema));
-        // die();
-        // $this->load->view('Admin/layout/header', $data);
-        // $this->load->view('Admin/Tema/V_Tema', $data['tema']);
-        // $this->load->view('Admin/layout/footer');
-        $this->load->view('Tema/' . $tema, $data);
+        // // var_dump($data['thema']->view_thema);
+        // $tema =  preg_replace("/.php/", "", ($data['thema']->view_thema));
+        // // die();
+        // // $this->load->view('Admin/layout/header', $data);
+        // // $this->load->view('Admin/Tema/V_Tema', $data['tema']);
+        // // $this->load->view('Admin/layout/footer');
+        // $this->load->view('Tema/' . $tema, $data);
     }
 
     public function Demo()
