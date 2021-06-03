@@ -2,6 +2,10 @@
 $('#Modal-P').modal('show');
 window.dataLayer = window.dataLayer || [];
 
+$("#pay-button").on("click", function () {
+    $('#Modal-P').modal('hide');
+})
+
 function gtag() {
     dataLayer.push(arguments);
 }
