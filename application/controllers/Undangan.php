@@ -19,7 +19,7 @@ class Undangan extends CI_Controller
         // // echo $this->Tema_Model->jumlahtema();
         // $id = 'UND1';
         $data['data_undangan'] = $this->Undangan_Model->selectbyid($id_undangan);
-        $data['id_tema'] = $data['data']->ID_Tema;
+        $data['id_tema'] = $data['data_undangan']->ID_Tema;
         $data['tema'] = $this->Tema_Model->selectbyid($data['id_tema'])->view_thema;
         // var_dump($data['tema']);
         // die;
@@ -27,7 +27,7 @@ class Undangan extends CI_Controller
         //     'judul' => 'Undangan',
         //     'page' => 'view',
         //     'data' => $this->Undangan_Model->selectbyid($id_undangan),
-        //     'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
+        $data['data_foto'] = $this->Galeri_Model->selectSingle($id_undangan, 'Foto');
         //     'thema' => $this->Tema_Model->selectbyid()
         // );
 

@@ -85,15 +85,8 @@
                         <ul>
                             <li class="active"><a href="#">Home</a></li>
                             <li class="">
-
-
-                                <!-- <a href="#">Kirim Hadiah</a> -->
-                                <!-- <form class="form-inline"> -->
-                                <button class="btn btn-primary btn-outline-primary" type="button">
-                                    <i class="icon-heart"></i> Kirim Hadiah</button>
-                                <!-- </form> -->
-
-
+                                <button class="btn btn-primary btn-outline-primary" type="button" data-toggle="modal" data-target="#kirimhadiah">
+                                    <i class="icon-heart"></i> Kirim Hadiah<br>Kirim Ucapan Selamat</button>
                             </li>
 
                             <!-- <li><a href="#fh5co-event">Story</a></li>
@@ -130,9 +123,9 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <div class="display-t">
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                <h2>Pernikahan Kami</h2>
                                 <h1><?= $data_undangan->Nama_MPria ?> &amp; <?= $data_undangan->Nama_MWanita ?></h1>
-                                <!-- <h2>We Are Getting Married</h2> -->
-                                <!-- <div class="simply-countdown simply-countdown-one"></div> -->
+                                <div class="simply-countdown simply-countdown-one"></div>
                                 <!-- <p><a href="#" class="btn btn-default btn-sm">Save the date</a></p> -->
                             </div>
                         </div>
@@ -239,7 +232,7 @@
                 <div class="row row-bottom-padded-md">
                     <div class="col-md-12">
                         <ul id="fh5co-gallery-list">
-                            <?php foreach ($data_undangan_foto as $key => $value) { ?>
+                            <?php foreach ($data_foto as $key => $value) { ?>
                                 <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(<?= base_url('assets/Mempelai/images/gallery/') . '' . $value->Link_Media; ?>); ">
                                     <a href="<?= base_url('assets/Mempelai/images/gallery/') . '' . $value->Link_Media; ?>">
                                         <div class="case-studies-summary">
@@ -410,31 +403,7 @@
             </div>
         </div> -->
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-        </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
             <div class="overlay"></div>
@@ -498,14 +467,44 @@
     </div>
 
     <div class="gototop js-top">
-
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
 
     <div class="sendgift js-top">
+        <a href="index.html" data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah / <br>Ucapan Selamat</a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="kirimhadiah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Form Ucapan Selamat</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
 
-        <a href="index.html"> Kirim Hadiah</a>
-
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Check me out
+                            </label>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 
