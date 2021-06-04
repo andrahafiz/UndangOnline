@@ -43,7 +43,7 @@
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Tanggal</p>
-                                                <input type="date" id="tgl_akad" name="tgl_akad" class="form-control form-control-round m-b-10" value='<?= empty($data_acara->TglAkad) ? 'hh/bb/tttt' : $date('Y-m-d', $data_acara->TglAkad); ?>'>
+                                                <input type="date" id="tgl_akad" name="tgl_akad" class="form-control form-control-round m-b-10" value='<?= empty($data_acara->TglAkad) ? 'hh/bb/tttt' : date('Y-m-d', $data_acara->TglAkad); ?>'>
                                             </div>
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Waktu Mulai</p>
