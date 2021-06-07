@@ -85,15 +85,8 @@
                         <ul>
                             <li class="active"><a href="#">Home</a></li>
                             <li class="">
-
-
-                                <!-- <a href="#">Kirim Hadiah</a> -->
-                                <!-- <form class="form-inline"> -->
-                                <button class="btn btn-primary btn-outline-primary" type="button">
-                                    <i class="icon-heart"></i> Kirim Hadiah</button>
-                                <!-- </form> -->
-
-
+                                <button class="btn btn-primary btn-outline-primary" type="button" data-toggle="modal" data-target="#kirimhadiah">
+                                    <i class="icon-heart"></i> Kirim Hadiah<br>Kirim Ucapan Selamat</button>
                             </li>
 
                             <!-- <li><a href="#fh5co-event">Story</a></li>
@@ -130,9 +123,9 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <div class="display-t">
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                <h1><?= $data->Nama_MPria ?> &amp; <?= $data->Nama_MWanita ?></h1>
-                                <!-- <h2>We Are Getting Married</h2> -->
-                                <!-- <div class="simply-countdown simply-countdown-one"></div> -->
+                                <h2>Pernikahan Kami</h2>
+                                <h1><?= $data_undangan->Nama_MPria ?> &amp; <?= $data_undangan->Nama_MWanita ?></h1>
+                                <div class="simply-countdown simply-countdown-one"></div>
                                 <!-- <p><a href="#" class="btn btn-default btn-sm">Save the date</a></p> -->
                             </div>
                         </div>
@@ -146,27 +139,27 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                         <h2>Hallo!</h2>
-                        <h3><?= getBulan(date('m', $data->TglAkad)) . " " . date('d', $data->TglResepsi); ?>, <?= date('Y', $data->TglResepsi) ?></h3>
+                        <h3><?= getBulan(date('m', $data_undangan->TglAkad)) . " " . date('d', $data_undangan->TglResepsi); ?>, <?= date('Y', $data_undangan->TglResepsi) ?></h3>
                         <p>Kami mengundang anda untuk merayakan pernikahan kami</p>
                     </div>
                 </div>
                 <div class="couple-wrap animate-box">
                     <div class="couple-half">
                         <div class="groom">
-                            <img src="<?= base_url('assets/Mempelai/images/mempelai/') . $data->Foto_MPria ?>" alt="Mempelai Pria" class="img-responsive">
+                            <img src="<?= base_url('assets/Mempelai/images/mempelai/') . $data_undangan->Foto_MPria ?>" alt="Mempelai Pria" class="img-responsive">
                         </div>
                         <div class="desc-groom">
-                            <h1><?= $data->Nama_MPria ?></h1>
+                            <h1><?= $data_undangan->Nama_MPria ?></h1>
                             <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
                         </div>
                     </div>
                     <p class="heart text-center"><i class="icon-heart2"></i></p>
                     <div class="couple-half">
                         <div class="bride">
-                            <img src="<?= base_url('assets/Mempelai/images/mempelai/') . $data->Foto_MWanita ?>" alt="Mempelai Wanita" class="img-responsive">
+                            <img src="<?= base_url('assets/Mempelai/images/mempelai/') . $data_undangan->Foto_MWanita ?>" alt="Mempelai Wanita" class="img-responsive">
                         </div>
                         <div class="desc-bride">
-                            <h1> <?= $data->Nama_MWanita ?></h1>
+                            <h1> <?= $data_undangan->Nama_MWanita ?></h1>
                             <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
                         </div>
                     </div>
@@ -192,15 +185,15 @@
                                         <h3>Akad Nikah</h3>
                                         <div class="event-col">
                                             <i class="icon-clock"></i>
-                                            <span><?= date('H:i', $data->WaktuMulaiAkad); ?> WIB</span>
-                                            <span><?= date('H:i', $data->WaktuSelesaiAkad); ?> WIB</span>
+                                            <span><?= date('H:i', $data_undangan->WaktuMulaiAkad); ?> WIB</span>
+                                            <span><?= date('H:i', $data_undangan->WaktuSelesaiAkad); ?> WIB</span>
                                         </div>
                                         <div class="event-col">
                                             <i class="icon-calendar"></i>
-                                            <span><?= getHari(date('D', $data->TglAkad)); ?> <?= date('d', $data->TglAkad); ?></span>
-                                            <span><?= getBulan(date('m', $data->TglAkad)) . ", " . date('Y', $data->TglAkad); ?></span>
+                                            <span><?= getHari(date('D', $data_undangan->TglAkad)); ?> <?= date('d', $data_undangan->TglAkad); ?></span>
+                                            <span><?= getBulan(date('m', $data_undangan->TglAkad)) . ", " . date('Y', $data_undangan->TglAkad); ?></span>
                                         </div>
-                                        <p><strong><?= $data->TempatAkad ?></strong><br><?= $data->AlamatAkad ?></p>
+                                        <p><strong><?= $data_undangan->TempatAkad ?></strong><br><?= $data_undangan->AlamatAkad ?></p>
                                         <p></p>
                                     </div>
                                 </div>
@@ -209,15 +202,15 @@
                                         <h3>Resepsi</h3>
                                         <div class="event-col">
                                             <i class="icon-clock"></i>
-                                            <span><?= date('H:i', $data->WaktuMulaiResepsi); ?> WIB</span>
-                                            <span><?= date('H:i', $data->WaktuSelesaiResepsi); ?> WIB</span>
+                                            <span><?= date('H:i', $data_undangan->WaktuMulaiResepsi); ?> WIB</span>
+                                            <span><?= date('H:i', $data_undangan->WaktuSelesaiResepsi); ?> WIB</span>
                                         </div>
                                         <div class="event-col">
                                             <i class="icon-calendar"></i>
-                                            <span><?= getHari(date('D', $data->TglResepsi)); ?> <?= date('d', $data->TglResepsi); ?></span>
-                                            <span><?= getBulan(date('m', $data->TglResepsi)) . ", " . date('Y', $data->TglResepsi); ?></span>
+                                            <span><?= getHari(date('D', $data_undangan->TglResepsi)); ?> <?= date('d', $data_undangan->TglResepsi); ?></span>
+                                            <span><?= getBulan(date('m', $data_undangan->TglResepsi)) . ", " . date('Y', $data_undangan->TglResepsi); ?></span>
                                         </div>
-                                        <p><strong><?= $data->TempatResepsi ?></strong><br><?= $data->AlamatResepsi ?></p>
+                                        <p><strong><?= $data_undangan->TempatResepsi ?></strong><br><?= $data_undangan->AlamatResepsi ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -410,31 +403,7 @@
             </div>
         </div> -->
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-        </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
             <div class="overlay"></div>
@@ -498,14 +467,44 @@
     </div>
 
     <div class="gototop js-top">
-
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
 
     <div class="sendgift js-top">
+        <a href="index.html" data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah / <br>Ucapan Selamat</a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="kirimhadiah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Form Ucapan Selamat</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
 
-        <a href="index.html"> Kirim Hadiah</a>
-
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Check me out
+                            </label>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 

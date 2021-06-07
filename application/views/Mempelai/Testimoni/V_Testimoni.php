@@ -7,7 +7,7 @@
                         <div class="col-xl-12 col-md-12">
                             <div class="card-block">
                                 <div class="row">
-                                    <div class="col-md-6 m-auto">
+                                    <div class="col-xl-6 col-lg-10 col-md-12 col-12 m-auto">
                                         <?= $this->session->flashdata('message'); ?>
                                         <div class="card-sub" style="cursor: auto;">
                                             <img class="card-img-top img-fluid" src="<?= base_url(); ?>assets\Mempelai\images\<?= $page == 'edit' ? 'feedback2.jpg' : 'feedback.jpg' ?>" alt=" Card image cap">

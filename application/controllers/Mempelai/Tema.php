@@ -54,7 +54,7 @@ class Tema extends CI_Controller
         $data = array(
             'judul' => 'Tema',
             'menu' => menu_mempelai(),
-            'data' => $this->Undangan_Model->selectbyid($id_undangan),
+            'data_undangan' => $this->Undangan_Model->selectbyid($id_undangan),
             'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
             'thema' => $this->Tema_Model->selectbyid($thema)
         );
@@ -68,7 +68,7 @@ class Tema extends CI_Controller
         $this->load->view('Tema/' . $tema, $data);
     }
 
- 
+
 
     public function PickTema($id_tema)
     {

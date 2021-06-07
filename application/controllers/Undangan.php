@@ -15,19 +15,24 @@ class Undangan extends CI_Controller
 
     public function index($id_undangan)
     {
+        // echo $id_undangan;
         // // echo $this->Tema_Model->jumlahtema();
         // $id = 'UND1';
-        $data = array(
-            'judul' => 'Tema',
-            'page' => 'view',
-            'menu' => menu_mempelai(),
-            'data' => $this->Undangan_Model->selectbyid($id_undangan),
-            'data_foto' => $this->Galeri_Model->selectSingle($id_undangan, 'Foto'),
-            'thema' => $this->Tema_Model->selectbyid($thema)
-        );
+        $data['data_undangan'] = $this->Undangan_Model->selectbyid($id_undangan);
+        $data['id_tema'] = $data['data_undangan']->ID_Tema;
+        $data['tema'] = $this->Tema_Model->selectbyid($data['id_tema'])->view_thema;
+        // var_dump($data['tema']);
+        // die;
+        // $data = array(
+        //     'judul' => 'Undangan',
+        //     'page' => 'view',
+        //     'data' => $this->Undangan_Model->selectbyid($id_undangan),
+        $data['data_foto'] = $this->Galeri_Model->selectSingle($id_undangan, 'Foto');
+        //     'thema' => $this->Tema_Model->selectbyid()
+        // );
 
         // var_dump($data['thema']->view_thema);
-        $tema =  preg_replace("/.php/", "", ($data['thema']->view_thema));
+        $tema =  preg_replace("/.php/", "", ($data['tema']));
         // die();
         // $this->load->view('Admin/layout/header', $data);
         // $this->load->view('Admin/Tema/V_Tema', $data['tema']);

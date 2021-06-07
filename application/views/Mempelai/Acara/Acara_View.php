@@ -41,6 +41,7 @@
                                     <div class="card-block ">
                                         <input type="hidden" id="id_acara" name="id_acara" value="<?= $data_acara->ID_Acara; ?>">
                                         <div class="row">
+                                        
                                             <div class="col-sm-4">
                                                 <p class="f-w-600 m-b-5">Tanggal</p>
                                                 <input type="date" id="tgl_akad" name="tgl_akad" class="form-control form-control-round m-b-10" value='<?= empty($data_acara->TglAkad) ? 'hh/bb/tttt' : date('Y-m-d', $data_acara->TglAkad); ?>'>
