@@ -15,12 +15,14 @@ class Pembayaran extends CI_Controller
     public function index()
     {
         $id =   $this->session->userdata('ID_Akun');
+        $id_undangan =   $this->session->userdata('ID_Undangan');
         $data = array(
             'judul' => 'Pembayaran',
             'menu' =>   $menu = [['Pembayaran'], ['fa fa-credit-card'], ['Mempelai/Pembayaran']],
-            'data_akun' => $this->data_akun($id)
+            'data_akun' => $this->data_akun($id),
+            'status' => $this->db->query("SELECT * FROM pembayaran_undangan WHERE kode_undangan = '$id_undangan'")->row()
         );
-        // var_dump($data['data_akun']);
+        // print_r($data['data_akun']);
         // die;
         $this->load->view('Mempelai/layout/header', $data);
         // $this->load->view('Mempelai/layout/navbar', $data);

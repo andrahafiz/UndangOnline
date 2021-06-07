@@ -28,7 +28,7 @@ class Snap extends CI_Controller
 		$this->midtrans->config($params);
 		$this->load->helper('url');
 		$this->load->model('Mempelai_Model');
-        $this->load->helper('my_function_helper');
+		$this->load->helper('my_function_helper');
 	}
 
 	public function index()
@@ -41,18 +41,18 @@ class Snap extends CI_Controller
 		// $data['undangan_online'] = $this->db->get('pembayaran_undangan')->result();
 		$id =   $this->session->userdata('ID_Akun');
 		$data = array(
-            'undangan_online' =>$this->db->get('pembayaran_undangan')->result(),
+			'undangan_online' => $this->db->get('pembayaran_undangan')->result(),
 			'data_akun' => $this->data_akun($id)
-        );
+		);
 
 		$this->load->view('pembayaranspp', $data);
 	}
 	public function data_akun($id)
-    {
-        // $this->db->where('ID_akun', $id);
+	{
+		// $this->db->where('ID_akun', $id);
 
-        return  $this->db->get_where('tb_akun', array('ID_akun' => $id))->row_array();
-    }
+		return  $this->db->get_where('tb_akun', array('ID_akun' => $id))->row_array();
+	}
 
 	public function hadiah()
 	{
@@ -115,7 +115,7 @@ class Snap extends CI_Controller
 	public function finish()
 	{
 		$result = json_decode($this->input->post('result_data'), true);
-		
+
 		// echo "<prev>";
 		// var_dump($result);
 		// echo $result['va_numbers'][0]['bank'];
@@ -128,13 +128,33 @@ class Snap extends CI_Controller
 			'bank' => $result['va_numbers'][0]['bank'],
 			'va_numbers' => $result['va_numbers'][0]["bank"],
 			'pdf_url' => $result['pdf_url'],
-			'status_code' => $result['status_code']
+			'status_code' => $result['status_code'],
+			'kode_undangan' => $this->input->post('kode_undangan')
+		];
+		$data2 = [
+			'order_id' => $result['order_id'],
+			'gross_amount' => $result['gross_amount'],
+			'payment_type' => $result['payment_type'],
+			'transaction_time' => $result['transaction_time'],
+			'bank' => $result['va_numbers'][0]['bank'],
+			'va_numbers' => $result['va_numbers'][0]["bank"],
+			'pdf_url' => $result['pdf_url'],
+			'status_code' => $result['status_code'],
+			'tipe_transaksi' => 'Undangan',
+			'kode_undangan' => $this->input->post('kode_undangan')
 		];
 		$simpan = $this->db->insert('pembayaran_undangan', $data);
+		$simpan2 = $this->db->insert('tb_transaksi', $data2);
 		if ($simpan) {
-			echo "Sukses";
+			echo "Sukses Simpan 1";
 		} else {
-			echo "Gagal";
+			echo "Gagal Simpan 1";
+		}
+
+		if ($simpan2) {
+			echo "Sukses Simpan 2";
+		} else {
+			echo "Gagal Simpan 2";
 		}
 	}
 
