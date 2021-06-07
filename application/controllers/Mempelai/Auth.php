@@ -42,6 +42,15 @@ class Auth extends CI_Controller
         if ($akun) {
             //jika user aktif
             if ($akun['Status_akun'] == 1) {
+                $data = [
+                    'Username' => $akun['Username'],
+                    'Email_Akun' => $akun['Email_akun'],
+                    'ID_Akun' => $akun['ID_akun'],
+                    'ID_Undangan' => $id_undangan['ID_Undangan']
+                ];
+                $this->session->set_userdata($data);
+                redirect('Mempelai/Pembayaran');
+            } elseif ($akun['Status_akun'] == 2) {
                 //cek password
                 if (password_verify($pass, $akun['Password_akun'])) {
                     $data = [
@@ -240,7 +249,7 @@ class Auth extends CI_Controller
         }
     }
 
-   
+
     public function CreateDataUndangan($id_akun, $id_acara, $id_mempelai)
     {
         $kode = kode_otomatis('tb_undangan', 'ID_Undangan');
