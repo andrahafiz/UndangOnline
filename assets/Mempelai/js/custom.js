@@ -6,6 +6,9 @@ $("#pay-button").on("click", function () {
     $('#Modal-P').modal('hide');
 })
 
+
+
+
 function gtag() {
     dataLayer.push(arguments);
 }
