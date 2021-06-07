@@ -22,6 +22,7 @@ class Testimoni extends CI_Controller
             'data_testimoni' => $testimoni
         );
         $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Testimoni/V_Testimoni', $data);
         $this->load->view('Admin/layout/footer');
     }

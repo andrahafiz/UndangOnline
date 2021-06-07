@@ -23,6 +23,7 @@ class Undangan extends CI_Controller
             'data_akun' => $undangan
         );
         $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Undangan/V_Undangan', $data);
         $this->load->view('Admin/layout/footer');
     }
@@ -38,6 +39,7 @@ class Undangan extends CI_Controller
         // var_dump($data['detail_data']->NoHp_akun);
         // die;
         $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Undangan/V_Detailundangan', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
     }

@@ -22,6 +22,7 @@ class Akun extends CI_Controller
             'data_akun' => $akun
         );
         $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Akun/V_Akun', $data);
         $this->load->view('Admin/layout/footer');
     }
