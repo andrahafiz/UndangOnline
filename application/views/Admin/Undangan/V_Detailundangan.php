@@ -80,21 +80,40 @@
 
                                                 </div>
                                                 <dl class="dl-horizontal row">
-                                                    <dt class="col-sm-3">Description lists</dt>
-                                                    <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-                                                    <dt class="col-sm-3">Euismod</dt>
-                                                    <dd class="col-sm-9">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                                    <dd class="col-sm-12 col-sm-offset-3">Donec id elit non mi porta gravida at eget metus.</dd>
-                                                    <dt class="col-sm-3">Malesuada porta</dt>
-                                                    <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
-                                                    <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-                                                    <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Lengkap </dt>
+                                                    <dd class="col-sm-7 mb-3"> <?= $detail_data->Nama_MPria; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Panggilan </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Panggilan_MPria; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Ayah </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NamaOrtu_Ayah_MPria; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Ibu </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NamaOrtu_Ibu_MPria; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">No.Telp</dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NoHp_MPria; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Alamat</dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Alamat_MPria; ?></dd>
+
                                                 </dl>
                                             </div>
                                             <div class="col-6">
                                                 <div class="sub-title">Mempelai Wanita
 
                                                 </div>
+                                                <dl class="dl-horizontal row">
+                                                    <dt class="col-sm-5 mb-3">Nama Lengkap</dt>
+                                                    <dd class="col-sm-7 mb-3"> <?= $detail_data->Nama_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Panggilan </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Panggilan_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Ayah </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NamaOrtu_Ayah_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Ibu </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NamaOrtu_Ibu_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nomor HP</dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NoHp_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Alamat</dt>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Alamat_MWanita; ?></dd>
+
+                                                </dl>
                                             </div>
                                         </div>
 
@@ -106,18 +125,12 @@
                                         <?= $detail_data->Created_akun; ?>
                                         <?= $detail_data->Status_akun; ?>
                                         <?= $detail_data->ID_Mempelai; ?>
-                                        <?= $detail_data->Nama_MPria; ?>
-                                        <?= $detail_data->Nama_MWanita; ?>
-                                        <?= $detail_data->NoHp_MPria; ?>
-                                        <?= $detail_data->NoHp_MWanita; ?>
-                                        <?= $detail_data->Alamat_MPria; ?>
-                                        <?= $detail_data->Alamat_MWanita; ?>
-                                        <?= $detail_data->Panggilan_MPria; ?>
-                                        <?= $detail_data->Panggilan_MWanita; ?>
+
+
                                         <?= $detail_data->NamaOrtu_Ayah_MPria; ?>
                                         <?= $detail_data->NamaOrtu_Ibu_MPria; ?>
-                                        <?= $detail_data->NamaOrtu_Ayah_MWanita; ?>
-                                        <?= $detail_data->NamaOrtu_Ibu_MWanita; ?>
+
+
                                         <?= $detail_data->Foto_MPria; ?>
                                         <?= $detail_data->Foto_MWanita; ?>
                                     </div>

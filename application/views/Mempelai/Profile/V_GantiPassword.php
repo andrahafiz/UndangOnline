@@ -23,7 +23,9 @@
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md">
+                                        <div class="col-m
+                                        
+                                        d">
                                             <div class="f-right">
                                                 <button type="reset" class="btn btn-primary btn-outline-primary z-depth-bottom-3"><i class="icofont icofont-close-circled "></i>Reset</button>
                                                 <button type="submit" class="btn btn-primary z-depth-bottom-3 "><i class="icofont icofont-check-circled"></i>Simpan</button>
