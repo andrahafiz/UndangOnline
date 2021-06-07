@@ -23,6 +23,7 @@ class Acara extends CI_Controller
                 'data_acara' => $this->Acara_Model->selectbyid($id)
             );
             $this->load->view('Mempelai/layout/header', $data);
+            $this->load->view('Mempelai/layout/navbar', $data);
             $this->load->view('Mempelai/Acara/Acara_View', $data['data_acara']);
             $this->load->view('Mempelai/layout/footer');
         } else {

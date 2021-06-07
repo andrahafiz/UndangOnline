@@ -33,6 +33,7 @@ class Tamu extends CI_Controller
         // }
         // die;
         $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Tamu/View_Tamu', $data);
         $this->load->view('Mempelai/layout/footer');
     }
@@ -56,7 +57,6 @@ class Tamu extends CI_Controller
         if ($this->db->affected_rows() > 0) {
             echo "<script> alert('data berhasil');</script>";
             echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
-
         } else {
             echo "<script> alert('data tidak berhasil');</script>";
             echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";

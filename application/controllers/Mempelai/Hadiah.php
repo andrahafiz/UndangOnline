@@ -20,6 +20,7 @@ class Hadiah extends CI_Controller
         );
 
         $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Hadiah/View_Hadiah');
         $this->load->view('Mempelai/layout/footer');
     }

@@ -26,6 +26,7 @@ class Dashboard extends CI_Controller
         );
 
         $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Dashboard', $data);
         $this->load->view('Mempelai/layout/footer');
     }

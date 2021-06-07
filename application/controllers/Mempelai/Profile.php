@@ -21,6 +21,7 @@ class Profile extends CI_Controller
 
         );
         $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Profile/V_GantiPassword', $data);
         $this->load->view('Mempelai/layout/footer');
     }

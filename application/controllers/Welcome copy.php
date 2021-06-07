@@ -71,6 +71,7 @@ class Welcome extends CI_Controller
 		// );
 
 		// $this->load->view('Mempelai/layout/header', $data);
+		$this->load->view('Mempelai/layout/navbar', $data);
 		// $this->load->view('Mempelai/Acara/Acara_View');
 		// $this->load->view('Mempelai/layout/footer');
 		$this->load->view('index');

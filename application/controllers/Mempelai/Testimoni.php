@@ -30,6 +30,7 @@ class Testimoni extends CI_Controller
         $this->form_validation->set_rules('komentar', 'Komentar', 'required|trim');
         if ($this->form_validation->run() == False) {
             $this->load->view('Mempelai/layout/header', $data);
+            $this->load->view('Mempelai/layout/navbar', $data);
             $this->load->view('Mempelai/Testimoni/V_Testimoni', $data);
             $this->load->view('Mempelai/layout/footer');
         } else {

@@ -37,6 +37,7 @@ class Galeri extends CI_Controller
         // echo count($data['data_video']);
         // die;
         $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Galeri/V_Galeri', $data);
         $this->load->view('Mempelai/layout/footer', $data['jml_foto']);
     }

@@ -28,6 +28,7 @@ class Tema extends CI_Controller
         // var_dump($data['undangan']->ID_Tema);
         // die;
         $this->load->view('Mempelai/layout/header', $data);
+        $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Tema/View_Tema', $data);
         $this->load->view('Mempelai/layout/footer');
 
