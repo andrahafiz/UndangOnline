@@ -1,4 +1,4 @@
-<div class="background-pay" style="">
+<div class="background-pay">
     <div class="pcoded-content">
         <div class="pcoded-inner-content">
             <div class="main-body">
