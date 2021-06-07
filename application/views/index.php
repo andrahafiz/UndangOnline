@@ -89,13 +89,13 @@
                                         <a class="page-scroll" href="#home">Beranda</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#harga">Harga</a>
+                                        <a class="page-scroll" href="#tema">Tema</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#statistik">Statistik</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#tema">Tema</a>
+                                        <a class="page-scroll" href="#harga">Harga</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#testimoni">Testimoni</a>
