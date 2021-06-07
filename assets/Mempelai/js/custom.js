@@ -1,5 +1,5 @@
-// $("#Modal-P").modal({ backdrop: 'static', keyboard: false, show: true });
-$('#Modal-P').modal('show');
+$("#Modal-P").modal({ backdrop: 'static', keyboard: false, show: true });
+// $('#Modal-P').modal('show');
 window.dataLayer = window.dataLayer || [];
 
 $("#pay-button").on("click", function () {

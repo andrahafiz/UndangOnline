@@ -23,7 +23,7 @@ class Pembayaran extends CI_Controller
         // var_dump($data['data_akun']);
         // die;
         $this->load->view('Mempelai/layout/header', $data);
-        $this->load->view('Mempelai/layout/navbar', $data);
+        // $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Pay/View_Pay2', $data);
         $this->load->view('Mempelai/layout/footer');
     }
