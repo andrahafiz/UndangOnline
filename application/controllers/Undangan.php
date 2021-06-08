@@ -35,6 +35,7 @@ class Undangan extends CI_Controller
         $tema =  preg_replace("/.php/", "", ($data['tema']));
         // die();
         // $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         // $this->load->view('Admin/Tema/V_Tema', $data['tema']);
         // $this->load->view('Admin/layout/footer');
         $this->load->view('Tema/' . $tema, $data);

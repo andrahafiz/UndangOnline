@@ -21,6 +21,7 @@ class Tema extends CI_Controller
 
         );
         $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Tema/V_Tema', $data['tema']);
         $this->load->view('Admin/layout/footer');
     }
@@ -41,6 +42,7 @@ class Tema extends CI_Controller
         );
 
         $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Tema/V_DetailTema', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
     }
@@ -55,6 +57,7 @@ class Tema extends CI_Controller
         $this->form_validation->set_rules('view_tema', 'View tema', 'required');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('Admin/layout/header', $data);
+            $this->load->view('Admin/layout/navbar', $data);
             $this->load->view('Admin/Tema/V_AddTema');
             $this->load->view('Admin/layout/footer');
         } else {
@@ -102,6 +105,7 @@ class Tema extends CI_Controller
         $this->form_validation->set_rules('view_tema', 'View tema', 'required');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('Admin/layout/header', $data);
+            $this->load->view('Admin/layout/navbar', $data);
             $this->load->view('Admin/Tema/V_EditTema', $data['detail_data']);
             $this->load->view('Admin/layout/footer');
         } else {

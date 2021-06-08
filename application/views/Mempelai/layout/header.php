@@ -148,7 +148,7 @@
                     </li>
 
                     <li>
-                      <a href="auth-normal-sign-in.htm">
+                      <a href="<?= base_url('Mempelai/Auth/Logout'); ?>">
                         <i class="feather icon-log-out"></i> Logout
                       </a>
                     </li>

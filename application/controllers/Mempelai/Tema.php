@@ -43,6 +43,7 @@ class Tema extends CI_Controller
         // var_dump($data);
         // die();
         // // $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         // // $this->load->view('Admin/Tema/V_Tema', $data['tema']);
         // // $this->load->view('Admin/layout/footer');
         // $this->load->view('Tema/Tema1', $data);
@@ -64,6 +65,7 @@ class Tema extends CI_Controller
         $tema =  preg_replace("/.php/", "", ($data['thema']->view_thema));
         // die();
         // $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         // $this->load->view('Admin/Tema/V_Tema', $data['tema']);
         // $this->load->view('Admin/layout/footer');
         $this->load->view('Tema/' . $tema, $data);
@@ -95,6 +97,7 @@ class Tema extends CI_Controller
         );
 
         $this->load->view('Admin/layout/header', $data);
+        $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Tema/V_DetailTema', $data['detail_data']);
         $this->load->view('Admin/layout/footer');
     }
