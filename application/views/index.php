@@ -156,10 +156,22 @@
                         </div>
                         <div class="col-lg-8">
                             <div class="undangan-form mt-50">
-                                <form action="#">
-                                    <input type="text" placeholder="Masukkan Kode Undangan">
-                                    <button class="main-btn">Cari</button>
+                                <form action="#" id="form_id" method="post">
+                                    <input type="text" id="kode_undangan" placeholder="Masukan kode undangan">
+
+                                    <button type="button" id="btn_id" class="main-btn" onclick="submit_by_id()">Cari</button>
                                 </form>
+                                <!-- <form action="#" method="post" name="form_name" id="form_id" class="form_class">
+                                    <h2>Javascript Form Submit Example</h2>
+                                    <label>Name :</label>
+                                    <input type="text" name="name" id="name" placeholder="Name" />
+                                    <label>Email :</label>
+                                    <input type="text" name="email" id="email" placeholder="Valid Email" />
+                                    <input type="button" name="submit_id" id="btn_id" value="Submit by Id" />
+                                    <form id="input" method="post">
+                                    <input type="text" name="input" placeholder="Input Data...">
+                                    <a href="#" onclick="document.getElementById('input').submit();">INPUT DATA</a>
+                                </form> -->
                             </div>
                         </div>
                     </div>
@@ -191,7 +203,7 @@
 
                                 <div class="social">
                                     <ul>
-                                        <li> <a href="#"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
+                                        <li> <a href="<?= base_url('Demo') ?>"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -459,8 +471,6 @@
                         </div>
                     </div> <!-- single testimonial -->
                 </div>
-
-
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
@@ -498,11 +508,11 @@
                                         <!-- <i class="fal fa-calendar-check"></i> -->
                                         <h6 class="title">3. Undangan Pernikahan Efektif</h6>
                                     </div>
-                                    <div class="col-lg-4 col-md-5 col-sm-6  mt- mt-lg--50 mt--60 text-center">
+                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60 text-center">
                                         <img src="<?php echo base_url('assets/LandingPage/images/') . 'fitur.png' ?>"></img>
                                         <h6 class="title">4. Undangan Pernikahan Fitur Terlengkap</h6>
                                     </div>
-                                    <div class="col-lg-4 col-md-5 col-sm-6  mt-5 mt-lg--50 mt--60 text-center">
+                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60 text-center">
                                         <img src="<?php echo base_url('assets/LandingPage/images/') . 'kekinian.png' ?>"></img>
                                         <!-- <i class="fal fa-map-marker-check"></i> -->
                                         <h6 class="title">5. Undangan Pernikahan Kekinian</h6>
@@ -519,7 +529,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-8">
                         <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <a class="logo" href="#">
-                                <img src="assets/images/logo.svg" alt="logo">
+                                <img src="<?= base_url(); ?>assets/LandingPage/images/logo.svg" alt="Logo">
                             </a>
                             <p class="text">Getmarried adalah platform yang diciptakan untuk memudahkan setiap pasangan yang ingin membuat website undangan pernikahan online secara mandiri.
                                 Jika dulu kita selalu memanfaatkan kertas untuk difungsikan sebagai media penyebaran kabar pernikahan, kini sudah tersedia Getmarried yang hadir sebagai solusi hemat, efektif, efisien dan tentunya sangat praktis untuk digunakan.</p>
@@ -581,7 +591,15 @@
     </footer>
 
     <!--====== FOOTER PART ENDS ======-->
+    <script>
+        function submit_by_id() {
+            var kode_undangan = document.getElementById("kode_undangan").value;
 
+            document.getElementById("form_id").submit(); //form submission
+            // alert(kode_undangan);
+            window.location = '<?= base_url('Undangan/') ?>' + kode_undangan;
+        }
+    </script>
 
     <!--====== Jquery js ======-->
     <script src="<?= base_url(); ?>assets/LandingPage/js/vendor/jquery-1.12.4.min.js"></script>
