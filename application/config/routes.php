@@ -58,3 +58,4 @@ $route['Register'] = 'Mempelai/Auth/register';
 $route['Demo'] = 'Undangan/Demo';
 $route['Mempelai/GantiPassword'] = 'Mempelai/Profile/GantiPassword';
 $route['Undangan/(:any)'] = 'Undangan/index/$1';
+$route['Admin/Transaksi'] = 'Transaksi';

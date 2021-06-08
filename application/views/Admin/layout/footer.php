@@ -87,6 +87,7 @@
 <script type="text/javascript" src="<?= base_url(); ?>assets\Admin\bower_components\ekko-lightbox\js\ekko-lightbox.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>assets\Admin\bower_components\lightbox2\js\lightbox.js"></script>
 <!-- Custom js -->
+<script src="<?= base_url(); ?>assets\Admin\pages\data-table\js\data-table-custom.js"></script>
 <script src="<?= base_url(); ?>assets\Admin\pages\data-table\extensions\buttons\js\extension-btns-custom.js"></script>
 <script src="<?= base_url(); ?>assets\Admin\js\pcoded.min.js"></script>
 <script src="<?= base_url(); ?>assets\Admin\js\vartical-layout.min.js"></script>
