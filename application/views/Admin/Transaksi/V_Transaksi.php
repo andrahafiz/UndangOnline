@@ -40,7 +40,7 @@
                                                         <td style="vertical-align:middle;"><?php echo $value->order_id ?></td>
                                                         <td style="vertical-align:middle;"><?php echo strtoupper($value->bank) ?></td>
                                                         <td style="vertical-align:middle;"><?php echo rupiah($value->gross_amount) ?></td>
-                                                        <td style="vertical-align:middle;"><?php echo $value->kode_undangan ?></td>
+                                                        <td style="vertical-align:middle;"><a class="text-custom" href="<?= base_url('Admin/Undangan/Detail/') . $value->kode_undangan ?>"><?php echo $value->kode_undangan ?></a></td>
                                                         <td style="vertical-align:middle;"><?php echo $value->transaction_time ?></td>
                                                         <td style="vertical-align:middle;">
                                                             <?php
@@ -54,13 +54,9 @@
                                                             }
                                                             ?></td>
                                                         <td style="vertical-align:middle;">
-
-                                                            <!-- <div class="card-block "> -->
                                                             <a href="<?= base_url('Transaksi/status/' . $value->order_id); ?>">
-                                                                <button class="btn btn-warning btn-icon icon-btn"><i class="fa fa-refresh"></i></button>
+                                                                <button class="btn  btn-icon icon-btn <?= $value->status_code == 200 ? 'btn-disabled disabled' : 'btn-warning' ?>" data-toggle="tooltip" data-placement="top    " title="Cek Status"><i class="fa fa-refresh"></i></button>
                                                             </a>
-                                                            <!-- </div> -->
-
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
