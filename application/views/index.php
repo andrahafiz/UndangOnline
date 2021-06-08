@@ -484,65 +484,28 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
-                                        <div class="feature-widget">
-                                            <div class="widget-icon bg-blue">
-                                                <img src="<?php echo base_url('assets/LandingPage/images/') . 'money.png' ?>"></img>
-                                                <!-- <i class="fal fa-trophy-alt"></i> -->
-                                            </div>
-                                            <div class="widget-text">
-                                                <h6 class="title">1. Undangan Pernikahan Hemat</h6>
-
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60 text-center">
+                                        <img src="<?php echo base_url('assets/LandingPage/images/') . 'money.png' ?>"></img>
+                                        <h6 class="title">1. Undangan Pernikahan Hemat</h6>
                                     </div>
-                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
-                                        <div class="feature-widget">
-                                            <div class="widget-icon bg-red">
-                                                <img src="<?php echo base_url('assets/LandingPage/images/') . 'simple.png' ?>"></img>
-                                                <!-- <i class="fal fa-user-friends"></i> -->
-                                            </div>
-                                            <div class="widget-text">
-                                                <h6 class="title">2. Undangan Pernikahan Simple</h6>
-
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60 text-center">
+                                        <img src="<?php echo base_url('assets/LandingPage/images/') . 'simple.png' ?>"></img>
+                                        <!-- <i class="fal fa-user-friends"></i> -->
+                                        <h6 class="title">2. Undangan Pernikahan Simple</h6>
                                     </div>
-                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
-                                        <div class="feature-widget">
-                                            <div class="widget-icon bg-green">
-                                                <img src="<?php echo base_url('assets/LandingPage/images/') . 'efektif.png' ?>"></img>
-                                                <!-- <i class="fal fa-calendar-check"></i> -->
-                                            </div>
-                                            <div class="widget-text">
-                                                <h6 class="title">3. Undangan Pernikahan Efektif</h6>
-
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60 text-center">
+                                        <img src="<?php echo base_url('assets/LandingPage/images/') . 'efektif.png' ?>"></img>
+                                        <!-- <i class="fal fa-calendar-check"></i> -->
+                                        <h6 class="title">3. Undangan Pernikahan Efektif</h6>
                                     </div>
-                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
-                                        <div class="feature-widget">
-                                            <div class="widget-icon bg-ash">
-                                                <img src="<?php echo base_url('assets/LandingPage/images/') . 'fitur.png' ?>"></img>
-                                                <!-- <i class="fal fa-images"></i> -->
-                                            </div>
-                                            <div class="widget-text">
-                                                <h6 class="title">4. Undangan Pernikahan Fitur Terlengkap</h6>
-
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-4 col-md-5 col-sm-6  mt- mt-lg--50 mt--60 text-center">
+                                        <img src="<?php echo base_url('assets/LandingPage/images/') . 'fitur.png' ?>"></img>
+                                        <h6 class="title">4. Undangan Pernikahan Fitur Terlengkap</h6>
                                     </div>
-                                    <div class="col-lg-4 col-md-5 col-sm-6 mt-lg--50 mt--60">
-                                        <div class="feature-widget">
-                                            <div class="widget-icon bg-yellow">
-                                                <img src="<?php echo base_url('assets/LandingPage/images/') . 'kekinian.png' ?>"></img>
-                                                <!-- <i class="fal fa-map-marker-check"></i> -->
-                                            </div>
-                                            <div class="widget-text">
-                                                <h6 class="title">5. Undangan Pernikahan Kekinian</h6>
-
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-4 col-md-5 col-sm-6  mt-5 mt-lg--50 mt--60 text-center">
+                                        <img src="<?php echo base_url('assets/LandingPage/images/') . 'kekinian.png' ?>"></img>
+                                        <!-- <i class="fal fa-map-marker-check"></i> -->
+                                        <h6 class="title">5. Undangan Pernikahan Kekinian</h6>
                                     </div>
                                 </div>
                             </div>
@@ -550,32 +513,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <div class="row"> -->
-            <!-- <div class="col-lg-6">
-
-                        <h6 class="text">Berikut beberapa keunggulan website undangan pernikahan online Datengdong :</h6>
-                        <p> <span>1. Undangan Pernikahan Hemat</span>
-                            <span>2. Undangan Pernikahan Simple</span>
-                            <span>3. Undangan Pernikahan Efektif</span>
-                            <span>4. Undangan Pernikahan Fitur Terlengkap</span>
-                            <span>5. Undangan Pernikahan Kekinian</span>
-                        </p>
-
-                    </div> -->
-            <!-- <div class="col-lg-6">
-                        <div class="subscribe-form mt-50">
-                            <form action="#">
-                                <input type="text" placeholder="Enter eamil">
-                                <input type="text" placeholder="Enter eamil">
-                                <input type="text" placeholder="Enter eamil">
-
-                            </form>
-                        </div>
-                    </div> -->
-            <!-- </div>
-            </div> -->
-            <!-- end subscribe area -->
             <div class="footer-widget pb-100">
                 <div class="row">
 
@@ -639,7 +576,7 @@
                     </div>
                 </div> <!-- row -->
             </div> <!-- footer copyright -->
-        </div> <!-- container -->
+        </div>
         <div id="particles-2"></div>
     </footer>
 
