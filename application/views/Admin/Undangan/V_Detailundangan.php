@@ -21,7 +21,7 @@
                 <div class="page-body">
                     <!-- <form class="form-group"> -->
                     <div class="form-group">
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-sm-12 ">
                                 <div class="card ">
                                     <div class="card-header">
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-sm-12 ">
                                 <div class="card ">
@@ -116,7 +116,7 @@
                                                 </dl>
                                             </div>
                                         </div>
-
+                                        <!-- 
                                         <?= $detail_data->ID_Undangan; ?>
                                         <?= $detail_data->ID_akun; ?>
                                         <?= $detail_data->Username; ?>
@@ -132,7 +132,7 @@
 
 
                                         <?= $detail_data->Foto_MPria; ?>
-                                        <?= $detail_data->Foto_MWanita; ?>
+                                        <?= $detail_data->Foto_MWanita; ?> -->
                                     </div>
                                 </div>
                             </div>
