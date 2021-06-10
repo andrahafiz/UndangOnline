@@ -65,7 +65,7 @@ class Transaksi extends CI_Controller
         $update = $this->Transaksi_Model->update_status('tb_transaksi', $data, $where);
         $update2 = $this->Transaksi_Model->update_status('pembayaran_undangan', $data, $where);
         if ($update > 0) {
-            $this->Akun_Model->$this->pesan('sukses', 'Data terupdate');
+            $this->pesan('sukses', 'Data terupdate');
         } else {
             $this->pesan('sukses', 'Data gagal terupdate pada tabel transaksi');
         }

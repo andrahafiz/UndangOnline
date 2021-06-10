@@ -20,7 +20,7 @@ class Pembayaran extends CI_Controller
             'judul' => 'Pembayaran',
             'menu' =>   $menu = [['Pembayaran'], ['fa fa-credit-card'], ['Mempelai/Pembayaran']],
             'data_akun' => $this->data_akun($id),
-            'status' => $this->db->query("SELECT * FROM pembayaran_undangan WHERE kode_undangan = '$id_undangan'")->row()
+            'status' => $this->db->query("SELECT * FROM tb_transaksi WHERE kode_undangan = '$id_undangan'")->row()
         );
         // print_r($data['data_akun']);
         // die;

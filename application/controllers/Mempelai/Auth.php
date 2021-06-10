@@ -46,7 +46,8 @@ class Auth extends CI_Controller
                     'Username' => $akun['Username'],
                     'Email_Akun' => $akun['Email_akun'],
                     'ID_Akun' => $akun['ID_akun'],
-                    'ID_Undangan' => $id_undangan['ID_Undangan']
+                    'ID_Undangan' => $id_undangan['ID_Undangan'],
+                    'Status_akun' => $akun['Status_akun']
                 ];
                 $this->session->set_userdata($data);
                 redirect('Mempelai/Pembayaran');
@@ -127,6 +128,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata("Email_Akun");
         $this->session->unset_userdata("ID_Akun");
         $this->session->unset_userdata("ID_Undangan");
+        $this->session->unset_userdata("Status_akun");
         $this->session->sess_destroy();
         redirect('Mempelai');
     }

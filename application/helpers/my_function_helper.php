@@ -40,8 +40,15 @@ function cekaccess()
 {
     $ci = get_instance();
     if (!$ci->session->userdata("Username")) {
+
         redirect('Mempelai');
     } else {
+        // redirect('');
+        // echo $ci->session->userdata("Status_akun");
+        // if ($ci->session->userdata("Status_akun") == "1") {
+        //     redirect('Mempelai/Pembayaran');
+        // }
+        // die();
     }
 }
 

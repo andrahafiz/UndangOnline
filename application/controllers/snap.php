@@ -141,18 +141,19 @@ class Snap extends CI_Controller
 			'pdf_url' => $result['pdf_url'],
 			'status_code' => $result['status_code'],
 			'tipe_transaksi' => 'Undangan',
-			'kode_undangan' => $this->input->post('kode_undangan')
+			'kode_undangan' => $this->input->post('kode_undangan'),
+			'ID_akun' => $this->session->userdata('ID_Akun'),
 		];
 		$simpan = $this->db->insert('pembayaran_undangan', $data);
 		$simpan2 = $this->db->insert('tb_transaksi', $data2);
 		if ($simpan) {
-			echo "Sukses Simpan 1";
+			redirect('Mempelai/Pembayaran');
 		} else {
 			echo "Gagal Simpan 1";
 		}
 
 		if ($simpan2) {
-			echo "Sukses Simpan 2";
+			redirect('Mempelai/Pembayaran');
 		} else {
 			echo "Gagal Simpan 2";
 		}
