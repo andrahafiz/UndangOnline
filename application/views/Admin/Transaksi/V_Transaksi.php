@@ -54,7 +54,7 @@
                                                             }
                                                             ?></td>
                                                         <td style="vertical-align:middle;">
-                                                            <a href="<?= base_url('Transaksi/status/' . $value->order_id); ?>">
+                                                            <a href="<?= $value->status_code == 200 ? "#" : base_url('Transaksi/status/' . $value->order_id); ?>">
                                                                 <button class="btn  btn-icon icon-btn <?= $value->status_code == 200 ? 'btn-disabled disabled' : 'btn-warning' ?>" data-toggle="tooltip" data-placement="top    " title="Cek Status"><i class="fa fa-refresh"></i></button>
                                                             </a>
                                                         </td>
