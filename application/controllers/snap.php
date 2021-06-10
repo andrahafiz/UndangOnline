@@ -62,9 +62,11 @@ class Snap extends CI_Controller
 
 	public function token()
 	{
-		$nama = $this->input->post('nama');
+		$nama = $this->session->userdata('Username');
+		$email = $this->input->post('nama');
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
 		$jml_bayar = $this->input->post('jml_bayar');
+		$id_undangan = $this->session->userdata('ID_Undangan');
 		// Required
 		$transaction_details = array(
 			'order_id' => rand(),
@@ -73,10 +75,10 @@ class Snap extends CI_Controller
 
 		// Optional
 		$item1_details = array(
-			'id' => 'a1',
+			'id' =>  $id_undangan,
 			'price' => $jml_bayar,
 			'quantity' => 1,
-			'name' => "Pembayarann Undangan", $jenis_kelamin
+			'name' => "Pembayarann Undangan (" . $id_undangan . ")",
 		);
 
 		$item_details = array($item1_details);
@@ -84,6 +86,7 @@ class Snap extends CI_Controller
 		// Optional
 		$customer_details = array(
 			'first_name'    => $nama,
+			'email' => $email,
 		);
 
 		// Data yang akan dikirim untuk request redirect_url.
@@ -166,6 +169,7 @@ class Snap extends CI_Controller
 		$email = $this->input->post('email');
 		$no_hp = $this->input->post('no_hp');
 		$jml_hadiah = $this->input->post('jml_hadiah');
+		$id_undangan = $this->session->userdata('ID_Undangan');
 		// Required
 		$transaction_details = array(
 			'order_id' => rand(),
@@ -174,10 +178,10 @@ class Snap extends CI_Controller
 
 		// Optional
 		$item1_details = array(
-			'id' => 'a1',
+			'id' => $id_undangan,
 			'price' => $jml_hadiah,
 			'quantity' => 1,
-			'name' => "Pembayarann Undangan", $email
+			'name' => "Pembayarann aaa (" . $id_undangan . ")"
 		);
 
 		$item_details = array($item1_details);

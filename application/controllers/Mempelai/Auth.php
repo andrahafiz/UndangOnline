@@ -176,11 +176,10 @@ class Auth extends CI_Controller
         $this->db->insert('token', $akun_token);
         $this->_sendEmail($token, 'verify');
 
-
-        // $id_akun = $data['ID_akun'];
-        // $id_acara = $this->CreateDataAcara();
-        // $id_mempelai = $this->CreateDataMempelai();
-        // $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
+        $id_akun = $data['ID_akun'];
+        $id_acara = $this->CreateDataAcara();
+        $id_mempelai = $this->CreateDataMempelai();
+        $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
     }
     private function _sendEmail($token, $type)
     {
@@ -200,11 +199,16 @@ class Auth extends CI_Controller
 
         $this->email->from('joyoom34@gmail.com', 'Get Married');
         $this->email->to($this->input->post('email'));
+        $data['link'] = base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token);
+        // base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '";
+        $email_aktifasi = $this->load->view('Email_Activation', $data, TRUE);
+
         if ($type == 'verify') {
 
             $this->email->subject('Verifikasi Akun');
-            $this->email->message('Click this link to verify you account :
-                <a href="' . base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Aktifasi</a>');
+            // $this->email->message('Click this link to verify you account :
+            //     <a href="' . base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Aktifasi</a>');
+            $this->email->message($email_aktifasi);
         }
 
         if ($this->email->send()) {
@@ -263,7 +267,6 @@ class Auth extends CI_Controller
             'ID_Mempelai' => $mempelai_id,
             'ID_Acara' => $acara_id,
             'ID_Akun' => $akun_id,
-            'ID_Kategori' => 'KTG1',
             'ID_Tema' => 'THM1',
             'tgl_buatakun' => time(),
             'tgl_selesaiakun' => time() + (60 * 60 * 24 * 7)
