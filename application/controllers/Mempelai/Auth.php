@@ -47,9 +47,11 @@ class Auth extends CI_Controller
                     'Email_Akun' => $akun['Email_akun'],
                     'ID_Akun' => $akun['ID_akun'],
                     'ID_Undangan' => $id_undangan['ID_Undangan'],
-                    'Status_akun' => $akun['Status_akun']
+                    'Status_Akun' => $akun['Status_akun']
                 ];
                 $this->session->set_userdata($data);
+                // print_r($data);
+                // die();
                 redirect('Mempelai/Pembayaran');
             } elseif ($akun['Status_akun'] == 2) {
                 //cek password
@@ -58,8 +60,10 @@ class Auth extends CI_Controller
                         'Username' => $akun['Username'],
                         'Email_Akun' => $akun['Email_akun'],
                         'ID_Akun' => $akun['ID_akun'],
-                        'ID_Undangan' => $id_undangan['ID_Undangan']
+                        'ID_Undangan' => $id_undangan['ID_Undangan'],
+                        'Status_Akun' => $akun['Status_akun'],
                     ];
+
                     $this->session->set_userdata($data);
                     redirect("Mempelai/Dashboard");
                 } else {

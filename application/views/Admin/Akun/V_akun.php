@@ -44,27 +44,38 @@
                                                             <td><?php echo $value->Created_akun ?></td>
                                                             <td><?php
 
-                                                                if ($value->Status_akun == 1) {
+                                                                if ($value->Status_akun == 2) {
                                                                     echo '<label class="badge badge-lg bg-success">Aktif</label>';
+                                                                } elseif ($value->Status_akun == 1) {
+                                                                    echo '<label class="badge badge-lg bg-warning">Menunggu Verifikasi</label>';
                                                                 } elseif ($value->Status_akun == 0) {
                                                                     echo '<label class="badge badge-lg bg-danger">Tidak Aktif</label>';
                                                                 }
                                                                 ?></td>
                                                             <td>
 
-                                                                <?php if ($value->Status_akun == 1) { ?>
+                                                                <?php if ($value->Status_akun == 2) { ?>
                                                                     <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/0"); ?>"> <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Nonaktifkan Akun">
                                                                             <i class="fa fa-key"></i>
                                                                         </button>
                                                                     </a>
                                                                 <?php
                                                                 } elseif ($value->Status_akun == 0) { ?>
-                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/1"); ?>"> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Aktifkan  Akun">
+                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/2"); ?>"> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Aktifkan  Akun">
                                                                             <i class="fa fa-key"></i>
                                                                         </button>
                                                                     </a>
-                                                                <?php }
+                                                                <?php } elseif ($value->Status_akun == 1) {
                                                                 ?>
+                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/2"); ?>"> <button type="button" class="btn btn-success  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Aktifkan  Akun">
+                                                                            <i class="fa fa-key"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                    <a href="<?php echo base_url("Admin/Akun/ubah_status/" . $value->ID_akun . "/0"); ?>"> <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Nonaktifkan Akun">
+                                                                            <i class="fa fa-key"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                <?php } ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
