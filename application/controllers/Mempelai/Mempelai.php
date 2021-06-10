@@ -24,7 +24,7 @@ class Mempelai extends CI_Controller
             );
             $this->load->view('Mempelai/layout/header', $data);
             $this->load->view('Mempelai/layout/navbar', $data);
-            $this->load->view('Mempelai/Mempelai/Mempelai_View');
+            $this->load->view('Mempelai/Mempelai/View_Mempelai');
             $this->load->view('Mempelai/layout/footer');
         } else {
             $id = htmlspecialchars($this->input->post('id_mempelai', true));
