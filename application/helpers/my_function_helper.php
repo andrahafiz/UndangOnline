@@ -39,17 +39,31 @@ function menu_admin()
 function cekaccess()
 {
     $ci = get_instance();
-    if (!$ci->session->userdata("Username")) {
+    // echo $ci->uri->segment(2);
+    // die();
+    // if (!$ci->session->userdata("Username")) {
 
-        redirect('Mempelai');
+    //     redirect('Mempelai');
+    // }
+    // print_r($ci->session->userdata("Status_Akun"));
+    // if (!$ci->session->userdata("Username")) {
+
+    //     redirect('Mempelai');
+    //     // break;
+    // }
+    print_r($ci->session->userdata("Status_Akun"));
+    if ($ci->session->userdata("Status_Akun") == 1) {
+        // redirect('Mempelai/Pembayaran');
+        echo "Akun status 1";
+        // echo $ci->uri->segment(2);
+        if ($ci->uri->segment(2) != "Pembayaran") {
+            echo "selain pembayaran";
+            redirect('Mempelai/Pembayaran');
+        }
     } else {
-        // redirect('');
-        // echo $ci->session->userdata("Status_akun");
-        // if ($ci->session->userdata("Status_akun") == "1") {
-        //     redirect('Mempelai/Pembayaran');
-        // }
-        // die();
+        echo "Akun status 2";
     }
+    // die();
 }
 
 function cekaccess_admin()
