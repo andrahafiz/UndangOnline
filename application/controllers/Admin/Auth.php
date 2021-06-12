@@ -37,11 +37,12 @@ class Auth extends CI_Controller
         #echo $pass;
         $akun = $this->db->get_where('tb_admin', ['Username_Admin' => $username])->row_array();
         // var_dump($akun);
+        // die();
         if ($akun) {
             if ($akun["Status_Admin"] == 1) {
                 if ($pass == $akun["Password_Admin"]) {
                     $data = [
-                        'ID_Akun' => $akun["ID_akun"],
+                        'ID_Akun' => $akun["ID_Admin"],
                         'Username_akun' => $akun["Username_Admin"]
                     ];
                     $this->session->set_userdata($data);

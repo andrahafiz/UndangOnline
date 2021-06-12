@@ -10,7 +10,7 @@ class Akun extends CI_Controller
         $this->load->helper('my_function_helper');
         $this->load->model('Tamu_Model');
         $this->load->model('Akun_Model');
-        cekaccess_admin();
+        // cekaccess_admin();
     }
     // }
     public function index()
