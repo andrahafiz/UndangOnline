@@ -9,6 +9,7 @@
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/LandingPage/images/favicon.png" type="image/png">
