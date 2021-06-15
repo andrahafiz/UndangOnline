@@ -43,7 +43,7 @@ $(".btn-wa").on("click", function () {
 })
 
 
-$('#pay-button').click(function(event) {
+$('#pay-button').click(function (event) {
     event.preventDefault();
     $(this).attr("disabled", "disabled");
 
@@ -52,7 +52,7 @@ $('#pay-button').click(function(event) {
     var jml_bayar = $("#jml_bayar").val();
     $.ajax({
         type: 'POST',
-        url: '<?= site_url() ?>/snap/token',
+        url: '<?= site_url() ?>snap/token',
         data: {
             nama: nama,
             jenis_kelamin: jenis_kelamin,
@@ -60,7 +60,7 @@ $('#pay-button').click(function(event) {
         },
         cache: false,
 
-        success: function(data) {
+        success: function (data) {
             //location = data;
 
             console.log('token = ' + data);
@@ -77,18 +77,18 @@ $('#pay-button').click(function(event) {
 
             snap.pay(data, {
 
-                onSuccess: function(result) {
+                onSuccess: function (result) {
                     changeResult('success', result);
                     console.log(result.status_message);
                     console.log(result);
                     $("#payment-form").submit();
                 },
-                onPending: function(result) {
+                onPending: function (result) {
                     changeResult('pending', result);
                     console.log(result.status_message);
                     $("#payment-form").submit();
                 },
-                onError: function(result) {
+                onError: function (result) {
                     changeResult('error', result);
                     console.log(result.status_message);
                     $("#payment-form").submit();
