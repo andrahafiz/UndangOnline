@@ -102,7 +102,7 @@
                                         <a class="page-scroll" href="#testimoni">Testimoni</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="<?= base_url('Demo') ?>">Demo</a>
+                                        <a class="page-scroll" href="<?= base_url('Demo') ?>" target="_blank">Demo</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="<?= base_url('Mempelai') ?>">Login</a>
@@ -127,7 +127,7 @@
                             <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Website</h3>
                             <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Undangan Pernikahan Online</h2>
                             <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Undang orang-orang terdekatmu, dengan menggunakan undangan pernikahan online yang praktis di GET MARRIED.</p>
-                            <a href="<?= base_url('Demo') ?>" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Demo</a>
+                            <a href="<?= base_url('Demo') ?>" target="_blank" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Demo</a>
                         </div> <!-- header hero content -->
                     </div>
                 </div> <!-- row -->
@@ -204,7 +204,7 @@
 
                                 <div class="social">
                                     <ul>
-                                        <li> <a href="<?= base_url('Demo') ?>"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
+                                        <li> <a href="<?= base_url('Demo') ?>" target="blank"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
                                     </ul>
                                 </div>
                             </div>

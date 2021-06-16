@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
+//TEST
 class Auth extends CI_Controller
 {
 
@@ -37,7 +37,7 @@ class Auth extends CI_Controller
         $akun = $this->db->get_where('tb_akun', ['Email_akun' => $email])->row_array();
         // $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun =$akun['ID_akun']");
         $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun ='" . $akun['ID_akun'] . "'")->row_array();
-        // var_dump($id_undangan['ID_Undangan']);
+        // var_dump($id_undangan);
         // die;
         if ($akun) {
             //jika user aktif
