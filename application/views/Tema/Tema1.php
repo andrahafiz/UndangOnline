@@ -86,7 +86,7 @@
                             <li class="active"><a href="#">Home</a></li>
                             <li class="">
                                 <button class="btn btn-primary btn-outline-primary" type="button" data-toggle="modal" data-target="#kirimhadiah">
-                                    <i class="icon-heart"></i> Kirim Hadiah<br>Kirim Ucapan Selamat</button>
+                                    <i class="icon-heart"></i> Kirim Hadiah</button>
                             </li>
 
                             <!-- <li><a href="#fh5co-event">Story</a></li>
@@ -402,43 +402,6 @@
 
             </div>
         </div> -->
-
-
-
-        <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
-            <div class="overlay"></div>
-            <div class="container">
-
-                <div class="row animate-box">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>Are You Attending?</h2>
-                        <p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
-                    </div>
-                </div>
-                <div class="row animate-box">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <form class=" form-inline">
-                            <div class="col-md-8 col-md-offset-2 ">
-                                <div class="form-group">
-                                    <label for="name" class="sr-only">Name</label>
-                                    <input type="name" class="form-control" id="name" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-md-offset-2 ">
-                                <div class="form-group">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <!-- <input type="email" class="form-control" id="email" placeholder="Email"> -->
-                                    <textarea class="form-control" placeholder="A" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-md-offset-2 ">
-                                <button type="submit" class="btn btn-default">I am Attending</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -471,7 +434,7 @@
     </div>
 
     <div class="sendgift js-top">
-        <a href="index.html" data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah / <br>Ucapan Selamat</a>
+        <a href="index.html" data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah</a>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="kirimhadiah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

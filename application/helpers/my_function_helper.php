@@ -27,11 +27,11 @@ function menu_admin()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Pembayaran', 'Testimoni', 'Logout'],
+        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Transaksi', 'Testimoni', 'Logout'],
         //icon
         ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', ' fa fa-money', 'fa fa-list-alt', 'feather icon-log-out'],
         //url
-        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Pembayaran', 'Admin/Testimoni', 'Admin/Auth/logout'],
+        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Transaksi', 'Admin/Testimoni', 'Admin/Auth/logout'],
     ];
     return $menu;
 }
@@ -42,6 +42,11 @@ function cekaccess()
     if (!$ci->session->userdata("Username")) {
         redirect('Mempelai');
     } else {
+        if ($ci->session->userdata("Status_Akun") == 1) {
+            if ($ci->uri->segment(2) != "Pembayaran") {
+                redirect('Mempelai/Pembayaran');
+            }
+        }
     }
 }
 
@@ -201,6 +206,11 @@ function combobox($name, $id, $table, $field, $primary_key, $selected)
     }
     $cmb .= "</select>";
     return $cmb;
+}
+function rupiah($angka)
+{
+    $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+    return $hasil_rupiah;
 }
 
 

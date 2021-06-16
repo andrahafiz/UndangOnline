@@ -21,7 +21,7 @@
                 <div class="page-body">
                     <!-- <form class="form-group"> -->
                     <div class="form-group">
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-sm-12 ">
                                 <div class="card ">
                                     <div class="card-header">
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-sm-12 ">
                                 <div class="card ">
@@ -81,17 +81,17 @@
                                                 </div>
                                                 <dl class="dl-horizontal row">
                                                     <dt class="col-sm-5 mb-3">Nama Lengkap </dt>
-                                                    <dd class="col-sm-7 mb-3"> <?= $detail_data->Nama_MPria; ?></dd>
+                                                    <dd class="col-sm-7 mb-3"> <?= empty($detail_data->Nama_MPria) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->Nama_MPria; ?></dd>
                                                     <dt class="col-sm-5 mb-3">Nama Panggilan </dt>
-                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Panggilan_MPria; ?></dd>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->Panggilan_MPria) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->Panggilan_MPria; ?></dd>
                                                     <dt class="col-sm-5 mb-3">Nama Ayah </dt>
-                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NamaOrtu_Ayah_MPria; ?></dd>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->NamaOrtu_Ayah_MPria) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->NamaOrtu_Ayah_MPria; ?></dd>
                                                     <dt class="col-sm-5 mb-3">Nama Ibu </dt>
-                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NamaOrtu_Ibu_MPria; ?></dd>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->NamaOrtu_Ibu_MPria) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->NamaOrtu_Ibu_MPria; ?></dd>
                                                     <dt class="col-sm-5 mb-3">No.Telp</dt>
-                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->NoHp_MPria; ?></dd>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->NoHp_MPria) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->NoHp_MPria; ?></dd>
                                                     <dt class="col-sm-5 mb-3">Alamat</dt>
-                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Alamat_MPria; ?></dd>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->Alamat_MPria) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->Alamat_MPria; ?></dd>
 
                                                 </dl>
                                             </div>
@@ -100,7 +100,21 @@
 
                                                 </div>
                                                 <dl class="dl-horizontal row">
-                                                    <dt class="col-sm-5 mb-3">Nama Lengkap</dt>
+                                                    <dt class="col-sm-5 mb-3">Nama Lengkap </dt>
+                                                    <dd class="col-sm-7 mb-3"> <?= empty($detail_data->Nama_MWanita) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->Nama_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Panggilan </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->Panggilan_MWanita) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->Panggilan_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Ayah </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->NamaOrtu_Ayah_MWanita) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->NamaOrtu_Ayah_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Nama Ibu </dt>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->NamaOrtu_Ibu_MWanita) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->NamaOrtu_Ibu_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">No.Telp</dt>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->NoHp_MWanita) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->NoHp_MWanita; ?></dd>
+                                                    <dt class="col-sm-5 mb-3">Alamat</dt>
+                                                    <dd class="col-sm-7 mb-3"><?= empty($detail_data->Alamat_MWanita) ?  "<span class='text-muted'>-- Data Kosong --</span>" : $detail_data->Alamat_MWanita; ?></dd>
+
+
+                                                    <!-- <dt class="col-sm-5 mb-3">Nama Lengkap</dt>
                                                     <dd class="col-sm-7 mb-3"> <?= $detail_data->Nama_MWanita; ?></dd>
                                                     <dt class="col-sm-5 mb-3">Nama Panggilan </dt>
                                                     <dd class="col-sm-7 mb-3"><?= $detail_data->Panggilan_MWanita; ?></dd>
@@ -111,12 +125,12 @@
                                                     <dt class="col-sm-5 mb-3">Nomor HP</dt>
                                                     <dd class="col-sm-7 mb-3"><?= $detail_data->NoHp_MWanita; ?></dd>
                                                     <dt class="col-sm-5 mb-3">Alamat</dt>
-                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Alamat_MWanita; ?></dd>
+                                                    <dd class="col-sm-7 mb-3"><?= $detail_data->Alamat_MWanita; ?></dd> -->
 
                                                 </dl>
                                             </div>
                                         </div>
-
+                                        <!-- 
                                         <?= $detail_data->ID_Undangan; ?>
                                         <?= $detail_data->ID_akun; ?>
                                         <?= $detail_data->Username; ?>
@@ -132,7 +146,7 @@
 
 
                                         <?= $detail_data->Foto_MPria; ?>
-                                        <?= $detail_data->Foto_MWanita; ?>
+                                        <?= $detail_data->Foto_MWanita; ?> -->
                                     </div>
                                 </div>
                             </div>

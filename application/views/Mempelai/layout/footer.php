@@ -110,7 +110,7 @@
 <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\bootstrap-maxlength\js\bootstrap-maxlength.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<!-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> -->
 <script>
     $(document).ready(function() {
 
@@ -254,7 +254,7 @@
             var jml_bayar = $("#jml_bayar").val();
             $.ajax({
                 type: 'POST',
-                url: '<?= site_url() ?>/snap/token',
+                url: '<?= site_url() ?>snap/token',
                 data: {
                     nama: nama,
                     jenis_kelamin: jenis_kelamin,
@@ -265,7 +265,7 @@
                 success: function(data) {
                     //location = data;
 
-                    console.log('token = ' + data);
+                    console.log('token  aaaaaa = ' + data);
 
                     var resultType = document.getElementById('result-type');
                     var resultData = document.getElementById('result-data');

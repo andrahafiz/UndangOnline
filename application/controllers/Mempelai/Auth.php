@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
+//TEST
 class Auth extends CI_Controller
 {
 
@@ -37,7 +37,7 @@ class Auth extends CI_Controller
         $akun = $this->db->get_where('tb_akun', ['Email_akun' => $email])->row_array();
         // $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun =$akun['ID_akun']");
         $id_undangan = $this->db->query("SELECT ID_Undangan FROM `tb_undangan` WHERE ID_Akun ='" . $akun['ID_akun'] . "'")->row_array();
-        // var_dump($id_undangan['ID_Undangan']);
+        // var_dump($id_undangan);
         // die;
         if ($akun) {
             //jika user aktif
@@ -46,9 +46,12 @@ class Auth extends CI_Controller
                     'Username' => $akun['Username'],
                     'Email_Akun' => $akun['Email_akun'],
                     'ID_Akun' => $akun['ID_akun'],
-                    'ID_Undangan' => $id_undangan['ID_Undangan']
+                    'ID_Undangan' => $id_undangan['ID_Undangan'],
+                    'Status_Akun' => $akun['Status_akun']
                 ];
                 $this->session->set_userdata($data);
+                // print_r($data);
+                // die();
                 redirect('Mempelai/Pembayaran');
             } elseif ($akun['Status_akun'] == 2) {
                 //cek password
@@ -57,8 +60,10 @@ class Auth extends CI_Controller
                         'Username' => $akun['Username'],
                         'Email_Akun' => $akun['Email_akun'],
                         'ID_Akun' => $akun['ID_akun'],
-                        'ID_Undangan' => $id_undangan['ID_Undangan']
+                        'ID_Undangan' => $id_undangan['ID_Undangan'],
+                        'Status_Akun' => $akun['Status_akun'],
                     ];
+
                     $this->session->set_userdata($data);
                     redirect("Mempelai/Dashboard");
                 } else {
@@ -127,6 +132,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata("Email_Akun");
         $this->session->unset_userdata("ID_Akun");
         $this->session->unset_userdata("ID_Undangan");
+        $this->session->unset_userdata("Status_akun");
         $this->session->sess_destroy();
         redirect('Mempelai');
     }
@@ -174,11 +180,10 @@ class Auth extends CI_Controller
         $this->db->insert('token', $akun_token);
         $this->_sendEmail($token, 'verify');
 
-
-        // $id_akun = $data['ID_akun'];
-        // $id_acara = $this->CreateDataAcara();
-        // $id_mempelai = $this->CreateDataMempelai();
-        // $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
+        $id_akun = $data['ID_akun'];
+        $id_acara = $this->CreateDataAcara();
+        $id_mempelai = $this->CreateDataMempelai();
+        $this->CreateDataUndangan($id_akun, $id_acara, $id_mempelai);
     }
     private function _sendEmail($token, $type)
     {
@@ -198,11 +203,16 @@ class Auth extends CI_Controller
 
         $this->email->from('joyoom34@gmail.com', 'Get Married');
         $this->email->to($this->input->post('email'));
+        $data['link'] = base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token);
+        // base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '";
+        $email_aktifasi = $this->load->view('Email_Activation', $data, TRUE);
+
         if ($type == 'verify') {
 
             $this->email->subject('Verifikasi Akun');
-            $this->email->message('Click this link to verify you account :
-                <a href="' . base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Aktifasi</a>');
+            // $this->email->message('Click this link to verify you account :
+            //     <a href="' . base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Aktifasi</a>');
+            $this->email->message($email_aktifasi);
         }
 
         if ($this->email->send()) {
@@ -261,7 +271,6 @@ class Auth extends CI_Controller
             'ID_Mempelai' => $mempelai_id,
             'ID_Acara' => $acara_id,
             'ID_Akun' => $akun_id,
-            'ID_Kategori' => 'KTG1',
             'ID_Tema' => 'THM1',
             'tgl_buatakun' => time(),
             'tgl_selesaiakun' => time() + (60 * 60 * 24 * 7)
