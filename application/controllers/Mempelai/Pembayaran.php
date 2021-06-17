@@ -22,7 +22,7 @@ class Pembayaran extends CI_Controller
             'data_akun' => $this->data_akun($id),
             'status' => $this->db->query("SELECT * FROM tb_transaksi WHERE kode_undangan = '$id_undangan'")->row()
         );
-        // print_r($data['data_akun']);
+        // print_r($data);
         // die;
         $this->load->view('Mempelai/layout/header', $data);
         // $this->load->view('Mempelai/layout/navbar', $data);

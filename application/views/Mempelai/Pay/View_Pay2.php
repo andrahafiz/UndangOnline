@@ -4,33 +4,14 @@
             <div class="main-body">
                 <div class="page-wrapper">
                     <div class="page-body">
-
                     </div>
-                    <!-- </div> -->
-                    <!-- </div> -->
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
-<!-- <div class="md-modal md-effect-1 md-show" id="Modal-P">
-        <div class="md-content">
-            <h3>Modal Dialog</h3>
-            <div>
-                <p>This is a modal window. You can do the following things with it:</p>
-                <ul>
-                    <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                    <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                    <li><strong>Close:</strong> click on the button below to close the modal.</li>
-                </ul>
-                <button type="button" class="btn btn-primary waves-effect md-close">Close</button>
-            </div>
-        </div>
-    </div> -->
-<!-- MODAL INPUTA DATA TAMU -->
-<?php if ($status) { ?>
+<!-- MODAL Sedang Menuggu Proses Pembayaran -->
+<?php if ($status == 1) { ?>
     <div class="modal fade md-show" id="Modal-P" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-center" role="document">
             <!-- <div class="modal-content"> -->
@@ -66,6 +47,10 @@
             </div>
         </div>
     </div>
+<?php  } elseif ($status == 2) { ?>
+    "test"
+
+
 <?php  } else { ?>
     <div class="modal fade md-show" id="Modal-P" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-center" role="document">
