@@ -12,7 +12,7 @@
                             <!-- HTML5 Export Buttons table start -->
                             <div class="card">
                                 <div class="card-header table-card-header">
-                                    <h3>Transaksi Undangann</h3>
+                                    <h3>Transaksi Undangan</h3>
 
                                 </div>
                                 <div class="card-block">
