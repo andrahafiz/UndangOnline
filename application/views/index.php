@@ -144,7 +144,7 @@
     </header>
 
     <!--====== CARI UNDANGAN ======-->
-    <div class="brand-area pt-90">
+    <!-- <div class="brand-area pt-90">
         <div class="container">
             <div class="line"></div>
             <div class="col-lg-12">
@@ -176,11 +176,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> <!-- row -->
-            <div class="line mt-5"></div>
-        </div> <!-- container -->
-    </div>
+                </div> -->
+    <!-- </div> row -->
+    <!-- <div class="line mt-5"></div>
+        </div> container -->
+    <!-- </div> -->
     <!--====== END CARI UNDANGAN ======-->
 
     <!--====== TEMA PART START ======-->
@@ -210,7 +210,7 @@
                             </div>
                             <div class="team-content">
                                 <h5 class="holder-name "><a href="#"><span class="text-uppercase"><?= $value->nama_thema ?></span> </a></h5>
-                                <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p>
+                                <!-- <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p> -->
                             </div>
                         </div>
                     </div>
