@@ -168,7 +168,7 @@
             </div>
         </div>
 
-        <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
+        <div id="fh5co-event" class="fh5co-bg" style="background-image:url(<?= base_url('assets/Tema/Tema1/') ?>images/img_bg_2.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
@@ -435,8 +435,10 @@
     </div>
 
     <div class="sendgift js-top">
-        <a href="index.html" data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah</a>
+        <a data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah</a>
     </div>
+
+
     <!-- Modal -->
     <div class="modal fade" id="kirimhadiah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
