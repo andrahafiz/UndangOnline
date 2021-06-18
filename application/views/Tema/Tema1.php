@@ -67,7 +67,7 @@
     <!--[if lt IE 9]>
 	<script src="<?= base_url('assets/Tema/Tema1/') ?>js/respond.min.js"></script>
 	<![endif]-->
-
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-6NV2MTOLU1VB-kDR"></script>
 </head>
 
 <body>
@@ -530,7 +530,7 @@
             var jml_bayar = $("#jml_bayar").val();
             $.ajax({
                 type: 'POST',
-                url: '<?= site_url() ?>/snap/token_hadiah',
+                url: '<?= site_url() ?>snap/token_hadiah',
                 data: {
                     nama: nama,
                     jenis_kelamin: jenis_kelamin,
