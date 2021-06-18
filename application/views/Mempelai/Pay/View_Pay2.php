@@ -116,7 +116,7 @@
                                     <div class="row m-t-25">
                                         <div class="col-sm-6">
                                             <h5 class="m-b-10 f-w-600">No Handphone</h5>
-                                            <input type="text" ame="jml_bayar" id="jml_bayar" class=" text-muted f-w-400 border-0" readonly value="100000"></input>
+                                            <input type="text" name="jml_bayar" id="jml_bayar" class=" text-muted f-w-400 border-0" readonly value="100000"></input>
                                             <!-- <h6 class="text-muted f-w-400"><?= format_nohp($data_akun['NoHp_akun']) ?></h6> -->
                                         </div>
                                         <div class="col-sm-6">
