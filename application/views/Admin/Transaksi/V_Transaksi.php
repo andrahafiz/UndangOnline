@@ -46,7 +46,7 @@
                                                             <?php
 
                                                             if ($value->status_code == 201) {
-                                                                echo '<label class="badge badge-lg bg-inverse">Pending</label>';
+                                                                echo '<label class="badge badge-lg bg-warning">Pending</label>';
                                                             } elseif ($value->status_code == 200) {
                                                                 echo '<label class="badge badge-lg bg-success">Lunas</label>';
                                                             } else {

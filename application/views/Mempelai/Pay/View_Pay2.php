@@ -1,41 +1,50 @@
-<div class="background-pay">
-    <div class="pcoded-content">
-        <div class="pcoded-inner-content">
-            <div class="main-body">
-                <div class="page-wrapper">
-                    <div class="page-body">
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="page-body">
+                    <?php if ($status && $data_akun['Status_akun'] == "2") { ?>
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 ">
+                                <div class="card user-card-full  z-depth-bottom-3 ">
+                                    <div class="row m-l-0 m-r-0">
+                                        <div class="col-sm-4 bg-c-pink user-profile">
+                                            <div class="card-block text-center text-white">
+                                                <div class="m-b-25">
+                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\money2.png" class="img-radius">
+                                                </div>
 
-                    </div>
-                    <!-- </div> -->
-                    <!-- </div> -->
+                                                <em>Username</em>
+                                                <h2 class="f-w-600"><?= $this->session->userdata('Username') ?></h2>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="card-block">
+                                                <h2 class=" b-b-default text-center mt-5 f-52">Transaksi Berhasil</h2>
+                                                <p class="text-muted text-center f-20">Transaksi anda sudah terdaftar di dalam sistem kami, mohon menunggu
+                                                    <br>lakukan pembayaran!!!<br>
+                                                    <a href="<?= $status->pdf_url ?>" class="text-center">Panduan Transfer</a>
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
-<!-- <div class="md-modal md-effect-1 md-show" id="Modal-P">
-        <div class="md-content">
-            <h3>Modal Dialog</h3>
-            <div>
-                <p>This is a modal window. You can do the following things with it:</p>
-                <ul>
-                    <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                    <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                    <li><strong>Close:</strong> click on the button below to close the modal.</li>
-                </ul>
-                <button type="button" class="btn btn-primary waves-effect md-close">Close</button>
-            </div>
-        </div>
-    </div> -->
+<!-- </div> -->
+
 <!-- MODAL INPUTA DATA TAMU -->
-<?php if ($status) { ?>
+<?php if ($status  && $data_akun['Status_akun'] == "1") { ?>
     <div class="modal fade md-show" id="Modal-P" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-center" role="document">
-            <!-- <div class="modal-content"> -->
-
-            <!-- <div class="modal-body"> -->
             <div class="row">
                 <div class="col-xl-12 col-md-12 ">
                     <div class="card user-card-full  z-depth-bottom-3 ">
@@ -66,7 +75,7 @@
             </div>
         </div>
     </div>
-<?php  } else { ?>
+<?php  } elseif ($status == false && $data_akun['Status_akun'] == "1") { ?>
     <div class="modal fade md-show" id="Modal-P" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-center" role="document">
             <!-- <div class="modal-content"> -->
@@ -131,12 +140,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- </div> -->
-                    <!-- </div> -->
                 </div>
-
             </div>
         </div>
     </div>
 <?php } ?>
-<!--END MODAL INPUTA DATA TAMU -->

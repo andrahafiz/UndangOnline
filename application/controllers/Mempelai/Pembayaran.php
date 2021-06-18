@@ -18,14 +18,21 @@ class Pembayaran extends CI_Controller
         $id_undangan =   $this->session->userdata('ID_Undangan');
         $data = array(
             'judul' => 'Pembayaran',
-            'menu' =>   $menu = [['Pembayaran'], ['fa fa-credit-card'], ['Mempelai/Pembayaran']],
+            'menu' =>   menu_mempelai(),
             'data_akun' => $this->data_akun($id),
             'status' => $this->db->query("SELECT * FROM tb_transaksi WHERE kode_undangan = '$id_undangan'")->row()
         );
-        // print_r($data['data_akun']);
+        // print_r($data['status']);
+        // if ($data['status'] && $data['data_akun']['Status_akun'] == 2) {
+        //     echo "Ada data";
+        // } else {
+        //     echo "tidak ada data";
+        // }
         // die;
         $this->load->view('Mempelai/layout/header', $data);
-        // $this->load->view('Mempelai/layout/navbar', $data);
+        if ($data['status'] && $data['data_akun']['Status_akun'] == 2) {
+            $this->load->view('Mempelai/layout/navbar', $data);
+        }
         $this->load->view('Mempelai/Pay/View_Pay2', $data);
         $this->load->view('Mempelai/layout/footer');
     }
