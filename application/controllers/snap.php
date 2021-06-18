@@ -161,6 +161,33 @@ class Snap extends CI_Controller
 			echo "Gagal Simpan 2";
 		}
 	}
+	public function finish_hadiah()
+	{
+		$result = json_decode($this->input->post('result_data'), true);
+
+		// echo "<prev>";
+		// var_dump($result);
+		// echo $result['va_numbers'][0]['bank'];
+		// die;
+		$data = [
+			'order_id' => $result['order_id'],
+			'gross_amount' => $result['gross_amount'],
+			'payment_type' => $result['payment_type'],
+			'transaction_time' => $result['transaction_time'],
+			'bank' => $result['va_numbers'][0]['bank'],
+			'va_numbers' => $result['va_numbers'][0]["bank"],
+			'pdf_url' => $result['pdf_url'],
+			'status_code' => $result['status_code'],
+			'kode_undangan' => $this->input->post('kode_undangan')
+		];
+		
+		$simpan = $this->db->insert('pembayaran_undangan', $data);
+		if ($simpan) {
+			redirect('Mempelai/Pembayaran');
+		} else {
+			echo "Gagal Simpan 1";
+		}	
+	}
 
 	//untuk transaksi hadiah
 	public function token_hadiah()
@@ -215,34 +242,5 @@ class Snap extends CI_Controller
 		$snapToken = $this->midtrans->getSnapToken($transaction_data);
 		error_log($snapToken);
 		echo $snapToken;
-	}
-
-	public function finish_hadiah()
-	{
-		$result = json_decode($this->input->post('result_data'), true);
-		$kode = $this->input->post('kode');
-		// var_dump($result);
-		// die;
-		// echo "<prev>";
-		// var_dump($result);
-		// echo $result['va_numbers'][0]['bank'];
-		// die;
-		$data = [
-			'order_id' => $result['order_id'],
-			'gross_amount' => $result['gross_amount'],
-			'payment_type' => $result['payment_type'],
-			'transaction_time' => $result['transaction_time'],
-			'bank' => $result['va_numbers'][0]['bank'],
-			'va_numbers' => $result['va_numbers'][0]["bank"],
-			'pdf_url' => $result['pdf_url'],
-			'status_code' => $result['status_code'],
-			'kode_undangan' => $kode
-		];
-		$simpan = $this->db->insert('pembayaran_undangan', $data);
-		if ($simpan) {
-			echo "Sukses";
-		} else {
-			echo "Gagal";
-		}
 	}
 }

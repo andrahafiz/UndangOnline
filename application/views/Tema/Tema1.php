@@ -444,29 +444,34 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Form Ucapan Selamat</h4>
+                    <form id="payment-form" method="post" action="<?= base_url() ?>snap/finish_hadiah">
+                        <input type="hidden" name="result_type" id="result-type" value="">
+                        <input type="hidden" name="result_data" id="result-data" value="">
+                        <input type="hidden" name="kode_undangan" id="result-data" value="<?= $this->session->userdata('ID_Undangan') ?>">
+                        <div class="m-b-25">
+                            <img src="<?= base_url(); ?>assets\Mempelai\images\money2.png" class="img-radius">
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Form Ucapan Selamat</h4>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-
-                        <div class="checkbox">
+                    <div class="form-group">
+                        <label for="Username">Nama : </label>
+                        <input type="text" class="form-control" id="Username" placeholder="Nama Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Berikan Ucapan Selamat : </label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mantan Tidak Diperkenankan">
+                    </div>
+                    <!-- <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Check me out
                             </label>
-                        </div>
+                        </div> -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button Pclass="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" id="pay-button">Kirim Hadiah</button>
                     </form>
                 </div>
             </div>
@@ -514,6 +519,61 @@
             month: d.getMonth() + 1,
             day: d.getDate(),
             enableUtc: false
+        });
+
+        $('#pay-button').click(function(event) {
+            event.preventDefault();
+            $(this).attr("disabled", "disabled");
+
+            var nama = $("#nama").val();
+            var jenis_kelamin = $("#jenis_kelamin").val();
+            var jml_bayar = $("#jml_bayar").val();
+            $.ajax({
+                type: 'POST',
+                url: '<?= site_url() ?>/snap/token_hadiah',
+                data: {
+                    nama: nama,
+                    jenis_kelamin: jenis_kelamin,
+                    jml_bayar: jml_bayar
+                },
+                cache: false,
+
+                success: function(data) {
+                    //location = data;
+
+                    console.log('token = ' + data);
+
+                    var resultType = document.getElementById('result-type');
+                    var resultData = document.getElementById('result-data');
+
+                    function changeResult(type, data) {
+                        $("#result-type").val(type);
+                        $("#result-data").val(JSON.stringify(data));
+                        //resultType.innerHTML = type;
+                        //resultData.innerHTML = JSON.stringify(data);
+                    }
+
+                    snap.pay(data, {
+
+                        onSuccess: function(result) {
+                            changeResult('success', result);
+                            console.log(result.status_message);
+                            console.log(result);
+                            $("#payment-form").submit();
+                        },
+                        onPending: function(result) {
+                            changeResult('pending', result);
+                            console.log(result.status_message);
+                            $("#payment-form").submit();
+                        },
+                        onError: function(result) {
+                            changeResult('error', result);
+                            console.log(result.status_message);
+                            $("#payment-form").submit();
+                        }
+                    });
+                }
+            });
         });
     </script>
 
