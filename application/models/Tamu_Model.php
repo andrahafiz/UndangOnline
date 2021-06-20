@@ -34,4 +34,9 @@ class Tamu_Model extends CI_Model
         $this->db->where('ID_TamuUndangan', $id_tamu);
         $this->db->delete('tb_tamu');
     }
+    function update_tamu($where, $data)
+    {
+        $this->db->where($where);
+        $this->db->update('tb_tamu', $data);
+    }
 }

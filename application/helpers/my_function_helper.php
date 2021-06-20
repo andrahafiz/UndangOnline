@@ -228,11 +228,12 @@ function kode_otomatis($table, $colum)
     $kode = kode($table);
     $hasil = $query->row();
     $kodeangka = substr($hasil->Kode, 3);
+    // echo $kode . "" . ($kodeangka + 1);
+    // die();
     if ($hasil->Kode == null) {
         return $kode . "1";
     } else {
-        return $kode . "" . $kodeangka + 1;
+        return $kode . "" . ($kodeangka + 1);
     }
     // die;
-
 }
