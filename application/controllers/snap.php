@@ -2,7 +2,7 @@
 
 class Snap extends CI_Controller
 {
-
+	// Test
 	/**
 	 * Index Page for this controller.
 	 *
@@ -180,13 +180,13 @@ class Snap extends CI_Controller
 			'status_code' => $result['status_code'],
 			'kode_undangan' => $this->input->post('kode_undangan')
 		];
-		
+
 		$simpan = $this->db->insert('pembayaran_undangan', $data);
 		if ($simpan) {
 			redirect('Mempelai/Pembayaran');
 		} else {
 			echo "Gagal Simpan 1";
-		}	
+		}
 	}
 
 	//untuk transaksi hadiah
