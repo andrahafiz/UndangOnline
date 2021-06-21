@@ -173,10 +173,10 @@
                                     <input type="text" name="input" placeholder="Input Data...">
                                     <a href="#" onclick="document.getElementById('input').submit();">INPUT DATA</a>
                                 </form> -->
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+    </div>
+    </div>
+    </div>
+    </div> -->
     <!-- </div> row -->
     <!-- <div class="line mt-5"></div>
         </div> container -->
@@ -189,7 +189,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-30">
-                        <h3 class="title mb-2">Tema Terfavorit Di <span> Getmarried</span></h3>
+                        <h3 class="title mb-2">Tema Terfavorit Di <span> GetMarried</span></h3>
                         <div class="line m-auto"></div>
                     </div> <!-- section title -->
                 </div>
@@ -317,7 +317,7 @@
                         </div>
                         <div class="services-content mt-30">
                             <h5>Harga</h5>
-                            <h class="services-title ">Rp. 100.000</h>
+                            <h class="services-title ">Rp.100.000</h>
                         </div>
                     </div> <!-- single services -->
                 </div>
