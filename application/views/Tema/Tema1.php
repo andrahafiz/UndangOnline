@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wedding &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+    <title><?= $data_undangan->Panggilan_MPria ?> & <?= $data_undangan->Panggilan_MWanita ?> &mdash; Undangan</title>
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
     <meta name="author" content="FREEHTML5.CO" />
@@ -435,38 +435,62 @@
     </div>
 
     <div class="sendgift js-top">
-        <a data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah b</a>
+        <a data-toggle="modal" data-target="#kirimhadiah"> Kirim Hadiah</a>
     </div>
 
 
-    <!-- Modal -->
+    <!--Kirim hadiah-->
     <div class="modal fade" id="kirimhadiah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-
-                    <div class="m-b-25">
-                        <img src="<?= base_url(); ?>assets\Mempelai\images\money2.png" class="img-radius">
-                    </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Form Ucapan Selamat</h4>
                 </div>
                 <div class="modal-body">
+
                     <form id="payment-form" method="post" action="<?= base_url() ?>snap/finish_hadiah">
                         <input type="hidden" name="result_type" id="result-type" value="">
                         <input type="hidden" name="result_data" id="result-data" value="">
-                        <input type="hidden" name="kode_undangan" id="result-data" value="<?= $this->session->userdata('ID_Undangan') ?>">
-                        <div class="form-group">
-                            <label for="Username">Nama : </label>
-                            <input type="email" class="form-control" id="nama" name="nama" placeholder="Nama Anda">
+                        <input type="text" name="kode_undangan" id="kode_undangan" value="<?= $id_undangan; ?>">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="Username">Nama : </label>
+                                    <input type="email" class="form-control" id="nama" name="nama" placeholder="Nama anda">
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Berikan Ucapan Selamat : </label>
-                            <input type="text" class="form-control" id="ucapan" name="ucapan" placeholder="Mantan Tidak Diperkenankan">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="Username">Email : </label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email anda">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="Username">Whatsapp : </label>
+                                    <input type="email" class="form-control" id="no_wa" name="no_wa" placeholder="No whatsapp anda">
+                                </div>
+                            </div>
                         </div>
-                        <label for="jml_hadiah">Jumlah Hadiah</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="jml_hadiah" id="jml_hadiah">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="ucapan">Ucapan Selamat : </label>
+                                    <textarea class="form-control" id="ucapan" rows="2">Masukan ucapanmu</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="jml_hadiah">Jumlah Hadiah</label>
+                                    <input type="number" class="form-control" name="jml_hadiah" id="jml_hadiah" placeholder="Masukan jumlah hadiah">
+                                </div>
+                            </div>
                         </div>
                         <!-- <div class="checkbox">
                             <label>
@@ -475,13 +499,14 @@
                         </div> -->
                 </div>
                 <div class="modal-footer">
-                    <button Pclass="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">Keluar</button>
                     <button class="btn btn-primary" id="pay-button">Kirim Hadiah</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <!-- End Kirim Hadiah -->
 
 
     <!-- jQuery -->
@@ -532,13 +557,18 @@
                 $(this).attr("disabled", "disabled");
 
                 var nama = $("#nama").val();
+                var no_wa = $("#no_wa").val();
+                var email = $("#email").val();
                 var ucapan = $("#ucapan").val();
                 var jml_hadiah = $("#jml_hadiah").val();
+                console.log(nama, no_wa, email, ucapan, jml_hadiah);
                 $.ajax({
                     type: 'POST',
                     url: '<?= site_url() ?>snap/token_hadiah',
                     data: {
                         nama: nama,
+                        no_wa: no_wa,
+                        email: email,
                         ucapan: ucapan,
                         jml_hadiah: jml_hadiah
                     },

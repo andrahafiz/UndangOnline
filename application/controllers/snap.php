@@ -194,9 +194,10 @@ class Snap extends CI_Controller
 	{
 		$nama = $this->input->post('nama');
 		$email = $this->input->post('email');
-		$no_hp = $this->input->post('no_hp');
+		$no_wa = $this->input->post('no_wa');
 		$jml_hadiah = $this->input->post('jml_hadiah');
-		$id_undangan = $this->session->userdata('ID_Undangan');
+
+		// $id_undangan = $this->session->userdata('ID_Undangan');
 		// Required
 		$transaction_details = array(
 			'order_id' => rand(),
@@ -205,17 +206,52 @@ class Snap extends CI_Controller
 
 		// Optional
 		$item1_details = array(
-			'id' => $id_undangan,
+			// 'id' => 'a1',
 			'price' => $jml_hadiah,
 			'quantity' => 1,
-			'name' => "Pembayarann aaa (" . $id_undangan . ")"
+			'name' => "Kirim Hadiah"
 		);
 
+		// Optional
+		$item2_details = array(
+			'id' => 'a2',
+			'price' => 20000,
+			'quantity' => 2,
+			'name' => "Orange"
+		);
+
+		// Optional
 		$item_details = array($item1_details);
+
+		// Optional
+		// $billing_address = array(
+		// 	'first_name'    => "Andri",
+		// 	'last_name'     => "Litani",
+		// 	'address'       => "Mangga 20",
+		// 	'city'          => "Jakarta",
+		// 	'postal_code'   => "16602",
+		// 	'phone'         => "081122334455",
+		// 	'country_code'  => 'IDN'
+		// );
+
+		// Optional
+		// $shipping_address = array(
+		// 	'first_name'    => "Obet",
+		// 	'last_name'     => "Supriadi",
+		// 	'address'       => "Manggis 90",
+		// 	'city'          => "Jakarta",
+		// 	'postal_code'   => "16601",
+		// 	'phone'         => "08113366345",
+		// 	'country_code'  => 'IDN'
+		// );
 
 		// Optional
 		$customer_details = array(
 			'first_name'    => $nama,
+			'email'         => $email,
+			'phone'         => $no_wa,
+			// 'billing_address'  => $billing_address,
+			// 'shipping_address' => $shipping_address
 		);
 
 		// Data yang akan dikirim untuk request redirect_url.
@@ -226,8 +262,8 @@ class Snap extends CI_Controller
 		$time = time();
 		$custom_expiry = array(
 			'start_time' => date("Y-m-d H:i:s O", $time),
-			'unit' => 'day',
-			'duration'  => 1
+			'unit' => 'minute',
+			'duration'  => 2
 		);
 
 		$transaction_data = array(
