@@ -452,7 +452,7 @@
                     <h4 class="modal-title" id="myModalLabel">Form Ucapan Selamat</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="payment-form" method="post" action="<?= base_url() ?>snap/finish">
+                    <form id="payment-form" method="post" action="<?= base_url() ?>snap/finish_hadiah">
                         <input type="hidden" name="result_type" id="result-type" value="">
                         <input type="hidden" name="result_data" id="result-data" value="">
                         <input type="hidden" name="kode_undangan" id="result-data" value="<?= $this->session->userdata('ID_Undangan') ?>">
@@ -464,9 +464,9 @@
                             <label for="exampleInputPassword1">Berikan Ucapan Selamat : </label>
                             <input type="text" class="form-control" id="ucapan" name="ucapan" placeholder="Mantan Tidak Diperkenankan">
                         </div>
-                        <label for="jml_bayar">Jumlah Hadiah</label>
+                        <label for="jml_hadiah">Jumlah Hadiah</label>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="jml_bayar" id="jml_bayar">
+                            <input type="text" class="form-control" name="jml_hadiah" id="jml_hadiah">
                         </div>
                         <!-- <div class="checkbox">
                             <label>
@@ -533,14 +533,14 @@
 
                 var nama = $("#nama").val();
                 var ucapan = $("#ucapan").val();
-                var jml_bayar = $("#jml_bayar").val();
+                var jml_hadiah = $("#jml_hadiah").val();
                 $.ajax({
                     type: 'POST',
-                    url: '<?= site_url() ?>/snap/token',
+                    url: '<?= site_url() ?>snap/token_hadiah',
                     data: {
                         nama: nama,
                         ucapan: ucapan,
-                        jml_bayar: jml_bayar
+                        jml_hadiah: jml_hadiah
                     },
                     cache: false,
 
