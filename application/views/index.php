@@ -255,7 +255,7 @@
                             <div class="col-6">
                                 <div class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
-                                        <span class="count"><span class="counter"><?= $jml_akun ?></span></span>
+                                        <span class="count"><span class="counter"><?= $jml_akun + 100 ?></span></span>
                                         <p class="text">Pengguna Web</p>
                                     </div>
                                 </div> <!-- single counter -->
@@ -264,7 +264,7 @@
                             <div class="col-6">
                                 <div class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
                                     <div class="counter-items text-center">
-                                        <span class="count"><span class="counter"><?= $jml_tema ?></span></span>
+                                        <span class="count"><span class="counter"><?= $jml_tema + 20 ?></span></span>
                                         <p class="text">Tema</p>
                                     </div>
                                 </div> <!-- single counter -->
@@ -299,7 +299,7 @@
                             <h3 class="title">Harga &amp; Paket<span><br> untuk undangan yang sudah disediakan dibawah ini.</span></h3>
                         </div> <!-- section title -->
                         <ul class="text">
-                            <li>- 100 Tema</li>
+                            <li>- ± <?= $jml_tema + 20 ?> Tema</li>
                             <li>- 10 Gambar Upload</li>
                             <li>- 3 Video Upload</li>
                         </ul>
@@ -316,8 +316,8 @@
                             <i class="lni lni-diamond-alt"></i>
                         </div>
                         <div class="services-content mt-30">
-                            <h5>Harga</h5>
-                            <h class="services-title ">Rp.100.000</h>
+                            <h5 class="f-w-10">Harga</h5>
+                            <h2 class="services-title ">Rp.100.000</h2>
                         </div>
                     </div> <!-- single services -->
                 </div>
