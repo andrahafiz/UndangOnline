@@ -20,6 +20,13 @@ class Undangan_Model extends CI_Model
         $hasil = $query->row();
         return $hasil;
     }
+    public function selectbyid_undangan($id)
+    {
+        // $this->db->where('pekerjaan_id', $id);
+        $query =  $this->db->get_where('view_all', ['Url_Undangan' => $id]);
+        $hasil = $query->row();
+        return $hasil;
+    }
     public function undangan_update($id, $data)
     {
         $this->db->where('ID_Undangan', $id);
