@@ -9,6 +9,7 @@
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/LandingPage/images/favicon.png" type="image/png">
@@ -101,7 +102,7 @@
                                         <a class="page-scroll" href="#testimoni">Testimoni</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="<?= base_url('Demo') ?>">Demo</a>
+                                        <a class="page-scroll" href="<?= base_url('Demo') ?>" target="_blank">Demo</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="<?= base_url('Mempelai') ?>">Login</a>
@@ -126,7 +127,7 @@
                             <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Website</h3>
                             <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Undangan Pernikahan Online</h2>
                             <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Undang orang-orang terdekatmu, dengan menggunakan undangan pernikahan online yang praktis di GET MARRIED.</p>
-                            <a href="<?= base_url('Demo') ?>" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Demo</a>
+                            <a href="<?= base_url('Demo') ?>" target="_blank" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Demo</a>
                         </div> <!-- header hero content -->
                     </div>
                 </div> <!-- row -->
@@ -143,7 +144,7 @@
     </header>
 
     <!--====== CARI UNDANGAN ======-->
-    <div class="brand-area pt-90">
+    <!-- <div class="brand-area pt-90">
         <div class="container">
             <div class="line"></div>
             <div class="col-lg-12">
@@ -172,14 +173,14 @@
                                     <input type="text" name="input" placeholder="Input Data...">
                                     <a href="#" onclick="document.getElementById('input').submit();">INPUT DATA</a>
                                 </form> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- row -->
-            <div class="line mt-5"></div>
-        </div> <!-- container -->
     </div>
+    </div>
+    </div>
+    </div> -->
+    <!-- </div> row -->
+    <!-- <div class="line mt-5"></div>
+        </div> container -->
+    <!-- </div> -->
     <!--====== END CARI UNDANGAN ======-->
 
     <!--====== TEMA PART START ======-->
@@ -188,7 +189,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="section-title text-center pb-30">
-                        <h3 class="title mb-2">Tema Terfavorit Di <span> Getmarried</span></h3>
+                        <h3 class="title mb-2">Tema Terfavorit Di <span> GetMarried</span></h3>
                         <div class="line m-auto"></div>
                     </div> <!-- section title -->
                 </div>
@@ -203,13 +204,13 @@
 
                                 <div class="social">
                                     <ul>
-                                        <li> <a href="<?= base_url('Demo') ?>"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
+                                        <li> <a href="<?= base_url('Demo') ?>" target="blank"><i class="lni lni-search"></i><strong>&nbsp;&nbsp;Preview</strong> </a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="team-content">
                                 <h5 class="holder-name "><a href="#"><span class="text-uppercase"><?= $value->nama_thema ?></span> </a></h5>
-                                <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p>
+                                <!-- <p class="text"><?= $value->jumlah_tema ?> <i class="lni lni-star-filled text-warning"></i></p> -->
                             </div>
                         </div>
                     </div>
@@ -316,7 +317,7 @@
                         </div>
                         <div class="services-content mt-30">
                             <h5>Harga</h5>
-                            <h class="services-title ">Rp. 100.000</h>
+                            <h class="services-title ">Rp.100.000</h>
                         </div>
                     </div> <!-- single services -->
                 </div>
