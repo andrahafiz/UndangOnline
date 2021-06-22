@@ -16,7 +16,9 @@
                                         </div>
                                         <div class="col-md-4 m-b-5">
                                             <!-- <button class="btn btn-primary f-right "></button> -->
-                                            <button type="button" class="btn btn-primary waves-effect f-right" data-toggle="modal" data-target="#large-Modal">Tambah Tamu Undangan</button>
+                                            <a href="<?= base_url('Mempelai/Tamu/tambahdata') ?>">
+                                                <button type="button" class="btn btn-primary waves-effect f-right">Tambah Tamu Undangan</button>
+                                            </a>
                                         </div>
                                     </div>
                                     <hr>

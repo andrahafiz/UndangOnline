@@ -52,25 +52,57 @@ class Tamu extends CI_Controller
 
     public function tambahdata()
     {
-        $data = $this->_datatamu();
-        // var_dump($data);
-        // die();
-        $email = $this->input->post('email_tamu');
-        $wa  = $this->input->post('wa_tamu');
-
-        // print_r($email);
-        // print_r($wa);
-        // die();
-        // // if()
-        $this->Tamu_Model->tambah_data_tamu($data);
-        if ($this->db->affected_rows() > 0) {
-            echo "<script> alert('data berhasil');</script>";
-            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+        $this->form_validation->set_rules('email_tamu', 'Nama Lengkap Mempelai Pria', 'required|callback_validate_member');
+        if ($this->form_validation->run() == FALSE) {
+            $data = array(
+                'judul' => 'Tamu Undangan',
+                'menu' => menu_mempelai(),
+            );
+            // var_dump($tamu);
+            // echo "<br><br>";
+            // var_dump($data);
+            // die;
+            // var_dump($data['tamu'][0]->UcapanSelamat);
+            // // echo $data['tamu']['UcapanSelamat'];
+            // if ($data['tamu'][0]->UcapanSelamat == null) {
+            //     echo "kosong";
+            // } else {
+            //     echo "berisi";
+            // }
+            // die;
+            $this->load->view('Mempelai/layout/header', $data);
+            $this->load->view('Mempelai/layout/navbar', $data);
+            $this->load->view('Mempelai/Tamu/V_Tambah_Tamu');
+            $this->load->view('Mempelai/layout/footer');
         } else {
-            echo "<script> alert('data tidak berhasil');</script>";
-            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            $data = $this->_datatamu();
+            // var_dump($data);
+            // die();
+            $email = $this->input->post('email_tamu');
+            $wa  = $this->input->post('wa_tamu');
+            $this->Tamu_Model->tambah_data_tamu($data);
+            if ($this->db->affected_rows() > 0) {
+                echo "<script> alert('data berhasil');</script>";
+                echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            } else {
+                echo "<script> alert('data tidak berhasil');</script>";
+                echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            }
         }
     }
+
+    function validate_member($str)
+    {
+        $field_value = $str; //this is redundant, but it's to show you how
+        //the content of the fields gets automatically passed to the method
+
+        if ($this->members_model->validate_member($field_value)) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
     public function edit()
     {
         $id_tamu =  htmlspecialchars($this->input->post('edit_id_undangan', true));
