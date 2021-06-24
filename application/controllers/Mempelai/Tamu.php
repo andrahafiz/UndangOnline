@@ -49,15 +49,79 @@ class Tamu extends CI_Controller
             echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
         }
     }
+    public function validate_member($str)
+    {
+        // var_dump($str);
+        // var_dump(explode);
+        // die();
+        // $data = explode(",", $email);
+        $email = $this->input->post('email_tamu');
+        $wa = $this->input->post('wa_tamu');
+        // echo $email;
+        // echo $wa;
+        // if (empty($email)) {
+        //     echo "Email Kosong";
+        // }
+        // if (empty($wa)) {
+        //     echo "wa Kosong";
+        // }
 
+        // if (empty($email) && empty($wa)) {
+        //     echo "wa emailKosong";
+        // }
+        // die();
+
+
+        $field_value = $str; //this is redundant, but it's to show you ho
+        $count_email = count($this->Tamu_Model->cek_email($email));
+        $count_wa = count($this->Tamu_Model->cek_no_wa($wa));
+        // echo $count_email;
+        // // // echo $count_wa;
+        // die();
+        if (empty($wa) && empty($email)) {
+            if ($count_email > 0) {
+                $this->form_validation->set_message('validate_member', 'Email sudah ada di sistem');
+                return False;
+            } else {
+                $this->form_validation->set_message('validate_member', 'Isi salah satu, Email atau Nomor Whatsapp');
+                return False;
+            }
+        } elseif (empty($wa) || empty($email)) {
+            if ($count_email > 0) {
+                $this->form_validation->set_message('validate_member', 'Email sudah ada di sistem');
+                return False;
+            } else {
+                return TRUE;
+            }
+        }
+        if ($count_email > 0) {
+            $this->form_validation->set_message('validate_member', 'Email sudah ada di sistem');
+            return False;
+        }
+
+
+
+
+        // //the content of the fields gets automatically passed to the method
+
+        // if (count($count_email) != 0) {
+        //     return FALSE;
+        // } elseif ($) {
+        // } else {
+        //     return TRUE;
+        // }
+    }
     public function tambahdata()
     {
-        $this->form_validation->set_rules('email_tamu', 'Nama Lengkap Mempelai Pria', 'required|callback_validate_member');
+        // $this->form_validation->set_rules('email_tamu', 'Email', 'callback_validate_member[' . $this->input->post('wa_tamu') . ',' . $this->input->post('email_tamu') . ']');
+        $this->form_validation->set_rules('email_tamu', 'Email', 'is_unique[tb_tamu.Email_Tamu]|callback_validate_member');
+        $this->form_validation->set_rules('wa_tamu', 'Wa Tamu', 'is_unique[tb_tamu.Wa_Tamu]');
         if ($this->form_validation->run() == FALSE) {
             $data = array(
                 'judul' => 'Tamu Undangan',
                 'menu' => menu_mempelai(),
             );
+
             // var_dump($tamu);
             // echo "<br><br>";
             // var_dump($data);
@@ -75,6 +139,8 @@ class Tamu extends CI_Controller
             $this->load->view('Mempelai/Tamu/V_Tambah_Tamu');
             $this->load->view('Mempelai/layout/footer');
         } else {
+            // var_dump();
+            // die();
             $data = $this->_datatamu();
             // var_dump($data);
             // die();
@@ -91,17 +157,7 @@ class Tamu extends CI_Controller
         }
     }
 
-    function validate_member($str)
-    {
-        $field_value = $str; //this is redundant, but it's to show you how
-        //the content of the fields gets automatically passed to the method
 
-        if ($this->members_model->validate_member($field_value)) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
-    }
 
     public function edit()
     {

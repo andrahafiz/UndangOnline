@@ -16,7 +16,18 @@ class Tamu_Model extends CI_Model
         $hasil = $query->result();
         return $hasil;
     }
-
+    public function cek_email($email)
+    {
+        $query =  $this->db->get_where('tb_tamu', ['Email_Tamu=' => $email]);
+        $hasil = $query->result();
+        return $hasil;
+    }
+    public function cek_no_wa($no_wa)
+    {
+        $query =  $this->db->get_where('tb_tamu', ['Wa_Tamu=' => $no_wa]);
+        $hasil = $query->result();
+        return $hasil;
+    }
     public function tambah_data_tamu($data)
     {
         $this->db->insert('tb_tamu', $data);

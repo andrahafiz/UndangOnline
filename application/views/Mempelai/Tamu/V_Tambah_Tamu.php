@@ -42,7 +42,7 @@
                                             <div class="col-sm-8 col-lg-10">
                                                 <div class="input-group">
                                                     <span class="input-group-addon round-left "><i class="icofont icofont-email"></i></span>
-                                                    <input type="text" required id="email_tamu" name="email_tamu" class="form-control form-control-round  m-b-10" placeholder="Email Tamu">
+                                                    <input type="text" id="email_tamu" name="email_tamu" class="form-control form-control-round  m-b-10" placeholder="Email Tamu">
                                                 </div>
                                             </div>
                                         </div>
@@ -51,7 +51,7 @@
                                             <div class="col-sm-8 col-lg-10">
                                                 <div class="input-group">
                                                     <span class="input-group-addon round-left "><i class="icofont icofont-brand-whatsapp"></i></span>
-                                                    <input type="number" required id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
+                                                    <input type="number" id="wa_tamu" name="wa_tamu" class="form-control form-control-round  m-b-10" placeholder="No Whatsapp Tamu">
                                                 </div>
                                             </div>
                                         </div>
