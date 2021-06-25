@@ -144,7 +144,7 @@
     </header>
 
     <!--====== CARI UNDANGAN ======-->
-    <!-- <div class="brand-area pt-90">
+    <div class="brand-area pt-90">
         <div class="container">
             <div class="line"></div>
             <div class="col-lg-12">
@@ -162,25 +162,13 @@
 
                                     <button type="button" id="btn_id" class="main-btn" onclick="submit_by_id()">Cari</button>
                                 </form>
-                                <!-- <form action="#" method="post" name="form_name" id="form_id" class="form_class">
-                                    <h2>Javascript Form Submit Example</h2>
-                                    <label>Name :</label>
-                                    <input type="text" name="name" id="name" placeholder="Name" />
-                                    <label>Email :</label>
-                                    <input type="text" name="email" id="email" placeholder="Valid Email" />
-                                    <input type="button" name="submit_id" id="btn_id" value="Submit by Id" />
-                                    <form id="input" method="post">
-                                    <input type="text" name="input" placeholder="Input Data...">
-                                    <a href="#" onclick="document.getElementById('input').submit();">INPUT DATA</a>
-                                </form> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    </div> -->
-    <!-- </div> row -->
-    <!-- <div class="line mt-5"></div>
-        </div> container -->
-    <!-- </div> -->
     <!--====== END CARI UNDANGAN ======-->
 
     <!--====== TEMA PART START ======-->
@@ -269,14 +257,6 @@
                                     </div>
                                 </div> <!-- single counter -->
                             </div>
-                            <!-- <div class="col-4">
-                                <div class="single-counter counter-color-3 d-flex align-items-center justify-content-center">
-                                    <div class="counter-items text-center">
-                                        <span class="count"><span class="counter">4.8</span></span>
-                                        <p class="text">User Rating</p>
-                                    </div>
-                                </div> 
-                            </div> -->
                         </div> <!-- row -->
                     </div> <!-- counter wrapper -->
                 </div>

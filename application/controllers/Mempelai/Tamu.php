@@ -51,33 +51,13 @@ class Tamu extends CI_Controller
     }
     public function validate_member($str)
     {
-        // var_dump($str);
-        // var_dump(explode);
-        // die();
-        // $data = explode(",", $email);
         $email = $this->input->post('email_tamu');
         $wa = $this->input->post('wa_tamu');
-        // echo $email;
-        // echo $wa;
-        // if (empty($email)) {
-        //     echo "Email Kosong";
-        // }
-        // if (empty($wa)) {
-        //     echo "wa Kosong";
-        // }
-
-        // if (empty($email) && empty($wa)) {
-        //     echo "wa emailKosong";
-        // }
-        // die();
 
 
         $field_value = $str; //this is redundant, but it's to show you ho
         $count_email = count($this->Tamu_Model->cek_email($email));
         $count_wa = count($this->Tamu_Model->cek_no_wa($wa));
-        // echo $count_email;
-        // // // echo $count_wa;
-        // die();
         if (empty($wa) && empty($email)) {
             if ($count_email > 0) {
                 $this->form_validation->set_message('validate_member', 'Email sudah ada di sistem');
@@ -98,18 +78,6 @@ class Tamu extends CI_Controller
             $this->form_validation->set_message('validate_member', 'Email sudah ada di sistem');
             return False;
         }
-
-
-
-
-        // //the content of the fields gets automatically passed to the method
-
-        // if (count($count_email) != 0) {
-        //     return FALSE;
-        // } elseif ($) {
-        // } else {
-        //     return TRUE;
-        // }
     }
     public function tambahdata()
     {

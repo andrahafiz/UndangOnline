@@ -455,7 +455,7 @@
                         <input type="text" name="kode_undangan" id="kode_undangan" value="<?= $id_undangan; ?>">
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="form-group">
+                                <div class="form-group" id="input_nama">
                                     <label for="Username">Nama : </label>
                                     <input type="email" class="form-control" id="nama" name="nama" placeholder="Nama anda">
                                 </div>
@@ -464,13 +464,13 @@
 
                         <div class="row">
                             <div class="col-xs-6">
-                                <div class="form-group">
+                                <div class="form-group" id="input_email">
                                     <label for="Username">Email : </label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="Email anda">
                                 </div>
                             </div>
                             <div class="col-xs-6">
-                                <div class="form-group">
+                                <div class="form-group" id="input_wa">
                                     <label for="Username">Whatsapp : </label>
                                     <input type="email" class="form-control" id="no_wa" name="no_wa" placeholder="No whatsapp anda">
                                 </div>
@@ -478,20 +478,32 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="form-group">
+                                <div class="form-group" id="input_ucapan">
                                     <label for="ucapan">Ucapan Selamat : </label>
-                                    <textarea class="form-control" id="ucapan" rows="2">Masukan ucapanmu</textarea>
+                                    <textarea class="form-control" id="ucapan" rows="2" placeholder="Masukan ucapanmu"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label for="jml_hadiah">Jumlah Hadiah</label>
-                                    <input type="number" class="form-control" name="jml_hadiah" id="jml_hadiah" placeholder="Masukan jumlah hadiah">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="checkhadiah">
+                                    <label class="form-check-label" for="checkhadiah">
+                                        Kirim Hadiah
+                                    </label>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group" id="input_hadiah">
+                                    <!-- <label for="jml_hadiah">Jumlah Hadiah</label>
+                                    <input type="number" class="form-control" name="jml_hadiah" id="jml_hadiah" placeholder="Masukan jumlah hadiah"> -->
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Check me out
@@ -536,6 +548,9 @@
     <script>
         $(document).ready(function() {
             var d = new Date(new Date().getTime() + 10 * 120 * 120 * 2000);
+            $('#jml_hadiah').mask('000.000.000', {
+                reverse: true
+            });
 
             // default example
             simplyCountdown('.simply-countdown-one', {
@@ -543,6 +558,16 @@
                 month: d.getMonth() + 1,
                 day: d.getDate()
             });
+
+            $("#checkhadiah").change(function() {
+                var $input = $(this);
+                var $test = $input.is(":checked");
+                if ($input.is(":checked")) {
+                    $("#input_hadiah").html('<input type="number" class="form-control" name="jml_hadiah" id="jml_hadiah" placeholder="Masukan jumlah hadiah">');
+                } else {
+                    $("#input_hadiah").html("");
+                };
+            }).change();
 
             //jQuery example
             $('#simply-countdown-losange').simplyCountdown({
@@ -554,62 +579,71 @@
 
             $('#pay-button').click(function(event) {
                 event.preventDefault();
-                $(this).attr("disabled", "disabled");
+                // $(this).attr("disabled", "disabled");
 
                 var nama = $("#nama").val();
                 var no_wa = $("#no_wa").val();
                 var email = $("#email").val();
                 var ucapan = $("#ucapan").val();
                 var jml_hadiah = $("#jml_hadiah").val();
-                console.log(nama, no_wa, email, ucapan, jml_hadiah);
-                $.ajax({
-                    type: 'POST',
-                    url: '<?= site_url() ?>snap/token_hadiah',
-                    data: {
-                        nama: nama,
-                        no_wa: no_wa,
-                        email: email,
-                        ucapan: ucapan,
-                        jml_hadiah: jml_hadiah
-                    },
-                    cache: false,
+                // console.log(nama, no_wa, email, ucapan, jml_hadiah);
+                var $input = $('#checkhadiah');
+                var $test = $input.is(":checked");
+                // alert($test);
+                if ($test == true) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?= site_url() ?>snap/token_hadiah',
+                        data: {
+                            nama: nama,
+                            no_wa: no_wa,
+                            email: email,
+                            ucapan: ucapan,
+                            jml_hadiah: jml_hadiah
+                        },
+                        cache: false,
 
-                    success: function(data) {
-                        //location = data;
+                        success: function(data) {
+                            //location = data;
 
-                        console.log('token = ' + data);
+                            console.log('token = ' + data);
 
-                        var resultType = document.getElementById('result-type');
-                        var resultData = document.getElementById('result-data');
+                            var resultType = document.getElementById('result-type');
+                            var resultData = document.getElementById('result-data');
 
-                        function changeResult(type, data) {
-                            $("#result-type").val(type);
-                            $("#result-data").val(JSON.stringify(data));
-                            //resultType.innerHTML = type;
-                            //resultData.innerHTML = JSON.stringify(data);
-                        }
-
-                        snap.pay(data, {
-
-                            onSuccess: function(result) {
-                                changeResult('success', result);
-                                console.log(result.status_message);
-                                console.log(result);
-                                $("#payment-form").submit();
-                            },
-                            onPending: function(result) {
-                                changeResult('pending', result);
-                                console.log(result.status_message);
-                                $("#payment-form").submit();
-                            },
-                            onError: function(result) {
-                                changeResult('error', result);
-                                console.log(result.status_message);
-                                $("#payment-form").submit();
+                            function changeResult(type, data) {
+                                $("#result-type").val(type);
+                                $("#result-data").val(JSON.stringify(data));
+                                //resultType.innerHTML = type;
+                                //resultData.innerHTML = JSON.stringify(data);
                             }
-                        });
-                    }
-                });
+
+                            snap.pay(data, {
+
+                                onSuccess: function(result) {
+                                    changeResult('success', result);
+                                    console.log(result.status_message);
+                                    console.log(result);
+                                    $("#payment-form").submit();
+                                },
+                                onPending: function(result) {
+                                    changeResult('pending', result);
+                                    console.log(result.status_message);
+                                    $("#payment-form").submit();
+                                },
+                                onError: function(result) {
+                                    changeResult('error', result);
+                                    console.log(result.status_message);
+                                    $("#payment-form").submit();
+                                }
+                            });
+                        }
+                    });
+
+                } else {
+                    alert("TEST");
+                }
+
 
             });
         });
