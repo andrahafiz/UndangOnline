@@ -503,7 +503,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Check me out
@@ -533,7 +532,8 @@
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/owl.carousel.min.js"></script>
     <!-- countTo -->
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.countTo.js"></script>
-
+    <!-- Mask -->
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/autoNumeric.js"></script>
     <!-- Stellar -->
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.stellar.min.js"></script>
     <!-- Magnific Popup -->
@@ -548,9 +548,7 @@
     <script>
         $(document).ready(function() {
             var d = new Date(new Date().getTime() + 10 * 120 * 120 * 2000);
-            $('#jml_hadiah').mask('000.000.000', {
-                reverse: true
-            });
+            // $('#jml_hadiah').autoNumeric('init');
 
             // default example
             simplyCountdown('.simply-countdown-one', {
@@ -563,7 +561,9 @@
                 var $input = $(this);
                 var $test = $input.is(":checked");
                 if ($input.is(":checked")) {
-                    $("#input_hadiah").html('<input type="number" class="form-control" name="jml_hadiah" id="jml_hadiah" placeholder="Masukan jumlah hadiah">');
+                    $("#input_hadiah").html('<input type="text" class="form-control" name="jml_hadiah" id="jml_hadiah"  data-a-dec="," data-a-sep="." placeholder="Masukan jumlah hadiah">');
+                    // $("#input_hadiah").html('  <input type="text" id="rupiah" data-a-sign="Rp. " data-a-dec="," data-a-sep=".">');
+                    $('#jml_hadiah').autoNumeric('init');
                 } else {
                     $("#input_hadiah").html("");
                 };
@@ -585,8 +585,9 @@
                 var no_wa = $("#no_wa").val();
                 var email = $("#email").val();
                 var ucapan = $("#ucapan").val();
-                var jml_hadiah = $("#jml_hadiah").val();
-                // console.log(nama, no_wa, email, ucapan, jml_hadiah);
+                var jml_hadiah = $("#jml_hadiah").autoNumeric('get');
+                // $(#jml_hadiah).
+                console.log(nama, no_wa, email, ucapan, jml_hadiah);
                 var $input = $('#checkhadiah');
                 var $test = $input.is(":checked");
                 // alert($test);
