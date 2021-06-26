@@ -449,10 +449,11 @@
                 </div>
                 <div class="modal-body">
 
-                    <form id="payment-form" method="post" action="<?= base_url() ?>snap/finish_hadiah">
+                    <form id="payment-form" name="payment-form" method="post" action="<?= base_url() ?>Snap/finish_hadiah">
                         <input type="hidden" name="result_type" id="result-type" value="">
                         <input type="hidden" name="result_data" id="result-data" value="">
                         <input type="text" name="kode_undangan" id="kode_undangan" value="<?= $id_undangan; ?>">
+                        <input type="text" name="url_undangan" id="url_undangan" value="<?= $this->uri->segment(2) ?>">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group" id="input_nama">
@@ -480,7 +481,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group" id="input_ucapan">
                                     <label for="ucapan">Ucapan Selamat : </label>
-                                    <textarea class="form-control" id="ucapan" rows="2" placeholder="Masukan ucapanmu"></textarea>
+                                    <textarea class="form-control" id="ucapan" name="ucapan" rows="2" placeholder="Masukan ucapanmu"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -511,7 +512,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-dismiss="modal">Keluar</button>
-                    <button class="btn btn-primary" id="pay-button">Kirim Hadiah</button>
+                    <button type="submit" class="btn btn-primary" id="pay-button">Kirim Hadiah</button>
                     </form>
                 </div>
             </div>
@@ -536,6 +537,8 @@
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/autoNumeric.js"></script>
     <!-- Stellar -->
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.stellar.min.js"></script>
+    <!-- Stellar -->
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.validate.min.js"></script>
     <!-- Magnific Popup -->
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.magnific-popup.min.js"></script>
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/magnific-popup-options.js"></script>
@@ -548,7 +551,6 @@
     <script>
         $(document).ready(function() {
             var d = new Date(new Date().getTime() + 10 * 120 * 120 * 2000);
-            // $('#jml_hadiah').autoNumeric('init');
 
             // default example
             simplyCountdown('.simply-countdown-one', {
@@ -561,8 +563,7 @@
                 var $input = $(this);
                 var $test = $input.is(":checked");
                 if ($input.is(":checked")) {
-                    $("#input_hadiah").html('<input type="text" class="form-control" name="jml_hadiah" id="jml_hadiah"  data-a-dec="," data-a-sep="." placeholder="Masukan jumlah hadiah">');
-                    // $("#input_hadiah").html('  <input type="text" id="rupiah" data-a-sign="Rp. " data-a-dec="," data-a-sep=".">');
+                    $("#input_hadiah").html('<input type="text" class="form-control" name="jml_hadiah" id="jml_hadiah"  data-a-sign="Rp. "data-a-dec="," data-a-sep="." placeholder="Masukan jumlah hadiah">');
                     $('#jml_hadiah').autoNumeric('init');
                 } else {
                     $("#input_hadiah").html("");
@@ -581,21 +582,22 @@
                 event.preventDefault();
                 // $(this).attr("disabled", "disabled");
 
+                var kode_undangan = $("#kode_undangan").val();
                 var nama = $("#nama").val();
                 var no_wa = $("#no_wa").val();
                 var email = $("#email").val();
                 var ucapan = $("#ucapan").val();
-                var jml_hadiah = $("#jml_hadiah").autoNumeric('get');
-                // $(#jml_hadiah).
+
                 console.log(nama, no_wa, email, ucapan, jml_hadiah);
                 var $input = $('#checkhadiah');
                 var $test = $input.is(":checked");
-                // alert($test);
                 if ($test == true) {
+                    var jml_hadiah = $("#jml_hadiah").autoNumeric('get');
                     $.ajax({
                         type: 'POST',
                         url: '<?= site_url() ?>snap/token_hadiah',
                         data: {
+                            kode_undangan: kode_undangan,
                             nama: nama,
                             no_wa: no_wa,
                             email: email,
@@ -606,38 +608,37 @@
 
                         success: function(data) {
                             //location = data;
+                            // console.log('token = ' + data);
 
-                            console.log('token = ' + data);
+                            // var resultType = document.getElementById('result-type');
+                            // var resultData = document.getElementById('result-data');
 
-                            var resultType = document.getElementById('result-type');
-                            var resultData = document.getElementById('result-data');
+                            // function changeResult(type, data) {
+                            //     $("#result-type").val(type);
+                            //     $("#result-data").val(JSON.stringify(data));
+                            //     //resultType.innerHTML = type;
+                            //     //resultData.innerHTML = JSON.stringify(data);
+                            // }
 
-                            function changeResult(type, data) {
-                                $("#result-type").val(type);
-                                $("#result-data").val(JSON.stringify(data));
-                                //resultType.innerHTML = type;
-                                //resultData.innerHTML = JSON.stringify(data);
-                            }
+                            // snap.pay(data, {
 
-                            snap.pay(data, {
-
-                                onSuccess: function(result) {
-                                    changeResult('success', result);
-                                    console.log(result.status_message);
-                                    console.log(result);
-                                    $("#payment-form").submit();
-                                },
-                                onPending: function(result) {
-                                    changeResult('pending', result);
-                                    console.log(result.status_message);
-                                    $("#payment-form").submit();
-                                },
-                                onError: function(result) {
-                                    changeResult('error', result);
-                                    console.log(result.status_message);
-                                    $("#payment-form").submit();
-                                }
-                            });
+                            //     onSuccess: function(result) {
+                            //         changeResult('success', result);
+                            //         console.log(result.status_message);
+                            //         console.log(result);
+                            //         $("#payment-form").submit();
+                            //     },
+                            //     onPending: function(result) {
+                            //         changeResult('pending', result);
+                            //         console.log(result.status_message);
+                            //         $("#payment-form").submit();
+                            //     },
+                            //     onError: function(result) {
+                            //         changeResult('error', result);
+                            //         console.log(result.status_message);
+                            $("#payment-form").submit();
+                            //     }
+                            // });
                         }
                     });
 
@@ -647,6 +648,9 @@
 
 
             });
+
+
+
         });
     </script>
 

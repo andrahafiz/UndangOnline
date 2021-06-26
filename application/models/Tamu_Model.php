@@ -12,13 +12,16 @@ class Tamu_Model extends CI_Model
         // $this->db->where('pekerjaan_id', $id);
         // $sql = "SELECT * FROM `view_mempelai` WHERE ID_akun='$id'";
         // $query = $this->db->query($sql);
-        $query =  $this->db->get_where('tb_tamu', ['ID_Undangan' => $id]);
+        // $this->db->order_by('birth_date', 'ASC')->get_where($this->tbl_name, $where);
+        $query =   $this->db->order_by('Nama_Tamu', 'ASC')->get_where('tb_tamu', ['ID_Undangan' => $id]);
+        // $this->db->order_by('Nama_Tamu', 'ASC');
         $hasil = $query->result();
         return $hasil;
     }
     public function cek_email($email)
     {
         $query =  $this->db->get_where('tb_tamu', ['Email_Tamu=' => $email]);
+
         $hasil = $query->result();
         return $hasil;
     }

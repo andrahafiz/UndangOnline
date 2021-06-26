@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Wedding &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -44,34 +45,33 @@
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="http://localhost/UndangOnline/assets/Tema/Tema1/css/animate.css">
+    <link rel="stylesheet" href="<?= base_url('assets/Tema/Tema1/') ?>css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="http://localhost/UndangOnline/assets/Tema/Tema1/css/icomoon.css">
+    <link rel="stylesheet" href="<?= base_url('assets/Tema/Tema1/') ?>css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="http://localhost/UndangOnline/assets/Tema/Tema1/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= base_url('assets/Tema/Tema1/') ?>css/bootstrap.css">
 
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="http://localhost/UndangOnline/assets/Tema/Tema1/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?= base_url('assets/Tema/Tema1/') ?>css/magnific-popup.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="http://localhost/UndangOnline/assets/Tema/Tema1/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="http://localhost/UndangOnline/assets/Tema/Tema1/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/Tema/Tema1/') ?>css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/Tema/Tema1/') ?>css/owl.theme.default.min.css">
 
     <!-- Theme style  -->
-    <link rel="stylesheet" href="http://localhost/UndangOnline/assets/Tema/Tema1/css/style.css">
+    <link rel="stylesheet" href="<?= base_url('assets/Tema/Tema1/') ?>css/style.css">
 
     <!-- Modernizr JS -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/modernizr-2.6.2.min.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-	<script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/respond.min.js"></script>
+	<script src="<?= base_url('assets/Tema/Tema1/') ?>js/respond.min.js"></script>
 	<![endif]-->
 
 </head>
 
 <body>
-    <!-- <audio src="http://www.jplayer.org/audio/mp3/Miaow-snip-Stirring-of-a-fool.mp3" autoplay="autoplay" hidden="hidden"></audio> -->
-    <audio src="http://localhost/UndangOnline/assets/Music/music.mp3" autoplay="autoplay" hidden="hidden"></audio>
+    <!-- <audio src="<?= base_url('assets/Music/') ?>music.mp3" autoplay="autoplay" hidden="hidden"></audio> -->
     <div class="fh5co-loader"></div>
 
     <div id="page">
@@ -111,7 +111,7 @@
             </div>
         </nav>
 
-        <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(http://localhost/UndangOnline/assets/Tema/Tema1/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+        <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(<?= base_url('assets/Tema/Tema1/') ?>images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
@@ -141,7 +141,7 @@
                 <div class="couple-wrap animate-box">
                     <div class="couple-half">
                         <div class="groom">
-                            <img src="http://localhost/UndangOnline/assets/Mempelai/images/mempelai/user_pria.png" alt="Mempelai Pria" class="img-responsive">
+                            <img src="<?= base_url('assets/Mempelai/') ?>images/mempelai/user_pria.png" alt="Mempelai Pria" class="img-responsive">
                         </div>
                         <div class="desc-groom">
                             <h1>Romeo</h1>
@@ -151,7 +151,7 @@
                     <p class="heart text-center"><i class="icon-heart2"></i></p>
                     <div class="couple-half">
                         <div class="bride">
-                            <img src="http://localhost/UndangOnline/assets/Mempelai/images/mempelai/user_wanita.png" alt="Mempelai Wanita" class="img-responsive">
+                            <img src="<?= base_url('assets/Mempelai/') ?>images/mempelai/user_wanita.png" alt="Mempelai Wanita" class="img-responsive">
                         </div>
                         <div class="desc-bride">
                             <h1> Juliet</h1>
@@ -162,7 +162,7 @@
             </div>
         </div>
 
-        <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
+        <div id="fh5co-event" class="fh5co-bg" style="background-image:url(<?= base_url('assets/Tema/Tema1/') ?>images/img_bg_3.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
@@ -227,24 +227,24 @@
                 <div class="row row-bottom-padded-md">
                     <div class="col-md-12">
                         <ul id="fh5co-gallery-list">
-                            <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(http://localhost/UndangOnline/assets/Mempelai/images/gallery/demo1.jpg); ">
-                                <a href="http://localhost/UndangOnline/assets/Mempelai/images/gallery/demo1.jpg">
+                            <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(<?= base_url('assets/Mempelai/') ?>images/gallery/demo1.jpg); ">
+                                <a href="<?= base_url('assets/Mempelai/') ?>images/gallery/demo1.jpg">
                                     <div class="case-studies-summary">
                                         <!-- <span>14 Photos</span> -->
                                         <h2>Prawedding 1</h2>
                                     </div>
                                 </a>
                             </li>
-                            <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(http://localhost/UndangOnline/assets/Mempelai/images/gallery/demo2.jpg); ">
-                                <a href="http://localhost/UndangOnline/assets/Mempelai/images/gallery/demo2.jpg">
+                            <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(<?= base_url('assets/Mempelai/') ?>images/gallery/demo2.jpg); ">
+                                <a href="<?= base_url('assets/Mempelai/') ?>images/gallery/demo2.jpg">
                                     <div class="case-studies-summary">
                                         <!-- <span>14 Photos</span> -->
                                         <h2>Prawedding 2</h2>
                                     </div>
                                 </a>
                             </li>
-                            <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(http://localhost/UndangOnline/assets/Mempelai/images/gallery/demo3.jpg); ">
-                                <a href="http://localhost/UndangOnline/assets/Mempelai/images/gallery/demo3.jpg">
+                            <li class="one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(<?= base_url('assets/Mempelai/') ?>images/gallery/demo3.jpg); ">
+                                <a href="<?= base_url('assets/Mempelai/') ?>images/gallery/demo3.jpg">
                                     <div class="case-studies-summary">
                                         <!-- <span>14 Photos</span> -->
                                         <h2>Prawedding 3</h2>
@@ -412,7 +412,7 @@
         </div> -->
 
 
-        <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+        <!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
             <div class="overlay"></div>
             <div class="container">
 
@@ -434,7 +434,7 @@
                             <div class="col-md-8 col-md-offset-2 ">
                                 <div class="form-group">
                                     <label for="email" class="sr-only">Email</label>
-                                    <!-- <input type="email" class="form-control" id="email" placeholder="Email"> -->
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
                                     <textarea class="form-control" placeholder="A" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                             </div>
@@ -445,7 +445,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 
@@ -710,28 +710,28 @@
     </div>
 
     <!-- jQuery -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/jquery.min.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.min.js"></script>
     <!-- jQuery Easing -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/jquery.easing.1.3.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.easing.1.3.js"></script>
     <!-- Bootstrap -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/bootstrap.min.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/bootstrap.min.js"></script>
     <!-- Waypoints -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/jquery.waypoints.min.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.waypoints.min.js"></script>
     <!-- Carousel -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/owl.carousel.min.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/owl.carousel.min.js"></script>
     <!-- countTo -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/jquery.countTo.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.countTo.js"></script>
 
     <!-- Stellar -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/jquery.stellar.min.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.stellar.min.js"></script>
     <!-- Magnific Popup -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/jquery.magnific-popup.min.js"></script>
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/magnific-popup-options.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.magnific-popup.min.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/magnific-popup-options.js"></script>
 
     <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/simplyCountdown.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/simplyCountdown.js"></script>
     <!-- Main -->
-    <script src="http://localhost/UndangOnline/assets/Tema/Tema1/js/main.js"></script>
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/main.js"></script>
 
     <script>
         var d = new Date(new Date().getTime() + 10 * 120 * 120 * 2000);

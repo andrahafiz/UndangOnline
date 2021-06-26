@@ -156,7 +156,6 @@ class Tamu extends CI_Controller
             'Nama_Tamu' => htmlspecialchars($this->input->post('nama_tamu', true)),
             'Email_Tamu' => htmlspecialchars($this->input->post('email_tamu', true)),
             'Wa_Tamu' => htmlspecialchars($this->input->post('wa_tamu', true)),
-            'UcapanSelamat' => 'kosong'
 
         ];
         return $data;
