@@ -9,6 +9,7 @@ class Tema extends CI_Controller
         parent::__construct();
         $this->load->model('Undangan_Model');
         $this->load->model('Tema_Model');
+        $this->load->model('Ucapan_Model');
         $this->load->model('Galeri_Model');
         $this->load->helper('my_function_helper');
         cekaccess();
@@ -23,7 +24,6 @@ class Tema extends CI_Controller
             'menu' => menu_mempelai(),
             'tema' => $this->data_all(),
             'undangan' => $this->Undangan_Model->selectbyid($this->session->userdata('ID_Undangan')),
-
         );
         // var_dump($data['undangan']->ID_Tema);
         // die;

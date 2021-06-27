@@ -29,6 +29,7 @@ class Snap extends CI_Controller
 		$this->load->helper('url');
 		$this->load->model('Mempelai_Model');
 		$this->load->model('Undangan_Model');
+		$this->load->model('Ucapan_Model');
 		$this->load->model('Tamu_Model');
 		$this->load->helper('my_function_helper');
 	}
@@ -167,41 +168,28 @@ class Snap extends CI_Controller
 
 	public function finish_hadiah()
 	{
+		$result = json_decode($this->input->post('result_data'), true);
+		$checked =  htmlspecialchars($this->input->post('checkhadiah', true));
+		$order_id = $checked === 'true' ? $result['order_id'] : 0;
+
 		$kode_undangan = htmlspecialchars($this->input->post('kode_undangan', true));
+		$url_undangan = htmlspecialchars($this->input->post('url_undangan', true));
 		$nama = htmlspecialchars($this->input->post('nama', true));
 		$email = htmlspecialchars($this->input->post('email', true));
 		$wa = htmlspecialchars($this->input->post('no_wa', true));
 		$ucapan = $this->input->post('ucapan');
 		$data_email = $this->Tamu_Model->cek_email($email);
 		$data_wa = $this->Tamu_Model->cek_no_wa($wa);
+
 		if (count($data_email) > 0 || count($data_wa) > 0) {
 			//Kondisi jika email dan wa ada di dalam database
-			// $data = array(
-			// 	'Ucapan' => $ucapan,
-			// 	'Id_Tamu' => $data_email[0]->ID_TamuUndangan,
-			// 	'Id_Pembayaran' => 1
-			// );
-			// $this->Undangan_Model->insert_to_tb_ucapan($data);
+			$id_tamu = $data_email[0]->ID_TamuUndangan;
+			$this->emailmatch($ucapan, $id_tamu, $order_id);
 		} else {
-			$data_tamu = [
-				'ID_TamuUndangan' => kode_otomatis('tb_tamu', 'ID_TamuUndangan'),
-				'ID_Undangan' => $kode_undangan,
-				'Nama_Tamu' => $nama,
-				'Email_Tamu' => $email,
-				'Wa_Tamu' => $wa,
-			];
-			$this->Tamu_Model->tambah_data_tamu($data_tamu);
-
-			$data = array(
-				'Ucapan' => $ucapan,
-				'Id_Tamu' => $data_tamu['ID_TamuUndangan'],
-				'Id_Pembayaran' => 1
-			);
-			$this->Undangan_Model->insert_to_tb_ucapan($data);
+			//Kondisi jika wa dan email tidak ada yang sama
+			$this->emailnotmatch($kode_undangan, $nama, $email, $wa, $ucapan, $order_id);
 		}
-		die();
 
-		$result = json_decode($this->input->post('result_data'), true);
 
 		// echo "<prev>";
 		// var_dump($result);
@@ -209,121 +197,158 @@ class Snap extends CI_Controller
 		// // echo $result['va_numbers'][0]['bank'];
 
 		// die;
-		$data = [
-			'order_id' => $result['order_id'],
-			'gross_amount' => $result['gross_amount'],
-			'payment_type' => $result['payment_type'],
-			'transaction_time' => $result['transaction_time'],
-			'bank' => $result['va_numbers'][0]['bank'],
-			'va_numbers' => $result['va_numbers'][0]["va_number"],
-			'pdf_url' => $result['pdf_url'],
-			'status_code' => $result['status_code'],
-			'kode_undangan' => $this->input->post('kode_undangan')
-		];
+		if ($checked === "true") {
+			$data = [
+				'order_id' => $result['order_id'],
+				'gross_amount' => $result['gross_amount'],
+				'payment_type' => $result['payment_type'],
+				'transaction_time' => $result['transaction_time'],
+				'bank' => $result['va_numbers'][0]['bank'],
+				'va_numbers' => $result['va_numbers'][0]["va_number"],
+				'pdf_url' => $result['pdf_url'],
+				'status_code' => $result['status_code'],
+				'kode_undangan' => $kode_undangan,
+				'tipe_transaksi' => "Hadiah",
+			];
 
-		$simpan = $this->db->insert('tb_transaksi', $data);
-		if ($simpan) {
-			// redirect('Undangan/' . $data['kode_undangan']);
-			redirect('A');
-		} else {
-			echo "Gagal Simpan 1";
+			$this->db->insert('tb_transaksi', $data);
 		}
+		// if ($simpan) {
+		redirect('Undangan/' . $url_undangan);
+		// redirect('A');
+		// } else {
+		// 	echo "Gagal Simpan 1";
+		// }
 	}
+
+	public function emailnotmatch($kode_undangan, $nama, $email, $wa, $ucapan, $id_pembayaran)
+	{
+		/* 
+		Function ini berfungsi untuk insert ke tb_tamu dan tb_ucapan 
+		function ini berfungsi kalau wa dan email tidak di temukan di dalam tb_tamu 
+		*/
+		$data_tamu = [
+			'ID_TamuUndangan' => kode_otomatis('tb_tamu', 'ID_TamuUndangan'),
+			'ID_Undangan' => $kode_undangan,
+			'Nama_Tamu' => $nama,
+			'Email_Tamu' => $email,
+			'Wa_Tamu' => $wa,
+		];
+		$this->Tamu_Model->tambah_data_tamu($data_tamu);
+
+		$data = array(
+			'Ucapan' => $ucapan,
+			'Id_Tamu' => $data_tamu['ID_TamuUndangan'],
+			'Id_Pembayaran' => $id_pembayaran
+		);
+		$this->Ucapan_Model->insert_to_tb_ucapan($data);
+	}
+
+	public function emailmatch($ucapan, $Id_Tamu, $Id_Pembayaran)
+	{
+		$data = [
+			'Ucapan' => $ucapan,
+			'Id_Tamu' => $Id_Tamu,
+			'Id_Pembayaran' => $Id_Pembayaran
+		];
+		$this->Ucapan_Model->insert_to_tb_ucapan($data);
+	}
+
 
 	//untuk transaksi hadiah
 	public function token_hadiah()
 	{
-		// $nama = $this->input->post('nama');
-		// $email = $this->input->post('email');
-		// $no_wa = $this->input->post('no_wa');
-		// $jml_hadiah = $this->input->post('jml_hadiah');
-		// $id_undangan = $this->input->post('kode_undangan');
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$no_wa = $this->input->post('no_wa');
+		$jml_hadiah = $this->input->post('jml_hadiah');
+		$id_undangan = $this->input->post('kode_undangan');
 
-		// // $id_undangan = $this->session->userdata('ID_Undangan');
-		// // Required
-		// $transaction_details = array(
-		// 	'order_id' => rand(),
-		// 	'gross_amount' => $jml_hadiah, // no decimal allowed for creditcard
-		// );
+		// $id_undangan = $this->session->userdata('ID_Undangan');
+		// Required
+		$transaction_details = array(
+			'order_id' => rand(),
+			'gross_amount' => $jml_hadiah, // no decimal allowed for creditcard
+		);
+
+		// Optional
+		$item1_details = array(
+			'id' => $id_undangan,
+			'price' => $jml_hadiah,
+			'quantity' => 1,
+			'name' => "Kirim Hadiah (" . $id_undangan . ")"
+		);
 
 		// // Optional
-		// $item1_details = array(
-		// 	'id' => $id_undangan,
-		// 	'price' => $jml_hadiah,
+		// $item2_details = array(
+		// 	'id' => 'kode_undangan',
+		// 	'price' => 0,
 		// 	'quantity' => 1,
-		// 	'name' => "Kirim Hadiah (" . $id_undangan . ")"
+		// 	'name' => "Orange"
 		// );
 
-		// // // Optional
-		// // $item2_details = array(
-		// // 	'id' => 'kode_undangan',
-		// // 	'price' => 0,
-		// // 	'quantity' => 1,
-		// // 	'name' => "Orange"
-		// // );
+		// Optional
+		$item_details = array($item1_details);
 
-		// // Optional
-		// $item_details = array($item1_details);
-
-		// // Optional
-		// // $billing_address = array(
-		// // 	'first_name'    => "Andri",
-		// // 	'last_name'     => "Litani",
-		// // 	'address'       => "Mangga 20",
-		// // 	'city'          => "Jakarta",
-		// // 	'postal_code'   => "16602",
-		// // 	'phone'         => "081122334455",
-		// // 	'country_code'  => 'IDN'
-		// // );
-
-		// // Optional
-		// // $shipping_address = array(
-		// // 	'first_name'    => "Obet",
-		// // 	'last_name'     => "Supriadi",
-		// // 	'address'       => "Manggis 90",
-		// // 	'city'          => "Jakarta",
-		// // 	'postal_code'   => "16601",
-		// // 	'phone'         => "08113366345",
-		// // 	'country_code'  => 'IDN'
-		// // );
-
-		// // Optional
-		// if (empty($email)) {
-		// 	$customer_details = array(
-		// 		'first_name'    => $nama,
-		// 		'phone'         => $no_wa,
-		// 	);
-		// } else {
-		// 	$customer_details = array(
-		// 		'first_name'    => $nama,
-		// 		'email'         => $email,
-		// 		'phone'         => $no_wa,
-		// 	);
-		// };
-
-		// // Data yang akan dikirim untuk request redirect_url.
-		// $credit_card['secure'] = true;
-		// //ser save_card true to enable oneclick or 2click
-		// //$credit_card['save_card'] = true;
-
-		// $time = time();
-		// $custom_expiry = array(
-		// 	'start_time' => date("Y-m-d H:i:s O", $time),
-		// 	'unit' => 'day',
-		// 	'duration'  => 1
+		// Optional
+		// $billing_address = array(
+		// 	'first_name'    => "Andri",
+		// 	'last_name'     => "Litani",
+		// 	'address'       => "Mangga 20",
+		// 	'city'          => "Jakarta",
+		// 	'postal_code'   => "16602",
+		// 	'phone'         => "081122334455",
+		// 	'country_code'  => 'IDN'
 		// );
 
-		// $transaction_data = array(
-		// 	'transaction_details' => $transaction_details,
-		// 	'item_details'       => $item_details,
-		// 	'customer_details'   => $customer_details,
-		// 	'credit_card'        => $credit_card,
-		// 	'expiry'             => $custom_expiry
+		// Optional
+		// $shipping_address = array(
+		// 	'first_name'    => "Obet",
+		// 	'last_name'     => "Supriadi",
+		// 	'address'       => "Manggis 90",
+		// 	'city'          => "Jakarta",
+		// 	'postal_code'   => "16601",
+		// 	'phone'         => "08113366345",
+		// 	'country_code'  => 'IDN'
 		// );
 
-		// error_log(json_encode($transaction_data));
-		// $snapToken = $this->midtrans->getSnapToken($transaction_data);
-		// error_log($snapToken);
-		// echo $snapToken;
+		// Optional
+		if (empty($email)) {
+			$customer_details = array(
+				'first_name'    => $nama,
+				'phone'         => $no_wa,
+			);
+		} else {
+			$customer_details = array(
+				'first_name'    => $nama,
+				'email'         => $email,
+				'phone'         => $no_wa,
+			);
+		};
+
+		// Data yang akan dikirim untuk request redirect_url.
+		$credit_card['secure'] = true;
+		//ser save_card true to enable oneclick or 2click
+		//$credit_card['save_card'] = true;
+
+		$time = time();
+		$custom_expiry = array(
+			'start_time' => date("Y-m-d H:i:s O", $time),
+			'unit' => 'day',
+			'duration'  => 1
+		);
+
+		$transaction_data = array(
+			'transaction_details' => $transaction_details,
+			'item_details'       => $item_details,
+			'customer_details'   => $customer_details,
+			'credit_card'        => $credit_card,
+			'expiry'             => $custom_expiry
+		);
+
+		error_log(json_encode($transaction_data));
+		$snapToken = $this->midtrans->getSnapToken($transaction_data);
+		error_log($snapToken);
+		echo $snapToken;
 	}
 }

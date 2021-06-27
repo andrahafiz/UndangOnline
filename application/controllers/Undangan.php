@@ -10,6 +10,7 @@ class Undangan extends CI_Controller
         $this->load->model('Undangan_Model');
         $this->load->model('Tema_Model');
         $this->load->model('Galeri_Model');
+        $this->load->model('Ucapan_Model');
         $this->load->model('Temp_Model');
     }
 
@@ -24,7 +25,8 @@ class Undangan extends CI_Controller
             $data['id_tema'] = $data['data_undangan']->ID_Tema;
             $data['id_undangan'] = $data['data_undangan']->ID_Undangan;
             $data['tema'] = $this->Tema_Model->selectbyid($data['id_tema'])->view_thema;
-            // var_dump($data['tema']);
+            $data['ucapan'] =  $this->Ucapan_Model->selectbyid_limit($id_undangan, '1');
+            // var_dump($data['ucapan']);
             // die;
             // $data = array(
             //     'judul' => 'Undangan',

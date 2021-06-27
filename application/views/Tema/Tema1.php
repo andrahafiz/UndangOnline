@@ -16,8 +16,7 @@
     <meta name="author" content="FREEHTML5.CO" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
-    <!-- 
-	//////////////////////////////////////////////////////
+    <!-- //////////////////////////////////////////////////////
 
 	FREE HTML5 TEMPLATE 
 	DESIGNED & DEVELOPED by FREEHTML5.CO
@@ -27,8 +26,7 @@
 	Twitter: 		http://twitter.com/fh5co
 	Facebook: 		https://www.facebook.com/fh5co
 
-	//////////////////////////////////////////////////////
-	 -->
+	//////////////////////////////////////////////////////-->
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -452,13 +450,13 @@
                     <form id="payment-form" name="payment-form" method="post" action="<?= base_url() ?>Snap/finish_hadiah">
                         <input type="hidden" name="result_type" id="result-type" value="">
                         <input type="hidden" name="result_data" id="result-data" value="">
-                        <input type="text" name="kode_undangan" id="kode_undangan" value="<?= $id_undangan; ?>">
-                        <input type="text" name="url_undangan" id="url_undangan" value="<?= $this->uri->segment(2) ?>">
+                        <input type="hidden" name="kode_undangan" id="kode_undangan" value="<?= $id_undangan; ?>">
+                        <input type="hidden" name="url_undangan" id="url_undangan" value="<?= $this->uri->segment(2) ?>">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group" id="input_nama">
                                     <label for="Username">Nama : </label>
-                                    <input type="email" class="form-control" id="nama" name="nama" placeholder="Nama anda">
+                                    <input type="nama" class="form-control" id="nama" name="nama" placeholder="Nama anda">
                                 </div>
                             </div>
                         </div>
@@ -473,7 +471,7 @@
                             <div class="col-xs-6">
                                 <div class="form-group" id="input_wa">
                                     <label for="Username">Whatsapp : </label>
-                                    <input type="email" class="form-control" id="no_wa" name="no_wa" placeholder="No whatsapp anda">
+                                    <input type="number" class="form-control" id="no_wa" name="no_wa" placeholder="No whatsapp anda">
                                 </div>
                             </div>
                         </div>
@@ -488,7 +486,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="checkhadiah">
+                                    <input class="form-check-input" type="checkbox" value="true" id="checkhadiah" name="checkhadiah">
                                     <label class="form-check-label" for="checkhadiah">
                                         Kirim Hadiah
                                     </label>
@@ -539,6 +537,8 @@
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.stellar.min.js"></script>
     <!-- Stellar -->
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.validate.min.js"></script>
+    <!-- Stellar -->
+    <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.inputmask.js"></script>
     <!-- Magnific Popup -->
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/jquery.magnific-popup.min.js"></script>
     <script src="<?= base_url('assets/Tema/Tema1/') ?>js/magnific-popup-options.js"></script>
@@ -551,7 +551,6 @@
     <script>
         $(document).ready(function() {
             var d = new Date(new Date().getTime() + 10 * 120 * 120 * 2000);
-
             // default example
             simplyCountdown('.simply-countdown-one', {
                 year: d.getFullYear(),
@@ -608,49 +607,44 @@
 
                         success: function(data) {
                             //location = data;
-                            // console.log('token = ' + data);
+                            console.log('token = ' + data);
 
-                            // var resultType = document.getElementById('result-type');
-                            // var resultData = document.getElementById('result-data');
+                            var resultType = document.getElementById('result-type');
+                            var resultData = document.getElementById('result-data');
 
-                            // function changeResult(type, data) {
-                            //     $("#result-type").val(type);
-                            //     $("#result-data").val(JSON.stringify(data));
-                            //     //resultType.innerHTML = type;
-                            //     //resultData.innerHTML = JSON.stringify(data);
-                            // }
+                            function changeResult(type, data) {
+                                $("#result-type").val(type);
+                                $("#result-data").val(JSON.stringify(data));
+                                //resultType.innerHTML = type;
+                                //resultData.innerHTML = JSON.stringify(data);
+                            }
 
-                            // snap.pay(data, {
+                            snap.pay(data, {
 
-                            //     onSuccess: function(result) {
-                            //         changeResult('success', result);
-                            //         console.log(result.status_message);
-                            //         console.log(result);
-                            //         $("#payment-form").submit();
-                            //     },
-                            //     onPending: function(result) {
-                            //         changeResult('pending', result);
-                            //         console.log(result.status_message);
-                            //         $("#payment-form").submit();
-                            //     },
-                            //     onError: function(result) {
-                            //         changeResult('error', result);
-                            //         console.log(result.status_message);
-                            $("#payment-form").submit();
-                            //     }
-                            // });
+                                onSuccess: function(result) {
+                                    changeResult('success', result);
+                                    console.log(result.status_message);
+                                    console.log(result);
+                                    $("#payment-form").submit();
+                                },
+                                onPending: function(result) {
+                                    changeResult('pending', result);
+                                    console.log(result.status_message);
+                                    $("#payment-form").submit();
+                                },
+                                onError: function(result) {
+                                    changeResult('error', result);
+                                    console.log(result.status_message);
+                                    $("#payment-form").submit();
+                                }
+                            });
                         }
                     });
 
                 } else {
-                    alert("TEST");
+                    $("#payment-form").submit();
                 }
-
-
             });
-
-
-
         });
     </script>
 

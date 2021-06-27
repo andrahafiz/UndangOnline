@@ -1,25 +1,23 @@
 <?php
-class Undangan_Model extends CI_Model
+class Ucapan_Model extends CI_Model
 {
 
-    public function selectAll()
-    {
-        $sql = "SELECT a.ID_akun, a.Email_akun, u.ID_Undangan, m.Nama_MPria, m.Nama_MWanita FROM `tb_akun` as a,`tb_undangan` as u,`tb_mempelai` as m WHERE a.ID_akun = u.ID_Akun and m.ID_Mempelai = u.ID_Mempelai";
-        return $this->db->query($sql)->result();
-    }
-
-    public function tambah_data_acara($data)
-    {
-        $this->db->insert('tb_acara', $data);
-    }
-
-    public function selectbyid($id)
+    public function selectbyid($id, $status)
     {
         // $this->db->where('pekerjaan_id', $id);
-        $query =  $this->db->get_where('view_all', ['ID_Undangan' => $id]);
-        $hasil = $query->row();
+        $query =  $this->db->get_where('view_tamu', ['ID_Undangan' => $id, 'Status_Ucapan' => $status]);
+        $hasil = $query->result();
         return $hasil;
     }
+
+    public function selectbyid_limit($id, $status)
+    {
+        // $this->db->where('pekerjaan_id', $id);
+        $query =  $this->db->limit(5)->get_where('view_tamu', ['ID_Undangan' => $id, 'Status_Ucapan' => $status]);
+        $hasil = $query->result();
+        return $hasil;
+    }
+
     public function selectbyid_undangan($id)
     {
         // $this->db->where('pekerjaan_id', $id);
