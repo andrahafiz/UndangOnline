@@ -13,7 +13,7 @@ class Ucapan_Model extends CI_Model
     public function selectbyid_limit($id, $status)
     {
         // $this->db->where('pekerjaan_id', $id);
-        $query =  $this->db->limit(5)->get_where('view_tamu', ['ID_Undangan' => $id, 'Status_Ucapan' => $status]);
+        $query =  $this->db->order_by('title', 'RANDOM')->limit(5)->get_where('view_tamu', ['ID_Undangan' => $id, 'Status_Ucapan' => $status]);
         $hasil = $query->result();
         return $hasil;
     }

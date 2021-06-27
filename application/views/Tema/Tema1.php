@@ -314,30 +314,16 @@
                         <div class="col-md-12 animate-box">
                             <div class="wrap-testimony">
                                 <div class="owl-carousel-fullwidth">
-                                    <div class="item">
-                                        <div class="testimony-slide active text-center">
-                                            <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-                                            <blockquote>
-                                                <p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
-                                            </blockquote>
+                                    <?php foreach ($ucapan as $key => $value) { ?>
+                                        <div class="item">
+                                            <div class="testimony-slide active text-center">
+                                                <span><?= $value->Nama_Tamu ?></span>
+                                                <blockquote>
+                                                    <p>"<?= $value->Ucapan ?>"</p>
+                                                </blockquote>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="testimony-slide active text-center">
-                                            <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-                                            <blockquote>
-                                                <p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="testimony-slide active text-center">
-                                            <h2>John Doe, via <a href="#" class="twitter">Twitter</a></h2>
-                                            <blockquote>
-                                                <p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
