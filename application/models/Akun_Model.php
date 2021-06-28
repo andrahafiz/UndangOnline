@@ -25,7 +25,6 @@ class Akun_Model extends CI_Model
 
     public function ganti_status($id, $status)
     {
-
         $this->db->update('tb_akun', array('Status_akun' => $status), "ID_akun='$id'");
     }
     public function jumlahakun()

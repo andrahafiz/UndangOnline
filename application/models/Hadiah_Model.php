@@ -34,10 +34,6 @@ class Hadiah_Model extends CI_Model
         return $query->row();
     }
 
-    public function selectbyid_undangan($id)
-    {
-        return $this->db->query("SELECT * FROM `view_all` WHERE ID_Undangan = 'UND1' OR Url_Undangan='AzizLubis'")->row();
-    }
     public function undangan_update($id, $data)
     {
         $this->db->where('ID_Undangan', $id);
