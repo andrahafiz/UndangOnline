@@ -36,8 +36,15 @@ class Undangan_Model extends CI_Model
         $this->db->insert('tb_ucapan', $data);
     }
 
+    public function update_url($id, $url)
+    {
+        $this->db->where('ID_Undangan', $id);
+        $this->db->update('tb_undangan', $url);
+        return $this->db->affected_rows();
+    }
+
     public function cek_ucapan($Id_tamu)
     {
-        return $this->db->query("SELECT * FROM tb_ucapan WHERE Id_tamu = 'UND1' OR Url_Undangan='AzizLubis'")->row();
+        return $this->db->query("SELECT * FROM tb_ucapan WHERE Id_tamu = '$Id_tamu' OR Url_Undangan='$Id_tamu'")->row();
     }
 }

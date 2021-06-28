@@ -4,6 +4,16 @@
             <div class="page-wrapper">
 
                 <div class="page-body">
+                    <?php
+                    if (validation_errors()) {
+                        echo "<div class='alert alert-warning icons-alert'> 
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'> 
+                    <i class='icofont icofont-close-line-circled'></i>
+                    </button> <p><strong>Gagal!</strong>" . validation_errors() . "</p>
+                    </div>";
+                    };
+                    ?>
+                    <?= $this->session->flashdata('message'); ?>
                     <div class="row">
                         <!-- Card Tamu Undangan -->
                         <div class="col-md-6 col-xl-4">
@@ -63,18 +73,29 @@
                                     <span class="text-c-blue f-w-900 f-20">URL Setting</span>
                                     <div class="row m-t-20 m-b-10">
                                         <div class="col-10">
-                                            <input type="text" class="form-control form-control" id="url_input" placeholder="URL Undangan">
+                                            <form action="<?= base_url('Mempelai/Dashboard') ?>" method="POST">
+                                                <input type="text" class="form-control form-control" id="url_input" name="url_input" placeholder="URL Undangan" value="<?= $url_undangan ?>" <?= empty($url_undangan) ? '' : '' ?>>
+                                                <?= form_error('url_input', '<span class="text-pink error f-12">', '</span>'); ?>
                                         </div>
                                         <div class="col-2">
                                             <div class="icon-btn">
-                                            <div class="div">
+                                                <div class="div">
                                                     <button class="btn btn-sm btn-primary"><i class="fa fa-save"></i></button>
+                                                    <!-- <?php
+                                                            if (empty($url_undangan)) {
+                                                                echo '<button class="btn btn-sm btn-primary"><i class="fa fa-save"></i></button>';
+                                                            } else {
+                                                                echo '<button class="btn btn-sm btn-success btn-disabled"><i class="fa fa-check-circle"></i></button>';
+                                                            }
+
+                                                            ?> -->
                                                 </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="div text-left">
-                                        <span class="text-muted f-12 m-t-"><?= base_url('') ?>Undangan/<strong id="target"></strong></span>
+                                        <span class="text-muted f-12 m-t-"><?= base_url('') ?>Undangan/<strong id="target"><?= $url_undangan ?></strong></span>
                                     </div>
                                     <!-- <span class="text-muted"><?= base_url('Undangan/') ?></span> -->
                                 </div>
