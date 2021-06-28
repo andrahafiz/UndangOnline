@@ -10,7 +10,14 @@ class Hadiah_Model extends CI_Model
         return $this->db->get()->result();
     }
 
-    public function selectbyid($id, $status)
+    public function selectbyid($id)
+    {
+        $query =  $this->db->get_where('view_tamu', ['ID_Undangan' => $id, 'status_code' => 'settlement', 'tipe_transaksi' => 'Hadiah']);
+        $hasil = $query->result();
+        return $hasil;
+    }
+
+    public function selectbyidwithstatus($id, $status)
     {
         $query =  $this->db->get_where('view_tamu', ['ID_Undangan' => $id, 'Status_Ucapan' => $status]);
         $hasil = $query->result();
@@ -21,6 +28,8 @@ class Hadiah_Model extends CI_Model
     {
         $this->db->select_sum('gross_amount');
         $this->db->where('ID_Undangan', $id_undangan);
+        $this->db->where('status_code', 'settlement');
+        $this->db->where('tipe_transaksi', 'Hadiah');
         $query = $this->db->get('view_tamu');
         return $query->row();
     }

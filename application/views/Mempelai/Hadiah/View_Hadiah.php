@@ -19,34 +19,27 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Tamu</th>
-                                                    <th>Position</th>
-                                                    <th>Office</th>
-                                                    <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>Email/Wa</th>
+                                                    <th>Jumlah Hadiah</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>61</td>
-                                                    <td>2011/04/25</td>
-                                                    <td>$320,800</td>
-                                                </tr>
+                                                <?php foreach ($data_hadiah as $key => $value) { ?>
+                                                    <tr>
+                                                        <td><?= ($key + 1) ?></td>
+                                                        <td><?= $value->Nama_Tamu ?></td>
+                                                        <td><?= empty($value->Email_Tamu) ? 'Tidak ada email' : $value->Email_Tamu ?> /<?= empty($value->Wa_Tamu) ? 'Tidak ada WA' : $value->Wa_Tamu ?> </td>
+                                                        <td><Strong><?= rupiah($value->gross_amount) ?></strong> </td>
+                                                    </tr>
+                                                <?php  } ?>
 
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>Office</th>
-                                                    <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>Nama Tamu</th>
+                                                    <th>Email/Wa</th>
+                                                    <th>Jumlah Hadiah</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -56,14 +49,8 @@
                             <!-- HTML5 Export Buttons end -->
                         </div>
                         <!-- END TABEL TAMU  -->
-
-
                     </div>
                 </div>
-            </div>
-
-            <div id="styleSelector">
-
             </div>
         </div>
     </div>
