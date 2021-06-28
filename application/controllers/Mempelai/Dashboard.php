@@ -32,7 +32,10 @@ class Dashboard extends CI_Controller
             'url_undangan' => $this->Undangan_Model->selectbyid($this->id_undangan)->Url_Undangan
         );
         $this->form_validation->set_rules('url_input', 'Nama Lengkap Mempelai Pria', 'alpha_dash|is_unique[tb_undangan.Url_Undangan]', [
-            'is_unique' => 'URL sudah terdaftar'
+            'is_unique' => 'URL sudah terdaftar',
+            'alpha_dash' => '
+            Inputan URL hanya boleh berisi karakter alfanumerik, garis bawah, dan tanda hubung.'
+
         ]);
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('Mempelai/layout/header', $data);

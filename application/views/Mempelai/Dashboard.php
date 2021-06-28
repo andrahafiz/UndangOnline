@@ -74,21 +74,20 @@
                                     <div class="row m-t-20 m-b-10">
                                         <div class="col-10">
                                             <form action="<?= base_url('Mempelai/Dashboard') ?>" method="POST">
-                                                <input type="text" class="form-control form-control" id="url_input" name="url_input" placeholder="URL Undangan" value="<?= $url_undangan ?>" <?= empty($url_undangan) ? '' : '' ?>>
+                                                <input type="text" class="form-control form-control" id="url_input" name="url_input" placeholder="URL Undangan" value="<?= $url_undangan ?>" <?= !empty($url_undangan) ? 'readonly' : '' ?>>
                                                 <?= form_error('url_input', '<span class="text-pink error f-12">', '</span>'); ?>
                                         </div>
                                         <div class="col-2">
                                             <div class="icon-btn">
                                                 <div class="div">
-                                                    <button class="btn btn-sm btn-primary"><i class="fa fa-save"></i></button>
-                                                    <!-- <?php
-                                                            if (empty($url_undangan)) {
-                                                                echo '<button class="btn btn-sm btn-primary"><i class="fa fa-save"></i></button>';
-                                                            } else {
-                                                                echo '<button class="btn btn-sm btn-success btn-disabled"><i class="fa fa-check-circle"></i></button>';
-                                                            }
+                                                    <?php
+                                                    if (empty($url_undangan)) {
+                                                        echo '<button class="btn btn-sm btn-primary"><i class="fa fa-save"></i></button>';
+                                                    } else {
+                                                        echo '<button class="btn btn-sm btn-success btn-disabled"><i class="fa fa-check-circle"></i></button>';
+                                                    }
 
-                                                            ?> -->
+                                                    ?>
                                                 </div>
                                                 </form>
                                             </div>
