@@ -132,7 +132,7 @@ class Snap extends CI_Controller
 			'bank' => $result['va_numbers'][0]['bank'],
 			'va_numbers' => $result['va_numbers'][0]["bank"],
 			'pdf_url' => $result['pdf_url'],
-			'status_code' => $result['status_code'],
+			'status_code' => $result['transaction_status'],
 			'kode_undangan' => $this->input->post('kode_undangan')
 		];
 		$data2 = [
@@ -143,7 +143,7 @@ class Snap extends CI_Controller
 			'bank' => $result['va_numbers'][0]['bank'],
 			'va_numbers' => $result['va_numbers'][0]["bank"],
 			'pdf_url' => $result['pdf_url'],
-			'status_code' => $result['status_code'],
+			'status_code' => $result['transaction_status'],
 			'tipe_transaksi' => 'Undangan',
 			'kode_undangan' => $this->input->post('kode_undangan'),
 			'ID_akun' => $this->session->userdata('ID_Akun'),
@@ -206,7 +206,7 @@ class Snap extends CI_Controller
 				'bank' => $result['va_numbers'][0]['bank'],
 				'va_numbers' => $result['va_numbers'][0]["va_number"],
 				'pdf_url' => $result['pdf_url'],
-				'status_code' => $result['status_code'],
+				'status_code' => $result['transaction_status'],
 				'kode_undangan' => $kode_undangan,
 				'tipe_transaksi' => "Hadiah",
 			];

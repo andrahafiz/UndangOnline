@@ -13,7 +13,7 @@
                                     <span class="text-c-blue f-w-900 f-20">Tamu Undangan
 
                                     </span>
-                                    <h3 class="m-t-15"> <?= $jml_tamu ?> Orang</h3>
+                                    <h1 class="m-t-20"> <?= $jml_tamu ?> Orang</h1>
                                 </div>
                                 <a href="<?= base_url("Mempelai/Tamu"); ?>">
                                     <div class="card-footer bg-c-blue">
@@ -37,11 +37,11 @@
                                     <!-- <i class="feather icon-cast bg-c-green card1-icon"></i> -->
                                     <i class="fa fa-money  bg-c-green card1-icon"></i>
                                     <span class="text-c-blue f-w-900 f-20">Total Hadiah</span>
-                                    <h3 class="m-t-15">Rp. 1.000.000.000</h3>
+                                    <h1 class="m-t-20"><?= rupiah($total_hadiah) ?></h1>
                                 </div>
                                 <a href="<?= base_url("Hadiah"); ?>">
                                     <div class="card-footer bg-c-green">
-                                        <div class="row align-items-center  text-left">
+                                        <div class="row align-items-center text-left ">
                                             <div class="col">
                                                 <p class="text-white m-b-0">Lihat Detail</p>
                                             </div>
@@ -55,25 +55,32 @@
                         </div>
                         <!-- End Card Total Hadiah -->
                         <!-- Card ????? -->
-                        <div class="col-md-12 col-xl-4">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card widget-card-1">
                                 <div class="card-block-small">
-                                    <i class="feather icon-user bg-c-pink card1-icon"></i>
-                                    <span class="text-c-blue f-w-900 f-20">Total Hadiah</span>
-                                    <h3 class="m-t-15">100 Orang</h3>
-                                </div>
-                                <a href="<?= base_url("Mempelai"); ?>">
-                                    <div class="card-footer bg-c-pink">
-                                        <div class="row align-items-center  text-left">
-                                            <div class="col">
-                                                <p class="text-white m-b-0">Lihat Detail</p>
-                                            </div>
-                                            <div class="col-3 text-right">
-                                                <i class="feather icon-arrow-up text-white f-16"></i>
+                                    <i class="fa fa-gears bg-c-pink card1-icon"></i>
+                                    <!-- <i class="fa fa-gears"></i> -->
+                                    <span class="text-c-blue f-w-900 f-20">URL Setting</span>
+                                    <div class="row m-t-20 m-b-10">
+                                        <div class="col-10">
+                                            <input type="text" class="form-control form-control" id="url_input" placeholder="URL Undangan">
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="icon-btn">
+                                            <div class="div">
+                                                    <button class="btn btn-sm btn-primary"><i class="fa fa-save"></i></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </a>
+                                    <div class="div text-left">
+                                        <span class="text-muted f-12 m-t-"><?= base_url('') ?>Undangan/<strong id="target"></strong></span>
+                                    </div>
+                                    <!-- <span class="text-muted"><?= base_url('Undangan/') ?></span> -->
+                                </div>
+                                <div class="card-footer bg-c-pink">
+
+                                </div>
                             </div>
                         </div>
                         <!-- End Card ????? -->
@@ -128,8 +135,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>

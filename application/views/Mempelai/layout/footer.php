@@ -113,6 +113,10 @@
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
     $(document).ready(function() {
+        $("#url_input").bind('input', function() {
+            var nilai = $("#url_input").val();
+            $("#target").html(nilai);
+        })
 
         $("#filer_input1").filer({
             limit: <?= empty($jml_foto) ? 9 : 9 - $jml_foto  ?>,

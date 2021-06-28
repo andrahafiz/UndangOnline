@@ -2,12 +2,9 @@
     <div class="pcoded-inner-content">
         <div class="main-body">
             <div class="page-wrapper">
-
                 <div class="page-body">
                     <div class="row">
-
-
-                        <!--  TABEL TAMU  -->
+                        <!--  TABEL Hadiah  -->
                         <div class="col-xl-12 col-md-12">
                             <!-- HTML5 Export Buttons table start -->
                             <div class="card">
@@ -20,7 +17,8 @@
                                         <table id="basic-btn" class="table table-striped table-bordered nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
+                                                    <th>No</th>
+                                                    <th>Nama Tamu</th>
                                                     <th>Position</th>
                                                     <th>Office</th>
                                                     <th>Age</th>
@@ -30,6 +28,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td>1</td>
                                                     <td>Tiger Nixon</td>
                                                     <td>System Architect</td>
                                                     <td>Edinburgh</td>
@@ -41,6 +40,7 @@
                                             </tbody>
                                             <tfoot>
                                                 <tr>
+                                                    <th>No</th>
                                                     <th>Name</th>
                                                     <th>Position</th>
                                                     <th>Office</th>

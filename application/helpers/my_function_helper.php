@@ -221,6 +221,7 @@ function kode($table)
     $index_kode = array_search($table, $tabel);
     return $kode[$index_kode];
 }
+
 function kode_otomatis($table, $colum)
 {
     $ci = get_instance();
@@ -236,4 +237,8 @@ function kode_otomatis($table, $colum)
         return $kode . "" . ($kodeangka + 1);
     }
     // die;
+}
+
+function status_code($status)
+{
 }

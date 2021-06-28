@@ -45,10 +45,14 @@
                                                         <td style="vertical-align:middle;">
                                                             <?php
 
-                                                            if ($value->status_code == 201) {
+                                                            if ($value->status_code == 'pending') {
                                                                 echo '<label class="badge badge-lg bg-inverse">Pending</label>';
-                                                            } elseif ($value->status_code == 200) {
+                                                            } elseif ($value->status_code == 'settlement') {
                                                                 echo '<label class="badge badge-lg bg-success">Lunas</label>';
+                                                            } elseif ($value->status_code == 'cancel') {
+                                                                echo '<label class="badge badge-lg bg-danger">Cancel</label>';
+                                                            } elseif ($value->status_code == 'expire') {
+                                                                echo '<label class="badge badge-lg bg-danger">Kadaluwarsa</label>';
                                                             } else {
                                                                 echo '<label class="badge badge-lg bg-danger">Gagal</label>';
                                                             }

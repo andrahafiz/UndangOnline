@@ -36,8 +36,15 @@ class Transaksi extends CI_Controller
     public function index()
     {
         $undangan = $this->Transaksi_Model->selectAll_Undangan();
-        $id_undangan = $this->Transaksi_Model->selectAll_Undangan()[0]->kode_undangan;
-        $id_akun = $this->db->get_where('tb_undangan', array('ID_Undangan' => $id_undangan))->row();
+
+
+        // var_dump($undangan);
+        // foreach ($undangan as $key => $row) {
+        //     echo $row->order_id;
+        // }
+        // die();
+        // $id_undangan = $undangan->kode_undangan;
+        // $id_akun = $this->db->get_where('tb_undangan', array('ID_Undangan' => $id_undangan))->row();
         // print_r($id_undangan);
         // die();
         $data = array(
@@ -58,9 +65,11 @@ class Transaksi extends CI_Controller
     public function status($order_id)
     {
         $result = $this->veritrans->status($order_id);
+        // var_dump($result);
         $data = [
-            'status_code' => $result->status_code
+            'status_code' => $result->transaction_status
         ];
+        // die();
         $where = ['order_id' => $order_id];
         $update = $this->Transaksi_Model->update_status('tb_transaksi', $data, $where);
         $update2 = $this->Transaksi_Model->update_status('pembayaran_undangan', $data, $where);
