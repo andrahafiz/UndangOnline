@@ -13,10 +13,8 @@
                                                 <div class="m-b-25">
                                                     <img src="<?= base_url(); ?>assets\Mempelai\images\money2.png" class="img-radius">
                                                 </div>
-
                                                 <em>Username</em>
                                                 <h2 class="f-w-600"><?= $this->session->userdata('Username') ?></h2>
-
                                             </div>
                                         </div>
                                         <div class="col-sm-8">
@@ -24,8 +22,8 @@
                                                 <h2 class=" b-b-default text-center mt-5 f-52">Transaksi Berhasil</h2>
                                                 <p class="text-muted text-center f-20">Transaksi anda sudah terdaftar di dalam sistem kami, mohon menunggu
                                                     <br>lakukan pembayaran!!!<br>
+                                                    Silahkah login kembali jika sudah melakukan pembayaran<br>
                                                     <a href="<?= $status->pdf_url ?>" class="text-center">Panduan Transfer</a>
-                                                    Silahkah login kembali jika sudah melakukan pembayaran
                                                 </p>
                                             </div>
                                         </div>

@@ -142,11 +142,11 @@
                   </div>
                   <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 
-                    <li>
+                    <!-- <li>
                       <a href="<?= base_url('Mempelai/Profile/GantiPassword') ?>">
                         <i class="fa fa-gears"></i> Ganti Paassword
                       </a>
-                    </li>
+                    </li> -->
 
                     <li>
                       <a href="<?= base_url('Mempelai/Auth/Logout'); ?>">
