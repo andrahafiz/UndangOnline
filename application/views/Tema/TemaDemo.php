@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
-                            <li class="active"><a href="#">Home</a></li>
+                            <!-- <li class="active"><a href="#">Home</a></li> -->
                             <!-- <li><a href="#fh5co-event">Story</a></li>
                             <li class="has-dropdown">
                                 <a href="">Services</a>
@@ -480,7 +480,7 @@
 
     <div class="sendgift js-top">
 
-        <a href="index.html"> Kirim Hadiah</a>
+        <a href="#"> Kirim Hadiah</a>
 
     </div>
     <!-- <div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">

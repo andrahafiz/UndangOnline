@@ -25,8 +25,8 @@
                                                 <p class="text-muted text-center f-20">Transaksi anda sudah terdaftar di dalam sistem kami, mohon menunggu
                                                     <br>lakukan pembayaran!!!<br>
                                                     <a href="<?= $status->pdf_url ?>" class="text-center">Panduan Transfer</a>
+                                                    Silahkah login kembali jika sudah melakukan pembayaran
                                                 </p>
-
                                             </div>
                                         </div>
                                     </div>

@@ -52,6 +52,7 @@
             <td align="center" bgcolor="#ffffff" style="padding: 75px 20px 40px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 20px; line-height: 30px; border-bottom: 1px solid #f6f6f6;">
                 <b>Aktifasi Email.</b><br>
                 Klik tombol di bawah ini untuk melakukan aktifasi akun anda.
+                Terima Kasih
             </td>
         </tr>
         <tr>

@@ -191,7 +191,7 @@ class Auth extends CI_Controller
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
             'smtp_user' => 'joyoom34@gmail.com',
-            'smtp_pass' => 'tuf18ti082',
+            'smtp_pass' => 'tuf18ti082_andra',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -206,6 +206,8 @@ class Auth extends CI_Controller
         $data['link'] = base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token);
         // base_url() . 'Mempelai/Auth/Verifikasi?Email=' . $this->input->post('email') . '&token=' . urlencode($token) . '";
         $email_aktifasi = $this->load->view('Email_Activation', $data, TRUE);
+        // var_dump($email_aktifasi);
+        // die();
 
         if ($type == 'verify') {
 
