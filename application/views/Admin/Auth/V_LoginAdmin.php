@@ -84,17 +84,18 @@
                         </div>
                         <div class="auth-box card">
                             <div class="card-block">
-                                <div class="row m-b-20">
+                                <div class="row m-25">
                                     <div class="col-md-12">
-                                        <h3 class="text-center">Masuk</h3>
+                                        <h3 class="text-center">Login Admin</h3>
                                     </div>
                                 </div>
+                                <?= $this->session->flashdata('message'); ?>
                                 <div class="form-group form-primary">
-                                    <input type="text" name="username" id="username" class="form-control" required="" placeholder="Alamat Username anda">
+                                    <input type="text" name="username" id="username" class="form-control" required="" placeholder="Username">
                                     <span class="form-bar"></span>
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="password" name="password" id="password" class="form-control" required="" placeholder="Password anda">
+                                    <input type="password" name="password" id="password" class="form-control" required="" placeholder="Password">
                                     <span class="form-bar"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
