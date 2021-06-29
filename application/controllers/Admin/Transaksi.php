@@ -31,6 +31,7 @@ class Transaksi extends CI_Controller
         $this->load->library('veritrans');
         $this->veritrans->config($params);
         $this->load->helper('url');
+        cekaccess_admin();
     }
 
     public function index()
