@@ -16,9 +16,9 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        // if ($this->session->userdata("username")) {
-        //     redirect('Mempelai/Dashboard');
-        // }
+        if ($this->session->userdata("Username_Admin")) {
+            redirect('Admin/Dashboard');
+        }
         $this->form_validation->set_rules('username', 'username', 'required|trim');
         $this->form_validation->set_rules('password', 'password', 'required|trim');
         if ($this->form_validation->run() == False) {
@@ -42,8 +42,8 @@ class Auth extends CI_Controller
             if ($akun["Status_Admin"] == 1) {
                 if ($pass == $akun["Password_Admin"]) {
                     $data = [
-                        'ID_Akun' => $akun["ID_Admin"],
-                        'Username_akun' => $akun["Username_Admin"]
+                        'ID_Admin' => $akun["ID_Admin"],
+                        'Username_Admin' => $akun["Username_Admin"]
                     ];
                     $this->session->set_userdata($data);
 
@@ -149,11 +149,11 @@ class Auth extends CI_Controller
     }
     public function logout()
     {
-            $this->session->unset_userdata("Username");
-            $this->session->unset_userdata("Email_Akun");
-            $this->session->unset_userdata("ID_Akun");
-            $this->session->unset_userdata("ID_Undangan");
-            $this->session->sess_destroy();
+        $this->session->unset_userdata("Username");
+        $this->session->unset_userdata("Email_Akun");
+        $this->session->unset_userdata("ID_Akun");
+        $this->session->unset_userdata("ID_Undangan");
+        $this->session->sess_destroy();
         redirect('Admin\Auth');
     }
 

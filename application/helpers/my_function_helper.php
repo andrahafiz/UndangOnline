@@ -53,9 +53,13 @@ function cekaccess()
 function cekaccess_admin()
 {
     $ci = get_instance();
-    if (!$ci->session->userdata("Username_akun")) {
+    // echo $ci->session->userdata("Username_Admin");
+    // die();
+    if (!$ci->session->userdata("Username_Admin")) {
         redirect('Admin/Auth');
+        // echo 'Admin tidak ditemukan';
     } else {
+        // echo $ci->session->userdata("Username_Admin");
     }
 }
 

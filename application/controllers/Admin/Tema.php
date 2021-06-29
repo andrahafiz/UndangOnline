@@ -9,6 +9,7 @@ class Tema extends CI_Controller
         parent::__construct();
         $this->load->model('Tema_Model');
         $this->load->helper('my_function_helper');
+        cekaccess_admin();
     }
 
     public function index()
