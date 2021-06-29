@@ -4,7 +4,7 @@ class Transaksi_Model extends CI_Model
 
     public function selectAll_Undangan()
     {
-        return $this->db->get_where('tb_transaksi', array('tipe_transaksi' => 'Undangan'))->result();
+        return $this->db->get_where('tb_transaksi')->result();
     }
 
     public function select_by_id($namathema)

@@ -12,7 +12,7 @@
                             <!-- HTML5 Export Buttons table start -->
                             <div class="card">
                                 <div class="card-header table-card-header">
-                                    <h3>Transaksi Undangan</h3>
+                                    <h3>Transaksi</h3>
 
                                 </div>
                                 <div class="card-block">
@@ -27,6 +27,7 @@
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Total Pembayaran</th>
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68.4px;">ID Undangan</th>
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Waktu Transaksi</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Tipe Transaksi</th>
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Status</th>
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Aksi </th>
                                                 </tr>
@@ -42,6 +43,9 @@
                                                         <td style="vertical-align:middle;"><?php echo rupiah($value->gross_amount) ?></td>
                                                         <td style="vertical-align:middle;"><a class="text-custom" href="<?= base_url('Admin/Undangan/Detail/') . $value->kode_undangan ?>"><?php echo $value->kode_undangan ?></a></td>
                                                         <td style="vertical-align:middle;"><?php echo $value->transaction_time ?></td>
+                                                        <td style="vertical-align:middle;">
+                                                            <strong><?php echo $value->tipe_transaksi ?></strong>
+                                                        </td>
                                                         <td style="vertical-align:middle;">
                                                             <?php
 
@@ -73,6 +77,7 @@
                                                     <th rowspan="1" colspan="1">Total Pembayaran</th>
                                                     <th rowspan="1" colspan="1">ID Undangan</th>
                                                     <th rowspan="1" colspan="1">Waktu Transaksi </th>
+                                                    <th rowspan="1" colspan="1">Tipe Transaksi </th>
                                                     <th rowspan="1" colspan="1">Status </th>
                                                     <th rowspan="1" colspan="1">Aksi</th>
                                                 </tr>
@@ -83,6 +88,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
