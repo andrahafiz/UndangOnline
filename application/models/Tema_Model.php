@@ -42,7 +42,7 @@ class Tema_Model extends CI_Model
         $this->db->update('thema', $data);
     }
 
-    public function tema_favorite()
+    public function tema_favorite($limit)
     {
         //QUERY 'SELECT *,COUNT(ID_Tema) FROM `tb_undangan` GROUP BY ID_Tema order by COUNT(ID_Tema) DESC LIMIT 3'
         /* select thema.*,count(ID_Tema) as jumlah_tema from tb_undangan 
@@ -55,7 +55,7 @@ class Tema_Model extends CI_Model
             ->join('thema', 'tb_undangan.ID_Tema = thema.id_thema ')
             ->group_by('ID_Tema')
             ->order_by('jumlah_tema', 'DESC')
-            ->limit(3);
+            ->limit($limit);
         $query = $this->db->get()->result();
         return $query;
     }

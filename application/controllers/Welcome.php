@@ -18,7 +18,7 @@ class Welcome extends CI_Controller
 		$data = array(
 			'jml_tema' => $this->Tema_Model->jumlahtema(),
 			'jml_akun' => $this->Akun_Model->jumlahakun(),
-			'tema_favorite' => $this->Tema_Model->tema_favorite(),
+			'tema_favorite' => $this->Tema_Model->tema_favorite(3),
 			'testimoni' => $this->Testimoni_Model->rand_select(),
 		);
 		// print_r($data['testimoni']);

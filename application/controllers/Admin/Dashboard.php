@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller
         $this->load->helper('my_function_helper');
         $this->load->model('Tamu_Model');
         $this->load->model('Akun_Model');
+        $this->load->model('Tema_Model');
         cekaccess_admin();
     }
     // }
@@ -20,8 +21,11 @@ class Dashboard extends CI_Controller
             'judul' => 'Dashboard',
             'menu' => menu_admin(),
             'data_akun' => $akun,
-            'jumlah_akun' => $this->Akun_Model->jumlahakun()
+            'jumlah_akun' => $this->Akun_Model->jumlahakun(),
+            'tema' => $this->Tema_Model->tema_favorite(5),
         );
+        // var_dump($data['tema']);
+        // die();
         $this->load->view('Admin/layout/header', $data);
         $this->load->view('Admin/layout/navbar', $data);
         $this->load->view('Admin/Dashboard', $data);

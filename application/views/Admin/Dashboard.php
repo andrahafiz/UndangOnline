@@ -139,99 +139,40 @@
                                                         <div class="chk-option">
                                                             <div class="checkbox-fade fade-in-primary">
                                                                 <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
+                                                                    <i class="fa fa-sort-numeric-asc"></i>
                                                                 </label>
                                                             </div>
                                                         </div>
                                                         Nama Tema
                                                     </th>
-                                                    <th>Total</th>
+                                                    <th class="text-center">Total</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
+                                                <?php foreach ($tema as $key => $value) { ?>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="chk-option">
+                                                                <div class="checkbox-fade fade-in-primary">
+                                                                    <label class="check-task">
+                                                                        <strong><?= $key + 1 ?></strong>
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Able Pro</h6>
-                                                            <p class="text-muted m-b-0">Powerful Admin Theme</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-c-pink"> 15,652</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
+                                                            <div class="d-inline-block align-middle">
+                                                                <h6><?= $value->nama_thema ?></h6>
+                                                                <p class="text-muted m-b-0"><?= $value->view_thema ?></p>
                                                             </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Photoshop</h6>
-                                                            <p class="text-muted m-b-0">Design Software</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-c-pink"> 18,785</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Guruable</h6>
-                                                            <p class="text-muted m-b-0">Best Admin Template</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-c-pink"> 9,652</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="chk-option">
-                                                            <div class="checkbox-fade fade-in-primary">
-                                                                <label class="check-task">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon feather icon-check txt-default"></i>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-inline-block align-middle">
-                                                            <h6>Flatable</h6>
-                                                            <p class="text-muted m-b-0">Admin App</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-c-pink"> 7,856</td>
-                                                </tr>
+                                                        </td>
+                                                        <td class="text-c-pink text-center"> <?= $value->jumlah_tema ?></td>
+                                                    </tr>
+                                                <?php } ?>
+
+
                                             </tbody>
                                         </table>
                                         <div class="text-center">
-                                            <a href="#!" class=" b-b-primary text-primary">View all Projects</a>
+                                            <a href="<?= base_url('Admin/Tema'); ?>" class=" b-b-primary text-primary">Lihat Semua Tema</a>
                                         </div>
                                     </div>
                                 </div>
