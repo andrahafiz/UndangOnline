@@ -39,7 +39,7 @@
                                                     <tr role="row">
                                                         <td class="sorting_1" style="vertical-align:middle;"><?php echo $key + 1 ?></td>
                                                         <td style="vertical-align:middle;"><?php echo $value->order_id ?></td>
-                                                        <td style="vertical-align:middle;"><?php echo strtoupper($value->bank) ?></td>
+                                                        <td style="vertical-align:middle;"><img class="img-40" src='<?php echo getimagebank($value->bank) ?>'> </td>
                                                         <td style="vertical-align:middle;"><?php echo rupiah($value->gross_amount) ?></td>
                                                         <td style="vertical-align:middle;"><a class="text-custom" href="<?= base_url('Admin/Undangan/Detail/') . $value->kode_undangan ?>"><?php echo $value->kode_undangan ?></a></td>
                                                         <td style="vertical-align:middle;"><?php echo $value->transaction_time ?></td>

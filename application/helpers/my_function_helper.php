@@ -182,6 +182,24 @@ function getBulan($bln)
     }
 }
 
+function getimagebank($str)
+{
+    switch ($str) {
+        case "bca":
+            return base_url('assets/Admin/images/bank/bca.png');
+            break;
+        case "bni":
+            return base_url('assets/Admin/images/bank/bni.png');
+            break;
+        case "permata":
+            return base_url('assets/Admin/images/bank/permata.png');
+            break;
+        case "mandiri":
+            return base_url('assets/Admin/images/bank/mandiri.png');
+            break;
+    }
+}
+
 // Fungsi untuk menampilkan data dalam bentuk combobox
 function comboboxmanual($name, $id, $value, $isi, $selected)
 {

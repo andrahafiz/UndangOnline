@@ -71,7 +71,7 @@
     </div>
     <!-- Pre-loader end -->
 
-    <section class="login-block">
+    <section class="login-block" style="background: linear-gradient(to right, #00bcd4, #ff94a3);">
         <!-- Container-fluid starts -->
         <div class="container">
             <div class="row">

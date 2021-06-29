@@ -49,7 +49,7 @@
                                     <span class="text-c-blue f-w-900 f-20">Total Hadiah</span>
                                     <h1 class="m-t-20"><?= rupiah($total_hadiah) ?></h1>
                                 </div>
-                                <a href="<?= base_url("Hadiah"); ?>">
+                                <a href="<?= base_url("Mempelai/Hadiah"); ?>">
                                     <div class="card-footer bg-c-green">
                                         <div class="row align-items-center text-left ">
                                             <div class="col">
