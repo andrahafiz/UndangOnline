@@ -27,11 +27,11 @@ function menu_admin()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Transaksi', 'Testimoni', 'Logout'],
+        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Transaksi', 'Testimoni', 'Admin', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', ' fa fa-money', 'fa fa-list-alt', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', ' fa fa-money', 'fa fa-list-alt', 'fa fa-group', 'feather icon-log-out'],
         //url
-        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Transaksi', 'Admin/Testimoni', 'Admin/Auth/logout'],
+        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Transaksi', 'Admin/Testimoni', 'Admin/Admin', 'Admin/Auth/logout'],
     ];
     return $menu;
 }
@@ -238,8 +238,8 @@ function rupiah($angka)
 
 function kode($table)
 {
-    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema', 'tb_testimoni');
-    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM', 'TSM');
+    $tabel = array('tb_akun', 'tb_acara', 'tb_mempelai', 'tb_undangan', 'tb_tamu', 'thema', 'tb_testimoni', 'tb_admin');
+    $kode = array('AKN', 'ACR', 'MPL', 'UND', 'TMU', 'THM', 'TSM', 'ADM');
     $index_kode = array_search($table, $tabel);
     return $kode[$index_kode];
 }
