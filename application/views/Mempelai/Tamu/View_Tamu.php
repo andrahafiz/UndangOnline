@@ -53,11 +53,11 @@
                                                                         </button>';
                                                                         }
 
-                                                                        if (isset($value->Email_Tamu)) {
-                                                                            echo ' <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Email">
-                                                                            <i class="fa fa-envelope"></i>
-                                                                        </button>';
-                                                                        }
+                                                                        // if (isset($value->Email_Tamu)) {
+                                                                        //     echo ' <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Email">
+                                                                        //     <i class="fa fa-envelope"></i>
+                                                                        // </button>';
+                                                                        // }
                                                                         ?>
                                                                         <span data-toggle="modal" data-target="#edit-Modal">
                                                                             <button type="button" id="" data-id="<?= $value->ID_TamuUndangan ?>" data-wa="<?= $value->Wa_Tamu ?>" data-nama="<?= $value->Nama_Tamu ?>" data-email="<?= $value->Email_Tamu ?>" class="tombolUbah btn btn-info  btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" title="Edit">

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Adminty - Premium Admin Template by Colorlib </title>
+    <title>Get Married</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -102,7 +102,7 @@
                                     <div class="col-12">
 
                                         <div class="forgot-phone text-right f-right">
-                                            <a href="auth-reset-password.htm" class="text-right f-w-600"> Lupa Password?</a>
+                                            <!-- <a href="auth-reset-password.htm" class="text-right f-w-600"> Lupa Password?</a> -->
                                         </div>
                                     </div>
                                 </div>

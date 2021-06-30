@@ -306,20 +306,22 @@
                 <div class="row">
                     <div class="row animate-box">
                         <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                            <span>Harapan Mereka</span>
-                            <h2>Ucapan Selamat</h2>
+                            <h2>Harapan Mereka</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 animate-box">
                             <div class="wrap-testimony">
                                 <div class="owl-carousel-fullwidth">
-                                    <?php foreach ($ucapan as $key => $value) { ?>
+
+                                    <?php
+                                    $i = 0;
+                                    foreach ($ucapan as $key => $value) if ($i++ <= 5) { ?>
                                         <div class="item">
                                             <div class="testimony-slide active text-center">
                                                 <span><?= $value->Nama_Tamu ?></span>
                                                 <blockquote>
-                                                    <p>"<?= $value->Ucapan ?>"</p>
+                                                    <p><?= $value->Nama_Tamu ?></p>
                                                 </blockquote>
                                             </div>
                                         </div>
@@ -331,6 +333,36 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- <div id="fh5co-testimonial">
+            <div class="container">
+                <div class="row">
+                    <div class="row animate-box">
+                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                            <span>Harapan Mereka</span>
+                            <h2>Ucapan Selamat</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 animate-box">
+                            <div class="wrap-testimony">
+                                <div class="owl-carousel-fullwidth">
+
+                                    <?php
+                                    foreach ($ucapan as $key => $value) {
+                                        echo  $value->Nama_Tamu;
+                                        echo  $value->Ucapan;
+                                    }
+                                    // }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
 
         <!-- <div id="fh5co-services" class="fh5co-section-gray">
             <div class="container">

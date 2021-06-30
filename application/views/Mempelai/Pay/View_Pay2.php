@@ -104,6 +104,7 @@
                                         <div class="col-sm-6">
                                             <h5 class="m-b-10 f-w-600">Email</h5>
                                             <input type="text" name="nama" id="nama" class=" text-muted f-w-400 border-0" readonly value="<?= $this->session->userdata('Email_Akun') ?>"></input>
+
                                         </div>
                                         <div class="col-sm-6">
                                             <h5 class="m-b-10 f-w-600">ID Akun</h5>
@@ -114,7 +115,8 @@
                                     <div class="row m-t-25">
                                         <div class="col-sm-6">
                                             <h5 class="m-b-10 f-w-600">No Handphone</h5>
-                                            <input type="text" name="jml_bayar" id="jml_bayar" class=" text-muted f-w-400 border-0" readonly value="100000"></input>
+                                            <input type="hidden" name="jml_bayar" id="jml_bayar" class=" text-muted f-w-400 border-0" readonly value="100000"></input>
+                                            <input type="hidden" name="no_hp" id="no_hp" class=" text-muted f-w-400 border-0" readonly value="<?= format_nohp($data_akun['NoHp_akun']) ?>"></input>
                                             <!-- <h6 class="text-muted f-w-400"><?= format_nohp($data_akun['NoHp_akun']) ?></h6> -->
                                         </div>
                                         <div class="col-sm-6">

@@ -23,7 +23,7 @@ class Undangan_Model extends CI_Model
     public function selectbyid_undangan($id)
     {
         // $this->db->where('pekerjaan_id', $id);
-        return $this->db->query("SELECT * FROM `view_all` WHERE ID_Undangan = 'UND1' OR Url_Undangan='AzizLubis'")->row();
+        return $this->db->query("SELECT * FROM `view_all` WHERE ID_Undangan = '$id' OR Url_Undangan='$id'")->row();
     }
     public function undangan_update($id, $data)
     {

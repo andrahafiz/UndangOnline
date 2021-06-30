@@ -19,11 +19,16 @@ class Statistik_Model extends CI_Model
 
     public function sum_tema()
     {
-        return $this->db->query("SELECT SUM(gross_amount) as total FROM tb_transaksi WHERE MONTH(transaction_time) = '" . date('m') . "' AND status_code='settlement' AND tipe_transaksi='Undangan'")->row();
+        return $this->db->count_all_results('thema');
     }
 
     public function selectAll_Transaksi()
     {
         return $this->db->get_where('tb_transaksi')->result();
+    }
+
+    public function jumlahtema()
+    {
+        return $this->db->count_all_results('thema');
     }
 }

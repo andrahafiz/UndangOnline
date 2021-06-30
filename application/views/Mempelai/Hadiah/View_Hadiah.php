@@ -20,6 +20,7 @@
                                                     <th>No</th>
                                                     <th>Nama Tamu</th>
                                                     <th>Email/Wa</th>
+                                                    <th>Tanggal</th>
                                                     <th>Jumlah Hadiah</th>
                                                 </tr>
                                             </thead>
@@ -29,6 +30,7 @@
                                                         <td><?= ($key + 1) ?></td>
                                                         <td><?= $value->Nama_Tamu ?></td>
                                                         <td><?= empty($value->Email_Tamu) ? 'Tidak ada email' : $value->Email_Tamu ?> /<?= empty($value->Wa_Tamu) ? 'Tidak ada WA' : $value->Wa_Tamu ?> </td>
+                                                        <td><?= $value->transaction_time ?> </td>
                                                         <td><Strong><?= rupiah($value->gross_amount) ?></strong> </td>
                                                     </tr>
                                                 <?php  } ?>
@@ -39,6 +41,7 @@
                                                     <th>No</th>
                                                     <th>Nama Tamu</th>
                                                     <th>Email/Wa</th>
+                                                    <th>Tanggal</th>
                                                     <th>Jumlah Hadiah</th>
                                                 </tr>
                                             </tfoot>

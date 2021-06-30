@@ -27,7 +27,8 @@ class Dashboard extends CI_Controller
             'tema' => $this->Tema_Model->tema_favorite(5),
             'pemasukan' => $this->Statistik_Model->sum_undangan()->gross_amount,
             'pemasukan_bulan' => $this->Statistik_Model->select_total_perbulan()->total,
-            'transaksi' => $this->Statistik_Model->selectAll_Transaksi()
+            'transaksi' => $this->Statistik_Model->selectAll_Transaksi(),
+            'jumlah_tema' => $this->Statistik_Model->sum_tema()
         );
         // var_dump($data['pemasukan']);
         // die();

@@ -47,7 +47,10 @@ class Galeri extends CI_Controller
         // redirect('Mempelai/Mempelai');
 
         $id_undangan = $this->session->userdata('ID_Undangan');
+        print_r($_FILES['files']['name']);
         $count = count($_FILES['files']['name']);
+        var_dump($count);
+        // die();
 
         for ($i = 0; $i < $count; $i++) {
 

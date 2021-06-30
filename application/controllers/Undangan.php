@@ -24,9 +24,14 @@ class Undangan extends CI_Controller
             // echo 'ada';
             $data['id_tema'] = $data['data_undangan']->ID_Tema;
             $data['id_undangan'] = $data['data_undangan']->ID_Undangan;
+            // var_dump($data['id_undangan']);
+            // die();
             $data['tema'] = $this->Tema_Model->selectbyid($data['id_tema'])->view_thema;
-            $data['ucapan'] =  $this->Ucapan_Model->selectbyid_limit($id_undangan);
+            $data['ucapan'] =  $this->Ucapan_Model->selectbyid_limit($data['id_undangan']);
             // var_dump($data['ucapan']);
+            // foreach ($data['ucapan'] as $key => $value) {
+            //     echo $value->Ucapan;
+            // }
             // die;
             // $data = array(
             //     'judul' => 'Undangan',

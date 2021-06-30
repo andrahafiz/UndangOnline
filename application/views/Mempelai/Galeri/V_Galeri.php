@@ -79,19 +79,19 @@
                                                                                 <li>Cari video yang ingin di upload</li>
                                                                                 <li>Klik tombol <b>"Bagikan"</b></li>
                                                                                 <div class="text-center m-3">
-                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\tutorial\tutorial1.png" class="text-center img-thumbnail " width="50%" height="50%">
+                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\Tutorial\tutorial1.png" class="text-center img-thumbnail " width="50%" height="50%">
                                                                                 </div>
                                                                                 <li>Klik <b>"Sematkan"</b></li>
                                                                                 <div class="text-center m-3">
-                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\tutorial\tutorial2.png" class="text-center img-thumbnail " width="50%" height="50%">
+                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\Tutorial\tutorial2.png" class="text-center img-thumbnail " width="50%" height="50%">
                                                                                 </div>
                                                                                 <li>Copy paste isi dari <b>"src"</b></li>
                                                                                 <div class="text-center m-3">
-                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\tutorial\tutorial3.png" class="text-center img-thumbnail" width="50%" height="50%">
+                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\Tutorial\tutorial3.png" class="text-center img-thumbnail" width="50%" height="50%">
                                                                                 </div>
                                                                                 <li>Masukan ke dalam inputan</li>
                                                                                 <div class="text-center m-3">
-                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\tutorial\tutorial4.png" class="text-center img-thumbnail" width="50%" height="50%">
+                                                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\Tutorial\tutorial4.png" class="text-center img-thumbnail" width="50%" height="50%">
                                                                                 </div>
                                                                                 <li><b>Selesai</b></li>
                                                                             </ol>

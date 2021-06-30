@@ -36,8 +36,8 @@
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-simple-c-pink text-white widget-visitor-card">
                                 <div class="card-block-small text-center">
-                                    <h2 class="f-w-900"><?= rupiah($pemasukan_bulan) ?></h2>
-                                    <h6>Pemasukan Bulan <strong><?= getBulan(date('m')) ?></strong></h6>
+                                    <h2 class="f-w-900"><?= $jumlah_tema ?></h2>
+                                    <h6>Tema</h6>
                                     <i class="ti-palette"></i>
                                 </div>
                             </div>
