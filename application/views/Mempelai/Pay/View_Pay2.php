@@ -3,7 +3,8 @@
         <div class="main-body">
             <div class="page-wrapper">
                 <div class="page-body">
-                    <?php if ($status && $data_akun['Status_akun'] == "2") { ?>
+                    <!-- JIKA SUDAH MELAKUKAN PEMBAYARAN -->
+                    <?php if ($status->status_code == "settlement" && $data_akun['Status_akun'] == "2") { ?>
                         <div class="row">
                             <div class="col-xl-12 col-md-12 ">
                                 <div class="card user-card-full  z-depth-bottom-3 ">
@@ -19,12 +20,37 @@
                                         </div>
                                         <div class="col-sm-8">
                                             <div class="card-block">
-                                                <h2 class=" b-b-default text-center mt-5 f-52">Transaksi Berhasil</h2>
-                                                <p class="text-muted text-center f-20">Transaksi anda sudah terdaftar di dalam sistem kami, mohon menunggu
-                                                    <br>lakukan pembayaran!!!<br>
-                                                    Silahkah login kembali jika sudah melakukan pembayaran<br>
-                                                    <a href="<?= $status->pdf_url ?>" class="text-center">Panduan Transfer</a>
-                                                </p>
+                                                <h2 class="f-w-900 text-center mt-5 f-50 m-b-">Transaksi Berhasil</h2>
+                                                <hr>
+                                                <div class="row m-t-25">
+                                                    <div class="col-sm-6">
+                                                        <h5 class="m-b-10 f-w-600">Email</h5>
+                                                        <input type="text" class=" text-muted f-w-600 border-0 w-100" readonly value="<?= $this->session->userdata('Email_Akun') ?>"></input>
+
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <h5 class="m-b-10 f-w-600">Bank Transfer</h5>
+                                                        <img class="img-60" src='<?php echo getimagebank($status->bank) ?>'>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row m-t-25 m-b-40">
+                                                    <div class="col-sm-6">
+                                                        <h5 class="m-b-10 f-w-600">Tanggal Pembayaran</h5>
+                                                        <input type="text" class=" text-muted f-w-600 border-0" readonly value="<?php
+                                                                                                                                $time = strtotime($status->transaction_time);
+                                                                                                                                $hari = date('D', $time);
+
+                                                                                                                                echo getHari($hari) . ', ' . tgl_indo($status->transaction_time);
+                                                                                                                                ?>"></input>
+
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <h5 class="m-b-10 f-w-600">Total Pembayaran</h5>
+                                                        <input type="text" class=" text-muted f-w-600 border-0" readonly value="<?= rupiah($status->gross_amount) ?>"></input>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -32,6 +58,7 @@
                             </div>
                         </div>
                     <?php } ?>
+                    <!-- END -->
                 </div>
             </div>
         </div>

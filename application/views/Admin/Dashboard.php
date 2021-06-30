@@ -209,7 +209,8 @@
                                                         <td><?= $value->tipe_transaksi == 'Undangan' ? '<p class="text-custom">Undangan</p>' : '<p class="text-pink">Hadiah</p>' ?></td>
                                                         <td><a class="text-custom" href="<?= base_url('Admin/Undangan/Detail/') . $value->kode_undangan ?>"><?php echo $value->kode_undangan ?></a></td>
                                                         <td class="f-w-900"><?= rupiah($value->gross_amount) ?></td>
-                                                        <td><?php
+                                                        <td>
+                                                        <?php
                                                             $time = strtotime($value->transaction_time);
                                                             $hari = date('D', $time);
 
