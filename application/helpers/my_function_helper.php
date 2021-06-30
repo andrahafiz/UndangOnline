@@ -15,11 +15,11 @@ function menu_mempelai()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Mempelai', 'Acara', 'Tamu Undangan', 'Hadiah', 'Tema', 'Galeri', 'Ucapan Selamat', 'Pembayaran', 'Testimoni', 'Logout'],
+        ['Dashboard', 'Mempelai', 'Acara', 'Tamu Undangan', 'Hadiah', 'Tema', 'Galeri', 'Ucapan Selamat', 'Pembayaran', 'Tarik Hadiah', 'Testimoni', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'ti-palette', 'feather icon-image', 'fa fa-comments-o', 'fa fa-credit-card', 'fa fa-list-alt', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'feather icon-calendar', 'feather icon-user-plus', 'fa fa-gift', 'ti-palette', 'feather icon-image', 'fa fa-comments-o', 'fa fa-credit-card', 'fa fa-money', 'fa fa-list-alt', 'feather icon-log-out'],
         //url
-        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Tema', 'Mempelai/Galeri', 'Mempelai/Ucapan', 'Mempelai/Pembayaran', 'Mempelai/Testimoni', 'Mempelai/Auth/logout'],
+        ['Mempelai/Dashboard', 'Mempelai/Mempelai', 'Mempelai/Acara', 'Mempelai/Tamu', 'Mempelai/Hadiah', 'Mempelai/Tema', 'Mempelai/Galeri', 'Mempelai/Ucapan', 'Mempelai/Pembayaran', 'Mempelai/TarikHadiah', 'Mempelai/Testimoni', 'Mempelai/Auth/logout'],
     ];
     return $menu;
 }
