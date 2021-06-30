@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller
         $this->load->model('Akun_Model');
         $this->load->model('Statistik_Model');
         $this->load->model('Tema_Model');
+
         cekaccess_admin();
     }
     // }
@@ -26,6 +27,7 @@ class Dashboard extends CI_Controller
             'tema' => $this->Tema_Model->tema_favorite(5),
             'pemasukan' => $this->Statistik_Model->sum_undangan()->gross_amount,
             'pemasukan_bulan' => $this->Statistik_Model->select_total_perbulan()->total,
+            'transaksi' => $this->Statistik_Model->selectAll_Transaksi()
         );
         // var_dump($data['pemasukan']);
         // die();

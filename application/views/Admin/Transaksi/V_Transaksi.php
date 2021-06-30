@@ -56,7 +56,7 @@
                                                             } elseif ($value->status_code == 'cancel') {
                                                                 echo '<label class="badge badge-lg bg-danger">Cancel</label>';
                                                             } elseif ($value->status_code == 'expire') {
-                                                                echo '<label class="badge badge-lg bg-danger">Kadaluwarsa</label>';
+                                                                echo '<label class="badge badge-lg bg-warning">Kadaluwarsa</label>';
                                                             } else {
                                                                 echo '<label class="badge badge-lg bg-danger">Gagal</label>';
                                                             }

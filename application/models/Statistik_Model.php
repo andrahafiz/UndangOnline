@@ -22,10 +22,8 @@ class Statistik_Model extends CI_Model
         return $this->db->query("SELECT SUM(gross_amount) as total FROM tb_transaksi WHERE MONTH(transaction_time) = '" . date('m') . "' AND status_code='settlement' AND tipe_transaksi='Undangan'")->row();
     }
 
-    public function update($id, $data)
+    public function selectAll_Transaksi()
     {
-
-        $this->db->where('ID_Mempelai', $id);
-        $this->db->update('tb_mempelai', $data);
+        return $this->db->get_where('tb_transaksi')->result();
     }
 }
