@@ -514,6 +514,11 @@ $(document).ready(function () {
         }
     });
 
+    $('#table-hadiah-ds').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json"
+        }
+    });
     $('#order-table').DataTable({
         "order": [
             [3, "desc"]

@@ -29,7 +29,8 @@ class Dashboard extends CI_Controller
             'jml_tamu' => $this->Tamu_Model->jumlahtamu($this->id_undangan),
             'tamu' => $tamu,
             'total_hadiah' => $this->Hadiah_Model->hitung_duit_id($this->id_undangan)->gross_amount,
-            'url_undangan' => $this->Undangan_Model->selectbyid($this->id_undangan)->Url_Undangan
+            'url_undangan' => $this->Undangan_Model->selectbyid($this->id_undangan)->Url_Undangan,
+            'data_hadiah' => $this->Hadiah_Model->selectbyid($this->id_undangan)
         );
         $this->form_validation->set_rules('url_input', 'Nama Lengkap Mempelai Pria', 'alpha_dash|is_unique[tb_undangan.Url_Undangan]', [
             'is_unique' => 'URL sudah terdaftar',

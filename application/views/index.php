@@ -144,7 +144,7 @@
     </header>
 
     <!--====== CARI UNDANGAN ======-->
-    <div class="brand-area pt-90">
+    <!-- <div class="brand-area pt-90">
         <div class="container">
             <div class="line"></div>
             <div class="col-lg-12">
@@ -168,7 +168,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--====== END CARI UNDANGAN ======-->
 
     <!--====== TEMA PART START ======-->
