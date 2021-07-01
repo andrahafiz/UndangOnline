@@ -44,6 +44,10 @@ class Hadiah_Model extends CI_Model
     {
         $this->db->insert('tb_ucapan', $data);
     }
+    public function insert_to_tb_tarikhadiah($data)
+    {
+        $this->db->insert('tb_requesthadiah', $data);
+    }
 
     public function cek_ucapan($Id_tamu)
     {
