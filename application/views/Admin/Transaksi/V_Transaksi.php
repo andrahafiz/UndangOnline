@@ -29,7 +29,7 @@
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Waktu Transaksi</th>
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Tipe Transaksi</th>
                                                     <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Status</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Aksi </th>
+                                                    <!-- <th class="sorting" tabindex="0" aria-controls="basic-btn" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 137.2px;">Aksi </th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -61,11 +61,11 @@
                                                                 echo '<label class="badge badge-lg bg-danger">Gagal</label>';
                                                             }
                                                             ?></td>
-                                                        <td style="vertical-align:middle;">
+                                                        <!-- <td style="vertical-align:middle;">
                                                             <a href="<?= $value->status_code == 200 ? "#" : base_url('Transaksi/status/' . $value->order_id); ?>">
                                                                 <button class="btn  btn-icon icon-btn <?= $value->status_code == 200 ? 'btn-disabled disabled' : 'btn-warning' ?>" data-toggle="tooltip" data-placement="top    " title="Cek Status"><i class="fa fa-refresh"></i></button>
                                                             </a>
-                                                        </td>
+                                                        </td> -->
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -79,7 +79,7 @@
                                                     <th rowspan="1" colspan="1">Waktu Transaksi </th>
                                                     <th rowspan="1" colspan="1">Tipe Transaksi </th>
                                                     <th rowspan="1" colspan="1">Status </th>
-                                                    <th rowspan="1" colspan="1">Aksi</th>
+                                                    <!-- <th rowspan="1" colspan="1">Aksi</th> -->
                                                 </tr>
                                             </tfoot>
                                         </table>
