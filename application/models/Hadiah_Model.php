@@ -49,8 +49,8 @@ class Hadiah_Model extends CI_Model
         $this->db->insert('tb_requesthadiah', $data);
     }
 
-    public function cek_ucapan($Id_tamu)
+    public function cek_hadiah($id_undangan)
     {
-        return $this->db->query("SELECT * FROM tb_ucapan WHERE Id_tamu = 'UND1' OR Url_Undangan='AzizLubis'")->row();
+    return $this->db->query("SELECT * FROM tb_requesthadiah WHERE ID_Undangan = '$id_undangan' limit 1")->row();
     }
 }
