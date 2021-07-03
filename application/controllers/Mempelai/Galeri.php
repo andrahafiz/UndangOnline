@@ -84,10 +84,10 @@ class Galeri extends CI_Controller
                     // var_dump($uploadData);
                     // die();
                     $this->Galeri_Model->tambah_data_media($data);
-                    echo "<script> alert('data berhasil');</script>";
+                    $this->pesan('sukses', 'Data berhasil ditambah');
+                    redirect('Mempelai/Mempelai');
                 } else {
-
-                    echo "<script> alert('" . $this->upload->display_errors() . "');</script>";
+                    $this->pesan('gagal', $this->upload->display_errors());
 
                     redirect('Mempelai/Mempelai');
                 }
@@ -106,13 +106,9 @@ class Galeri extends CI_Controller
             if ($this->cekurlyoutube($url) == 1) {
                 $this->Galeri_Model->tambah_data_media($this->_datavideo());
                 if ($this->db->affected_rows() > 0) {
-                    $this->pesan('sukses', 'Video anda berhasil ditambahkan');
-                    echo "<script> alert('data berhasil di tambah');</script>";
-                    echo "<script> window.location='" . base_url('Mempelai/Galeri') . "';</script>";
-                    // redirect('Mempelai/Galeri');
+                    $this->pesan('sukses', 'Data berhasil ditambah');
+                    redirect('Mempelai/Galeri');
                 } else {
-                    // echo "<script> alert('data gagal di tambah');</script>";
-                    // echo "<script> window.location='" . base_url('Mempelai/Galeri') . "';</script>";
                     $this->pesan('gagal', 'Video gagal upload, coba lagi!!!');
                     redirect('Mempelai/Galeri');
                 }

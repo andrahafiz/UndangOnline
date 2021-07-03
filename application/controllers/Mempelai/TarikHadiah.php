@@ -24,18 +24,6 @@ class TarikHadiah extends CI_Controller
             'status' => $this->db->query("SELECT * FROM tb_transaksi WHERE kode_undangan = '$this->id_undangan' AND tipe_transaksi='Undangan'")->row(),
             'dana_tarik' => $this->Hadiah_Model->hitung_duit_id($this->id_undangan)->gross_amount
         );
-        // var_dump($tamu);
-        // echo "<br><br>";
-        // var_dump($data['dana_tarik']);
-        // die;
-        // var_dump($data['tamu'][0]->UcapanSelamat);
-        // // echo $data['tamu']['UcapanSelamat'];
-        // if ($data['tamu'][0]->UcapanSelamat == null) {
-        //     echo "kosong";
-        // } else {
-        //     echo "berisi";
-        // }
-        // die;
         $this->load->view('Mempelai/layout/header', $data);
         $this->load->view('Mempelai/layout/navbar', $data);
         $this->load->view('Mempelai/Hadiah/View_Request', $data);

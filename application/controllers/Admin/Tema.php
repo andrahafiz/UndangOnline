@@ -133,14 +133,13 @@ class Tema extends CI_Controller
                         'image_thema' =>  $upload['file']['file_name'],
                     ];
                     $this->Tema_Model->update_tema($id_thema, $data);
-                    // var_dump($upload);
-                    // die;
+
                     if ($this->db->affected_rows() > 0) {
-                        echo "<script> alert('data berhasil');</script>";
-                        echo "<script> window.location='" . base_url('Admin/Tema') . "';</script>";
+                        $this->pesan('sukses', 'Data berhasil diubah');
+                        redirect('Admin/Tema');
                     } else {
-                        echo "<script> alert('data tidak berhasil');</script>";
-                        echo "<script> window.location='" . base_url('Admin/Tema') . "';</script>";
+                        $this->pesan('gagal', 'Data anda gagal diubah');
+                        redirect('Admin/Tema');
                     }
                 } else { // Jika proses upload gagal
                     $this->pesan('gagal_foto', $upload['error']);
@@ -154,8 +153,8 @@ class Tema extends CI_Controller
                 ];
                 $this->Tema_Model->update_tema($id_thema, $data);
                 if ($this->db->affected_rows() > 0) {
-                    echo "<script> alert('data berhasil');</script>";
-                    echo "<script> window.location='" . base_url('Admin/Tema') . "';</script>";
+                    $this->pesan('sukses', 'Data berhasil diubah');
+                    redirect('Admin/Tema');
                 } else {
                 }
                 redirect('Admin/Tema');

@@ -43,11 +43,11 @@ class Tamu extends CI_Controller
     {
         $this->Tamu_Model->delete($id_undangan);
         if ($this->db->affected_rows() > 0) {
-            echo "<script> alert('data berhasil di hapus');</script>";
-            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            $this->pesan('sukses', 'Data berhasil dihapus');
+            redirect('Mempelai/Tamu');
         } else {
-            echo "<script> alert('data tidak berhasil di hapus');</script>";
-            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            $this->pesan('gagal', 'Data anda gagal dihapus');
+            redirect('Mempelai/Tamu');
         }
     }
     public function validate_member($str)
@@ -116,12 +116,13 @@ class Tamu extends CI_Controller
             $email = $this->input->post('email_tamu');
             $wa  = $this->input->post('wa_tamu');
             $this->Tamu_Model->tambah_data_tamu($data);
+
             if ($this->db->affected_rows() > 0) {
-                echo "<script> alert('data berhasil');</script>";
-                echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+                $this->pesan('sukses', 'Data berhasil ditambah');
+                redirect('Mempelai/Tamu');
             } else {
-                echo "<script> alert('data tidak berhasil');</script>";
-                echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+                $this->pesan('gagal', 'Data gagal ditambahkan');
+                redirect('Mempelai/Tamu');
             }
         }
     }
@@ -140,12 +141,13 @@ class Tamu extends CI_Controller
             'ID_TamuUndangan' => $id_tamu
         ];
         $this->Tamu_Model->update_tamu($where, $data);
+
         if ($this->db->affected_rows() > 0) {
-            echo "<script> alert('data berhasil diubah');</script>";
-            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            $this->pesan('sukses', 'Data berhasil diubah');
+            redirect('Mempelai/Tamu');
         } else {
-            echo "<script> alert('data tidak berhasil diubah');</script>";
-            echo "<script> window.location='" . base_url('Mempelai/Tamu') . "';</script>";
+            $this->pesan('gagal', 'Data gagal ditambahkan');
+            redirect('Mempelai/Tamu');
         }
     }
 
@@ -162,16 +164,41 @@ class Tamu extends CI_Controller
         return $data;
     }
 
-
-
-    public function coba()
+    function pesan($tipe, $pesan)
     {
-        $post = $this->input->post(null, TRUE);
-        if ($post['nama_tamu'] == null) {
-            echo "<script> alert('data');</script>";
-            return false;
-        } else {
-            return true;
+        $template = "";
+        switch ($tipe) {
+            case 'sukses':
+                echo "";
+                $template = '<div class="alert alert-success background-success">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="icofont icofont-close-line-circled text-white"></i>
+                            </button>
+                            <strong>Sukses !</strong> ' . $pesan . '
+                            </div>';
+                break;
+            case 'gagal':
+                $template = '<div class="alert alert-danger background-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="icofont icofont-close-line-circled text-white"></i>
+                            </button>
+                            <strong>Sukses !</strong> ' . $pesan . '
+                            </div>';
+
+                break;
+            case 'gagal_foto':
+                $template = "<div class='alert alert-warning icons-alert'> 
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'> 
+                                <i class='icofont icofont-close-line-circled'></i>
+                                </button> <p><strong>Gagal!</strong>" . $pesan . "</p>
+                                </div>";
+
+                break;
+
+            default:
+
+                break;
         }
+        $this->session->set_flashdata('message', $template);
     }
 }
