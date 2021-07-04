@@ -71,6 +71,17 @@ class TarikHadiah extends CI_Controller
         }
     }
 
+    public function cetak()
+    {
+        $data = [
+            'status' => $this->db->query("SELECT * FROM tb_transaksi WHERE kode_undangan = '$this->id_undangan' AND tipe_transaksi='Undangan'")->row(),
+            'dana_tarik' => $this->Hadiah_Model->hitung_duit_id($this->id_undangan)->gross_amount,
+            'status_tarik' => $this->Hadiah_Model->cek_hadiah($this->id_undangan)
+
+        ];
+        $this->load->view('Mempelai/Hadiah/Invoice', $data);
+    }
+
     function pesan($tipe, $pesan)
     {
         $template = "";

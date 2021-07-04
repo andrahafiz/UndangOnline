@@ -113,11 +113,7 @@
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <h5 class="m-b-10 f-w-600">Tanggal Pengajuan</h5>
-                                                            ] <input type="text" class="form-control-lg text-muted f-w-600 border-0" readonly value="<?php
-                                                                                                                                                        $time = strtotime($status_tarik->Status_RequestTime);
-                                                                                                                                                        $hari = date('D', $time);
-                                                                                                                                                        echo getHari($hari) . ', ' . tgl_indo($status_tarik->Status_RequestTime);
-                                                                                                                                                        ?>"></input>
+                                                            <input type="text" class="form-control-lg text-muted border-0" readonly value=" <?= tgl_indo(date('Y-m-d', $status_tarik->Request_Time)) ?>"></input>
                                                         </div>
                                                     </div>
 
@@ -168,41 +164,25 @@
                                                         </div>
                                                     </div>
                                                     <div class="row m-t-25 m-b-15">
-
                                                         <div class="col-sm-6">
                                                             <h5 class="m-b-10 f-w-600">Total Uang Ditarik</h5>
                                                             <input type="text" name="total" id="total" class="form-control-lg text-muted border-0" readonly value="<?= rupiah($dana_tarik) ?>"></input>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <h5 class="m-b-10 f-w-600">Tanggal Pengajuan</h5>
-                                                            <input type="text" class="form-control-lg text-muted f-w-600 border-0" readonly value="<?php
-                                                                                                                                                    $time = strtotime($status_tarik->Status_RequestTime);
-                                                                                                                                                    $hari = date('D', $time);
-                                                                                                                                                    echo getHari($hari) . ', ' . tgl_indo($status_tarik->Status_RequestTime);
-                                                                                                                                                    ?>"></input>
+                                                            <input type="text" class="form-control-lg text-muted border-0" readonly value=" <?= tgl_indo(date('Y-m-d', $status_tarik->Request_Time)) ?>"></input>
                                                         </div>
                                                     </div>
 
                                                     <div class="row m-t-25">
                                                         <div class="col-sm-6">
                                                             <h5 class="m-b-10 f-w-600">Tanggal Diterima</h5>
+                                                            <input type="text" class="form-control-lg text-muted border-0" readonly value=" <?= tgl_indo(date('Y-m-d', $status_tarik->Acc_Time)) ?>"></input>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <h5 class="m-b-10 f-w-600">Nama Admin</h5>
-                                                            <input type="text" name="total" id="total" class="form-control-lg text-muted border-0" readonly>
+                                                            <input type="text" name="total" id="total" class="form-control-lg text-muted border-0" value='<?= $status_tarik->Username_Admin . ' (' .  $status_tarik->ID_Admin . ')' ?>' readonly>
                                                         </div>
-                                                        <!-- <div class="col-sm-6">
-                                                    <h5 class="m-b-10 f-w-600">Tanggal Pembayaran</h5>
-                                                    <input type="text" class="form-control-lg text-muted f-w-600 border-0" readonly value="<?php
-                                                                                                                                            $time = strtotime($status->transaction_time);
-                                                                                                                                            $hari = date('D', $time);
-                                                                                                                                            echo getHari($hari) . ', ' . tgl_indo($status->transaction_time);
-                                                                                                                                            ?>"></input>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <h5 class="m-b-10 f-w-600">Total Pembayaran</h5>
-                                                    <input type="text" class="form-control-lg text-muted border-0" readonly value="<?= rupiah($dana_tarik) ?>"></input>
-                                                </div> -->
                                                     </div>
                                                     <div class="row m-t-40 text-center">
                                                         <div class="col-sm">
