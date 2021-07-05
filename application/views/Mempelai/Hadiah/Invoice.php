@@ -92,11 +92,11 @@
             <input type="text" name="total" id="total" class="form-control-lg text-muted border-0" value='<?= $status_tarik->Username_Admin . ' (' .  $status_tarik->ID_Admin . ')' ?>' readonly>
         </div>
     </div>
-    <div class="row">
+    <div class="row text-center">
         <div class="col-sm">
-            <h5 class="m-b-10 f-w-600">Status Pengambilan</h5>
-            <button type="button" class="btn btn-danger btn-block " style="cursor: no-drop">Dana sudah diambil
-            </button>
+            <p class="f-w-600 f-30 m-t-5">Terima Kasih</p>
+            <p class="text-muted m-t-5"><?= tgl_indo(date('Y-m-d')) ?></p>
+
         </div>
     </div>
     <!-- END-->
