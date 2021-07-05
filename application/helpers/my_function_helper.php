@@ -27,11 +27,11 @@ function menu_admin()
 {
     $menu = [
         //nama menu
-        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Transaksi', 'Testimoni', 'Admin', 'Logout'],
+        ['Dashboard', 'Akun', 'Undangan', 'Tema', 'Transaksi', 'Testimoni', 'Admin', 'Tarik Hadiah', 'Logout'],
         //icon
-        ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', ' fa fa-money', 'fa fa-list-alt', 'fa fa-group', 'feather icon-log-out'],
+        ['feather icon-home', 'feather icon-users', 'fa fa-book', 'ti-palette', ' fa fa-money', 'fa fa-list-alt', 'fa fa-group', 'fa fa-credit-card-alt', 'feather icon-log-out'],
         //url
-        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Transaksi', 'Admin/Testimoni', 'Admin/Admin', 'Admin/Auth/logout'],
+        ['Admin/Dashboard',  'Admin/Akun', 'Admin/Undangan', 'Admin/Tema', 'Admin/Transaksi', 'Admin/Testimoni', 'Admin/Admin', 'Admin/TarikHadiah', 'Admin/Auth/logout'],
     ];
     return $menu;
 }

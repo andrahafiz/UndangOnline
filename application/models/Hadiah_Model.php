@@ -52,10 +52,28 @@ class Hadiah_Model extends CI_Model
     public function cek_hadiah($id_undangan)
     {
         return $this->db->query("SELECT *
-    FROM tb_requesthadiah
-    LEFT JOIN tb_admin
-    ON tb_requesthadiah.Admin_Acc = tb_admin.ID_Admin
-    WHERE tb_requesthadiah.ID_Undangan = '$id_undangan'
-    LIMIT 1")->row();
+                                FROM tb_requesthadiah
+                                LEFT JOIN tb_admin
+                                ON tb_requesthadiah.Admin_Acc = tb_admin.ID_Admin
+                                WHERE tb_requesthadiah.ID_Undangan = '$id_undangan'
+                                LIMIT 1")->row();
+    }
+
+    public function requesthadiah()
+    {
+        $this->db->select("*");
+        $this->db->from("tb_requesthadiah");
+        $this->db->join("tb_admin", '`tb_admin`.`ID_Admin`=`tb_requesthadiah`.`Admin_Acc`', 'left');
+        $this->db->join("tb_undangan", '`tb_undangan`.`ID_Undangan`=`tb_requesthadiah`.`ID_Undangan`', 'left');
+        $this->db->join("tb_akun", '`tb_undangan`.`ID_Akun`=`tb_akun`.`ID_akun`');
+        $this->db->where("Status_req !=", 0);
+        return $this->db->get()->result();
+    }
+
+    public function update_req($id, $data)
+    {
+        $this->db->where('ID_Request', $id);
+        $this->db->update('tb_requesthadiah', $data);
+        return $this->db->affected_rows();
     }
 }

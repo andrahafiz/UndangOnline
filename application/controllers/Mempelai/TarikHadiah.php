@@ -59,7 +59,8 @@ class TarikHadiah extends CI_Controller
         $data = [
             'ID_Undangan' => $id_undangan,
             'Total_Harga' => preg_replace("/Rp/", "", preg_replace("/[^a-zA-Z0-9]/", "", $total)),
-            'Request_Time' => $time_request
+            'Request_Time' => $time_request,
+            'Status_Req' => 1
         ];
         $upload = $this->Hadiah_Model->insert_to_tb_tarikhadiah($data);
         if ($this->db->affected_rows() > 0) {

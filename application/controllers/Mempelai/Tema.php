@@ -43,7 +43,6 @@ class Tema extends CI_Controller
         // var_dump($data);
         // die();
         // // $this->load->view('Admin/layout/header', $data);
-        $this->load->view('Admin/layout/navbar', $data);
         // // $this->load->view('Admin/Tema/V_Tema', $data['tema']);
         // // $this->load->view('Admin/layout/footer');
         // $this->load->view('Tema/Tema1', $data);

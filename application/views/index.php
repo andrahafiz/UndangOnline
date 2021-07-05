@@ -561,7 +561,7 @@
                     <div class="col-lg-12">
                         <div class="copyright d-sm-flex justify-content-between">
                             <div class="copyright-content">
-                                <p class="text">© <?= date('Y') ?> getmarried. <a href="https://uideck.com" rel="nofollow">Made by in team PCR</a></p>
+                                <p class="text">© <?= date('Y') ?> getmarried. Made by in team PCR</p>
                             </div> <!-- copyright content -->
                         </div> <!-- copyright -->
                     </div>

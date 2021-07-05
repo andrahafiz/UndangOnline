@@ -79,9 +79,6 @@
                     <!-- Authentication card start -->
 
                     <form class="md-float-material form-material" method="post">
-                        <div class="text-center">
-                            <img src="<?= base_url(); ?>assets\Admin\assets\images\logo.png" alt="logo.png">
-                        </div>
                         <div class="auth-box card">
                             <div class="card-block">
                                 <div class="row m-25">
@@ -116,9 +113,6 @@
                                     <div class="col-md-10">
                                         <p class="text-inverse text-left m-b-0">Terimakasih</p>
                                         <p class="text-inverse text-left"><a href="index-1.htm"><b class="f-w-600">Kembali ke Halaman Website</b></a></p>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <img src="<?= base_url(); ?>assets\Admin\assets\images\auth\Logo-small-bottom.png" alt="small-logo.png">
                                     </div>
                                 </div>
                             </div>

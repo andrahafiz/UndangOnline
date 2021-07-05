@@ -61,6 +61,9 @@
             }
         }
     </style>
+    <script>
+        window.print();
+    </script>
 </head>
 
 <body>
@@ -85,7 +88,7 @@
                             <form method="post" action="<?= base_url('Mempelai/TarikHadiah/tambahdata') ?>">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <h5 class="f-w-600" style="color :red">Username</h5>
+                                        <h5 class="f-w-600">Username</h5>
                                         <input type="hidden" name="id_undangan" value="<?= $this->session->userdata('ID_Undangan') ?>"></input>
                                         <input type="text" class="form-control-lg text-muted border-0 w-100" readonly value="<?= $this->session->userdata('Username') ?>"></input>
                                     </div>
@@ -94,10 +97,7 @@
                                         <input type="hidden" name="id_undangan" value="<?= $this->session->userdata('ID_Undangan') ?>"></input>
                                         <input type="text" class="form-control-lg text-muted border-0 w-100" readonly value="<?= $this->session->userdata('Email_Akun') ?>"></input>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <h5 class="f-w-600">Bank Transfer</h5>
-                                        <img class="img-80" src='<?php echo getimagebank($status->bank) ?>'>
-                                    </div>
+
                                 </div>
                                 <div class="row ">
                                     <div class="col-sm-6">
@@ -118,6 +118,12 @@
                                     <div class="col-sm-6">
                                         <h5 class=" f-w-600">Nama Admin</h5>
                                         <input type="text" name="total" id="total" class="form-control-lg text-muted border-0" value='<?= $status_tarik->Username_Admin . ' (' .  $status_tarik->ID_Admin . ')' ?>' readonly>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h5 class="f-w-600">Bank Transfer</h5>
+                                        <img class="img-80" src='<?php echo getimagebank($status->bank) ?>'>
                                     </div>
                                 </div>
                             </form>
@@ -184,9 +190,7 @@
 
     <!-- Max-length js -->
     <script type="text/javascript" src="<?= base_url(); ?>assets\Mempelai\bower_components\bootstrap-maxlength\js\bootstrap-maxlength.js"></script>
-    <script>
-        window.print();
-    </script>
+
 </body>
 
 </html>

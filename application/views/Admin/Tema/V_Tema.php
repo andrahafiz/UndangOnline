@@ -80,11 +80,11 @@
                                                                 </a>
                                                             <?php } ?>
 
-                                                            <a href="">
+                                                            <!-- <a href="">
                                                                 <button type="button" class="btn btn-danger  btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Hapus">
                                                                     <i class="fa fa-trash"></i>
                                                                 </button>
-                                                            </a>
+                                                            </a> -->
                                                         </div>
                                                         <!-- <p class="card-text">asdasd</p> -->
                                                     </div>
