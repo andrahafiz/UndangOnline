@@ -38,18 +38,6 @@ class Snap extends CI_Controller
 	{
 		$this->load->view('checkout_snap');
 	}
-
-	public function spp()
-	{
-		// $data['undangan_online'] = $this->db->get('pembayaran_undangan')->result();
-		$id =   $this->session->userdata('ID_Akun');
-		$data = array(
-			'undangan_online' => $this->db->get('pembayaran_undangan')->result(),
-			'data_akun' => $this->data_akun($id)
-		);
-
-		$this->load->view('pembayaranspp', $data);
-	}
 	public function data_akun($id)
 	{
 		return  $this->db->get_where('tb_akun', array('ID_akun' => $id))->row_array();
@@ -135,31 +123,12 @@ class Snap extends CI_Controller
 			'status_code' => $result['transaction_status'],
 			'kode_undangan' => $this->input->post('kode_undangan')
 		];
-		$data2 = [
-			'order_id' => $result['order_id'],
-			'gross_amount' => $result['gross_amount'],
-			'payment_type' => $result['payment_type'],
-			'transaction_time' => $result['transaction_time'],
-			'bank' => $result['va_numbers'][0]['bank'],
-			'va_numbers' => $result['va_numbers'][0]["bank"],
-			'pdf_url' => $result['pdf_url'],
-			'status_code' => $result['transaction_status'],
-			'tipe_transaksi' => 'Undangan',
-			'kode_undangan' => $this->input->post('kode_undangan'),
-			'ID_akun' => $this->session->userdata('ID_Akun'),
-		];
 		$simpan = $this->db->insert('pembayaran_undangan', $data);
-		$simpan2 = $this->db->insert('tb_transaksi', $data2);
 		if ($simpan) {
 			redirect('Mempelai/Pembayaran');
 		} else {
-			echo "Gagal Simpan 1";
-		}
-
-		if ($simpan2) {
+			"<script> alert('Transaksi Gagal')</script>";
 			redirect('Mempelai/Pembayaran');
-		} else {
-			echo "Gagal Simpan 2";
 		}
 	}
 

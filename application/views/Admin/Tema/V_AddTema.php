@@ -20,7 +20,7 @@
                                 <div class="card ">
                                     <div class="card-header ">
                                         <div class="d-inline">
-                                            <h1 class="f-w-900">Edit Tema </h1>
+                                            <h1 class="f-w-900">Tambah Tema </h1>
                                             <hr />
                                         </div>
                                     </div>
@@ -45,7 +45,7 @@
 
                                                     <div class="text-center m-t-25">
                                                         <a href="<?= base_url('Admin/Tema') ?>">
-                                                            <button type="reset" class="btn btn-inverse btn-outline-inverse w-25"><i class="icofont icofont-close-circled "></i>Batal</button>
+                                                            <button type="button" class="btn btn-inverse btn-outline-inverse w-25"><i class="icofont icofont-close-circled "></i>Batal</button>
                                                         </a>
                                                         <button type="submit" class="btn btn-success w-25"><i class="icofont icofont-check-circled"></i>Simpan</button>
                                                     </div>

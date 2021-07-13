@@ -80,7 +80,7 @@ class Tema extends CI_Controller
                     $this->pesan('sukses', 'Data berhasil');
                     redirect('Admin/Tema');
                     // echo "<script> alert('data berhasil');</script>";
-                    // echo "<script> window.location='" . base_url('Admin/Tema') . "';</script>";
+                    // echo "<script> window.location='" . base_url('Adminp/Tema') . "';</script>";
                 } else {
                     $this->pesan('gagal', 'Data gagal disimpan');
                     redirect('Admin/Tema');

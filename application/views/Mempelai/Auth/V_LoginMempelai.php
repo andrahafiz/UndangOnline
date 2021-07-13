@@ -106,7 +106,7 @@
                                     <div class="col-12">
 
                                         <div class="forgot-phone text-right f-right">
-                                            <a href="auth-reset-password.htm" class="text-right f-w-600"> Lupa Password?</a>
+                                            <!-- <a href="auth-reset-password.htm" class="text-right f-w-600"> Lupa Password?</a> -->
                                         </div>
                                     </div>
                                 </div>

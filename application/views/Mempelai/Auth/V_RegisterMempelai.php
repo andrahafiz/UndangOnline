@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Adminty - Premium Admin Template by Colorlib </title>
+    <title>Get Married</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -79,7 +79,7 @@
                     <!-- <form class="md-float-material form-material"> -->
                     <form class="md-float-material form-material form-group" action=<?= base_url('Mempelai/Auth/register'); ?> method="POST">
                         <div class="text-center">
-                            <img src="<?= base_url(); ?>assets\Mempelai\assets\images\logo.png" alt="logo.png">
+                            <!-- <img src="<?= base_url(); ?>assets\Mempelai\assets\images\logo.png" alt="logo.png"> -->
                         </div>
                         <div class="auth-box card">
                             <div class="card-block">
@@ -162,7 +162,7 @@
                                         <p class="text-inverse text-left"><a href="index-1.htm"><b class="f-w-600">Kembali Ke Website</b></a></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <img src="<?= base_url(); ?>assets\Mempelai\assets\images\auth\Logo-small-bottom.png" alt="small-logo.png">
+                                        <!-- <img src="<?= base_url(); ?>assets\Mempelai\assets\images\auth\Logo-small-bottom.png" alt="small-logo.png"> -->
                                     </div>
                                 </div>
                             </div>
