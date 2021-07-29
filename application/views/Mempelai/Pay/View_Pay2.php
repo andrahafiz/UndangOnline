@@ -3,61 +3,64 @@
         <div class="main-body">
             <div class="page-wrapper">
                 <div class="page-body">
-                    <!-- JIKA SUDAH MELAKUKAN PEMBAYARAN -->
-                    <?php if ($status->status_code == "settlement" && $data_akun['Status_akun'] == "2") { ?>
-                        <div class="row">
-                            <div class="col-xl-12 col-md-12 ">
-                                <div class="card user-card-full  z-depth-bottom-3 ">
-                                    <div class="row m-l-0 m-r-0">
-                                        <div class="col-sm-4 bg-c-pink user-profile">
-                                            <div class="card-block text-center text-white">
-                                                <div class="m-b-25">
-                                                    <img src="<?= base_url(); ?>assets\Mempelai\images\money2.png" class="img-radius">
+                    <?php if (isset($status)) { ?>
+                        <!-- JIKA SUDAH MELAKUKAN PEMBAYARAN -->
+                        <?php if ($status->status_code == "settlement" && $data_akun['Status_akun'] == "2") { ?>
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 ">
+                                    <div class="card user-card-full  z-depth-bottom-3 ">
+                                        <div class="row m-l-0 m-r-0">
+                                            <div class="col-sm-4 bg-c-pink user-profile">
+                                                <div class="card-block text-center text-white">
+                                                    <div class="m-b-25">
+                                                        <img src="<?= base_url(); ?>assets\Mempelai\images\money2.png" class="img-radius">
+                                                    </div>
+                                                    <em>Username</em>
+                                                    <h2 class="f-w-600"><?= $this->session->userdata('Username') ?></h2>
                                                 </div>
-                                                <em>Username</em>
-                                                <h2 class="f-w-600"><?= $this->session->userdata('Username') ?></h2>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="card-block">
-                                                <h2 class="f-w-900 text-center mt-5 f-50 m-b-">Transaksi Berhasil</h2>
-                                                <hr>
-                                                <div class="row m-t-25">
-                                                    <div class="col-sm-6">
-                                                        <h5 class="m-b-10 f-w-600">Email</h5>
-                                                        <input type="text" class=" text-muted f-w-600 border-0 w-100" readonly value="<?= $this->session->userdata('Email_Akun') ?>"></input>
+                                            <div class="col-sm-8">
+                                                <div class="card-block">
+                                                    <h2 class="f-w-900 text-center mt-5 f-50 m-b-">Transaksi Berhasil</h2>
+                                                    <hr>
+                                                    <div class="row m-t-25">
+                                                        <div class="col-sm-6">
+                                                            <h5 class="m-b-10 f-w-600">Email</h5>
+                                                            <input type="text" class=" text-muted f-w-600 border-0 w-100" readonly value="<?= $this->session->userdata('Email_Akun') ?>"></input>
+
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <h5 class="m-b-10 f-w-600">Bank Transfer</h5>
+                                                            <img class="img-60" src='<?php echo getimagebank($status->bank) ?>'>
+                                                        </div>
 
                                                     </div>
-                                                    <div class="col-sm-6">
-                                                        <h5 class="m-b-10 f-w-600">Bank Transfer</h5>
-                                                        <img class="img-60" src='<?php echo getimagebank($status->bank) ?>'>
+                                                    <div class="row m-t-25 m-b-40">
+                                                        <div class="col-sm-6">
+                                                            <h5 class="m-b-10 f-w-600">Tanggal Pembayaran</h5>
+                                                            <input type="text" class=" text-muted f-w-600 border-0" readonly value="<?php
+                                                                                                                                    $time = strtotime($status->transaction_time);
+                                                                                                                                    $hari = date('D', $time);
+
+                                                                                                                                    echo getHari($hari) . ', ' . tgl_indo($status->transaction_time);
+                                                                                                                                    ?>"></input>
+
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <h5 class="m-b-10 f-w-600">Total Pembayaran</h5>
+                                                            <input type="text" class=" text-muted f-w-600 border-0" readonly value="<?= rupiah($status->gross_amount) ?>"></input>
+                                                        </div>
+
                                                     </div>
-
-                                                </div>
-                                                <div class="row m-t-25 m-b-40">
-                                                    <div class="col-sm-6">
-                                                        <h5 class="m-b-10 f-w-600">Tanggal Pembayaran</h5>
-                                                        <input type="text" class=" text-muted f-w-600 border-0" readonly value="<?php
-                                                                                                                                $time = strtotime($status->transaction_time);
-                                                                                                                                $hari = date('D', $time);
-
-                                                                                                                                echo getHari($hari) . ', ' . tgl_indo($status->transaction_time);
-                                                                                                                                ?>"></input>
-
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <h5 class="m-b-10 f-w-600">Total Pembayaran</h5>
-                                                        <input type="text" class=" text-muted f-w-600 border-0" readonly value="<?= rupiah($status->gross_amount) ?>"></input>
-                                                    </div>
-
+                                                    <span class="text-muted">* Jika menu tidak bisa di buka, silahkan login ulang</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                    <?php }
+                    } ?>
                     <!-- END -->
                 </div>
             </div>
@@ -100,12 +103,10 @@
             </div>
         </div>
     </div>
+    <!-- JIKA BELUM MELAKUKAN PEMBAYARAN -->
 <?php  } elseif ($status == false && $data_akun['Status_akun'] == "1") { ?>
     <div class="modal fade md-show" id="Modal-P" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-center" role="document">
-            <!-- <div class="modal-content"> -->
-
-            <!-- <div class="modal-body"> -->
             <div class="row">
                 <div class="col-xl-12 col-md-12 ">
                     <div class="card user-card-full  z-depth-bottom-3 ">
@@ -116,6 +117,7 @@
                                         <input type="hidden" name="result_type" id="result-type" value="">
                                         <input type="hidden" name="result_data" id="result-data" value="">
                                         <input type="hidden" name="kode_undangan" id="result-data" value="<?= $this->session->userdata('ID_Undangan') ?>">
+                                        <input type="hidden" name="jml_bayar" id="jml_bayar" class=" text-muted f-w-400 border-0" readonly value="100000"></input>
                                         <div class="m-b-25">
                                             <img src="<?= base_url(); ?>assets\Mempelai\images\money2.png" class="img-radius">
                                         </div>
@@ -142,8 +144,7 @@
                                     <div class="row m-t-25">
                                         <div class="col-sm-6">
                                             <h5 class="m-b-10 f-w-600">No Handphone</h5>
-                                            <input type="hidden" name="jml_bayar" id="jml_bayar" class=" text-muted f-w-400 border-0" readonly value="100000"></input>
-                                            <input type="hidden" name="no_hp" id="no_hp" class=" text-muted f-w-400 border-0" readonly value="<?= format_nohp($data_akun['NoHp_akun']) ?>"></input>
+                                            <input type="text" name="no_hp" id="no_hp" class=" text-muted f-w-400 border-0" readonly value="<?= format_nohp($data_akun['NoHp_akun']) ?>"></input>
                                             <!-- <h6 class="text-muted f-w-400"><?= format_nohp($data_akun['NoHp_akun']) ?></h6> -->
                                         </div>
                                         <div class="col-sm-6">

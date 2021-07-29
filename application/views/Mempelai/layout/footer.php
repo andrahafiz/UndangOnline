@@ -112,6 +112,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> -->
 <script>
+    <?php $teks = 'Kepada Yth.%0ABapak/Ibu/Saudara/i%0A%0A__________%0A'; ?>
     $(document).ready(function() {
         $("#url_input").bind('input', function() {
             var nilai = $("#url_input").val();
@@ -200,7 +201,7 @@
                     });
                     setTimeout(function() {
                         window.location.href = window.location.href
-                    }, 1500)
+                    }, 2000)
 
                     // alert("Sukes");
                     // location.href = "";
@@ -303,6 +304,24 @@
                 }
             });
         });
+
+        $(".btn-wa").on("click", function() {
+            const nomor = $(this).data('nowa');
+            const pesan = 'Kepada Yth.%0ABapak/Ibu/Saudara/i%0A%0A__________%0A';
+            // console.log(nomor);
+            // https://api.whatsapp.com/send?phone=6289661083456&text=Halo%0ASaya%20Ingin%20Bekerja%20Sama
+
+            var win = window.open('https://api.whatsapp.com/send?phone=' + nomor + '&text=' + pesan + '');
+            if (win) {
+                //Browser has allowed it to be opened
+                win.focus();
+            } else {
+                //Browser has blocked it
+                alert('Please allow popups for this website');
+            }
+            return false;
+        })
+
     });
 </script>
 </body>

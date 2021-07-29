@@ -120,7 +120,7 @@
                                 <div class="row">
                                     <div class="col-md-10">
                                         <p class="text-inverse text-left m-b-0">Terima Kasih</p>
-                                        <p class="text-inverse text-left"><a href="index-1.htm"><b class="f-w-600">Kembali Ke Website</b></a></p>
+                                    <p class="text-inverse text-left"><a href="<?= base_url('war'); ?>"><b class="f-w-600">Kembali Ke Website</b></a></p>
                                     </div>
                                     <div class="col-md-2">
                                         <!-- <img src="<?= base_url(); ?>assets\Mempelai\assets\images\auth\Logo-small-bottom.png" alt="small-logo.png"> -->

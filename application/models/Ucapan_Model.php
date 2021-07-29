@@ -25,7 +25,7 @@ class Ucapan_Model extends CI_Model
 
     public function ubah_status_ucapan($id, $status)
     {
-        $this->db->update('tb_ucapan', array('Id_Ucapan' => $id, 'Status_Ucapan' => $status));
+        $this->db->update('tb_ucapan', array('Status_Ucapan' => $status), array('Id_Ucapan' => $id));
     }
     public function insert_to_tb_ucapan($data)
     {

@@ -25,13 +25,13 @@
                                 </div>
                                 <div class="card-block">
                                     <div class="dt-responsive table-responsive">
-                                        <div id="simpletable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                        <div id="simpletable_wrapper" class="dataTables_wrapper dt-bootstrap4" style="overflow: hidden">
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12">
                                                     <table id="simpletable" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="simpletable_info">
                                                         <thead>
                                                             <tr role="row">
-                                                                <th class="sorting_asc" tabindex="0" aria-controls="simpletable" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 5%;">No</th>
+                                                                <th class="sorting_asc" tabindex="0" aria-controls="simpletable" aria-sort="ascending" aria-label="Name: activate to sort column descending">No</th>
                                                                 <th class="sorting" tabindex="0" aria-controls="simpletable" aria-label="Position: activate to sort column ascending" style="width:auto;">Nama</th>
                                                                 <th tabindex="0" style="width: 15%;">Aksi</th>
                                                             </tr>

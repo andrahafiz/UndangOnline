@@ -95,7 +95,7 @@ class Auth extends CI_Controller
     private function _formvalidation()
     {
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim', [
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tb_akun.Email_akun]', [
             'is_unique' => 'Email ini telah terdaftar'
         ]);
         $this->form_validation->set_rules('wa', 'Nomor Whatasapp', 'required|trim|numeric');
@@ -191,7 +191,7 @@ class Auth extends CI_Controller
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
             'smtp_user' => 'joyoom34@gmail.com',
-            'smtp_pass' => 'tuf18ti082_andra',
+            'smtp_pass' => 'joyoom18ti082',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',

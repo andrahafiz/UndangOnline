@@ -46,18 +46,4 @@ $(".btn-detail").on("click", function () {
     // $('.detail-body').append()
 
 })
-$(".btn-wa").on("click", function () {
-    const nomor = $(this).data('nowa');
-    // console.log(nomor);
-    // https://api.whatsapp.com/send?phone=6289661083456&text=Halo%0ASaya%20Ingin%20Bekerja%20Sama
-    var win = window.open('https://api.whatsapp.com/send?phone=' + nomor + '&text=WA test');
-    if (win) {
-        //Browser has allowed it to be opened
-        win.focus();
-    } else {
-        //Browser has blocked it
-        alert('Please allow popups for this website');
-    }
-    return false;
-})
 

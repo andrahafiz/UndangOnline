@@ -113,7 +113,7 @@ class Galeri extends CI_Controller
                     redirect('Mempelai/Galeri');
                 }
             } else {
-                $this->pesan('gagal', 'URL video tidak cocok , contoh URL : https://youtube/aaaaaa');
+                $this->pesan('gagal', 'URL video tidak cocok , contoh URL : https://youtube/embed/******');
                 redirect('Mempelai/Galeri');
             }
         } else {
@@ -135,6 +135,9 @@ class Galeri extends CI_Controller
                 $this->pesan('sukses', 'Foto sudah di hapus');
                 redirect('Mempelai/Galeri');
             }
+        } else if ($old_image->Tipe_Media == "Video") {
+            $this->pesan('sukses', 'Video sudah di hapus');
+            redirect('Mempelai/Galeri');
         }
         // var_dump($query);
         // if ($query) {

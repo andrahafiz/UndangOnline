@@ -22,6 +22,12 @@ class Pembayaran extends CI_Controller
             'data_akun' => $this->data_akun($id),
             'status' => $this->db->query("SELECT * FROM tb_transaksi WHERE kode_undangan = '$id_undangan' AND tipe_transaksi='Undangan'")->row()
         );
+        // var_dump($id);
+        // echo '<br>';
+        // var_dump($id_undangan);
+        // echo '<br>';
+            // var_dump($data['data_akun']);
+            // die();
 
         $this->load->view('Mempelai/layout/header', $data);
         if ($data['status'] && $data['data_akun']['Status_akun'] == 2) {
