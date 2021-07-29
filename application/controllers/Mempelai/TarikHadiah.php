@@ -26,10 +26,11 @@ class TarikHadiah extends CI_Controller
             'status_tarik' => $this->Hadiah_Model->cek_hadiah($this->id_undangan)
         );
 
-        // if (empty($data['status_tarik'])) {
+        // echo $this->id_undangan;
+        // if (empty($data)) {
         //     echo 'Kosong';
         // } else {
-        //     var_dump($data['status_tarik']);
+        //     var_dump($data['status']);
         // }
         // die();
         $this->load->view('Mempelai/layout/header', $data);

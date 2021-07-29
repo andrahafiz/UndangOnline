@@ -305,22 +305,22 @@
             });
         });
 
-        $(".btn-wa").on("click", function() {
-            const nomor = $(this).data('nowa');
-            const pesan = 'Kepada Yth.%0ABapak/Ibu/Saudara/i%0A%0A__________%0A';
-            // console.log(nomor);
-            // https://api.whatsapp.com/send?phone=6289661083456&text=Halo%0ASaya%20Ingin%20Bekerja%20Sama
+        // $(".btn-wa").on("click", function() {
+        //     const nomor = $(this).data('nowa');
+        //     const pesan = 'Kepada Yth.%0ABapak/Ibu/Saudara/i%0A%0A__________%0A';
+        //     // console.log(nomor);
+        //     // https://api.whatsapp.com/send?phone=6289661083456&text=Halo%0ASaya%20Ingin%20Bekerja%20Sama
 
-            var win = window.open('https://api.whatsapp.com/send?phone=' + nomor + '&text=' + pesan + '');
-            if (win) {
-                //Browser has allowed it to be opened
-                win.focus();
-            } else {
-                //Browser has blocked it
-                alert('Please allow popups for this website');
-            }
-            return false;
-        })
+        //     var win = window.open('https://api.whatsapp.com/send?phone=' + nomor + '&text=' + pesan + '');
+        //     if (win) {
+        //         //Browser has allowed it to be opened
+        //         win.focus();
+        //     } else {
+        //         //Browser has blocked it
+        //         alert('Please allow popups for this website');
+        //     }
+        //     return false;
+        // })
 
     });
 </script>

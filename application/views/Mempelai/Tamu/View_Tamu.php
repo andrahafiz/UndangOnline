@@ -48,9 +48,12 @@
                                                                     <td class="card-block icon-btn">
                                                                         <?php
                                                                         if (isset($value->Wa_Tamu)) {
-                                                                            echo '<button type="button" id="" class="btn-wa btn btn-success btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" data-nowa="' . $value->Wa_Tamu . '" title="Whatsapp ' . $value->Wa_Tamu . '">
+
+                                                                            echo '
+                                                                            <a href=' . base_url('Mempelai/Tamu/kirim_wa/' . $value->Wa_Tamu . '/' . $value->Nama_Tamu) . '
+                                                                            <button type="button" id="" class="btn-wa btn btn-success btn-icon waves-effect waves-light" style="height: 30px; width: 30px;" data-toggle="tooltip" data-placement="bottom" data-nowa="' . $value->Wa_Tamu . '" title="Whatsapp ' . $value->Wa_Tamu . '">
                                                                             <i class="fa fa-whatsapp"></i>
-                                                                        </button>';
+                                                                        </button></a>';
                                                                         }
 
                                                                         // if (isset($value->Email_Tamu)) {

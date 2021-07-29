@@ -194,6 +194,9 @@ function getimagebank($str)
         case "permata":
             return base_url('assets/Admin/images/bank/permata.png');
             break;
+        case "bri":
+            return base_url('assets/Admin/images/bank/bri.png');
+            break;
         case "mandiri":
             return base_url('assets/Admin/images/bank/mandiri.png');
             break;

@@ -8,6 +8,7 @@ class Tamu extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Tamu_Model');
+        $this->load->model('Mempelai_Model');
         $this->load->helper('my_function_helper');
         cekaccess();
     }
@@ -200,5 +201,44 @@ class Tamu extends CI_Controller
                 break;
         }
         $this->session->set_flashdata('message', $template);
+    }
+
+    public function kirim_wa($nomor, $namatamu)
+    {
+        $id_undangan =   $this->session->userdata('ID_Akun');
+        $data = array(
+            'datamempelai' => $this->Mempelai_Model->selectbyid($id_undangan)
+        );
+        // var_dump($data['datamempelai']->Nama_MPria);
+        // die();
+        $pesan = "Kepada Yth.%0ABapak/Ibu/Saudara/i%0A" . $namatamu . "%0A__________%0AAssalamu'alaikum Wr. Wb.%0ABismillahirahmanirrahim.%0ATanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:%0A" . $data['datamempelai']->Nama_MPria . "%0Adan%0A" . $data['datamempelai']->Nama_MWanita . "%0A%0ABerikut link untuk info lengkap dari acara kami :%0A" . base_url('Undangan/naufal-luna') . " Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.%0A%0A%0AWassalamu'alaikum Wr. Wb.%0A%0ATerima Kasih..%0A%0AHormat kami,%0A" . $data['datamempelai']->Nama_MPria . " dan " . $data['datamempelai']->Nama_MWanita;
+        header('Location: https://api.whatsapp.com/send?phone=' . $nomor . '&text=' . $pesan);
+        //         Kepada Yth. 
+        // Bapak/Ibu/Saudara/i
+        // Mimin Exclusive Home Studio
+        // __________
+
+        // Assalamu'alaikum Wr. Wb.
+
+        // Bismillahirahmanirrahim.
+        // Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:
+
+        // Anggia Purna Octavianti, A.Md.Ak
+        //    &
+        // Novendra Masrivan
+
+        // Berikut link untuk info lengkap dari acara kami :
+        // https://foreverr.id/anggianovend/?to=Mimin%20Exclusive%20Home%20Studio 
+
+        // Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+
+        // Jangan lupa isi Guestbook ya.. 
+
+        // Wassalamu'alaikum Wr. Wb.
+
+        // Terima Kasih..
+
+        // Hormat kami,
+        // Anggia & Novend
     }
 }
