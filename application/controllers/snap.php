@@ -109,9 +109,9 @@ class Snap extends CI_Controller
 		$result = json_decode($this->input->post('result_data'), true);
 
 		// echo "<prev>";
-		// var_dump($result);
+		var_dump($result);
 		// echo $result['va_numbers'][0]['bank'];
-		// die;
+		die;
 		$data = [
 			'order_id' => $result['order_id'],
 			'gross_amount' => $result['gross_amount'],
@@ -123,7 +123,7 @@ class Snap extends CI_Controller
 			'status_code' => $result['transaction_status'],
 			'kode_undangan' => $this->input->post('kode_undangan')
 		];
-		$simpan = $this->db->insert('pembayaran_undangan', $data);
+		$simpan = $this->db->insert('tb_transaksiaaaa', $data);
 		if ($simpan) {
 			redirect('Mempelai/Pembayaran');
 		} else {
